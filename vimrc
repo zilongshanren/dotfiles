@@ -2,6 +2,11 @@
 " Description: Optimized for C/C++ development, but useful also for other things.
 " Author: guanghui qu 
 "
+
+call pathogen#runtime_append_all_bundles()
+call pathogen#helptags()
+
+
 " set UTF-8 encoding
 set enc=utf-8
 set fenc=utf-8
