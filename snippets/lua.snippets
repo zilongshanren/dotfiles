@@ -1,0 +1,209 @@
+snippet comment
+	--------------------------------------------------------------------------------
+	-- ${1:comment}
+	--------------------------------------------------------------------------------
+snippet :addMarker
+	:addMarker(${1:latitude}, ${2:longitude}, {title = "${3:title}", subtitle = "${4:subtitle}"})
+snippet :getAddressLocation
+	:getAddressLocation("${1:location}")
+snippet :setCenter
+	:setCenter(${1:latitude}, ${2:longitude}, ${3:isAnimated})
+snippet :setRegion
+	:setRegion(${1:latitude}, ${2:longitude}, ${3:latitudeSpan}, ${4:longitudeSpan}, ${5:isAnimated})
+snippet addEventListener
+	addEventListener("${1:event_name}", ${2:function})
+snippet analytics.init
+	analytics.init(${1:your app key})
+snippet analytics.logEvent
+	analytics.logEvent(${1:event ID})
+snippet audio.fade
+	audio.fade( { channel = ${1:channel}, time = ${2:time}, volume = ${3:targetVolume} } )
+snippet audio.fadeOut
+	audio.fadeOut( { channel = ${1:channel}, time = ${2:milliseconds} } )
+snippet audio.findFreeChannel
+	audio.findFreeChannel( ${1:[startChannel]} )
+snippet audio.getDuration
+	audio.getDuration( ${1:audioHandle} )
+snippet audio.getMaxVolume
+	audio.getMaxVolume( { channel = ${1:channel} } )
+snippet audio.getMinVolume
+	audio.getMinVolume( { channel = ${1:channel} } )
+snippet audio.getVolume
+	audio.getVolume( { channel = ${1:channel} } )
+snippet audio.isChannelActive
+	audio.isChannelActive( ${1:channel} )
+snippet audio.isChannelPaused
+	audio.isChannelPaused( ${1:channel} )
+snippet audio.isChannelPlaying
+	audio.isChannelPlaying( ${1:channel} )
+snippet audio.loadSound
+	audio.loadSound( ${1:audiofileName}${2:[, baseDir ]}  )
+snippet audio.loadStream
+	audio.loadStream( ${1:audiofileName}${2:[, baseDir ]}  )
+snippet audio.pause
+	audio.pause( ${1:[channel]} )
+snippet audio.play
+	audio.play( ${1:audioHandle}, { ${2:[channel=c]}${3:[, loops=l]}${4:[, duration=d]}${5:[, fadein=f]}${6:[, onComplete=o]} } )
+snippet audio.reserveChannels
+	audio.reserveChannels( ${1:channels} )
+snippet audio.resume
+	audio.resume( ${1:channels} )
+snippet audio.rewind
+	audio.rewind( ${1:[audioHandle]},{ channel=${2:c} } )
+snippet audio.seek
+	audio.seek( ${1:timeInMilliseconds}${2:, audioHandle}, { channel=${3:c} } )
+snippet audio.setMaxVolume
+	audio.setMaxVolume( ${1:volume_0_to_1}, { channel=${2:c} } )
+snippet audio.setMinVolume
+	audio.setMinVolume( ${1:volume_0_to_1}, {channel=${2:c}} )
+snippet audio.setVolume
+	audio.setVolume( ${1:volume_0_to_1}, {channel=${2:c}} )
+snippet audio.stop
+	audio.stop( ${1:[channel]} )
+snippet audio.stopWithDelay
+	audio.stopWithDelay( ${1:duration}, {channel = ${2:c}} )
+snippet credits.init
+	credits.init(${1:app id}, ${2:[uid,]} ${3:listener})
+snippet display.captureScreen
+	display.captureScreen(${1:saveToAlbum})
+snippet display.loadRemoteImage
+	display.loadRemoteImage( ${1:url}, ${2:method}, ${3:listener} ${4:[, params]}, ${5:destFilename} ${6:[, baseDir]} ${7:[, x, y]} )
+snippet display.newCircle
+	display.newCircle( ${1:xCenter}, ${2:yCenter}, ${3:radius} )
+snippet display.newImage
+	display.newImage( ${1:[parentGroup], }"${2:filename}", ${3:[baseDirectory], }${4:left, }${5:top, }${6:isFullResolution} )
+snippet display.newImageRect
+	display.newImageRect( ${1:[parentGroup], }"${2:path_to_image}, "${3:[baseDirectory], }${4:width, }${5:height} )
+snippet display.newLine
+	display.newLine(${1:[parent], }${2:x1}, ${3:y1}, ${4:x2}, ${5:y2})
+snippet display.newRect
+	display.newRect( ${1:[parentGroup], }${2:left}, ${3:top}, ${4:width}, ${5:height} )
+snippet display.newRoundedRect
+	display.newRoundedRect( ${1:[parentGroup], }${2:left}, ${3:top}, ${4:width}, ${5:height}, ${6:cornerRadius} )
+snippet display.newText
+	display.newText(${1:[parentGroup], }"${2:string}", ${3:x}, ${4:y}, ${5:font}, ${6:size})
+snippet display.setDefault
+	display.setDefault("${1:fillColor, strokeColor, textColor, or lineColor"}", ${2:r}, ${3:g}, ${4:b}, ${5:[alpha]})
+snippet facebook.login
+	facebook.login(${1:app id}, ${2:listener}${3:[, permissions]})
+snippet facebook.request
+	facebook.request("${1:path}"${2:[, http method]}${3:[, params]})
+snippet facebook.showDialog
+	facebook.showDialog(${1:params})
+snippet fori
+	for ${1:i},${2:v} in ipairs(${3:table_name}) do
+		${0:print(i,v)}
+	end
+snippet for
+	for ${1:i}=${2:1},${3:10} do
+		${0:print(i)}
+	end
+snippet forp
+	for ${1:key},${2:value} in pairs(${3:table_name}) do
+		${0:print($1, $2)}
+	end
+snippet function
+	function ${1:function_name}( ${2:...} )
+		${0:-- body}
+	end
+snippet fun
+	function ${1:function_name}( ${2:...} )
+		${0:-- body}
+	end
+snippet gameNetwork.init
+	gameNetwork.init("${1:provider name}"${2:[, provider-specific parameters]})
+snippet gameNetwork.request
+	gameNetwork.request("${1:command}"${2:[, provider-specific parameters]})
+snippet gameNetwork.show
+	gameNetwork.show("${1:name}"${2:[, "data"]})
+snippet json.decode
+	json.decode(${1:json string to decode})
+snippet json.encode
+	json.encode(${1:table to encode})
+# local x = 1
+snippet local
+	local ${1:x} = ${0:1}
+snippet media.newEventSound
+	media.newEventSound("${1:filename}")
+snippet media.newRecording
+	media.newRecording(${1:[filePath]})
+snippet media.playEventSound
+	media.playEventSound("${1:audio_file}"${2:, [baseDirectory]}${3:, callback_function})
+snippet media.playSound
+	media.playSound("${1:soundFile}"${2:, onComplete, loop, or path})
+snippet media.playVideo
+	media.playVideo(${1:path} ${2:[, baseSource ]}${3:, showControls}${4:, listener})
+snippet media.setSoundVolume
+	media.setSoundVolume(${1:volume, 0 to 1})
+snippet media.show
+	media.show(${1:imageSource}${2:, listener})
+snippet module
+	module (..., package.seeall)
+snippet native.cancelAlert
+	native.cancelAlert(${1:alertID})
+snippet native.newFont
+	native.newFont("${1:Font name}"${2:[, size]})
+snippet native.newMapView
+	native.newMapView(${1:left}, ${2:top}, ${3:width}, ${4:height})
+snippet native.newTextBox
+	native.newTextBox(${1:left}, ${2:top}, ${3:width}, ${4:height})
+snippet native.newTextField
+	native.newTextField(${1:left}, ${2:top}, ${3:width}, ${4:height}${5:[, listener]})
+snippet native.setActivityIndicator
+	native.setActivityIndicator(${1:true to show, false to hide})
+snippet native.setKeyboardFocus
+	native.setKeyboardFocus(${1:textField, or nil to dismiss keyboard})
+snippet native.showAlert
+	native.showAlert("${1:title}", "${2:message}"${3:[, buttonLabels]}${4:[, listener]})
+snippet native.showWebPopup
+	-- x, y, width, height are optional; if not used, popup is fullscreen
+	native.showWebPopup(${1:x}, ${2:y}, ${3:width}, ${4:height}, "${5:url}"${6:[, options]})
+snippet physics.addBody
+	physics.addBody(${1:object}, "${2:static, dynamic, or kinematic}", {density = ${3:1.0}, friction = ${4:0.3}, bounce = ${5:0.2}, isSensor = ${6:false}})
+snippet physics.setDrawMode
+	physics.setDrawMode("${1:debug, hybrid, or normal}")	
+snippet removeEventListener
+	removeEventListener("${1:event_name}", ${2:function})
+snippet setFillColor
+	setFillColor(${1:r}, ${2:g}, ${3:b}, ${4:[alpha]})
+snippet setSampleRate
+	-- make sure to call setSampleRate BEFORE calling startTuner()
+	setSampleRate(${1:rate})
+snippet setStrokeColor
+	setStrokeColor(${1:r}, ${2:g}, ${3:b}, ${4:[alpha]})
+snippet setTextColor
+	setTextColor(${1:r}, ${2:g}, ${3:b}, ${4:[alpha]})
+snippet sprite.add
+	sprite.add(${1:spriteSet}, "${2:sequenceName}", ${3:startFrame}, ${4:frameCount}, ${5:time}, ${6:loopCount})
+snippet sprite.newSprite
+	sprite.newSprite(${1:spriteSet})
+snippet sprite.newSpriteSet
+	sprite.newSpriteSet(${1:spriteSheet}, ${2:startFrame}, ${3:frameCount})
+snippet sprite.newSpriteSheet
+	sprite.newSpriteSheet("${1:sprite.png}", ${2:frameWidth}, ${3:frameHeight})
+snippet store.finishTransaction
+	store.finishTransaction(${1:transaction})
+snippet store.init
+	store.init(${1:listener})
+snippet store.loadProducts
+	store.loadProducts(${1:array of product identifiers}, ${2:listener})
+snippet store.purchase
+	store.purchase(${1:array of products to purchase})
+snippet table.concat
+	table.concat( ${1:tablename}${2:, ", "}${3:, start_index}${4:, end_index} )
+snippet table.remove
+	table.remove(${1:table_name}, ${2:position_to_remove})
+snippet table.sort
+	table.sort( ${1:tablename}${2:, sortfunction} )
+snippet timer.cancel
+	timer.cancel(${1:timerID})
+snippet timer.performWithDelay
+	timer.performWithDelay(${1:delay_in_milliseconds}, ${2:callback_function}, ${3:iterations})
+snippet transition.from
+	transition.from(${1:object}, {time = ${2:milliseconds}, ${3:property} = ${4:value}, onComplete = ${5:function}})
+snippet transition.to
+	transition.to(${1:object}, {time = ${2:milliseconds}, ${3:property} = ${4:value}, onComplete = ${5:function}})
+snippet zwoptex
+	local ${1:zwoptexData} = require("${2:ZwoptexSpriteData}")
+	local ${3:data} = $1.getSpriteSheetData()
+	local ${4:spriteSheet} = sprite.newSpriteSheetFromData( "${5:sprite.png}", $3 )
