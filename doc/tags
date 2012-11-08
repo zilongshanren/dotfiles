@@ -646,9 +646,6 @@ lua_complete_keywords	ft_lua.txt	/*lua_complete_keywords*
 lua_complete_library	ft_lua.txt	/*lua_complete_library*
 lua_complete_omni	ft_lua.txt	/*lua_complete_omni*
 lua_error_format	ft_lua.txt	/*lua_error_format*
-lua_omni-intro	lua_omni.txt	/*lua_omni-intro*
-lua_omni-settings	lua_omni.txt	/*lua_omni-settings*
-lua_omni.txt	lua_omni.txt	/*lua_omni.txt*
 lua_path	ft_lua.txt	/*lua_path*
 luaref	lua51refvim.txt	/*luaref*
 luarefvim	lua51refvim.txt	/*luarefvim*
