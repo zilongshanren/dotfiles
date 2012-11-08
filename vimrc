@@ -130,3 +130,5 @@ nmap <silent> <leader>t :TlistOpen <CR>
 nmap <silent> <leader>g  :!ctags -R --c++-kinds=+p --fields=+iaS --extra=+q ./ <CR>
 map  <leader>d <c-]>
 map <leader>b <c-t>
+let g:SuperTabDefaultCompletionType = "<C-X><C-O>"
+
