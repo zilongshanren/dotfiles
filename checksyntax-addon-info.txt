@@ -1,0 +1,9 @@
+{
+  "name" : "checksyntax",
+  "version" : "dev",
+  "author" : "Tom Link <micathom at gmail com>",
+  "maintainer" : "Tom Link <micathom at gmail com>",
+  "repository" : {"type": "git", "url": "git://github.com/tomtom/checksyntax_vim.git"},
+  "dependencies" : {},
+  "description" : "Check syntax when saving a file (php etc.)"
+}
