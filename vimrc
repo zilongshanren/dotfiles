@@ -1,6 +1,6 @@
 " VIM Configuration File
 " Description: Optimized for C/C++ development, but useful also for other things.
-" Author: Gerhard Gappmeier
+" Author: guanghui qu 
 "
 " set UTF-8 encoding
 set enc=utf-8
@@ -54,34 +54,9 @@ let g:DoxygenToolkit_authorName="guanghui.qu <guanghui8827@126.com>"
 
 " Enhanced keyboard mappings
 "
-" in normal mode F2 will save the file
-nmap <F2> :w<CR>
-" in insert mode F2 will exit insert, save, enters insert again
-imap <F2> <ESC>:w<CR>i
-" map F3 and SHIFT-F3 to toggle spell checking
-nmap <F3> :setlocal spell spelllang=en<CR>
-imap <F3> <ESC>:setlocal spell spelllang=en<CR>i
-nmap <S-F3> :setlocal spell spelllang=<CR>
-imap <S-F3> <ESC>:setlocal spell spelllang=<CR>i
-" switch between header/source with F4 C++
-"map <F4> :e %:p:s,.h$,.X123X,:s,.cpp$,.h,:s,.X123X$,.cpp,<CR>
-" switch between header/source with F4 C
-map <F4> :e %:p:s,.h$,.X123X,:s,.c$,.h,:s,.X123X$,.c,<CR>
-" recreate tags file with F5
-"map <F5> :!ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .<CR>
-" create doxygen comment
-map <F6> :Dox<CR>
+"create doxygen comment
+map <leader>d :Dox<CR>
 " build using makeprg with <F7>
-nmap <F7> :make<CR>
-" build using makeprg with <F7>, in insert mode exit to command mode, save and compile
-imap <F7> <ESC>:w<CR>:make<CR>
-" build using makeprg with <S-F7>
-map <S-F7> :make clean all<CR>
-" macro recording
-nmap <S-F8> qq
-nmap <F8> @q
-" goto definition with F12
-map <F12> <C-]>
 " in diff mode we use the spell check keys for merging
 if &diff
   " diff settings
@@ -133,8 +108,6 @@ let OmniCpp_SelectFirstItem = 2 " select first item (but don't insert)
 let OmniCpp_NamespaceSearch = 2 " search namespaces in this and included files
 let OmniCpp_ShowPrototypeInAbbr = 1 " show function prototype (i.e. parameters) in popup window
 " -- ctags --
-" map \g generate ctags for current folder:
-map <leader>g  :!ctags -R --c++-kinds=+p --fields=+iaS --extra=+q ./ <CR>
 
 "--vim-pathogen
 call pathogen#infect()
@@ -149,3 +122,6 @@ nmap <buffer> <silent> <leader> ,PP
 nmap <silent> <Leader>f :FSHere<cr>
 nmap <silent> <leader>n :NERDTree <CR>
 nmap <silent> <leader>t :TlistOpen <CR>
+nmap <silent> <leader>g  :!ctags -R --c++-kinds=+p --fields=+iaS --extra=+q ./ <CR>
+map  <leader>d <c-]>
+map <leader>b <c-t>
