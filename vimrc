@@ -133,3 +133,7 @@ map <leader>b <c-t>
 "for command mode
 nmap <S-Tab> <<
 nmap <leader><Tab> <c-w><c-w>
+"automatically save foldings in vim
+au BufWinLeave * silent! mkview
+au BufWinEnter * silent! loadview
+
