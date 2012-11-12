@@ -138,4 +138,4 @@ au BufWinLeave * silent! mkview
 au BufWinEnter * silent! loadview
 
 "map markdown to html
-nmap <leader>md :%!/usr/local/bin/Mardown.pl --html4tags
+nmap <leader>md :%!/usr/local/bin/Markdown.pl --html4tags <cr>
