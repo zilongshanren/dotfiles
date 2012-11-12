@@ -133,17 +133,60 @@ silent! normal! zE
 341,436fold
 284,436fold
 438,477fold
+518,522fold
+518,531fold
+532,541fold
 479,557fold
 559,573fold
 575,603fold
 605,611fold
 613,615fold
 618,632fold
+1
+normal zo
+1
+normal zc
+1
+normal zc
 8
 normal zo
 8
 normal zo
+33
+normal zo
+53
+normal zo
+54
+normal zo
+53
+normal zo
+86
+normal zo
+99
+normal zo
+119
+normal zo
+124
+normal zo
 8
+normal zo
+132
+normal zo
+146
+normal zo
+167
+normal zo
+167
+normal zc
+167
+normal zo
+220
+normal zo
+243
+normal zo
+259
+normal zo
+284
 normal zo
 284
 normal zo
@@ -155,12 +198,36 @@ normal zo
 normal zo
 284
 normal zo
-let s:l = 22 - ((21 * winheight(0) + 17) / 34)
+438
+normal zo
+479
+normal zo
+518
+normal zo
+518
+normal zc
+518
+normal zo
+532
+normal zo
+479
+normal zo
+559
+normal zo
+575
+normal zo
+605
+normal zo
+613
+normal zo
+618
+normal zo
+let s:l = 259 - ((10 * winheight(0) + 11) / 22)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-22
-normal! 0
+259
+normal! 037l
 let &so = s:so_save | let &siso = s:siso_save
 doautoall SessionLoadPost
 " vim: set ft=vim :

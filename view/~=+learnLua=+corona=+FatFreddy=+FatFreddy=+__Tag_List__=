@@ -2,17 +2,17 @@ let s:so_save = &so | let s:siso_save = &siso | set so=0 siso=0
 argglobal
 let s:cpo_save=&cpo
 set cpo&vim
-inoremap <buffer> <silent> <kMultiply> :silent! %foldopen!
-inoremap <buffer> <silent> <kMinus> :silent! foldclose
 inoremap <buffer> <silent> <kPlus> :silent! foldopen
+inoremap <buffer> <silent> <kMinus> :silent! foldclose
+inoremap <buffer> <silent> <kMultiply> :silent! %foldopen!
 nnoremap <buffer> <silent> * :silent! %foldopen!
 nnoremap <buffer> <silent> + :silent! foldopen
 nnoremap <buffer> <silent> - :silent! foldclose
 nnoremap <buffer> <silent> = :silent! %foldclose
 nnoremap <buffer> <silent> q :close
-nnoremap <buffer> <silent> <kMultiply> :silent! %foldopen!
-nnoremap <buffer> <silent> <kMinus> :silent! foldclose
 nnoremap <buffer> <silent> <kPlus> :silent! foldopen
+nnoremap <buffer> <silent> <kMinus> :silent! foldclose
+nnoremap <buffer> <silent> <kMultiply> :silent! %foldopen!
 inoremap <buffer> <silent> * :silent! %foldopen!
 inoremap <buffer> <silent> + :silent! foldopen
 inoremap <buffer> <silent> - :silent! foldclose
@@ -113,12 +113,12 @@ setlocal nowinfixheight
 setlocal winfixwidth
 setlocal nowrap
 setlocal wrapmargin=0
-let s:l = 3 - ((2 * winheight(0) + 17) / 34)
+let s:l = 26 - ((16 * winheight(0) + 17) / 34)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-3
-normal! 0
+26
+normal! 04l
 let &so = s:so_save | let &siso = s:siso_save
 doautoall SessionLoadPost
 " vim: set ft=vim :

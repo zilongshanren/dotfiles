@@ -96,6 +96,8 @@ Tlist_Set_App()	taglist.txt	/*Tlist_Set_App()*
 Tlist_Update_File_Tags()	taglist.txt	/*Tlist_Update_File_Tags()*
 checksyntax#Check()	checksyntax.txt	/*checksyntax#Check()*
 checksyntax.txt	checksyntax.txt	/*checksyntax.txt*
+cs	surround.txt	/*cs*
+ds	surround.txt	/*ds*
 easymotion	easymotion.txt	/*easymotion*
 easymotion-configuration	easymotion.txt	/*easymotion-configuration*
 easymotion-contents	easymotion.txt	/*easymotion-contents*
@@ -201,6 +203,8 @@ g:tcommentOpModeExtra	tcomment.txt	/*g:tcommentOpModeExtra*
 g:tcommentOptions	tcomment.txt	/*g:tcommentOptions*
 g:tcommentSyntaxMap	tcomment.txt	/*g:tcommentSyntaxMap*
 g:tcomment_types	tcomment.txt	/*g:tcomment_types*
+i_CTRL-G_S	surround.txt	/*i_CTRL-G_S*
+i_CTRL-G_s	surround.txt	/*i_CTRL-G_s*
 i_CTRL-R_<Tab>	snipMate.txt	/*i_CTRL-R_<Tab>*
 l9	l9.txt	/*l9*
 l9-about	l9.txt	/*l9-about*
@@ -722,6 +726,13 @@ supertab-options	supertab.txt	/*supertab-options*
 supertab-preventcomplete	supertab.txt	/*supertab-preventcomplete*
 supertab-usage	supertab.txt	/*supertab-usage*
 supertab.txt	supertab.txt	/*supertab.txt*
+surround	surround.txt	/*surround*
+surround-customizing	surround.txt	/*surround-customizing*
+surround-issues	surround.txt	/*surround-issues*
+surround-mappings	surround.txt	/*surround-mappings*
+surround-replacements	surround.txt	/*surround-replacements*
+surround-targets	surround.txt	/*surround-targets*
+surround.txt	surround.txt	/*surround.txt*
 taglist-commands	taglist.txt	/*taglist-commands*
 taglist-debug	taglist.txt	/*taglist-debug*
 taglist-extend	taglist.txt	/*taglist-extend*
@@ -749,3 +760,9 @@ tcomment#OperatorLineAnyway()	tcomment.txt	/*tcomment#OperatorLineAnyway()*
 tcomment-maps	tcomment.txt	/*tcomment-maps*
 tcomment-operator	tcomment.txt	/*tcomment-operator*
 tcomment.txt	tcomment.txt	/*tcomment.txt*
+vS	surround.txt	/*vS*
+vgS	surround.txt	/*vgS*
+yS	surround.txt	/*yS*
+ySS	surround.txt	/*ySS*
+ys	surround.txt	/*ys*
+yss	surround.txt	/*yss*
