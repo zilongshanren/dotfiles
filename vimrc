@@ -59,8 +59,6 @@ let g:DoxygenToolkit_authorName="guanghui.qu <guanghui8827@126.com>"
 
 " Enhanced keyboard mappings
 "
-"create doxygen comment
-map <leader>d :Dox<CR>
 " build using makeprg with <F7>
 " in diff mode we use the spell check keys for merging
 if &diff
@@ -120,22 +118,37 @@ syntax on
 filetype plugin indent on
 
 autocmd vimenter * NERDTree
-"--tcomment plugin
+"--tcomment plugin,comment a line
 map <leader>c <c-_><c-_>
 "---a.vim plugin
 nmap <buffer> <silent> <leader> ,PP
+"go back and forth from header file and source file
 nmap <silent> <Leader>h :FSHere<cr>
+"open a tree view
 nmap <silent> <leader>n :NERDTree <CR>
+"open a tag list ivew
 nmap <silent> <leader>t :TlistOpen <CR>
+"generate ctags at current directory
 nmap <silent> <leader>g  :!ctags -R --c++-kinds=+p --fields=+iaS --extra=+q ./ <CR>
+"go to function definition
 map  <leader>f <c-]>
+"go back to prev function
 map <leader>b <c-t>
-"for command mode
+"indent back
 nmap <S-Tab> <<
+"change between different tap windows
 nmap <leader><Tab> <c-w><c-w>
+"create doxygen comment
+map <leader>d :Dox<CR>
+
 "automatically save foldings in vim
 au BufWinLeave * silent! mkview
 au BufWinEnter * silent! loadview
 
 "map markdown to html
 nmap <leader>md :%!/usr/local/bin/Markdown.pl --html4tags <cr>
+
+
+" :hi CursorLine   cterm=NONE ctermbg=lightyellow ctermfg=black guibg=lightyellow guifg=black
+" :hi CursorColumn cterm=NONE ctermbg=yellow ctermfg=black guibg=yellow guifg=black
+:nnoremap <Leader>1 :set cursorline! cursorcolumn!<CR>
