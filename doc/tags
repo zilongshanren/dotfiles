@@ -72,8 +72,12 @@
 :TlistUndebug	taglist.txt	/*:TlistUndebug*
 :TlistUnlock	taglist.txt	/*:TlistUnlock*
 :TlistUpdate	taglist.txt	/*:TlistUpdate*
+CHANGE_LOG	vimpress.txt	/*CHANGE_LOG*
+COMMANDS	vimpress.txt	/*COMMANDS*
+CONFIGURE	vimpress.txt	/*CONFIGURE*
 CheckSyntaxFail()	checksyntax.txt	/*CheckSyntaxFail()*
 CheckSyntaxSucceed()	checksyntax.txt	/*CheckSyntaxSucceed()*
+EXAMPLES	vimpress.txt	/*EXAMPLES*
 EasyMotion_do_mapping	easymotion.txt	/*EasyMotion_do_mapping*
 EasyMotion_do_shade	easymotion.txt	/*EasyMotion_do_shade*
 EasyMotion_grouping	easymotion.txt	/*EasyMotion_grouping*
@@ -85,6 +89,7 @@ FSReturnCompanionFilenameString()	fswitch.txt	/*FSReturnCompanionFilenameString(
 FSReturnReadableCompanionFilename()	fswitch.txt	/*FSReturnReadableCompanionFilename()*
 FSwitch()	fswitch.txt	/*FSwitch()*
 Filename()	snipMate.txt	/*Filename()*
+INSTALL	vimpress.txt	/*INSTALL*
 Lua-Reference	lua51refvim.txt	/*Lua-Reference*
 OmniCpp_DefaultNamespaces	omnicppcomplete.txt	/*OmniCpp_DefaultNamespaces*
 OmniCpp_DisplayMode	omnicppcomplete.txt	/*OmniCpp_DisplayMode*
@@ -103,6 +108,7 @@ ReloadSnippets()	snipMate.txt	/*ReloadSnippets()*
 ResetAllSnippets()	snipMate.txt	/*ResetAllSnippets()*
 ResetSnippets()	snipMate.txt	/*ResetSnippets()*
 ReturnSkeletonsFromPrototypesForCurrentBuffer()	protodef.txt	/*ReturnSkeletonsFromPrototypesForCurrentBuffer()*
+TIPS	vimpress.txt	/*TIPS*
 Tlist_Get_Tag_Prototype_By_Line()	taglist.txt	/*Tlist_Get_Tag_Prototype_By_Line()*
 Tlist_Get_Tagname_By_Line()	taglist.txt	/*Tlist_Get_Tagname_By_Line()*
 Tlist_Set_App()	taglist.txt	/*Tlist_Set_App()*
@@ -788,6 +794,7 @@ tcomment-operator	tcomment.txt	/*tcomment-operator*
 tcomment.txt	tcomment.txt	/*tcomment.txt*
 vS	surround.txt	/*vS*
 vgS	surround.txt	/*vgS*
+vimpress.txt	vimpress.txt	/*vimpress.txt*
 yS	surround.txt	/*yS*
 ySS	surround.txt	/*ySS*
 ys	surround.txt	/*ys*
