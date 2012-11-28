@@ -128,9 +128,9 @@ nmap <buffer> <silent> <leader> ,PP
 "go back and forth from header file and source file
 nmap <silent> <Leader>h :FSHere<cr>
 "open a tree view
-nmap <silent> <leader>n :NERDTree <CR>
+nmap <silent> <leader>n :NERDTreeToggle <CR>
 "open a tag list ivew
-nmap <silent> <leader>t :TlistOpen <CR>
+nmap <silent> <leader>t :TlistToggle <CR>
 "generate ctags at current directory
 nmap <silent> <leader>g  :!ctags -R --c++-kinds=+p --fields=+iaS --extra=+q ./ <CR>
 "go to function definition
@@ -139,8 +139,6 @@ map  <leader>f <c-]>
 map <leader>b <c-t>
 "indent back
 nmap <S-Tab> <<
-"change between different tap windows
-nmap <leader><Tab> <c-w><c-w>
 "create doxygen comment
 map <leader>d :Dox<CR>
 
@@ -155,3 +153,15 @@ nmap <leader>md :%!/usr/local/bin/Markdown.pl --html4tags <cr>
 " :hi CursorLine   cterm=NONE ctermbg=lightyellow ctermfg=black guibg=lightyellow guifg=black
 " :hi CursorColumn cterm=NONE ctermbg=yellow ctermfg=black guibg=yellow guifg=black
 :nnoremap <Leader>1 :set cursorline! cursorcolumn!<CR>
+
+"set javascript auto completion
+autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
+
+"map windows command
+nmap ,j <c-w>j
+nmap ,k <c-w>k
+nmap ,h <c-w>h
+nmap ,l <c-w>l
+nmap ,o <c-w>o
+nmap ,c <c-w>c
+
