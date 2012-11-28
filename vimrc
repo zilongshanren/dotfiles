@@ -62,30 +62,10 @@ let g:ProjTags += [["~/OpenSourceGitRepository/cocos2d-x","~/vimTags/cocos2dx/ta
 let g:DoxygenToolkit_briefTag_pre=""
 let g:DoxygenToolkit_paramTag_pre="@param "
 let g:DoxygenToolkit_returnTag="@return "
-"let g:DoxygenToolkit_blockHeader="--------------------------------------------------------------------------"
-"let g:DoxygenToolkit_blockFooter="----------------------------------------------------------------------------"
+let g:DoxygenToolkit_blockHeader="--------------------------------------------------------------------------"
+let g:DoxygenToolkit_blockFooter="----------------------------------------------------------------------------"
 let g:DoxygenToolkit_authorName="guanghui.qu <guanghui8827@126.com>"
-"let g:DoxygenToolkit_licenseTag="My own license"
-
-" Enhanced keyboard mappings
-"
-" build using makeprg with <F7>
-" in diff mode we use the spell check keys for merging
-if &diff
-  " diff settings
-  map <M-Down> ]c
-  map <M-Up> [c
-  map <M-Left> do
-  map <M-Right> dp
-  map <F9> :new<CR>:read !svn diff<CR>:set syntax=diff buftype=nofile<CR>gg
-else
-  " spell settings
-"  :setlocal spell spelllang=en
-  " set the spellfile - folders must exist
-  set spellfile=~/.vim/spellfile.add
-  map <M-Down> ]s
-  map <M-Up> [s
-endif
+let g:DoxygenToolkit_licenseTag="MIT License"
 
 " template functionality
 function! CreateHeaderFile()
@@ -172,3 +152,23 @@ nmap ,l <c-w>l
 nmap ,o <c-w>o
 nmap ,c <c-w>c
 nmap ,<tab> <c-w><c-w>
+
+"config syntastic check syntax when file open
+let g:syntastic_check_on_open=1
+
+"windows down
+nmap ,d <c-D>
+nmap ,u <c-U>
+
+"disable navigation throgh arrow key
+nnoremap <up> <nop>
+nnoremap <down> <nop>
+nnoremap <left> <nop>
+nnoremap <right> <nop>
+inoremap <up> <nop>
+inoremap <down> <nop>
+inoremap <left> <nop>
+inoremap <right> <nop>
+
+nmap ,t :CommandT <cr>
+
