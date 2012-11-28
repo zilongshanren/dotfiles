@@ -50,6 +50,9 @@ set tags+=~/.vim/tags/c2dx
 set tags+=~/.vim/tags/cocoDensionTags
 set tags+=~/.vim/tags/b2dTags
 set tags+=~/.vim/c2dxexTags
+set tags+=~/.vim/c2dhtml5
+set tags+=~/.vim/jsbox2d
+set tags+=~/.vim/jscocoaDenshion
 
 " Install DoxygenToolkit from http://www.vim.org/scripts/script.php?script_id=987
 let g:DoxygenToolkit_briefTag_pre=""
