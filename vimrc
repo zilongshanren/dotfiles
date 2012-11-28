@@ -46,13 +46,17 @@ set statusline=%{GitBranch()}
 " Load standard tag files
 set tags+=./tags
 set tags+=~/.vim/tags/cpp
-set tags+=~/.vim/tags/c2dx
-set tags+=~/.vim/tags/cocoDensionTags
-set tags+=~/.vim/tags/b2dTags
-set tags+=~/.vim/c2dxexTags
-set tags+=~/.vim/c2dhtml5
-set tags+=~/.vim/jsbox2d
-set tags+=~/.vim/jscocoaDenshion
+let g:ProjTags = ["~/OpenSourceGitRepository/cocos2d-html5"]
+let g:ProjTags += [["~/OpenSourceGitRepository/cocos2d-html5","~/vimTags/c2dhtml5","~/vimTags/jsbox2d","~/vimTags/jscocoaDenshion"]]
+let g:ProjTags += [["~/OpenSourceGitRepository/cocos2d-x","~/vimTags/cocos2dx/tags","~/vimTags/b2dTags","~/vimTags/cocoDensionTags"]]
+
+" set tags+=~/vimTags/cocos2dx/tags
+" set tags+=~/.vim/tags/cocoDensionTags
+" set tags+=~/.vim/tags/b2dTags
+" set tags+=~/.vim/c2dxexTags
+" set tags+=~/.vim/c2dhtml5
+" set tags+=~/.vim/jsbox2d
+" set tags+=~/.vim/jscocoaDenshion
 
 " Install DoxygenToolkit from http://www.vim.org/scripts/script.php?script_id=987
 let g:DoxygenToolkit_briefTag_pre=""
@@ -167,4 +171,4 @@ nmap ,h <c-w>h
 nmap ,l <c-w>l
 nmap ,o <c-w>o
 nmap ,c <c-w>c
-
+nmap ,<tab> <c-w><c-w>

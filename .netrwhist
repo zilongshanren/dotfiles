@@ -1,7 +1,8 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =5
+let g:netrw_dirhist_cnt =6
 let g:netrw_dirhist_1='/home/gergap/tmp/vim/.vim/plugin'
 let g:netrw_dirhist_2='/home/gergap/work/box2d-read-only/Box2D/Build'
 let g:netrw_dirhist_3='/home/gergap/.kde4/share/apps/okteta/structures/mbr'
 let g:netrw_dirhist_4='/Users/andyque/.vim/snippets'
 let g:netrw_dirhist_5='/Users/andyque/OpenSourceGitRepository/cocos2d-x/samples'
+let g:netrw_dirhist_6='/Users/andyque/OpenSourceGitRepository/cocos2d-html5/tests/src/tests'
