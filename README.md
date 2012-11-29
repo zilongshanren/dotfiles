@@ -13,6 +13,8 @@ This repo inspired by this blog post:
     git submodule init
 
     git submodule update
+#Tips:
+    if you want to use the full power of these vim plugins, you should install python,ruby ctags,jsctags
 
 #if you want to update all submodules, you can
     git submodule foreach git pull orign master
