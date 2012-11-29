@@ -6,3 +6,6 @@
 	path = bundle/nerdtree
 	url = git://github.com/scrooloose/nerdtree.git
     ignore = dirty
+[submodule "bundle/syntastic"]
+	path = bundle/syntastic
+	url = git://github.com/scrooloose/syntastic.git
