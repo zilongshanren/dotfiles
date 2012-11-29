@@ -1,6 +1,5 @@
-This repo inspired by this blog post:
+This repo is inspired by this blog post:
     http://vimcasts.org/episodes/synchronizing-plugins-with-git-submodules-and-pathogen/
-
 
 #Installed with:
 
@@ -18,3 +17,5 @@ This repo inspired by this blog post:
 
 #if you want to update all submodules, you can
     git submodule foreach git pull orign master
+##TODO
+    find all plugins's github version,and update all to use pathogen if necessary
