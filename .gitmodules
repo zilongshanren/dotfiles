@@ -70,3 +70,6 @@
 [submodule "bundle/vim-sparkup"]
 	path = bundle/vim-sparkup
 	url = git://github.com/kogakure/vim-sparkup.git
+[submodule "bundle/vim-markdown"]
+	path = bundle/vim-markdown
+	url = git://github.com/plasticboy/vim-markdown.git
