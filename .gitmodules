@@ -61,3 +61,6 @@
 [submodule "bundle/vim-projtags"]
 	path = bundle/vim-projtags
 	url = git://github.com/vim-scripts/projtags.vim.git
+[submodule "bundle/git-vim"]
+	path = bundle/git-vim
+	url = git://github.com/motemen/git-vim.git
