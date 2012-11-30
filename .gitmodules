@@ -52,3 +52,6 @@
 [submodule "bundle/DoxygenToolkit"]
 	path = bundle/DoxygenToolkit
 	url = git://github.com/vim-scripts/DoxygenToolkit.vim.git
+[submodule "bundle/vim-lua-ftplugin"]
+	path = bundle/vim-lua-ftplugin
+	url = git://github.com/xolox/vim-lua-ftplugin.git
