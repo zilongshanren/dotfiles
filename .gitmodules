@@ -43,3 +43,6 @@
 [submodule "bundle/vim-taglist-plus"]
 	path = bundle/vim-taglist-plus
 	url = git://github.com/int3/vim-taglist-plus.git
+[submodule "bundle/vim-surround"]
+	path = bundle/vim-surround
+	url = git://github.com/tpope/vim-surround.git
