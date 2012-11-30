@@ -113,17 +113,17 @@ map <leader>c <c-_><c-_>
 "---a.vim plugin
 nmap <buffer> <silent> <leader> ,PP
 "go back and forth from header file and source file
-nmap <silent> <Leader>h :FSHere<cr>
+nmap <silent> <leader>h :FSHere<cr>
 "open a tree view
 nmap <silent> <leader>n :NERDTreeToggle <CR>
 "open a tag list ivew
-nmap <silent> <leader>tl :TlistToggle <CR>
+nmap <silent> <leader>t :TlistToggle <CR>
 "generate ctags at current directory
 nmap <silent> <leader>g  :!ctags -R --c++-kinds=+p --fields=+iaS --extra=+q ./ <CR>
 "go to function definition
-map  <leader>f <c-]>
+map  ,f <c-]>
 "go back to prev function
-map <leader>b <c-t>
+map ,b <c-t>
 "indent back
 nmap <S-Tab> <<
 "create doxygen comment
@@ -181,7 +181,10 @@ else
     colorscheme wombat256 
 endif
 
-"config for Buffergator plugin map"
-nmap <silent>,b :BuffergatorToggle <cr>
+"disable default buffergator keymaps"
+let g:buffergator_suppress_keymaps = 1
 "config for ZoomWin plugin map
 nmap <silent>,o :ZoomWin <cr>
+"config for BufferNavigator"
+nmap <leader>b :BuffergatorToggle<cr>
+
