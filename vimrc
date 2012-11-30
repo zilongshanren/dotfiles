@@ -59,31 +59,18 @@ let g:ProjTags += [["~/OpenSourceGitRepository/cocos2d-x","~/vimTags/cocos2dx/ta
 " set tags+=~/.vim/jscocoaDenshion
 
 " Install DoxygenToolkit from http://www.vim.org/scripts/script.php?script_id=987
-let g:DoxygenToolkit_briefTag_pre=""
+let g:DoxygenToolkit_briefTag_pre="@Synopsis"
 let g:DoxygenToolkit_paramTag_pre="@param "
-let g:DoxygenToolkit_returnTag="@return "
+let g:DoxygenToolkit_returnTag="@Returns "
 let g:DoxygenToolkit_blockHeader="--------------------------------------------------------------------------"
 let g:DoxygenToolkit_blockFooter="----------------------------------------------------------------------------"
 let g:DoxygenToolkit_authorName="guanghui.qu <guanghui8827@126.com>"
 let g:DoxygenToolkit_licenseTag="MIT License"
+"create doxygen comment
+map <leader>d :Dox<CR>
+map <leader>da :DoxAuthor<Cr>
+map <leader>dl :DoxLic<cr>
 
-" template functionality
-function! CreateHeaderFile()
-    silent! 0r ~/.vim/skel/templ.h
-    silent! exe "%s/%INCLUDEPROTECTION%/__".toupper(expand("<afile>:r"))."_H__/g"
-endfunction
-
-function! CreateCSourceFile()
-    if expand("<afile>") == "main.c"
-        return
-    endif
-    silent! 0r ~/.vim/skel/templ.cpp
-    " :r removes file extension
-    silent! exe "%s/%FILE%/".expand("<afile>:r").".h/g"
-endfunction
-
-autocmd BufNewFile *.cpp call CreateCSourceFile()
-autocmd BufNewFile *.h call CreateHeaderFile()
 
 "--- OmniCppComplete ---
 " -- required --
@@ -126,8 +113,6 @@ map  ,f <c-]>
 map ,b <c-t>
 "indent back
 nmap <S-Tab> <<
-"create doxygen comment
-map <leader>d :Dox<CR>
 
 "automatically save foldings in vim
 au BufWinLeave * silent! mkview
