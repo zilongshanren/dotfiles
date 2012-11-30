@@ -50,7 +50,6 @@
 :Blogit-tags	blogit.txt	/*:Blogit-tags*
 :Blogit-this	blogit.txt	/*:Blogit-this*
 :Blogit-unpush	blogit.txt	/*:Blogit-unpush*
-:CheckSyntax	checksyntax.txt	/*:CheckSyntax*
 :TComment	tcomment.txt	/*:TComment*
 :TCommentAs	tcomment.txt	/*:TCommentAs*
 :TCommentBlock	tcomment.txt	/*:TCommentBlock*
@@ -76,8 +75,6 @@
 CHANGE_LOG	vimpress.txt	/*CHANGE_LOG*
 COMMANDS	vimpress.txt	/*COMMANDS*
 CONFIGURE	vimpress.txt	/*CONFIGURE*
-CheckSyntaxFail()	checksyntax.txt	/*CheckSyntaxFail()*
-CheckSyntaxSucceed()	checksyntax.txt	/*CheckSyntaxSucceed()*
 EXAMPLES	vimpress.txt	/*EXAMPLES*
 EasyMotion_do_mapping	easymotion.txt	/*EasyMotion_do_mapping*
 EasyMotion_do_shade	easymotion.txt	/*EasyMotion_do_shade*
@@ -125,8 +122,6 @@ blogit-url	blogit.txt	/*blogit-url*
 blogit-usage	blogit.txt	/*blogit-usage*
 blogit.txt	blogit.txt	/*blogit.txt*
 blogit.vim	blogit.txt	/*blogit.vim*
-checksyntax#Check()	checksyntax.txt	/*checksyntax#Check()*
-checksyntax.txt	checksyntax.txt	/*checksyntax.txt*
 cs	surround.txt	/*cs*
 ds	surround.txt	/*ds*
 easymotion	easymotion.txt	/*easymotion*
@@ -189,22 +184,6 @@ g:SuperTabMappingTabLiteral	supertab.txt	/*g:SuperTabMappingTabLiteral*
 g:SuperTabNoCompleteAfter	supertab.txt	/*g:SuperTabNoCompleteAfter*
 g:SuperTabNoCompleteBefore	supertab.txt	/*g:SuperTabNoCompleteBefore*
 g:SuperTabRetainCompletionDuration	supertab.txt	/*g:SuperTabRetainCompletionDuration*
-g:checksyntax	checksyntax.txt	/*g:checksyntax*
-g:checksyntax#auto_mode	checksyntax.txt	/*g:checksyntax#auto_mode*
-g:checksyntax#defs#r#options	checksyntax.txt	/*g:checksyntax#defs#r#options*
-g:checksyntax#defs#r#progname	checksyntax.txt	/*g:checksyntax#defs#r#progname*
-g:checksyntax#defs#ruby#interpreter	checksyntax.txt	/*g:checksyntax#defs#ruby#interpreter*
-g:checksyntax#preferred	checksyntax.txt	/*g:checksyntax#preferred*
-g:checksyntax#prototypes	checksyntax.txt	/*g:checksyntax#prototypes*
-g:checksyntax#run_alternatives	checksyntax.txt	/*g:checksyntax#run_alternatives*
-g:checksyntax#syntastic#auto	checksyntax.txt	/*g:checksyntax#syntastic#auto*
-g:checksyntax#syntastic#blacklist	checksyntax.txt	/*g:checksyntax#syntastic#blacklist*
-g:checksyntax#syntastic#filetype_rx	checksyntax.txt	/*g:checksyntax#syntastic#filetype_rx*
-g:checksyntax#syntastic_dir	checksyntax.txt	/*g:checksyntax#syntastic_dir*
-g:checksyntax['r']	checksyntax.txt	/*g:checksyntax['r']*
-g:checksyntax_auto	checksyntax.txt	/*g:checksyntax_auto*
-g:checksyntax_key_all	checksyntax.txt	/*g:checksyntax_key_all*
-g:checksyntax_key_single	checksyntax.txt	/*g:checksyntax_key_single*
 g:snippets_dir	snipMate.txt	/*g:snippets_dir*
 g:snips_author	snipMate.txt	/*g:snips_author*
 g:tcomment#ignore_char_type	tcomment.txt	/*g:tcomment#ignore_char_type*
@@ -700,7 +679,6 @@ omnicpp-popup	omnicppcomplete.txt	/*omnicpp-popup*
 omnicpp-thanks	omnicppcomplete.txt	/*omnicpp-thanks*
 omnicppcomplete	omnicppcomplete.txt	/*omnicppcomplete*
 omnicppcomplete.txt	omnicppcomplete.txt	/*omnicppcomplete.txt*
-once	checksyntax.txt	/*once*
 pandoc-url	blogit.txt	/*pandoc-url*
 protodef	protodef.txt	/*protodef*
 protodef-about	protodef.txt	/*protodef-about*
