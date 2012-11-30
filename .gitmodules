@@ -40,3 +40,6 @@
 [submodule "bundle/vim-fswitch"]
 	path = bundle/vim-fswitch
 	url = git://github.com/derekwyatt/vim-fswitch.git
+[submodule "bundle/vim-taglist-plus"]
+	path = bundle/vim-taglist-plus
+	url = git://github.com/int3/vim-taglist-plus.git
