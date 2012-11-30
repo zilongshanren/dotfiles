@@ -66,15 +66,6 @@ ft_lua.txt	ft_lua.txt	/*ft_lua.txt*
 g:snippets_dir	snipMate.txt	/*g:snippets_dir*
 g:snips_author	snipMate.txt	/*g:snips_author*
 i_CTRL-R_<Tab>	snipMate.txt	/*i_CTRL-R_<Tab>*
-l9	l9.txt	/*l9*
-l9-about	l9.txt	/*l9-about*
-l9-author	l9.txt	/*l9-author*
-l9-changelog	l9.txt	/*l9-changelog*
-l9-contact	l9.txt	/*l9-contact*
-l9-installation	l9.txt	/*l9-installation*
-l9-introduction	l9.txt	/*l9-introduction*
-l9-usage	l9.txt	/*l9-usage*
-l9.txt	l9.txt	/*l9.txt*
 list-snippets	snipMate.txt	/*list-snippets*
 lrv-API	lua51refvim.txt	/*lrv-API*
 lrv-Lib	lua51refvim.txt	/*lrv-Lib*
