@@ -24,3 +24,6 @@
 [submodule "bundle/NrrwRgn"]
 	path = bundle/NrrwRgn
 	url = git://github.com/chrisbra/NrrwRgn.git
+[submodule "bundle/vim-autoclose"]
+	path = bundle/vim-autoclose
+	url = git://github.com/Townk/vim-autoclose.git
