@@ -59,7 +59,7 @@ let g:ProjTags += [["~/OpenSourceGitRepository/cocos2d-x","~/vimTags/cocos2dx/ta
 " set tags+=~/.vim/jscocoaDenshion
 
 " Install DoxygenToolkit from http://www.vim.org/scripts/script.php?script_id=987
-let g:DoxygenToolkit_briefTag_pre="@Synopsis"
+let g:DoxygenToolkit_briefTag_pre="@brief "
 let g:DoxygenToolkit_paramTag_pre="@param "
 let g:DoxygenToolkit_returnTag="@Returns "
 let g:DoxygenToolkit_blockHeader="--------------------------------------------------------------------------"
