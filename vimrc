@@ -172,4 +172,5 @@ let g:buffergator_suppress_keymaps = 1
 nmap <silent>,o :ZoomWin <cr>
 "config for BufferNavigator"
 nmap <leader>b :BuffergatorToggle<cr>
-
+"map sparkup, make html programming like zend coding
+imap <leader>e <c-e>
