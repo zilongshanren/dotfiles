@@ -117,7 +117,7 @@ nmap <silent> <Leader>h :FSHere<cr>
 "open a tree view
 nmap <silent> <leader>n :NERDTreeToggle <CR>
 "open a tag list ivew
-nmap <silent> <leader>t :TlistToggle <CR>
+nmap <silent> <leader>tl :TlistToggle <CR>
 "generate ctags at current directory
 nmap <silent> <leader>g  :!ctags -R --c++-kinds=+p --fields=+iaS --extra=+q ./ <CR>
 "go to function definition
@@ -170,7 +170,7 @@ inoremap <down> <nop>
 inoremap <left> <nop>
 inoremap <right> <nop>
 
-nmap ,t :CommandT <cr>
+nmap ,p :CtrlP <cr>
 
 "set colorscheme
 if has('gui_running')
