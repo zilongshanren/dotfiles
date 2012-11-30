@@ -26,7 +26,7 @@ set textwidth=120
 " turn syntax highlighting on
 set t_Co=256
 syntax on
-colorscheme wombat256 
+" colorscheme wombat256 
 " turn line numbers on
 set number
 " highlight matching braces
@@ -92,7 +92,7 @@ filetype plugin on " enable plugins
 " -- optional --
 " auto close options when exiting insert mode
 autocmd InsertLeave * if pumvisible() == 0|pclose|endif
-set completeopt=menu,menuone
+" set completeopt=menu,menuone
 " -- configs --
 let OmniCpp_MayCompleteDot = 1 " autocomplete with .
 let OmniCpp_MayCompleteArrow = 1 " autocomplete with ->
@@ -172,3 +172,11 @@ inoremap <right> <nop>
 
 nmap ,t :CommandT <cr>
 
+"set colorscheme
+if has('gui_running')
+    syntax enable
+    set background=dark
+    colorscheme solarized
+else
+    colorscheme wombat256 
+endif
