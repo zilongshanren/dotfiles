@@ -149,7 +149,7 @@ nmap ,j <c-w>j
 nmap ,k <c-w>k
 nmap ,h <c-w>h
 nmap ,l <c-w>l
-nmap ,o <c-w>o
+" nmap ,o <c-w>o
 nmap ,c <c-w>c
 nmap ,<tab> <c-w><c-w>
 
@@ -180,3 +180,8 @@ if has('gui_running')
 else
     colorscheme wombat256 
 endif
+
+"config for Buffergator plugin map"
+nmap <silent>,b :BuffergatorToggle <cr>
+"config for ZoomWin plugin map
+nmap <silent>,o :ZoomWin <cr>
