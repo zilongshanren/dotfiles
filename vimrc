@@ -36,7 +36,9 @@ set comments=sl:/*,mb:\ *,elx:\ */
 " use intelligent file completion like in the bash
 set wildmode=longest:full
 set wildmenu
-
+set title
+set matchpairs+=<:>
+set ruler
 " vim-git plugin
 set laststatus=2
 set statusline=%{GitBranch()}
@@ -137,6 +139,8 @@ nmap ,l <c-w>l
 " nmap ,o <c-w>o
 nmap ,c <c-w>c
 nmap ,<tab> <c-w><c-w>
+nmap ,a <c-A>
+nmap ,x <c-X>
 
 "config syntastic check syntax when file open
 let g:syntastic_check_on_open=1
@@ -174,3 +178,5 @@ nmap <silent>,o :ZoomWin <cr>
 nmap <leader>b :BuffergatorToggle<cr>
 "map sparkup, make html programming like zend coding
 imap <leader>e <c-e>
+"map visual mode vertical selectoin"
+nmap ,v <c-v>
