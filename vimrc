@@ -180,3 +180,5 @@ nmap <leader>b :BuffergatorToggle<cr>
 imap <leader>e <c-e>
 "map visual mode vertical selectoin"
 nmap ,v <c-v>
+"config taglist window to the right most"
+let Tlist_Use_Right_Window = 1
