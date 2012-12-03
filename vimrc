@@ -2,6 +2,9 @@
 " Description: Optimized for C/C++ development, but useful also for other things.
 " Author: guanghui qu 
 "
+" load plugins that ship with Vim"
+runtime macros/matchit.vim
+runtime ftplugin/man.vim
 
 call pathogen#runtime_append_all_bundles()
 call pathogen#helptags()
