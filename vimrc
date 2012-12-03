@@ -108,7 +108,7 @@ nmap <silent> <leader>h :FSHere<cr>
 nmap <silent> <leader>n :NERDTreeToggle <CR>
 
 "open a tag list ivew
-nmap <silent> <leader>t :TlistToggle <CR>
+nmap <silent> <leader>t :TagbarToggle <CR>
 
 "generate ctags at current directory
 nmap <silent> <leader>g  :!ctags -R --c++-kinds=+p --fields=+iaS --extra=+q ./ <CR>
