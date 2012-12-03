@@ -39,9 +39,12 @@ set wildmenu
 set title
 set matchpairs+=<:>
 set ruler
-" vim-git plugin
+
 set laststatus=2
-set statusline=%{GitBranch()}
+" Add git branch to statusline.
+if exists("*fugitive#statusline")
+set statusline=%<%f\ %h%m%r%{fugitive#statusline()}%=%-14.(%l,%c%V%)\ %P
+endif
 
 " Install OmniCppComplete like described on http://vim.wikia.com/wiki/C++_code_completion
 " This offers intelligent C++ completion when typing '.' '->' or <C-o>
@@ -170,8 +173,9 @@ inoremap <right> <nop>
 nmap ,p :CtrlP <cr>
 
 "set colorscheme
+syntax enable
 if has('gui_running')
-    syntax enable
+
     set background=dark
     colorscheme solarized
 else
@@ -202,3 +206,7 @@ nnoremap ,z zMzv
 
 "set git diff color schema"
 let g:solarized_diffmode="high"
+
+" Ctlr-P {{{2
+let g:ctrlp_jump_to_buffer = 0
+let g:ctrlp_working_path_mode = 0
