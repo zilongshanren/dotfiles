@@ -99,20 +99,28 @@ filetype plugin indent on
 autocmd vimenter * NERDTree
 "--tcomment plugin,comment a line
 map <leader>c <c-_><c-_>
+
 "---a.vim plugin
 nmap <buffer> <silent> <leader> ,PP
+
 "go back and forth from header file and source file
 nmap <silent> <leader>h :FSHere<cr>
+
 "open a tree view
 nmap <silent> <leader>n :NERDTreeToggle <CR>
+
 "open a tag list ivew
 nmap <silent> <leader>t :TlistToggle <CR>
+
 "generate ctags at current directory
 nmap <silent> <leader>g  :!ctags -R --c++-kinds=+p --fields=+iaS --extra=+q ./ <CR>
+
 "go to function definition
 map  ,f <c-]>
+
 "go back to prev function
 map ,b <c-t>
+
 "indent back
 nmap <S-Tab> <<
 
@@ -172,13 +180,25 @@ endif
 
 "disable default buffergator keymaps"
 let g:buffergator_suppress_keymaps = 1
+
 "config for ZoomWin plugin map
 nmap <silent>,o :ZoomWin <cr>
+
 "config for BufferNavigator"
 nmap <leader>b :BuffergatorToggle<cr>
+
 "map sparkup, make html programming like zend coding
 imap <leader>e <c-e>
+
 "map visual mode vertical selectoin"
 nmap ,v <c-v>
+
 "config taglist window to the right most"
 let Tlist_Use_Right_Window = 1
+
+"map fold method"
+nnoremap <space> za
+nnoremap ,z zMzv
+
+"set git diff color schema"
+let g:solarized_diffmode="high"
