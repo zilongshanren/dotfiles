@@ -5,13 +5,9 @@ This repo is inspired by this blog post:
 
     git clone https://github.com/andyque/dotvim.git ~/.vim
 
-    ln -s ~/.vim/vimrc ~/.vimrc
-    
     cd ~/.vim
 
-    git submodule init
-
-    git submodule update
+    sudo ./install.sh
 #Tips:
     if you want to use the full power of these vim plugins, you should install python,ruby ctags,jsctags
 
