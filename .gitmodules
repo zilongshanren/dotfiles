@@ -51,9 +51,6 @@
 [submodule "bundle/vim-lua-ftplugin"]
 	path = bundle/vim-lua-ftplugin
 	url = git://github.com/xolox/vim-lua-ftplugin.git
-[submodule "bundle/snipmate"]
-	path = bundle/snipmate
-	url = git://github.com/msanders/snipmate.vim.git
 [submodule "bundle/vim-projtags"]
 	path = bundle/vim-projtags
 	url = git://github.com/vim-scripts/projtags.vim.git
