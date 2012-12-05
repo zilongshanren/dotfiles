@@ -13,6 +13,7 @@ call pathogen#helptags()
 set nobackup
 set noswapfile
 " }}}
+"let mapleader=','
 
 set enc=utf-8
 set fenc=utf-8
@@ -111,7 +112,7 @@ nmap <silent> <leader>n :NERDTreeToggle <CR>
 nmap <silent> <leader>t :TagbarToggle <CR>
 
 "generate ctags at current directory
-nmap <silent> <leader>g  :!ctags -R --c++-kinds=+p --fields=+iaS --extra=+q ./ <CR>
+nmap <silent> <leader>gg  :!ctags -R --c++-kinds=+p --fields=+iaS --extra=+q ./ <CR>
 
 "go to function definition
 map  ,f <c-]>
@@ -184,7 +185,7 @@ let g:buffergator_suppress_keymaps = 1
 nmap <silent>,o :ZoomWin <cr>
 
 "config for BufferNavigator"
-nmap <leader>b :BuffergatorToggle<cr>
+nmap <leader>bb :BuffergatorToggle<cr>
 
 "map sparkup, make html programming like zend coding
 imap <leader>e <c-e>
@@ -215,4 +216,18 @@ augroup ft_c
     au!
     au FileType javascript,c,cpp,java setlocal foldmethod=marker foldmarker={,}
 augroup END
+
+"Configuration for tabular plugin"
+if exists(":Tabularize")
+  nmap <Leader>a= :Tabularize /=<CR>
+  vmap <Leader>a= :Tabularize /=<CR>
+  nmap <Leader>a: :Tabularize /:<CR>
+  vmap <Leader>a: :Tabularize /:<CR>
+endif
+
+"english spell check"
+nmap <silent> <leader>s :set spell!<CR>
+ 
+" Set region to British English
+set spelllang=en_gb
 
