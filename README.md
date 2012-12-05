@@ -7,7 +7,9 @@ This repo is inspired by this blog post:
 
     cd ~/.vim
 
-    sudo ./install.sh
+    ./install.sh
+#Optional
+    sudo cp ~/.vim/Markdown.pl /usr/local/bin
 #Tips:
     if you want to use the full power of these vim plugins, you should install python,ruby ctags,jsctags
 

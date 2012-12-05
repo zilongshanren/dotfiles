@@ -10,8 +10,6 @@ echo "create .vimrc"
 ln -s ~/.vim/vimrc ~/.vimrc
 ln -s ~/.vim/vimrc ~/.gvimrc
 
-echo "copy markdown.pl to /usr/local/bin  directory"
-cp Markdown.pl /usr/local/bin
 
 echo "update submodules"
 git submodule init
