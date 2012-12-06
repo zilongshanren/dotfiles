@@ -47,9 +47,9 @@ endif
 " Load standard tag files
 set tags+=./tags
 set tags+=~/.vim/tags/cpp
-let g:ProjTags = ["~/OpenSourceGitRepository/cocos2d-html5"]
-let g:ProjTags += [["~/OpenSourceGitRepository/cocos2d-html5","~/vimTags/c2dhtml5","~/vimTags/jsbox2d","~/vimTags/jscocoaDenshion"]]
-let g:ProjTags += [["~/OpenSourceGitRepository/cocos2d-x","~/vimTags/cocos2dx/tags","~/vimTags/b2dTags","~/vimTags/cocoDensionTags"]]
+" let g:ProjTags = [ "~/workspace" ]
+let g:ProjTags = [["~/workspace/cocos2d-html5", "~/.vim/tags/cocos2d-html5/cocos2d/tags", "~/.vim/tags/cocos2d-html5/chipmunk/tags","~/.vim/tags/cocos2d-html5/box2d/tags","~/.vim/tags/cocos2d-html5/CocosDenshion/tags","~/.vim/tags/cocos2d-html5/extensions/tags"]]
+let g:ProjTags += [["~/workspace/cocos2d-x","~/.vim/tags/cocos2d-x/cocos2dx/tags","~/.vim/tags/cocos2d-x/chipmunk/tags","~/.vim/tags/cocos2d-x/Box2d/tags","~/.vim/tags/cocos2d-x/CocosDenshion/tags","~/.vim/tags/cocos2d-x/extensions/tags"]]
 
 " set tags+=~/vimTags/cocos2dx/tags
 " set tags+=~/.vim/tags/cocoDensionTags
