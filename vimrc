@@ -230,4 +230,5 @@ nmap <silent> <leader>s :set spell!<CR>
  
 " Set region to British English
 set spelllang=en_gb
-
+" map Gundo plugin toggle"
+nnoremap <leader>U ::GundoToggle<CR>

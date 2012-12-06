@@ -81,3 +81,6 @@
 [submodule "tags"]
 	path = tags
 	url = git@github.com:andyque/Cocos2DTags.git
+[submodule "bundle/gundo"]
+	path = bundle/gundo
+	url = git://github.com/sjl/gundo.vim.git
