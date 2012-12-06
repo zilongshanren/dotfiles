@@ -232,3 +232,9 @@ nmap <silent> <leader>s :set spell!<CR>
 set spelllang=en_gb
 " map Gundo plugin toggle"
 nnoremap <leader>U ::GundoToggle<CR>
+" Source the vimrc file after saving it
+if has("autocmd")
+  autocmd bufwritepost .vimrc source $MYVIMRC
+endif
+nmap <leader>v :tabedit $MYVIMRC<CR>
+
