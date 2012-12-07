@@ -51,14 +51,6 @@ set tags+=~/.vim/tags/cpp
 let g:ProjTags = [["~/workspace/cocos2d-html5", "~/.vim/tags/cocos2d-html5/cocos2d/tags", "~/.vim/tags/cocos2d-html5/chipmunk/tags","~/.vim/tags/cocos2d-html5/box2d/tags","~/.vim/tags/cocos2d-html5/CocosDenshion/tags","~/.vim/tags/cocos2d-html5/extensions/tags"]]
 let g:ProjTags += [["~/workspace/cocos2d-x","~/.vim/tags/cocos2d-x/cocos2dx/tags","~/.vim/tags/cocos2d-x/chipmunk/tags","~/.vim/tags/cocos2d-x/Box2d/tags","~/.vim/tags/cocos2d-x/CocosDenshion/tags","~/.vim/tags/cocos2d-x/extensions/tags"]]
 
-" set tags+=~/vimTags/cocos2dx/tags
-" set tags+=~/.vim/tags/cocoDensionTags
-" set tags+=~/.vim/tags/b2dTags
-" set tags+=~/.vim/c2dxexTags
-" set tags+=~/.vim/c2dhtml5
-" set tags+=~/.vim/jsbox2d
-" set tags+=~/.vim/jscocoaDenshion
-
 " Install DoxygenToolkit from http://www.vim.org/scripts/script.php?script_id=987
 let g:DoxygenToolkit_briefTag_pre="@brief "
 let g:DoxygenToolkit_paramTag_pre="@param "
@@ -74,10 +66,7 @@ map <leader>dl :DoxLic<cr>
 
 
 "--- OmniCppComplete ---
-" -- required --
-set nocp " non vi compatible mode
-filetype plugin on " enable plugins
-" -- optional --
+filetype on " enable plugins
 " auto close options when exiting insert mode
 autocmd InsertLeave * if pumvisible() == 0|pclose|endif
 " set completeopt=menu,menuone
@@ -135,8 +124,6 @@ nmap <leader>md :%!/usr/local/bin/Markdown.pl --html4tags <cr>
 " :hi CursorColumn cterm=NONE ctermbg=yellow ctermfg=black guibg=yellow guifg=black
 :nnoremap <Leader>1 :set cursorline! cursorcolumn!<CR>
 
-"set javascript auto completion
-autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
 
 "map windows command
 nmap ,j <c-w>j
