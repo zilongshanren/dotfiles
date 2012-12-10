@@ -66,7 +66,8 @@ map <leader>dl :DoxLic<cr>
 
 
 "--- OmniCppComplete ---
-filetype on " enable plugins
+set nocp
+filetype plugin on
 " auto close options when exiting insert mode
 autocmd InsertLeave * if pumvisible() == 0|pclose|endif
 " set completeopt=menu,menuone
@@ -80,9 +81,9 @@ let OmniCpp_ShowPrototypeInAbbr = 1 " show function prototype (i.e. parameters) 
 " -- ctags --
 
 "--vim-pathogen
-call pathogen#infect()
-syntax on
-filetype plugin indent on
+" call pathogen#infect()
+" syntax on
+" filetype plugin indent on
 
 autocmd vimenter * NERDTree
 "--tcomment plugin,comment a line
