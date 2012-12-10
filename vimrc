@@ -86,7 +86,7 @@ filetype plugin indent on
 
 autocmd vimenter * NERDTree
 "--tcomment plugin,comment a line
-map <leader>c <c-_><c-_>
+map <leader>c \\\
 
 "---a.vim plugin
 nmap <buffer> <silent> <leader> ,PP
