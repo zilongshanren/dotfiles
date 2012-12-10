@@ -9,6 +9,10 @@ runtime ftplugin/man.vim
 call pathogen#runtime_append_all_bundles()
 call pathogen#helptags()
 
+"--vim-pathogen
+call pathogen#infect()
+syntax on
+filetype plugin indent on
 
 " Disable swapfile and backup {{{2
 set nobackup
@@ -81,10 +85,6 @@ let OmniCpp_NamespaceSearch = 2 " search namespaces in this and included files
 let OmniCpp_ShowPrototypeInAbbr = 1 " show function prototype (i.e. parameters) in popup window
 " -- ctags --
 
-"--vim-pathogen
-" call pathogen#infect()
-" syntax on
-" filetype plugin indent on
 
 autocmd vimenter * NERDTree
 "--tcomment plugin,comment a line
