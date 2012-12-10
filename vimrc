@@ -9,6 +9,7 @@ runtime ftplugin/man.vim
 call pathogen#runtime_append_all_bundles()
 call pathogen#helptags()
 
+
 " Disable swapfile and backup {{{2
 set nobackup
 set noswapfile
@@ -64,7 +65,7 @@ map <leader>d :Dox<CR>
 map <leader>da :DoxAuthor<Cr>
 map <leader>dl :DoxLic<cr>
 
-
+filetype on
 "--- OmniCppComplete ---
 set nocp
 filetype plugin on
