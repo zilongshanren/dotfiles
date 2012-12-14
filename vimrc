@@ -227,3 +227,9 @@ if has("autocmd")
 endif
 nmap <leader>v :tabedit $MYVIMRC<CR>
 
+nnoremap <silent> [b :bprevious<cr>
+nnoremap <silent> ]b :bnext<cr>
+nnoremap <silent> [B :bfirst<cr>
+nnoremap <silent> ]B :blast<cr>
+
+cnoremap <expr> %% getcmdtype() == ':' ? expand('%:h').'/' : '%%'
