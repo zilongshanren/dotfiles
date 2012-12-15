@@ -59,8 +59,8 @@ from types import MethodType
 #      Settings     #
 #####################
 
-blog_username = 'admin'
-blog_password = 'Wqgipvbkcg8827'
+blog_username = 'user'
+blog_password = 'password'
 blog_url = 'http://www.zilongshanren.com/xmlrpc.php'
 # enabled if blog has the tag plugin:
 have_tags = True
