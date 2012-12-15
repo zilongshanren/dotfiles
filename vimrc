@@ -233,3 +233,9 @@ nnoremap <silent> [B :bfirst<cr>
 nnoremap <silent> ]B :blast<cr>
 
 cnoremap <expr> %% getcmdtype() == ':' ? expand('%:h').'/' : '%%'
+
+"config cocos2d snippets for snipmate"
+autocmd FileType cpp set ft=cpp.cocos2dxcpp
+autocmd FileType javascript set ft=javascript.cocos2dhtml5
+autocmd FileType lua set ft=lua.cocos2dxlua
+
