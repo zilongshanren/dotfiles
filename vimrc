@@ -251,3 +251,31 @@ function! CompileRunOpencv()
     exec "r !g++ -I" . IncDir . " -L" . LibDir . " % " . Libs . " -o %< " 
     echo "compile finished!"
 endfunc
+
+function! GenerateTagsFile()
+  if (!filereadable("tags"))
+    exec ":!ctags -R --c++-kinds=+p --fields=+iaS --extra=+q --sort=foldcase ."
+  endif
+endfunction
+
+function! GenerateJsTags()
+    if (!filereadable("tags"))
+        exec ":!jsctags ."
+    endif
+endfunction
+
+" Always change to directory of the buffer currently in focus.
+autocmd! bufenter *.* :cd %:p:h
+autocmd! bufread  *.* :cd %:p:h
+
+"Generate tags on opening an existing file.
+" autocmd! bufreadpost *.cpp :call GenerateTagsFile()
+" autocmd! bufreadpost *.c   :call GenerateTagsFile()
+" autocmd! bufreadpost *.h   :call GenerateTagsFile()
+
+" Generate tags on save. Note that this regenerates tags for all files in current folder.
+autocmd! bufwritepost *.cpp :call GenerateTagsFile()
+autocmd! bufwritepost *.c   :call GenerateTagsFile()
+autocmd! bufwritepost *.h   :call GenerateTagsFile()
+autocmd! bufwritepost *.js   :call GenerateJsTags()
+
