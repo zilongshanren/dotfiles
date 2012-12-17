@@ -103,8 +103,6 @@ nmap <silent> <leader>n :NERDTreeToggle <CR>
 "open a tag list ivew
 nmap <silent> <leader>t :TagbarToggle <CR>
 
-"generate ctags at current directory
-nmap <silent> <leader>gg  :!ctags -R --c++-kinds=+p --fields=+iaS --extra=+q ./ <CR>
 
 "go to function definition
 map  ,f <c-]>
@@ -253,29 +251,19 @@ function! CompileRunOpencv()
 endfunc
 
 function! GenerateTagsFile()
-  if (!filereadable("tags"))
     exec ":!ctags -R --c++-kinds=+p --fields=+iaS --extra=+q --sort=foldcase ."
-  endif
 endfunction
 
 function! GenerateJsTags()
-    if (!filereadable("tags"))
-        exec ":!jsctags ."
-    endif
+    exec ":!jsctags ."
 endfunction
 
 " Always change to directory of the buffer currently in focus.
 autocmd! bufenter *.* :cd %:p:h
 autocmd! bufread  *.* :cd %:p:h
 
-"Generate tags on opening an existing file.
-" autocmd! bufreadpost *.cpp :call GenerateTagsFile()
-" autocmd! bufreadpost *.c   :call GenerateTagsFile()
-" autocmd! bufreadpost *.h   :call GenerateTagsFile()
 
 " Generate tags on save. Note that this regenerates tags for all files in current folder.
-autocmd! bufwritepost *.cpp :call GenerateTagsFile()
-autocmd! bufwritepost *.c   :call GenerateTagsFile()
-autocmd! bufwritepost *.h   :call GenerateTagsFile()
-autocmd! bufwritepost *.js   :call GenerateJsTags()
+nnoremap <leader>8   :call GenerateTagsFile() <cr>
+nnoremap <leader>9   :call GenerateJsTags() <cr>
 
