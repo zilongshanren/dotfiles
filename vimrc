@@ -241,7 +241,7 @@ autocmd FileType javascript set ft=javascript.cocos2dhtml5
 autocmd FileType lua set ft=lua.cocos2dxlua
 
 "add command to complie opencv program"
-nnoremap <silent>2 :call CompileRunOpencv()<CR>
+nnoremap <silent><leader>2 :call CompileRunOpencv()<CR>
 function! CompileRunOpencv()
     let IncDir = "/usr/local/include"
     let LibDir = "/usr/local/lib"
