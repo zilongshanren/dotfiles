@@ -55,7 +55,7 @@ set tags+=~/.vim/tags/cpp
 " let g:ProjTags = [ "~/workspace" ]
 let g:ProjTags = [["~/workspace/cocos2d-html5", "~/.vim/tags/cocos2d-html5/cocos2d/tags", "~/.vim/tags/cocos2d-html5/chipmunk/tags","~/.vim/tags/cocos2d-html5/box2d/tags","~/.vim/tags/cocos2d-html5/CocosDenshion/tags","~/.vim/tags/cocos2d-html5/extensions/tags"]]
 let g:ProjTags += [["~/workspace/cocos2d-x","~/.vim/tags/cocos2d-x/cocos2dx/tags","~/.vim/tags/cocos2d-x/chipmunk/tags","~/.vim/tags/cocos2d-x/Box2d/tags","~/.vim/tags/cocos2d-x/CocosDenshion/tags","~/.vim/tags/cocos2d-x/extensions/tags"]]
-let g:ProjTags += [[ "~/workspace/opencv","~/.vim/tags/opencvtags" ]]
+let g:ProjTags += [[ "~/workspace/opencv","~/.vim/tags/opencv/tags" ]]
 
 " Install DoxygenToolkit from http://www.vim.org/scripts/script.php?script_id=987
 let g:DoxygenToolkit_briefTag_pre="@brief "
