@@ -240,3 +240,14 @@ autocmd FileType cpp set ft=cpp.cocos2dxcpp
 autocmd FileType javascript set ft=javascript.cocos2dhtml5
 autocmd FileType lua set ft=lua.cocos2dxlua
 
+"add command to complie opencv program"
+nnoremap <silent>2 :call CompileRunOpencv()<CR>
+function! CompileRunOpencv()
+    let IncDir = "/usr/local/include"
+    let LibDir = "/usr/local/lib"
+    let Libs = "-lopencv_core -lopencv_highgui -lopencv_imgproc"
+    exec "w"
+    exec "lcd %:p:h"
+    exec "r !g++ -I" . IncDir . " -L" . LibDir . " % " . Libs . " -o %< " 
+    echo "compile finished!"
+endfunc
