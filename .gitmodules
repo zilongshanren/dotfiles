@@ -102,3 +102,6 @@
 [submodule "bundle/vim-textobj-line"]
 	path = bundle/vim-textobj-line
 	url = git://github.com/kana/vim-textobj-line.git
+[submodule "bundle/vim-visual-star-search"]
+	path = bundle/vim-visual-star-search
+	url = git://github.com/nelstrom/vim-visual-star-search.git
