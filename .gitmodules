@@ -90,3 +90,6 @@
 [submodule "bundle/vim-textobj-lastpat"]
 	path = bundle/vim-textobj-lastpat
 	url = git://github.com/kana/vim-textobj-lastpat.git
+[submodule "bundle/vim-textobj-user"]
+	path = bundle/vim-textobj-user
+	url = git://github.com/kana/vim-textobj-user.git
