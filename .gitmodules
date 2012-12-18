@@ -105,3 +105,6 @@
 [submodule "bundle/vim-visual-star-search"]
 	path = bundle/vim-visual-star-search
 	url = git://github.com/nelstrom/vim-visual-star-search.git
+[submodule "bundle/vim-textobj-indent"]
+	path = bundle/vim-textobj-indent
+	url = git://github.com/kana/vim-textobj-indent.git
