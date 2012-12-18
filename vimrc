@@ -20,9 +20,6 @@ set noswapfile
 " }}}
 "let mapleader=','
 
-set enc=utf-8
-set fenc=utf-8
-set termencoding=utf-8
 set nocompatible
 set autoindent
 set smartindent
@@ -37,6 +34,8 @@ set showmatch
 set comments=sl:/*,mb:\ *,elx:\ */
 set wildmode=longest:full
 set wildmenu
+set hls
+set autoread
 set title
 set matchpairs+=<:>
 set ruler
@@ -110,8 +109,6 @@ map  ,f <c-]>
 "go back to prev function
 map ,b <c-t>
 
-"indent back
-nmap <S-Tab> <<
 
 "automatically save foldings in vim
 au BufWinLeave * silent! mkview
