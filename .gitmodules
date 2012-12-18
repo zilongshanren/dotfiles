@@ -93,3 +93,9 @@
 [submodule "bundle/vim-textobj-user"]
 	path = bundle/vim-textobj-user
 	url = git://github.com/kana/vim-textobj-user.git
+[submodule "bundle/vim-eunuch"]
+	path = bundle/vim-eunuch
+	url = git://github.com/tpope/vim-eunuch.git
+[submodule "bundle/vim-space"]
+	path = bundle/vim-space
+	url = git://github.com/kongo2002/vim-space.git
