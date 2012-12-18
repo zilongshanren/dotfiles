@@ -145,15 +145,15 @@ let g:syntastic_check_on_open=1
 nmap ,d <c-D>
 nmap ,u <c-U>
 
-"disable navigation throgh arrow key
-nnoremap <up> <nop>
-nnoremap <down> <nop>
-nnoremap <left> <nop>
-nnoremap <right> <nop>
-inoremap <up> <nop>
-inoremap <down> <nop>
-inoremap <left> <nop>
-inoremap <right> <nop>
+" "disable navigation throgh arrow key
+" nnoremap <up> <nop>
+" nnoremap <down> <nop>
+" nnoremap <left> <nop>
+" nnoremap <right> <nop>
+" inoremap <up> <nop>
+" inoremap <down> <nop>
+" inoremap <left> <nop>
+" inoremap <right> <nop>
 
 nmap ,p :CtrlP <cr>
 

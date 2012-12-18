@@ -108,3 +108,6 @@
 [submodule "bundle/vim-textobj-indent"]
 	path = bundle/vim-textobj-indent
 	url = git://github.com/kana/vim-textobj-indent.git
+[submodule "bundle/vim-abolish"]
+	path = bundle/vim-abolish
+	url = git://github.com/tpope/vim-abolish.git
