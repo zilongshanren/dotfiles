@@ -186,7 +186,6 @@ nmap ,v <c-v>
 let Tlist_Use_Right_Window = 1
 
 "map fold method"
-nnoremap <space> za
 nnoremap ,z zMzv
 
 "set git diff color schema"
