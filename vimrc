@@ -34,11 +34,15 @@ set showmatch
 set comments=sl:/*,mb:\ *,elx:\ */
 set wildmode=longest:full
 set wildmenu
-set hls
 set autoread
 set title
 set matchpairs+=<:>
 set ruler
+"search"
+set incsearch
+set hls
+nnoremap <silent> <C-l> :<C-u>nohlsearch<CR><C-l>
+nnoremap <silent> <C-c> :%s///gn<cr>
 
 set laststatus=2
 " Add git branch to statusline.
