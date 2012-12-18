@@ -99,3 +99,6 @@
 [submodule "bundle/vim-space"]
 	path = bundle/vim-space
 	url = git://github.com/kongo2002/vim-space.git
+[submodule "bundle/vim-textobj-line"]
+	path = bundle/vim-textobj-line
+	url = git://github.com/kana/vim-textobj-line.git
