@@ -87,3 +87,6 @@
 [submodule "snippets"]
 	path = snippets
 	url = git@github.com:andyque/snippetsForCocos2d.git
+[submodule "bundle/vim-textobj-lastpat"]
+	path = bundle/vim-textobj-lastpat
+	url = git://github.com/kana/vim-textobj-lastpat.git
