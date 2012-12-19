@@ -20,7 +20,8 @@ set noswapfile
 " }}}
 "let mapleader=','
 
-set enc=utf-8
+"effect windows gvim font
+"set enc=utf-8
 set fenc=utf-8
 set termencoding=utf-8
 set nocompatible
