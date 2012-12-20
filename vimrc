@@ -3,6 +3,7 @@
 " Author: guanghui qu 
 "
 " load plugins that ship with Vim"
+set nocompatible
 runtime macros/matchit.vim
 runtime ftplugin/man.vim
 
@@ -10,9 +11,10 @@ call pathogen#runtime_append_all_bundles()
 call pathogen#helptags()
 
 "--vim-pathogen
+filetype plugin indent on
+filetype plugin on
 call pathogen#infect()
 syntax on
-filetype plugin indent on
 
 " Disable swapfile and backup {{{2
 set nobackup
@@ -24,7 +26,6 @@ set noswapfile
 "set enc=utf-8
 set fenc=utf-8
 set termencoding=utf-8
-set nocompatible
 set autoindent
 set smartindent
 set tabstop=4        " tab width is 4 spaces
@@ -47,6 +48,7 @@ set incsearch
 set hls
 nnoremap <silent> <C-l> :<C-u>nohlsearch<CR><C-l>
 nnoremap <silent> <C-c> :%s///gn<cr>
+set backspace=indent,eol,start
 
 set laststatus=2
 " Add git branch to statusline.
@@ -211,10 +213,10 @@ augroup END
 
 "Configuration for tabular plugin"
 if exists(":Tabularize")
-  nmap <Leader>a= :Tabularize /=<CR>
-  vmap <Leader>a= :Tabularize /=<CR>
-  nmap <Leader>a: :Tabularize /:<CR>
-  vmap <Leader>a: :Tabularize /:<CR>
+  nmap <Leader>= :Tabularize /=<CR>
+  vmap <Leader>= :Tabularize /=<CR>
+  nmap <Leader>; :Tabularize /:<CR>
+  vmap <Leader>; :Tabularize /:<CR>
 endif
 
 "english spell check"
@@ -242,17 +244,17 @@ autocmd FileType cpp set ft=cpp.cocos2dxcpp
 autocmd FileType javascript set ft=javascript.cocos2dhtml5
 autocmd FileType lua set ft=lua.cocos2dxlua
 
-"add command to complie opencv program"
-nnoremap <silent><leader>2 :call CompileRunOpencv()<CR>
-function! CompileRunOpencv()
-    let IncDir = "/usr/local/include"
-    let LibDir = "/usr/local/lib"
-    let Libs = "-lopencv_core -lopencv_highgui -lopencv_imgproc"
-    exec "w"
-    exec "lcd %:p:h"
-    exec "r !g++ -I" . IncDir . " -L" . LibDir . " % " . Libs . " -o %< " 
-    echo "compile finished!"
-endfunc
+" add command to complie opencv program"
+" nnoremap <silent><leader>2 : call compilerunopencv()<cr>
+" function! compilerunopencv()
+"     let incdir = "/usr/local/include"
+"     let LibDir = "/usr/local/lib"
+"     let Libs = "-lopencv_core -lopencv_highgui -lopencv_imgproc"
+"     exec "w"
+"     exec "lcd %:p:h"
+"     exec "r !g++ -I" . IncDir . " -L" . LibDir . " % " . Libs . " -o %< " 
+"     echo "compile finished!"
+" endfunc
 
 function! GenerateTagsFile()
     exec ":!ctags -R --c++-kinds=+p --fields=+iaS --extra=+q --sort=foldcase ."
