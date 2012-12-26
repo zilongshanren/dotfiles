@@ -114,3 +114,6 @@
 [submodule "bundle/vim-qargs"]
 	path = bundle/vim-qargs
 	url = git://github.com/nelstrom/vim-qargs.git
+[submodule "bundle/vim-cpp11"]
+	path = bundle/vim-cpp11
+	url = git://github.com/vim-scripts/Cpp11-Syntax-Support.git
