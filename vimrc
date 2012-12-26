@@ -31,7 +31,6 @@ set shiftwidth=4     " indent also with 4 spaces
 set expandtab        " expand tabs to spaces
 set textwidth=120
 set t_Co=256
-syntax on
 set number
 set showmatch
 set comments=sl:/*,mb:\ *,elx:\ */
@@ -254,7 +253,7 @@ function! CompileRunOpencv()
 endfunc
 
 function! GenerateTagsFile()
-    exec ":!ctags -R --c++-kinds=+p --fields=+iaS --extra=+q --sort=foldcase ."
+    exec ":!ctags -R --c++-kinds=+p --fields=+iaS --extra=+q ."
 endfunction
 
 function! GenerateJsTags()
@@ -269,4 +268,9 @@ autocmd! bufread  *.* :cd %:p:h
 " Generate tags on save. Note that this regenerates tags for all files in current folder.
 nnoremap <leader>8   :call GenerateTagsFile() <cr>
 nnoremap <leader>9   :call GenerateJsTags() <cr>
+
+" add cpp11 syntax support"
+au BufNewFile,BufRead *.cpp set syntax=cpp11
+let g:syntastic_cpp_compiler_options = ' -std=c++11'
+nmap <leader>rr :<C-U>!clang++ -std=c++11 -stdlib=libc++ -o %:r % && ./%:r <cr>
 
