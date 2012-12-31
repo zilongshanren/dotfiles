@@ -277,3 +277,6 @@ au BufNewFile,BufRead *.cpp set syntax=cpp11
 let g:syntastic_cpp_compiler_options = ' -std=c++11'
 nmap <leader>rr :<C-U>!clang++ -std=c++11 -stdlib=libc++ -o %:r % && ./%:r <cr>
 
+"add octrpress publish blog key mappings"
+nmap ,3 :!rake generate <cr>
+nmap ,4 :!rake deploy <cr>
