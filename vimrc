@@ -242,17 +242,21 @@ autocmd FileType cpp set ft=cpp.cocos2dxcpp
 autocmd FileType javascript set ft=javascript.cocos2dhtml5
 autocmd FileType lua set ft=lua.cocos2dxlua
 
-" add command to complie opencv program"
-" nnoremap <silent><leader>2 : call compilerunopencv()<cr>
-" function! compilerunopencv()
-"     let incdir = "/usr/local/include"
-"     let LibDir = "/usr/local/lib"
-"     let Libs = "-lopencv_core -lopencv_highgui -lopencv_imgproc"
-"     exec "w"
-"     exec "lcd %:p:h"
-"     exec "r !g++ -I" . IncDir . " -L" . LibDir . " % " . Libs . " -o %< " 
-"     echo "compile finished!"
-" endfunc
+if !has("win32")
+    " add command to complie opencv program"
+    nnoremap <silent><leader>2 : call Compilerunopencv()<cr>
+
+    function! Compilerunopencv()
+        let IncDir = "/usr/local/include"
+        let LibDir = "/usr/local/lib"
+        let Libs   = "-lopencv_core -lopencv_highgui -lopencv_imgproc"
+        exec "w"
+        exec "lcd %:p:h"
+        exec "r !g++ -I" . IncDir . " -L" . LibDir . " % " . Libs . " -o %< " 
+        echo "compile finished!"
+        exec "!./%<"
+    endfunction
+endif
 
 function! GenerateTagsFile()
     exec ":!ctags -R --c++-kinds=+p --fields=+iaS --extra=+q ."
