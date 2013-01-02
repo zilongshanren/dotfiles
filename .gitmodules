@@ -117,3 +117,6 @@
 [submodule "bundle/vim-cpp11"]
 	path = bundle/vim-cpp11
 	url = git://github.com/vim-scripts/Cpp11-Syntax-Support.git
+[submodule "bundle/python-mode"]
+	path = bundle/python-mode
+	url = git://github.com/klen/python-mode.git
