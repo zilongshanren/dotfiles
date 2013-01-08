@@ -45,9 +45,6 @@ set backspace=indent,eol,start
 map Y y$
 set laststatus=2
 
-"map jk/kj to ESC"
-inoremap jk <Esc>
-inoremap kj <Esc>
 
 
 "search"
@@ -57,8 +54,6 @@ nnoremap <silent> <C-l> :<C-u>nohlsearch<CR><C-l>
 nnoremap <silent> <C-c> :%s///gn<cr>
 vnoremap < <gv
 vnoremap > >gv
-nnoremap / /\v
-vnoremap / /\v
 nnoremap <silent> n nzz
 nnoremap <silent> N Nzz
 nnoremap <silent> * *zz
@@ -203,7 +198,7 @@ let g:solarized_diffmode="high"
 " Ctlr-P 
 let g:ctrlp_jump_to_buffer    = 0
 let g:ctrlp_working_path_mode = 0
-let g:ctrlp_max_height = 30
+let g:ctrlp_max_height        = 30
 set wildignore+=*.pyc
 set wildignore+=*_build/*
 set wildignore+=*/coverage/*
@@ -314,3 +309,9 @@ let g:pymode_syntax = 1
 let g:pymode_syntax_builtin_objs = 0
 let g:pymode_syntax_builtin_funcs = 0
 " map <Leader>b Oimport ipdb; ipdb.set_trace() # BREAKPOINT<C-c>
+
+"map navigations for quick list"
+nnoremap <silent> [b :bprevious<CR> 
+nnoremap <silent> ]b :bnext<CR>
+nnoremap <silent> [B :bfirst<CR> 
+nnoremap <silent> ]B :blast<CR>
