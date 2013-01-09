@@ -33,9 +33,6 @@
 [submodule "bundle/easymotion"]
 	path = bundle/easymotion
 	url = git://github.com/Lokaltog/vim-easymotion.git
-[submodule "bundle/vim-fswitch"]
-	path = bundle/vim-fswitch
-	url = git://github.com/derekwyatt/vim-fswitch.git
 [submodule "bundle/vim-surround"]
 	path = bundle/vim-surround
 	url = git://github.com/tpope/vim-surround.git
