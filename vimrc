@@ -120,7 +120,7 @@ let OmniCpp_ShowPrototypeInAbbr = 1 " show function prototype (i.e. parameters) 
 "--commentary plugin,comment a line
 map <leader>/ \\\
 "go back and forth from header file and source file
-nmap <silent> <leader>f :FSHere<cr>
+nmap <silent> <leader>f :A<cr>
 "open a tag list ivew
 nmap <silent> <leader>t :TagbarToggle <CR>
 "disable default buffergator keymaps"
