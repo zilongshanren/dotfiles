@@ -8,7 +8,7 @@ runtime ftplugin/man.vim
 "}}}
 
 "auto reload vimrc configuration {{{
-autocmd! bufwritepost .vimrc source %
+autocmd! bufwritepost $VIMRC source %
 nmap <leader>vv :tabedit $MYVIMRC<CR>
 "}}}
 
@@ -58,8 +58,12 @@ set laststatus=2
 set pastetoggle=<F2>
 set list
 set listchars=tab:>.,trail:.,extends:#,nbsp:.
+" Toggle show/hide invisible chars
+nnoremap <leader>i :set list! <cr>
+set fileformats="unix,dos,mac"
+set formatoptions+=1            " When wrapping paragraphs, don't end lines
+                                "    with 1-letter words (looks stupid)
 "}}}
-
 
 "search" {{{
 set incsearch
