@@ -7,10 +7,6 @@ runtime macros/matchit.vim
 runtime ftplugin/man.vim
 "}}}
 
-"auto reload vimrc configuration {{{
-au BufWritePost .vimrc so ~/.vimrc
-nmap <leader>vv :tabedit $MYVIMRC<CR>
-"}}}
 
 "--vim-pathogen {{{
 filetype plugin indent on
@@ -18,7 +14,6 @@ filetype plugin on
 call pathogen#runtime_append_all_bundles()
 call pathogen#helptags()
 call pathogen#infect()
-syntax on
 "}}}
 
 " Disable swapfile and backup {{{
@@ -32,6 +27,7 @@ let mapleader=','
 
 "some common configs {{{
 "map visual mode vertical selectoin"
+syntax on
 nmap <leader>v <c-v>
 set fenc=utf-8
 set termencoding=utf-8
@@ -56,10 +52,6 @@ set backspace=indent,eol,start
 map Y y$
 set laststatus=2
 set pastetoggle=<F2>
-set list
-set listchars=tab:>.,trail:.,extends:#,nbsp:.
-" Toggle show/hide invisible chars
-nnoremap <leader>i :set list! <cr>
 set fileformats="unix,dos,mac"
 set formatoptions+=1            " When wrapping paragraphs, don't end lines
                                 "    with 1-letter words (looks stupid)
@@ -111,8 +103,6 @@ map <leader>dl :DoxLic<cr>
 
 "--- OmniCppComplete ---{{{
 filetype on
-set nocp
-filetype plugin on
 " auto close options when exiting insert mode
 autocmd InsertLeave * if pumvisible() == 0|pclose|endif
 " set completeopt=menu,menuone
@@ -237,26 +227,17 @@ set spelllang=en_gb
 nnoremap <leader>U ::GundoToggle<CR>
 "}}}
 
-"buffer navigations {{{
-nnoremap <silent> <leader>bp : bprevious<cr>
-nnoremap <silent> <leader>bn : bnext<cr>
-"}}}
-
-"tab navigations {{{
-map <Leader>tn <esc>:tabprevious<CR>
-map <Leader>tp <esc>:tabnext<CR>
-"}}}
-
 
 "command line editing key maps {{{
 cnoremap <expr> %% getcmdtype() == ':' ? expand('%:h').'/' : '%%'
+map <leader>ew :e %%
+map <leader>es :sp %%
+map <leader>ev :vsp %%
+map <leader>et :tabe %%
+" Prompt to open file with same name, different extension
+map <leader>er :e <C-R>=expand("%:r")."."<CR>
 "}}}
 
-"config cocos2d snippets for snipmate {{{
-autocmd FileType cpp set ft=cpp.cocos2dxcpp
-autocmd FileType javascript set ft=javascript.cocos2dhtml5
-autocmd FileType lua set ft=lua.cocos2dxlua
-"}}}
 
 "configure for running opencv {{{
 if !has("win32")
@@ -378,3 +359,7 @@ let g:UltiSnipsJumpForwardTrigger="<tab>"
 let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
 "}}}
 
+"auto reload vimrc configuration {{{
+au BufWritePost .vimrc so ~/.vimrc
+nmap <leader>vv :tabedit $MYVIMRC<CR>
+"}}}
