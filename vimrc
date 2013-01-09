@@ -8,7 +8,7 @@ runtime ftplugin/man.vim
 "}}}
 
 "auto reload vimrc configuration {{{
-autocmd! bufwritepost $VIMRC source %
+au BufWritePost .vimrc so ~/.vimrc
 nmap <leader>vv :tabedit $MYVIMRC<CR>
 "}}}
 
@@ -371,3 +371,10 @@ nnoremap <Space> za
 vnoremap <Space> za
 nnoremap ,z zMzv
 "}}}
+
+"configure for UltiSnips plugin {{{ 
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<tab>"
+let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
+"}}}
+
