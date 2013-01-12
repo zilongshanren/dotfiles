@@ -126,3 +126,6 @@
 [submodule "bundle/clang_complete"]
 	path = bundle/clang_complete
 	url = git://github.com/Rip-Rip/clang_complete.git
+[submodule "bundle/neocomplcache"]
+	path = bundle/neocomplcache
+	url = git://github.com/Shougo/neocomplcache.git
