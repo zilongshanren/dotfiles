@@ -52,6 +52,7 @@ set backspace=indent,eol,start
 map Y y$
 set laststatus=2
 set pastetoggle=<F2>
+set nolist
 set fileformats="unix,dos,mac"
 set formatoptions+=1            " When wrapping paragraphs, don't end lines
                                 "    with 1-letter words (looks stupid)
