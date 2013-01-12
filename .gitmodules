@@ -120,9 +120,6 @@
 [submodule "bundle/a"]
 	path = bundle/a
 	url = git://github.com/vim-scripts/a.vim.git
-[submodule "bundle/clang_complete"]
-	path = bundle/clang_complete
-	url = git://github.com/Rip-Rip/clang_complete.git
 [submodule "bundle/neocomplcache"]
 	path = bundle/neocomplcache
 	url = git://github.com/Shougo/neocomplcache.git
@@ -132,3 +129,12 @@
 [submodule "bundle/buferexplorer"]
 	path = bundle/buferexplorer
 	url = git://github.com/vim-scripts/bufexplorer.zip.git
+[submodule "bundle/dfrank_util"]
+	path = bundle/dfrank_util
+	url = git://github.com/oblitum/dfrank_util.git
+[submodule "bundle/vimprj"]
+	path = bundle/vimprj
+	url = git://github.com/oblitum/vimprj.git
+[submodule "bundle/SingleCompile"]
+	path = bundle/SingleCompile
+	url = git://github.com/xuhdev/SingleCompile.git
