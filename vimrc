@@ -123,7 +123,7 @@ map <leader>/ \\\
 "go back and forth from header file and source file
 nmap <silent> <leader>f :A<cr>
 "open a tag list ivew
-nmap <silent> <leader>t :TagbarToggle <CR>
+nmap <silent> <leader>ta :TagbarToggle <CR>
 "disable default buffergator keymaps"
 let g:buffergator_suppress_keymaps = 1
 
@@ -137,6 +137,7 @@ nmap <leader>bf :BuffergatorToggle<cr>
 "nerdTree plugin config {{{
 autocmd vimenter * NERDTree
 nmap <silent> <leader>n :NERDTreeToggle <CR>
+let NERDTreeShowHidden=1
 "}}}
 
 "better tag navigation from www.vimbits.com {{{
@@ -367,6 +368,10 @@ nmap <leader>vv :tabedit $MYVIMRC<CR>
 
 
 "config clang_complete library {{{
-let g:clang_use_library=1
-let g:clang_library_path="/usr/lib/libclang.dylib"
+" let g:clang_complete_copen=1
+" let g:clang_periodic_quickfix=1
+" let g:clang_snippets=1
+" let g:clang_close_preview=1
+" let g:clang_use_library=1
+" let g:clang_user_options='-stdlib=libc++ -std=c++11 -IIncludePath'
 "}}}
