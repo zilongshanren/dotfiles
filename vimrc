@@ -364,3 +364,9 @@ let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
 au BufWritePost .vimrc so ~/.vimrc
 nmap <leader>vv :tabedit $MYVIMRC<CR>
 "}}}
+
+
+"config clang_complete library {{{
+let g:clang_use_library=1
+let g:clang_library_path="/usr/lib/libclang.dylib"
+"}}}
