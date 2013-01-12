@@ -3,6 +3,7 @@
 "
 " load plugins that ship with Vim {{{
 set nocompatible
+filetype on
 runtime macros/matchit.vim
 runtime ftplugin/man.vim
 "}}}
@@ -11,9 +12,8 @@ runtime ftplugin/man.vim
 "--vim-pathogen {{{
 filetype plugin indent on
 filetype plugin on
-call pathogen#runtime_append_all_bundles()
-call pathogen#helptags()
 call pathogen#infect()
+call pathogen#helptags()
 "}}}
 
 " Disable swapfile and backup {{{
@@ -102,19 +102,6 @@ map <leader>da :DoxAuthor<Cr>
 map <leader>dl :DoxLic<cr>
 "}}}
 
-"--- OmniCppComplete ---{{{
-filetype on
-" auto close options when exiting insert mode
-autocmd InsertLeave * if pumvisible() == 0|pclose|endif
-" set completeopt=menu,menuone
-" -- configs --
-let OmniCpp_MayCompleteDot = 1 " autocomplete with .
-let OmniCpp_MayCompleteArrow = 1 " autocomplete with ->
-let OmniCpp_MayCompleteScope = 1 " autocomplete with ::
-let OmniCpp_SelectFirstItem = 0 " select first item (but don't insert)
-let OmniCpp_NamespaceSearch = 2 " search namespaces in this and included files
-let OmniCpp_ShowPrototypeInAbbr = 1 " show function prototype (i.e. parameters) in popup window
-"}}}
 
 
 "plugins key maps" {{{
