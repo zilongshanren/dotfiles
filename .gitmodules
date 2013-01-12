@@ -129,3 +129,6 @@
 [submodule "bundle/neocompneocomplcache-clang_complete"]
 	path = bundle/neocompneocomplcache-clang_complete
 	url = git://github.com/osyo-manga/neocomplcache-clang_complete.git
+[submodule "bundle/buferexplorer"]
+	path = bundle/buferexplorer
+	url = git://github.com/vim-scripts/bufexplorer.zip.git
