@@ -123,3 +123,6 @@
 [submodule "bundle/a"]
 	path = bundle/a
 	url = git://github.com/vim-scripts/a.vim.git
+[submodule "bundle/clang_complete"]
+	path = bundle/clang_complete
+	url = git://github.com/Rip-Rip/clang_complete.git
