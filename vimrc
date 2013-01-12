@@ -355,12 +355,31 @@ nmap <leader>vv :tabedit $MYVIMRC<CR>
 
 
 "config clang_complete library {{{
-" let g:clang_complete_copen=1
-" let g:clang_periodic_quickfix=1
-" let g:clang_snippets=1
-" let g:clang_close_preview=1
-" let g:clang_use_library=1
-" let g:clang_user_options='-stdlib=libc++ -std=c++11 -IIncludePath'
+" g:clang_user_options set at vimprj section
+let g:clang_use_library=1
+let g:clang_complete_copen=1
+let g:clang_complete_macros=1
+let g:clang_complete_patterns=0
+" Avoids lame path cache generation and other unknown sources for includes 
+let g:clang_auto_user_options=''
+let g:clang_memory_percent=70
+
+set conceallevel=2
+set concealcursor=vin
+let g:clang_snippets=1
+let g:clang_conceal_snippets=1
+" The single one that works with clang_complete
+let g:clang_snippets_engine='clang_complete'
+
+" Complete options (disable preview scratch window, longest removed to aways
+" show menu)
+set completeopt=menu,menuone
+
+" Limit popup menu height
+set pumheight=20
+
+" SuperTab completion fall-back 
+let g:SuperTabDefaultCompletionType='<c-x><c-u><c-p>'
 "}}}
 
 "config for neocomplcache plugin {{{
@@ -396,4 +415,90 @@ let g:neocomplcache_omni_patterns.ruby = '[^. *\t]\.\w*\|\h\w*::'
 let g:neocomplcache_omni_patterns.php = '[^. \t]->\h\w*\|\h\w*::'
 let g:neocomplcache_omni_patterns.c = '\%(\.\|->\)\h\w*'
 let g:neocomplcache_omni_patterns.cpp = '\h\w*\%(\.\|->\)\h\w*\|\h\w*::'
+"}}}
+
+"Config for SimpleCompile plugin {{{
+" SingleCompile for C++ with Clang
+" vimprj configuration
+ 
+" Initialize vimprj plugin
+call vimprj#init()
+ 
+" vimprj hooks
+ 
+" Called BEFORE sourcing .vimprj and when not sourcing
+function! g:vimprj#dHooks['SetDefaultOptions']['main_options'](dParams)
+    let g:vimprj_dir = substitute(a:dParams['sVimprjDirName'], '[/\\]\.vimprj$', '', '')
+    
+    if &ft == 'c' || &ft == 'cpp'  
+        let g:clang_user_options = ''
+        if &ft == 'cpp'
+            let g:clang_user_options = '-std=c++11 -stdlib=libc++'
+        endif
+        let g:single_compile_options = '-O3 ' . g:clang_user_options
+    endif
+endfunction
+ 
+" Called AFTER sourcing .vimprj and when not sourcing
+function! g:vimprj#dHooks['OnAfterSourcingVimprj']['main_options'](dParams)
+    unlet g:vimprj_dir
+    if &ft == 'c' || &ft == 'cpp'  
+      call g:ClangBackgroundParse()
+      call s:LoadSingleCompileOptions()
+    endif                          
+endfunction
+"}}}
+
+"keymaps for c/c++ development{{{
+" Reparse the current translation unit in background
+command Parse
+\ if &ft == 'c' || &ft == 'cpp'   |
+\   call g:ClangBackgroundParse() |
+\ else                            |
+\   echom 'Parse What?'           |
+\ endif
+ 
+" Reparse the current translation unit and check for errors
+command ClangCheck
+\ if &ft == 'c' || &ft == 'cpp'   |
+\   call g:ClangUpdateQuickFix()  |
+\ else                            |
+\   echom 'Check What?'           |
+
+" Set the most common used run command
+if has('win32') || has('win64') || has('os2')
+    let g:common_run_command='$(FILE_TITLE)$'
+else
+    let g:common_run_command='./$(FILE_TITLE)$'
+endif
+ 
+" SingleCompile for C++ with Clang
+function! s:LoadSingleCompileOptions()
+    call SingleCompile#SetCompilerTemplate('c', 
+                \'clang', 
+                \'the Clang C and Objective-C compiler', 
+                \'clang', 
+                \'-o $(FILE_TITLE)$ ' . g:single_compile_options, 
+                \g:common_run_command)
+ 
+    call SingleCompile#ChooseCompiler('c', 'clang')
+ 
+    call SingleCompile#SetCompilerTemplate('cpp', 
+                \'clang', 
+                \'the Clang C and Objective-C compiler', 
+                \'clang++', 
+                \'-o $(FILE_TITLE)$ ' . g:single_compile_options, 
+                \g:common_run_command)
+ 
+    call SingleCompile#ChooseCompiler('cpp', 'clang')
+endfunction
+
+noremap  <silent> <F5> :Parse<cr>
+noremap  <silent> <F6> :ClangCheck<cr>
+noremap  <silent> <F7> :SCCompile<cr>
+noremap  <silent> <F9> :SCCompileRun<cr>
+noremap! <silent> <F5> <c-o>:Parse<cr>
+noremap! <silent> <F6> <c-o>:ClangCheck<cr>
+noremap! <silent> <F7> <c-o>:SCCompile<cr>
+noremap! <silent> <F9> <c-o>:SCCompileRun<cr>
 "}}}
