@@ -138,3 +138,6 @@
 [submodule "bundle/SingleCompile"]
 	path = bundle/SingleCompile
 	url = git://github.com/xuhdev/SingleCompile.git
+[submodule "bundle/clangComplete"]
+	path = bundle/clangComplete
+	url = git://github.com/oblitum/clang_complete.git
