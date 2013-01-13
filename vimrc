@@ -55,7 +55,8 @@ set pastetoggle=<F2>
 set nolist
 set fileformats="unix,dos,mac"
 set formatoptions+=1            " When wrapping paragraphs, don't end lines
-                                "    with 1-letter words (looks stupid)
+au InsertEnter * :let @/="" " Disable highlighted search on insert mode
+au InsertLeave * :let @/="" " Enable it back                                "    with 1-letter words (looks stupid)
 "}}}
 
 "search" {{{
