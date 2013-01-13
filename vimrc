@@ -367,7 +367,6 @@ au BufNewFile,BufRead *
 \ if expand('%:e') =~ '^\(h\|hh\|hxx\|hpp\|ii\|ixx\|ipp\|inl\|txx\|tpp\|tpl\|cc\|cxx\|cpp\)$' |
 \   if &ft != 'cpp'                                                                           |
 \     set ft=cpp                                                                              |
-\     set completefunc=ClangComplete                                                        |
 \   endif                                                                                     |
 \ endif   
 
@@ -378,6 +377,7 @@ let g:clang_complete_patterns=0
 " Avoids lame path cache generation and other unknown sources for includes 
 let g:clang_auto_user_options=''
 let g:clang_memory_percent=70
+
 
 set conceallevel=2
 set concealcursor=vin
@@ -459,7 +459,7 @@ function! g:vimprj#dHooks['SetDefaultOptions']['main_options'](dParams)
     if &ft == 'c' || &ft == 'cpp'  
         let g:clang_user_options = ''
         if &ft == 'cpp'
-            let g:clang_user_options = '-std=c++11 -stdlib=libc++ -I/usr/local/src/llvm/tools/libcxx/include -L/usr/local/src/llvm/tools/libcxx/lib'
+            let g:clang_user_options = '-std=c++11 -stdlib=libc++ '
         endif
         let g:single_compile_options = '-O3 ' . g:clang_user_options
     endif
@@ -478,4 +478,26 @@ endfunction
 "config for rainbow plugin{{{
 let g:rainbow_operators = 2 
 au FileType c,cpp,objc,objcpp call rainbow#activate()
+"}}}
+
+"config for neocomplcache{{{
+" use neocomplcache & clang_complete
+
+" add neocomplcache option
+let g:neocomplcache_force_overwrite_completefunc=1
+
+" add clang_complete option
+let g:clang_complete_auto=1
+" Disable AutoComplPop. Comment out this line if AutoComplPop is not installed.
+let g:acp_enableAtStartup = 0
+" Launches neocomplcache automatically on vim startup.
+let g:neocomplcache_enable_at_startup = 1
+" Use smartcase.
+let g:neocomplcache_enable_smart_case = 1
+" Use camel case completion.
+let g:neocomplcache_enable_camel_case_completion = 1
+" Use underscore completion.
+let g:neocomplcache_enable_underbar_completion = 1
+" Sets minimum char length of syntax keyword.
+let g:neocomplcache_min_syntax_length = 3
 "}}}
