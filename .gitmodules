@@ -120,12 +120,6 @@
 [submodule "bundle/a"]
 	path = bundle/a
 	url = git://github.com/vim-scripts/a.vim.git
-[submodule "bundle/neocomplcache"]
-	path = bundle/neocomplcache
-	url = git://github.com/Shougo/neocomplcache.git
-[submodule "bundle/neocompneocomplcache-clang_complete"]
-	path = bundle/neocompneocomplcache-clang_complete
-	url = git://github.com/osyo-manga/neocomplcache-clang_complete.git
 [submodule "bundle/buferexplorer"]
 	path = bundle/buferexplorer
 	url = git://github.com/vim-scripts/bufexplorer.zip.git
@@ -141,3 +135,6 @@
 [submodule "bundle/clangComplete"]
 	path = bundle/clangComplete
 	url = git://github.com/oblitum/clang_complete.git
+[submodule "bundle/bufkill"]
+	path = bundle/bufkill
+	url = git://github.com/oblitum/bufkill.git
