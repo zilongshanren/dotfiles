@@ -141,3 +141,9 @@
 [submodule "bundle/rainbow"]
 	path = bundle/rainbow
 	url = git://github.com/oblitum/rainbow.git
+[submodule "bundle/neocomplcache"]
+	path = bundle/neocomplcache
+	url = git://github.com/Shougo/neocomplcache.git
+[submodule "bundle/neocomplcache-clang_complete"]
+	path = bundle/neocomplcache-clang_complete
+	url = git://github.com/osyo-manga/neocomplcache-clang_complete.git
