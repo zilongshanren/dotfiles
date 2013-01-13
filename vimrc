@@ -125,6 +125,13 @@ nmap <leader>bf :BuffergatorToggle<cr>
 autocmd vimenter * NERDTree
 nmap <silent> <leader>n :NERDTreeToggle <CR>
 let NERDTreeShowHidden=1
+" bufkill bd's: really do not mess with NERDTree buffer
+nnoremap <silent> <backspace> :BD<cr>
+nnoremap <silent> <s-backspace> :BD!<cr>
+
+" Prevent :bd inside NERDTree buffer
+au FileType nerdtree cnoreabbrev <buffer> bd <nop>
+au FileType nerdtree cnoreabbrev <buffer> BD <nop>
 "}}}
 
 "better tag navigation from www.vimbits.com {{{
@@ -356,6 +363,14 @@ nmap <leader>vv :tabedit $MYVIMRC<CR>
 
 "config clang_complete library {{{
 " g:clang_user_options set at vimprj section
+au FileType cpp,objcpp set syntax=cpp11
+au BufNewFile,BufRead *
+\ if expand('%:e') =~ '^\(h\|hh\|hxx\|hpp\|ii\|ixx\|ipp\|inl\|txx\|tpp\|tpl\|cc\|cxx\|cpp\)$' |
+\   if &ft != 'cpp'                                                                           |
+\     set ft=cpp                                                                              |
+\   endif                                                                                     |
+\ endif   
+
 let g:clang_use_library=1
 let g:clang_complete_copen=1
 let g:clang_complete_macros=1
@@ -386,84 +401,25 @@ let g:SuperTabDefaultCompletionType='<c-x><c-u><c-p>'
 let g:neocomplcache_enable_at_startup = 1
 " use neocomplcache & clang_complete
 
-" add neocomplcache option
-let g:neocomplcache_force_overwrite_completefunc=1
-
-" add clang_complete option
-let g:clang_complete_auto=1
-" Use smartcase.
-let g:neocomplcache_enable_smart_case = 1
-" Use camel case completion.
-let g:neocomplcache_enable_camel_case_completion = 1
-" Use underscore completion.
-let g:neocomplcache_enable_underbar_completion = 1
-" Sets minimum char length of syntax keyword.
-let g:neocomplcache_min_syntax_length = 3
-" Enable omni completion. Not required if they are already set elsewhere in .vimrc
-autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
-autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
-autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
-autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
-autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
-autocmd FileType ruby setlocal omnifunc=rubycomplete#Complete
-
-" Enable heavy omni completion, which require computational power and may stall the vim. 
-if !exists('g:neocomplcache_omni_patterns')
-  let g:neocomplcache_omni_patterns = {}
-endif
-let g:neocomplcache_omni_patterns.ruby = '[^. *\t]\.\w*\|\h\w*::'
-let g:neocomplcache_omni_patterns.php = '[^. \t]->\h\w*\|\h\w*::'
-let g:neocomplcache_omni_patterns.c = '\%(\.\|->\)\h\w*'
-let g:neocomplcache_omni_patterns.cpp = '\h\w*\%(\.\|->\)\h\w*\|\h\w*::'
 "}}}
 
-"Config for SimpleCompile plugin {{{
-" SingleCompile for C++ with Clang
-" vimprj configuration
- 
-" Initialize vimprj plugin
-call vimprj#init()
- 
-" vimprj hooks
- 
-" Called BEFORE sourcing .vimprj and when not sourcing
-function! g:vimprj#dHooks['SetDefaultOptions']['main_options'](dParams)
-    let g:vimprj_dir = substitute(a:dParams['sVimprjDirName'], '[/\\]\.vimprj$', '', '')
-    
-    if &ft == 'c' || &ft == 'cpp'  
-        let g:clang_user_options = ''
-        if &ft == 'cpp'
-            let g:clang_user_options = '-std=c++11 -stdlib=libc++'
-        endif
-        let g:single_compile_options = '-O3 ' . g:clang_user_options
-    endif
-endfunction
- 
-" Called AFTER sourcing .vimprj and when not sourcing
-function! g:vimprj#dHooks['OnAfterSourcingVimprj']['main_options'](dParams)
-    unlet g:vimprj_dir
-    if &ft == 'c' || &ft == 'cpp'  
-      call g:ClangBackgroundParse()
-      call s:LoadSingleCompileOptions()
-    endif                          
-endfunction
-"}}}
 
 "keymaps for c/c++ development{{{
 " Reparse the current translation unit in background
-command Parse
-\ if &ft == 'c' || &ft == 'cpp'   |
-\   call g:ClangBackgroundParse() |
-\ else                            |
-\   echom 'Parse What?'           |
-\ endif
- 
+command! Parse
+            \ if &ft == 'cpp'                 |
+            \   call g:ClangBackgroundParse() |
+            \ else                            |
+            \   echom 'Parse What?'           |
+            \ endif
+
 " Reparse the current translation unit and check for errors
-command ClangCheck
-\ if &ft == 'c' || &ft == 'cpp'   |
-\   call g:ClangUpdateQuickFix()  |
-\ else                            |
-\   echom 'Check What?'           |
+command! ClangCheck
+            \ if &ft == 'cpp'                 |
+            \   call g:ClangUpdateQuickFix()  |
+            \ else                            |
+            \   echom 'Check What?'           |
+            \ endif
 
 " Set the most common used run command
 if has('win32') || has('win64') || has('os2')
@@ -489,16 +445,48 @@ function! s:LoadSingleCompileOptions()
                 \'clang++', 
                 \'-o $(FILE_TITLE)$ ' . g:single_compile_options, 
                 \g:common_run_command)
- 
     call SingleCompile#ChooseCompiler('cpp', 'clang')
 endfunction
 
 noremap  <silent> <F5> :Parse<cr>
 noremap  <silent> <F6> :ClangCheck<cr>
-noremap  <silent> <F7> :SCCompile<cr>
-noremap  <silent> <F9> :SCCompileRun<cr>
+noremap  <silent> <F9> :SCCompile<cr>
+noremap  <silent> <F10> :SCCompileRun<cr>
 noremap! <silent> <F5> <c-o>:Parse<cr>
 noremap! <silent> <F6> <c-o>:ClangCheck<cr>
-noremap! <silent> <F7> <c-o>:SCCompile<cr>
-noremap! <silent> <F9> <c-o>:SCCompileRun<cr>
+noremap! <silent> <F9> <c-o>:SCCompile<cr>
+noremap! <silent> <F10> <c-o>:SCCompileRun<cr>
+"}}}
+
+"Config for SimpleCompile plugin {{{
+" SingleCompile for C++ with Clang
+" vimprj configuration
+au BufNewFile,BufRead *.vimprj set ft=vim
+
+ 
+" Initialize vimprj plugin
+call vimprj#init()
+ 
+" vimprj hooks
+ 
+" Called BEFORE sourcing .vimprj and when not sourcing
+function! g:vimprj#dHooks['SetDefaultOptions']['main_options'](dParams)
+    let g:vimprj_dir = substitute(a:dParams['sVimprjDirName'], '[/\\]\.vimprj$', '', '')
+    if &ft == 'c' || &ft == 'cpp'  
+        let g:clang_user_options = ''
+        if &ft == 'cpp'
+            let g:clang_user_options = '-std=c++11 -stdlib=libc++ -I/usr/local/src/llvm/tools/libcxx/include -L/usr/local/src/llvm/tools/libcxx/lib'
+        endif
+        let g:single_compile_options = '-O3 ' . g:clang_user_options
+    endif
+endfunction
+ 
+" Called AFTER sourcing .vimprj and when not sourcing
+function! g:vimprj#dHooks['OnAfterSourcingVimprj']['main_options'](dParams)
+    unlet g:vimprj_dir
+    if &ft == 'c' || &ft == 'cpp'  
+      call g:ClangBackgroundParse()
+      call s:LoadSingleCompileOptions()
+    endif                          
+endfunction
 "}}}
