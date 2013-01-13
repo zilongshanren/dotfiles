@@ -72,6 +72,7 @@ nnoremap <silent> * *zz
 nnoremap <silent> # #zz
 nnoremap <silent> g* g*zz
 nnoremap <silent> g# g#zz
+vnoremap <C-r> "hy:%s/<C-r>h//gc<left><left><left>
 "}}}
 
 "better command line editing {{{
