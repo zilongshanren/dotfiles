@@ -36,7 +36,7 @@ set smartindent
 set tabstop=4        " tab width is 4 spaces
 set shiftwidth=4     " indent also with 4 spaces
 set expandtab        " expand tabs to spaces
-set textwidth=120
+set textwidth=300
 set t_Co=256
 set number
 set hidden
@@ -276,7 +276,6 @@ autocmd! bufread  *.* :cd %:p:h
 
 
 " add cpp11 syntax support {{{
-au BufNewFile,BufRead *.cpp set syntax=cpp11
 let g:syntastic_cpp_compiler_options = ' -std=c++11'
 "run cpp11 code"
 nmap <leader>rr :<C-U>!clang++ -std=c++11 -stdlib=libc++ -nostdinc++ -I/usr/local/src/llvm/tools/libcxx/include -L/usr/local/src/llvm/tools/libcxx/lib -o %:r % && ./%:r <cr>
@@ -368,6 +367,7 @@ au BufNewFile,BufRead *
 \ if expand('%:e') =~ '^\(h\|hh\|hxx\|hpp\|ii\|ixx\|ipp\|inl\|txx\|tpp\|tpl\|cc\|cxx\|cpp\)$' |
 \   if &ft != 'cpp'                                                                           |
 \     set ft=cpp                                                                              |
+\     set completefunc=ClangComplete                                                        |
 \   endif                                                                                     |
 \ endif   
 
@@ -397,29 +397,13 @@ set pumheight=20
 let g:SuperTabDefaultCompletionType='<c-x><c-u><c-p>'
 "}}}
 
-"config for neocomplcache plugin {{{
-let g:neocomplcache_enable_at_startup = 1
-" use neocomplcache & clang_complete
-
-"}}}
 
 
 "keymaps for c/c++ development{{{
 " Reparse the current translation unit in background
-command! Parse
-            \ if &ft == 'cpp'                 |
-            \   call g:ClangBackgroundParse() |
-            \ else                            |
-            \   echom 'Parse What?'           |
-            \ endif
-
+command! Parse  call g:ClangBackgroundParse()  
 " Reparse the current translation unit and check for errors
-command! ClangCheck
-            \ if &ft == 'cpp'                 |
-            \   call g:ClangUpdateQuickFix()  |
-            \ else                            |
-            \   echom 'Check What?'           |
-            \ endif
+command! ClangCheck call g:ClangUpdateQuickFix()  
 
 " Set the most common used run command
 if has('win32') || has('win64') || has('os2')
@@ -489,4 +473,9 @@ function! g:vimprj#dHooks['OnAfterSourcingVimprj']['main_options'](dParams)
       call s:LoadSingleCompileOptions()
     endif                          
 endfunction
+"}}}
+
+"config for rainbow plugin{{{
+let g:rainbow_operators = 2 
+au FileType c,cpp,objc,objcpp call rainbow#activate()
 "}}}

@@ -138,3 +138,6 @@
 [submodule "bundle/bufkill"]
 	path = bundle/bufkill
 	url = git://github.com/oblitum/bufkill.git
+[submodule "bundle/rainbow"]
+	path = bundle/rainbow
+	url = git://github.com/oblitum/rainbow.git
