@@ -1,5 +1,5 @@
 snippet cocos2dx "generate cocos2dx" !b
-let s:local_include_option = " -I../libs/cocos2dx/include -I../libs/cocos2dx/kazmath/include -I../libs/cocos2dx -I../libs/CocosDenshion/include -I../usr/include/libxml2 -I../libs/cocos2dx/include -I../libs/cocos2dx/platform/third_party/ios -I../libs/cocos2dx/platform/ios"
+let s:local_include_option = " -I../libs/cocos2dx/include -I../libs/cocos2dx/kazmath/include -I../libs/cocos2dx -I../libs/CocosDenshion/include -I../usr/include/libxml2  -I../libs/cocos2dx/platform/third_party/ios -I../libs/cocos2dx/platform/ios"
 let s:local_include_option .= " -I/usr/local/src/llvm/tools/libcxx/include -L/usr/local/src/llvm/tools/libcxx/lib"
 let g:clang_user_options .= s:local_include_option
 let g:clang_user_options .= " -DDEBUG -DCOCOS2D_DEBUG=1 -DUSE_FILE32API -DCC_TARGET_OS_IPHONE -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator6.0.sdk -fexceptions"
@@ -15,7 +15,7 @@ let g:single_compile_options .= s:local_include_option
 endsnippet
 
 snippet cocos2dxb "generate cocos2dx" !b
-let s:local_include_option = " -I../libs/cocos2dx/include -I../libs/cocos2dx/kazmath/include -I../libs/cocos2dx -I../libs/CocosDenshion/include -I../usr/include/libxml2 -I../libs/cocos2dx/include -I../libs/cocos2dx/platform/third_party/ios -I../libs/cocos2dx/platform/ios -I../libs -I../libs/Box2D"
+let s:local_include_option = " -I../libs/cocos2dx/include -I../libs/cocos2dx/kazmath/include -I../libs/cocos2dx -I../libs/CocosDenshion/include -I../usr/include/libxml2  -I../libs/cocos2dx/platform/third_party/ios -I../libs/cocos2dx/platform/ios -I../libs -I../libs/Box2D"
 let s:local_include_option .= " -I/usr/local/src/llvm/tools/libcxx/include -L/usr/local/src/llvm/tools/libcxx/lib"
 let g:clang_user_options .= s:local_include_option
 let g:clang_user_options .= " -DDEBUG -DCOCOS2D_DEBUG=1 -DUSE_FILE32API -DCC_TARGET_OS_IPHONE -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator6.0.sdk -fexceptions"
