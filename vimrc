@@ -503,3 +503,10 @@ let g:neocomplcache_enable_underbar_completion = 1
 " Sets minimum char length of syntax keyword.
 let g:neocomplcache_min_syntax_length = 3
 "}}}
+"configs for TagHighlightSettings{{{
+if ! exists('g:TagHighlightSettings')
+        let g:TagHighlightSettings = {}
+endif
+let g:TagHighlightSettings['ForcedPythonVariant'] = 'if_pyth'
+let g:TagHighlightSettings['CtagsExecutable'] = 'ctags'
+"}}}
