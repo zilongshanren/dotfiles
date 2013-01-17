@@ -510,3 +510,14 @@ endif
 let g:TagHighlightSettings['ForcedPythonVariant'] = 'if_pyth'
 let g:TagHighlightSettings['CtagsExecutable'] = 'ctags'
 "}}}
+
+"some abbreviates for myself {{{
+abbreviate zl zilongshanren
+"}}}
+
+" tab navigation like firefox{{{
+nnoremap <leader><tab> :tabnext<CR>
+nnoremap <C-t>     :tabnew<CR>
+inoremap <leader><tab>   <Esc>:tabnext<CR>i
+inoremap <C-t>     <Esc> :tabnew<CR>
+"}}}
