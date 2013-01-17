@@ -521,3 +521,8 @@ nnoremap <C-t>     :tabnew<CR>
 inoremap <leader><tab>   <Esc>:tabnext<CR>i
 inoremap <C-t>     <Esc> :tabnew<CR>
 "}}}
+
+"map key for vimwiki"{{{
+nnoremap <f4> :VimwikiAll2HTML<cr>
+"}}}
+

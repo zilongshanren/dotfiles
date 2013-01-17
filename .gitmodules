@@ -153,3 +153,6 @@
 [submodule "bundle/TagHighlight"]
 	path = bundle/TagHighlight
 	url = https://github.com/Lokaltog/TagHighlight.git
+[submodule "bundle/vimwiki"]
+	path = bundle/vimwiki
+	url = https://github.com/vim-scripts/vimwiki.git
