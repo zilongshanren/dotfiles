@@ -522,7 +522,9 @@ inoremap <leader><tab>   <Esc>:tabnext<CR>i
 inoremap <C-t>     <Esc> :tabnew<CR>
 "}}}
 
-"map key for vimwiki"{{{
+"configs for vimwiki"{{{
 nnoremap <f4> :VimwikiAll2HTML<cr>
+let g:vimwiki_list = [{'path': '/Users/andyque/workspace/myblog/octopress/source/vimwiki',  
+  \ 'path_html': '/Users/andyque/workspace/myblog/octopress/source/vimwiki_html'}]
 "}}}
 
