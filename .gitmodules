@@ -162,6 +162,3 @@
 [submodule "bundle/vim-nerdtree-tabs"]
 	path = bundle/vim-nerdtree-tabs
 	url = https://github.com/jistr/vim-nerdtree-tabs.git
-[submodule "bundle/vim-ragtag"]
-	path = bundle/vim-ragtag
-	url = https://github.com/tpope/vim-ragtag.git
