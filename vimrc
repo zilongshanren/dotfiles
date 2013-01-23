@@ -248,7 +248,7 @@ if !has("win32")
         let Libs   = "-lopencv_core -lopencv_highgui -lopencv_imgproc"
         exec "w"
         exec "lcd %:p:h"
-        exec "r !g++ -I" . IncDir . " -L" . LibDir . " % " . Libs . " -o %< " 
+        exec "r !g++ -I" . IncDir . " -L" . LibDir . " *.cpp " . Libs . " -o %< " 
         echo "compile finished!"
         exec "!./%<"
     endfunction
@@ -344,6 +344,9 @@ function! MyFoldText()
 endfunction
 set foldtext=MyFoldText()
 
+"c/c++/javascript/java fold method
+autocmd filetype c,cpp,javascript,java set foldmarker={,}
+
 nnoremap zO zCzO
 nnoremap <Space> za
 vnoremap <Space> za
@@ -434,12 +437,12 @@ function! s:LoadSingleCompileOptions()
     call SingleCompile#ChooseCompiler('cpp', 'clang')
 endfunction
 
-noremap  <silent> <F5> :Parse<cr>
-noremap  <silent> <F6> :ClangCheck<cr>
+noremap  <silent> <F7> :Parse<cr>
+noremap  <silent> <F8> :ClangCheck<cr>
 noremap  <silent> <F9> :SCCompile<cr>
 noremap  <silent> <F10> :SCCompileRun<cr>
-noremap! <silent> <F5> <c-o>:Parse<cr>
-noremap! <silent> <F6> <c-o>:ClangCheck<cr>
+noremap! <silent> <F7> <c-o>:Parse<cr>
+noremap! <silent> <F8> <c-o>:ClangCheck<cr>
 noremap! <silent> <F9> <c-o>:SCCompile<cr>
 noremap! <silent> <F10> <c-o>:SCCompileRun<cr>
 "}}}
