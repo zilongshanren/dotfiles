@@ -55,8 +55,8 @@ set pastetoggle=<F2>
 set nolist
 set fileformats="unix,dos,mac"
 set formatoptions+=1            " When wrapping paragraphs, don't end lines
-au InsertEnter * :let @/="" " Disable highlighted search on insert mode
-au InsertLeave * :let @/="" " Enable it back                                "    with 1-letter words (looks stupid)
+" au InsertEnter * :let @/="" " Disable highlighted search on insert mode
+" au InsertLeave * :let @/="" " Enable it back                                "    with 1-letter words (looks stupid)
 "}}}
 
 "search" {{{
@@ -526,8 +526,8 @@ inoremap <C-t>     <Esc> :tabnew<CR>
 "}}}
 
 "configs for vimwiki"{{{
-nnoremap <f4> :VimwikiAll2HTML<cr>
-let g:vimwiki_list = [{'path': '/Users/andyque/workspace/myblog/octopress/source/vimwiki',  
-  \ 'path_html': '/Users/andyque/workspace/myblog/octopress/source/vimwiki_html'}]
+nmap <leader>5 :VimwikiAll2HTML<cr>
+let g:vimwiki_list = [{'path': '/Users/andyque/workspace/myblog/octopress/source/vimwiki/',  
+  \ 'path_html': '/Users/andyque/workspace/myblog/octopress/source/vimwiki_html/'}]
 "}}}
 
