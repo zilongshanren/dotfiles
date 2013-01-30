@@ -10,7 +10,6 @@ runtime ftplugin/man.vim
 
 
 "--vim-pathogen {{{
-filetype plugin indent on
 filetype plugin on
 call pathogen#infect()
 call pathogen#helptags()
@@ -29,12 +28,14 @@ let mapleader=','
 "map visual mode vertical selectoin"
 syntax on
 nmap <leader>v <c-v>
+filetype plugin indent on
 set fenc=utf-8
 set termencoding=utf-8
 set autoindent
 set smartindent
 set tabstop=4        " tab width is 4 spaces
 set shiftwidth=4     " indent also with 4 spaces
+set softtabstop=4
 set expandtab        " expand tabs to spaces
 set textwidth=300
 set t_Co=256
@@ -54,7 +55,8 @@ set laststatus=2
 set pastetoggle=<F2>
 set nolist
 set fileformats="unix,dos,mac"
-set formatoptions+=1            " When wrapping paragraphs, don't end lines
+set formatoptions+=1 
+
 " au InsertEnter * :let @/="" " Disable highlighted search on insert mode
 " au InsertLeave * :let @/="" " Enable it back                                "    with 1-letter words (looks stupid)
 "}}}
