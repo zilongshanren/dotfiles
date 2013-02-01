@@ -6,6 +6,11 @@ set nocompatible
 filetype on
 runtime macros/matchit.vim
 runtime ftplugin/man.vim
+if has("win32") || has("win64")
+    source $VIMRUNTIME/vimrc_example.vim
+    source $VIMRUNTIME/mswin.vim
+    behave mswin
+endif
 "}}}
 
 
@@ -208,12 +213,10 @@ set wildignore+=*.o
 
 
 "Configuration for tabular plugin {{{
-if exists(":Tabularize")
-  nmap <Leader>= :Tabularize /=<CR>
-  vmap <Leader>= :Tabularize /=<CR>
-  nmap <Leader>; :Tabularize /:<CR>
-  vmap <Leader>; :Tabularize /:<CR>
-endif
+nmap <Leader>= :Tabularize /=<CR>
+vmap <Leader>= :Tabularize /=<CR>
+nmap <Leader>: :Tabularize /:<CR>
+vmap <Leader>: :Tabularize /:<CR>
 "}}}
 
 "english spell check {{{
@@ -383,6 +386,10 @@ let g:clang_complete_patterns=0
 " Avoids lame path cache generation and other unknown sources for includes 
 let g:clang_auto_user_options=''
 let g:clang_memory_percent=70
+
+if has("win32") || has("win64")
+let g:clang_library_path="c:"
+endif
 
 
 set conceallevel=2
