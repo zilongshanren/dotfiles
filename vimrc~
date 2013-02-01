@@ -31,10 +31,9 @@ syntax on
 nmap <leader>v <c-v>
 set fenc=utf-8
 set termencoding=utf-8
-set fileencodings=utf-8,chinese
-if has("win32") || has("win64")
-    set fileencoding=chinese
-endif
+" set fileencodings=utf-8,chinese
+" if has("win32") || has("win64")
+"     set fileencoding=chinese
 set autoindent
 set smartindent
 set tabstop=4        " tab width is 4 spaces
@@ -58,6 +57,10 @@ set laststatus=2
 set pastetoggle=<F2>
 set nolist
 syntax on
+" set fileformats="unix,dos,mac"
+" set formatoptions+=1            " When wrapping paragraphs, don't end lines
+" au InsertEnter * :let @/="" " Disable highlighted search on insert mode
+" au InsertLeave * :let @/="" " Enable it back                                "    with 1-letter words (looks stupid)
 "}}}
 
 "search" {{{
@@ -192,7 +195,7 @@ let Tlist_Use_Right_Window = 1
 
 
 "solarized colorschema config{{{
-let g:solarized_diffmode="low"
+let g:solarized_diffmode="high"
 "}}}
 
 " Ctlr-P {{{
@@ -341,7 +344,7 @@ function! MyFoldText()
 
     let line = strpart(line, 0, windowwidth - 2 -len(foldedlinecount))
     let fillcharcount = windowwidth - len(line) - len(foldedlinecount) - 4
-    return line . ' ¡­' . repeat(" ",fillcharcount) . foldedlinecount . ' '
+    return line . ' â€¦' . repeat(" ",fillcharcount) . foldedlinecount . ' '
 endfunction
 set foldtext=MyFoldText()
 
