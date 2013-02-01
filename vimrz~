@@ -31,10 +31,9 @@ syntax on
 nmap <leader>v <c-v>
 set fenc=utf-8
 set termencoding=utf-8
-set fileencodings=utf-8,chinese
-if has("win32") || has("win64")
-    set fileencoding=chinese
-endif
+" set fileencodings=utf-8,chinese
+" if has("win32") || has("win64")
+"     set fileencoding=chinese
 set autoindent
 set smartindent
 set tabstop=4        " tab width is 4 spaces
@@ -58,6 +57,10 @@ set laststatus=2
 set pastetoggle=<F2>
 set nolist
 syntax on
+" set fileformats="unix,dos,mac"
+" set formatoptions+=1            " When wrapping paragraphs, don't end lines
+" au InsertEnter * :let @/="" " Disable highlighted search on insert mode
+" au InsertLeave * :let @/="" " Enable it back                                "    with 1-letter words (looks stupid)
 "}}}
 
 "search" {{{
@@ -192,7 +195,7 @@ let Tlist_Use_Right_Window = 1
 
 
 "solarized colorschema config{{{
-let g:solarized_diffmode="low"
+let g:solarized_diffmode="high"
 "}}}
 
 " Ctlr-P {{{
@@ -307,217 +310,4 @@ inoremap <silent><C-j> <C-R>=OmniPopup('j')<CR>
 inoremap <silent><C-k> <C-R>=OmniPopup('k')<CR>
 "}}}
 
-" Settings for python-mode {{{
-" cd ~/.vim/bundle
-" git clone https://github.com/klen/python-mode
-map <Leader>g :call RopeGotoDefinition()<CR>
-let ropevim_enable_shortcuts = 1
-let g:pymode_rope_goto_def_newwin = "vnew"
-let g:pymode_rope_extended_complete = 1
-let g:pymode_breakpoint = 0
-let g:pymode_syntax = 1
-let g:pymode_syntax_builtin_objs = 0
-let g:pymode_syntax_builtin_funcs = 0
-" map <Leader>b Oimport ipdb; ipdb.set_trace() # BREAKPOINT<C-c>
-"}}}
-
-" Folding rules {{{
-set foldenable                  " enable folding
-set foldcolumn=2                " add a fold column
-set foldmethod=marker           " detect triple-{ style fold markers
-set foldlevelstart=99           " start out with everything folded
-set foldopen=block,hor,insert,jump,mark,percent,quickfix,search,tag,undo
-                                " which commands trigger auto-unfold
-function! MyFoldText()
-    let line = getline(v:foldstart)
-
-    let nucolwidth = &fdc + &number * &numberwidth
-    let windowwidth = winwidth(0) - nucolwidth - 3
-    let foldedlinecount = v:foldend - v:foldstart
-
-    " expand tabs into spaces
-    let onetab = strpart('          ', 0, &tabstop)
-    let line = substitute(line, '\t', onetab, 'g')
-
-    let line = strpart(line, 0, windowwidth - 2 -len(foldedlinecount))
-    let fillcharcount = windowwidth - len(line) - len(foldedlinecount) - 4
-    return line . ' бн' . repeat(" ",fillcharcount) . foldedlinecount . ' '
-endfunction
-set foldtext=MyFoldText()
-
-"c/c++/javascript/java fold method
-autocmd filetype c,cpp,javascript,java set foldmarker={,}
-
-nnoremap zO zCzO
-nnoremap <Space> za
-vnoremap <Space> za
-nnoremap ,z zMzv
-"}}}
-
-"configure for UltiSnips plugin {{{ 
-let g:UltiSnipsExpandTrigger="<tab>"
-let g:UltiSnipsJumpForwardTrigger="<tab>"
-let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
-"}}}
-
-"auto reload vimrc configuration {{{
-au BufWritePost .vimrc so ~/.vimrc
-nmap <leader>vv :tabedit $MYVIMRC<CR>
-"}}}
-
-
-"config clang_complete library {{{
-" g:clang_user_options set at vimprj section
-au FileType cpp,objcpp set syntax=cpp11
-au BufNewFile,BufRead *
-\ if expand('%:e') =~ '^\(h\|hh\|hxx\|hpp\|ii\|ixx\|ipp\|inl\|txx\|tpp\|tpl\|cc\|cxx\|cpp\)$' |
-\   if &ft != 'cpp'                                                                           |
-\     set ft=cpp                                                                              |
-\   endif                                                                                     |
-\ endif   
-
-let g:clang_use_library=1
-let g:clang_complete_copen=1
-let g:clang_complete_macros=1
-let g:clang_complete_patterns=0
-" Avoids lame path cache generation and other unknown sources for includes 
-let g:clang_auto_user_options=''
-let g:clang_memory_percent=70
-
-
-set conceallevel=2
-set concealcursor=vin
-let g:clang_snippets=1
-let g:clang_conceal_snippets=1
-" The single one that works with clang_complete
-let g:clang_snippets_engine='clang_complete'
-
-" Complete options (disable preview scratch window, longest removed to aways
-" show menu)
-set completeopt=menu,menuone
-
-" Limit popup menu height
-set pumheight=20
-
-" SuperTab completion fall-back 
-let g:SuperTabDefaultCompletionType='<c-x><c-u><c-p>'
-"}}}
-
-
-
-"keymaps for c/c++ development{{{
-" Reparse the current translation unit in background
-command! Parse  call g:ClangBackgroundParse()  
-" Reparse the current translation unit and check for errors
-command! ClangCheck call g:ClangUpdateQuickFix()  
-
-" Set the most common used run command
-if has('win32') || has('win64') || has('os2')
-    let g:common_run_command='$(FILE_TITLE)$'
-else
-    let g:common_run_command='./$(FILE_TITLE)$'
-endif
- 
-" SingleCompile for C++ with Clang
-function! s:LoadSingleCompileOptions()
-    call SingleCompile#SetCompilerTemplate('c', 
-                \'clang', 
-                \'the Clang C and Objective-C compiler', 
-                \'clang', 
-                \'-o $(FILE_TITLE)$ ' . g:single_compile_options, 
-                \g:common_run_command)
- 
-    call SingleCompile#ChooseCompiler('c', 'clang')
- 
-    call SingleCompile#SetCompilerTemplate('cpp', 
-                \'clang', 
-                \'the Clang C and Objective-C compiler', 
-                \'clang++', 
-                \'-o $(FILE_TITLE)$ ' . g:single_compile_options, 
-                \g:common_run_command)
-    call SingleCompile#ChooseCompiler('cpp', 'clang')
-endfunction
-
-noremap  <silent> <F7> :Parse<cr>
-noremap  <silent> <F8> :ClangCheck<cr>
-noremap  <silent> <F9> :SCCompile<cr>
-noremap  <silent> <F10> :SCCompileRun<cr>
-noremap! <silent> <F7> <c-o>:Parse<cr>
-noremap! <silent> <F8> <c-o>:ClangCheck<cr>
-noremap! <silent> <F9> <c-o>:SCCompile<cr>
-noremap! <silent> <F10> <c-o>:SCCompileRun<cr>
-"}}}
-
-"Config for SimpleCompile plugin {{{
-" SingleCompile for C++ with Clang
-" vimprj configuration
-au BufNewFile,BufRead *.vimprj set ft=vim
-
- 
-" Initialize vimprj plugin
-call vimprj#init()
- 
-" vimprj hooks
- 
-" Called BEFORE sourcing .vimprj and when not sourcing
-function! g:vimprj#dHooks['SetDefaultOptions']['main_options'](dParams)
-    let g:vimprj_dir = substitute(a:dParams['sVimprjDirName'], '[/\\]\.vimprj$', '', '')
-    if &ft == 'c' || &ft == 'cpp'  
-        let g:clang_user_options = ''
-        if &ft == 'cpp'
-            let g:clang_user_options = '-std=c++11 -stdlib=libc++ '
-        endif
-        let g:single_compile_options = '-O3 ' . g:clang_user_options
-    endif
-endfunction
- 
-" Called AFTER sourcing .vimprj and when not sourcing
-function! g:vimprj#dHooks['OnAfterSourcingVimprj']['main_options'](dParams)
-    unlet g:vimprj_dir
-    if &ft == 'c' || &ft == 'cpp'  
-      call g:ClangBackgroundParse()
-      call s:LoadSingleCompileOptions()
-    endif                          
-endfunction
-"}}}
-
-
-"config for neocomplcache{{{
-" use neocomplcache & clang_complete
-
-" add neocomplcache option
-let g:neocomplcache_force_overwrite_completefunc=1
-
-" add clang_complete option
-let g:clang_complete_auto=1
-" Disable AutoComplPop. Comment out this line if AutoComplPop is not installed.
-let g:acp_enableAtStartup = 0
-" Launches neocomplcache automatically on vim startup.
-let g:neocomplcache_enable_at_startup = 1
-" Use smartcase.
-let g:neocomplcache_enable_smart_case = 1
-" Use camel case completion.
-let g:neocomplcache_enable_camel_case_completion = 1
-" Use underscore completion.
-let g:neocomplcache_enable_underbar_completion = 1
-" Sets minimum char length of syntax keyword.
-let g:neocomplcache_min_syntax_length = 3
-"}}}
-
-"some abbreviates for myself {{{
-abbreviate zl zilongshanren
-"}}}
-
-" tab navigation like firefox{{{
-nnoremap <leader><tab> :tabnext<CR>
-nnoremap <C-t>     :tabnew<CR>
-inoremap <leader><tab>   <Esc>:tabnext<CR>i
-inoremap <C-t>     <Esc> :tabnew<CR>
-"}}}
-
-"configs for vimwiki"{{{
-nmap <leader>5 :VimwikiAll2HTML<cr>
-let g:vimwiki_list = [{'path': '/Users/andyque/workspace/myblog/octopress/source/vimwiki/',  
-  \ 'path_html': '/Users/andyque/workspace/myblog/octopress/source/vimwiki_html/'}]
-"}}}
-
+" 
