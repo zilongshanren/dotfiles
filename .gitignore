@@ -3,5 +3,3 @@
 .DS_store
 view/
 *.swp
-bundle/SingleCompile/doc/tags
-bundle/ZoomWin/doc/tags
