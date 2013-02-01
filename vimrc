@@ -184,7 +184,7 @@ if has('gui_running')
     set background=dark
     colorscheme solarized
 else
-    colorscheme wombat256 
+    colorscheme wombat
 endif
 "}}}
 
