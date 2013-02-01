@@ -483,10 +483,6 @@ function! g:vimprj#dHooks['OnAfterSourcingVimprj']['main_options'](dParams)
 endfunction
 "}}}
 
-"config for rainbow plugin{{{
-let g:rainbow_operators = 2 
-au FileType c,cpp,objc,objcpp call rainbow#activate()
-"}}}
 
 "config for neocomplcache{{{
 " use neocomplcache & clang_complete
@@ -508,13 +504,6 @@ let g:neocomplcache_enable_camel_case_completion = 1
 let g:neocomplcache_enable_underbar_completion = 1
 " Sets minimum char length of syntax keyword.
 let g:neocomplcache_min_syntax_length = 3
-"}}}
-"configs for TagHighlightSettings{{{
-if ! exists('g:TagHighlightSettings')
-        let g:TagHighlightSettings = {}
-endif
-let g:TagHighlightSettings['ForcedPythonVariant'] = 'if_pyth'
-let g:TagHighlightSettings['CtagsExecutable'] = 'ctags'
 "}}}
 
 "some abbreviates for myself {{{
