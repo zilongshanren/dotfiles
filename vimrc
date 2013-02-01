@@ -31,6 +31,9 @@ syntax on
 nmap <leader>v <c-v>
 set fenc=utf-8
 set termencoding=utf-8
+set fileencodings=utf-8,chinese
+if has("win32") || has("win64")
+    set fileencoding=chinese
 set autoindent
 set smartindent
 set tabstop=4        " tab width is 4 spaces
