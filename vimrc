@@ -6,11 +6,6 @@ set nocompatible
 filetype on
 runtime macros/matchit.vim
 runtime ftplugin/man.vim
-if has("win32") || has("win64")
-    source $VIMRUNTIME/vimrc_example.vim
-    source $VIMRUNTIME/mswin.vim
-    behave mswin
-endif
 "}}}
 
 
@@ -37,6 +32,7 @@ nmap <leader>v <c-v>
 set fenc=utf-8
 set termencoding=utf-8
 set fileencodings=utf-8,chinese
+set encoding=utf-8  "if not set, the powerline plugins won't work 
 if has("win32") || has("win64")
     set fileencoding=chinese
 endif
@@ -284,7 +280,24 @@ autocmd! bufread  *.* :cd %:p:h
 " add cpp11 syntax support {{{
 let g:syntastic_cpp_compiler_options = ' -std=c++11'
 "run cpp11 code"
+if !has("win32")
 nmap <leader>rr :<C-U>!clang++ -std=c++11 -stdlib=libc++ -nostdinc++ -I/usr/local/src/llvm/tools/libcxx/include -L/usr/local/src/llvm/tools/libcxx/lib -o %:r % && ./%:r <cr>
+endif
+
+if has("win32") || has("win64")
+nmap <leader>rr :<C-U>!clang++ -std=c++11 -stdlib=libc++ -nostdinc++
+            \ -IC:/MinGW/include
+            \ -IC:/MinGW/lib
+            \ -IC:/MinGW/lib/gcc/mingw32/4.6.2/include/c++
+            \ -IC:/MinGW/lib/gcc/mingw32/4.6.2/include/c++/mingw32
+            \ -o %:r % && %:r <cr>
+endif
+
+if has("win32") || has("win64")
+    " fix cygwin shell redirection
+    set shellredir=>\"%s\"\ 2>&1
+endif    
+
 "}}}
 
 "add octrpress publish blog key mappings {{{
@@ -344,7 +357,7 @@ function! MyFoldText()
 
     let line = strpart(line, 0, windowwidth - 2 -len(foldedlinecount))
     let fillcharcount = windowwidth - len(line) - len(foldedlinecount) - 4
-    return line . ' ¡­' . repeat(" ",fillcharcount) . foldedlinecount . ' '
+    return line . ' â€¦' . repeat(" ",fillcharcount) . foldedlinecount . ' '
 endfunction
 set foldtext=MyFoldText()
 
