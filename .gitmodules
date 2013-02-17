@@ -26,6 +26,7 @@
 [submodule "bundle/AutoClose"]
 	path = bundle/AutoClose
 	url = git://github.com/vim-scripts/AutoClose.git
+    ignore = dirty
 [submodule "bundle/checksyntax_vim"]
 	path = bundle/checksyntax_vim
 	url = git://github.com/tomtom/checksyntax_vim.git
@@ -109,6 +110,7 @@
 [submodule "bundle/python-mode"]
 	path = bundle/python-mode
 	url = git://github.com/klen/python-mode.git
+    ignore = dirty
 [submodule "bundle/vim-powerline"]
 	path = bundle/vim-powerline
 	url = git://github.com/Lokaltog/vim-powerline.git
@@ -141,6 +143,7 @@
 [submodule "bundle/clangComplete"]
 	path = bundle/clangComplete
 	url = git://github.com/oblitum/clang_complete.git
+    ignore = dirty
 [submodule "bundle/bufkill"]
 	path = bundle/bufkill
 	url = git://github.com/oblitum/bufkill.git
