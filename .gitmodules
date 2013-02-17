@@ -12,9 +12,11 @@
 [submodule "bundle/vim-colors-solarized"]
 	path = bundle/vim-colors-solarized
 	url = git://github.com/altercation/vim-colors-solarized.git
+    ignore = dirty
 [submodule "bundle/ZoomWin"]
 	path = bundle/ZoomWin
 	url = git://github.com/vim-scripts/ZoomWin.git
+    ignore = dirty
 [submodule "bundle/ctrlp"]
 	path = bundle/ctrlp
 	url = git://github.com/kien/ctrlp.vim.git
@@ -42,6 +44,7 @@
 [submodule "bundle/vim-lua-ftplugin"]
 	path = bundle/vim-lua-ftplugin
 	url = git://github.com/xolox/vim-lua-ftplugin.git
+    ignore = dirty
 [submodule "bundle/vim-projtags"]
 	path = bundle/vim-projtags
 	url = git://github.com/vim-scripts/projtags.vim.git
@@ -75,21 +78,25 @@
 [submodule "bundle/vim-textobj-lastpat"]
 	path = bundle/vim-textobj-lastpat
 	url = git://github.com/kana/vim-textobj-lastpat.git
+    ignore = dirty
 [submodule "bundle/vim-textobj-user"]
 	path = bundle/vim-textobj-user
 	url = git://github.com/kana/vim-textobj-user.git
+    ignore = dirty
 [submodule "bundle/vim-eunuch"]
 	path = bundle/vim-eunuch
 	url = git://github.com/tpope/vim-eunuch.git
 [submodule "bundle/vim-textobj-line"]
 	path = bundle/vim-textobj-line
 	url = git://github.com/kana/vim-textobj-line.git
+    ignore = dirty
 [submodule "bundle/vim-visual-star-search"]
 	path = bundle/vim-visual-star-search
 	url = git://github.com/nelstrom/vim-visual-star-search.git
 [submodule "bundle/vim-textobj-indent"]
 	path = bundle/vim-textobj-indent
 	url = git://github.com/kana/vim-textobj-indent.git
+    ignore = dirty
 [submodule "bundle/vim-abolish"]
 	path = bundle/vim-abolish
 	url = git://github.com/tpope/vim-abolish.git
@@ -120,6 +127,7 @@
 [submodule "bundle/buferexplorer"]
 	path = bundle/buferexplorer
 	url = git://github.com/vim-scripts/bufexplorer.zip.git
+    ignore = dirty
 [submodule "bundle/dfrank_util"]
 	path = bundle/dfrank_util
 	url = git://github.com/oblitum/dfrank_util.git
@@ -129,15 +137,13 @@
 [submodule "bundle/SingleCompile"]
 	path = bundle/SingleCompile
 	url = git://github.com/xuhdev/SingleCompile.git
+    ignore = dirty
 [submodule "bundle/clangComplete"]
 	path = bundle/clangComplete
 	url = git://github.com/oblitum/clang_complete.git
 [submodule "bundle/bufkill"]
 	path = bundle/bufkill
 	url = git://github.com/oblitum/bufkill.git
-[submodule "bundle/rainbow"]
-	path = bundle/rainbow
-	url = git://github.com/oblitum/rainbow.git
 [submodule "bundle/neocomplcache"]
 	path = bundle/neocomplcache
 	url = git://github.com/Shougo/neocomplcache.git
@@ -147,12 +153,10 @@
 [submodule "bundle/syntaxHighlighting"]
 	path = bundle/syntaxHighlighting
 	url = git@github.com:andyque/cSyntaxAfter.git
-[submodule "bundle/TagHighlight"]
-	path = bundle/TagHighlight
-	url = https://github.com/Lokaltog/TagHighlight.git
 [submodule "bundle/vimwiki"]
 	path = bundle/vimwiki
 	url = https://github.com/vim-scripts/vimwiki.git
+    ignore = dirty
 [submodule "bundle/calendar"]
 	path = bundle/calendar
 	url = https://github.com/vim-scripts/calendar.vim--Matsumoto.git
