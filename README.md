@@ -25,4 +25,4 @@ This repo is inspired by this blog post:
     if you want to use the full power of these vim plugins, you should install python,ruby ctags,jsctags
 
 ##if you want to update all submodules, you can
-    git submodule foreach git pull orign master
+    git submodule foreach git pull origin master

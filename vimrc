@@ -10,6 +10,7 @@ runtime ftplugin/man.vim
 
 
 "--vim-pathogen {{{
+filetype plugin indent on
 filetype plugin on
 call pathogen#infect()
 call pathogen#helptags()
@@ -28,14 +29,17 @@ let mapleader=','
 "map visual mode vertical selectoin"
 syntax on
 nmap <leader>v <c-v>
-filetype plugin indent on
 set fenc=utf-8
 set termencoding=utf-8
+set fileencodings=utf-8,chinese
+set encoding=utf-8  "if not set, the powerline plugins won't work 
+if has("win32") || has("win64")
+    set fileencoding=chinese
+endif
 set autoindent
 set smartindent
 set tabstop=4        " tab width is 4 spaces
 set shiftwidth=4     " indent also with 4 spaces
-set softtabstop=4
 set expandtab        " expand tabs to spaces
 set textwidth=300
 set t_Co=256
@@ -54,11 +58,7 @@ map Y y$
 set laststatus=2
 set pastetoggle=<F2>
 set nolist
-set fileformats="unix,dos,mac"
-set formatoptions+=1 
-
-" au InsertEnter * :let @/="" " Disable highlighted search on insert mode
-" au InsertLeave * :let @/="" " Enable it back                                "    with 1-letter words (looks stupid)
+syntax on
 "}}}
 
 "search" {{{
@@ -183,7 +183,7 @@ if has('gui_running')
     set background=dark
     colorscheme solarized
 else
-    colorscheme wombat256 
+    colorscheme wombat
 endif
 "}}}
 
@@ -193,7 +193,7 @@ let Tlist_Use_Right_Window = 1
 
 
 "solarized colorschema config{{{
-let g:solarized_diffmode="high"
+let g:solarized_diffmode="low"
 "}}}
 
 " Ctlr-P {{{
@@ -209,12 +209,10 @@ set wildignore+=*.o
 
 
 "Configuration for tabular plugin {{{
-if exists(":Tabularize")
-  nmap <Leader>= :Tabularize /=<CR>
-  vmap <Leader>= :Tabularize /=<CR>
-  nmap <Leader>; :Tabularize /:<CR>
-  vmap <Leader>; :Tabularize /:<CR>
-endif
+nmap <Leader>= :Tabularize /=<CR>
+vmap <Leader>= :Tabularize /=<CR>
+nmap <Leader>: :Tabularize /:<CR>
+vmap <Leader>: :Tabularize /:<CR>
 "}}}
 
 "english spell check {{{
@@ -282,7 +280,24 @@ autocmd! bufread  *.* :cd %:p:h
 " add cpp11 syntax support {{{
 let g:syntastic_cpp_compiler_options = ' -std=c++11'
 "run cpp11 code"
+if !has("win32")
 nmap <leader>rr :<C-U>!clang++ -std=c++11 -stdlib=libc++ -nostdinc++ -I/usr/local/src/llvm/tools/libcxx/include -L/usr/local/src/llvm/tools/libcxx/lib -o %:r % && ./%:r <cr>
+endif
+
+if has("win32") || has("win64")
+nmap <leader>rr :<C-U>!clang++ -std=c++11 -stdlib=libc++ -nostdinc++
+            \ -IC:/MinGW/include
+            \ -IC:/MinGW/lib
+            \ -IC:/MinGW/lib/gcc/mingw32/4.6.2/include/c++
+            \ -IC:/MinGW/lib/gcc/mingw32/4.6.2/include/c++/mingw32
+            \ -o %:r % && %:r <cr>
+endif
+
+if has("win32") || has("win64")
+    " fix cygwin shell redirection
+    set shellredir=>\"%s\"\ 2>&1
+endif    
+
 "}}}
 
 "add octrpress publish blog key mappings {{{
@@ -385,6 +400,10 @@ let g:clang_complete_patterns=0
 let g:clang_auto_user_options=''
 let g:clang_memory_percent=70
 
+if has("win32") || has("win64")
+let g:clang_library_path="c:"
+endif
+
 
 set conceallevel=2
 set concealcursor=vin
@@ -482,10 +501,6 @@ function! g:vimprj#dHooks['OnAfterSourcingVimprj']['main_options'](dParams)
 endfunction
 "}}}
 
-"config for rainbow plugin{{{
-let g:rainbow_operators = 2 
-au FileType c,cpp,objc,objcpp call rainbow#activate()
-"}}}
 
 "config for neocomplcache{{{
 " use neocomplcache & clang_complete
@@ -507,13 +522,6 @@ let g:neocomplcache_enable_camel_case_completion = 1
 let g:neocomplcache_enable_underbar_completion = 1
 " Sets minimum char length of syntax keyword.
 let g:neocomplcache_min_syntax_length = 3
-"}}}
-"configs for TagHighlightSettings{{{
-if ! exists('g:TagHighlightSettings')
-        let g:TagHighlightSettings = {}
-endif
-let g:TagHighlightSettings['ForcedPythonVariant'] = 'if_pyth'
-let g:TagHighlightSettings['CtagsExecutable'] = 'ctags'
 "}}}
 
 "some abbreviates for myself {{{
