@@ -1,0 +1,2 @@
+nnoremap ,a :nc
+inoremap ,a :nc
