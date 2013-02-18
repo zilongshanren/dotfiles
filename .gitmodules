@@ -169,3 +169,6 @@
 [submodule "bundle/textobj-word-column"]
 	path = bundle/textobj-word-column
 	url = https://github.com/coderifous/textobj-word-column.vim.git
+[submodule "bundle/vim-octopress"]
+	path = bundle/vim-octopress
+	url = https://github.com/tangledhelix/vim-octopress.git
