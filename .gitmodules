@@ -172,3 +172,4 @@
 [submodule "bundle/vim-octopress"]
 	path = bundle/vim-octopress
 	url = https://github.com/tangledhelix/vim-octopress.git
+    ignore = dirty
