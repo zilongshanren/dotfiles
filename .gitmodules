@@ -173,3 +173,6 @@
 	path = bundle/vim-octopress
 	url = https://github.com/tangledhelix/vim-octopress.git
     ignore = dirty
+[submodule "bundle/hardmode"]
+	path = bundle/hardmode
+	url = https://github.com/wikitopian/hardmode.git
