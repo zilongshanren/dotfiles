@@ -176,3 +176,4 @@
 [submodule "bundle/hardmode"]
 	path = bundle/hardmode
 	url = https://github.com/wikitopian/hardmode.git
+    ignore = dirty
