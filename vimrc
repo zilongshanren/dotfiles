@@ -541,3 +541,7 @@ let g:vimwiki_list = [{'path': '/Users/andyque/workspace/myblog/octopress/source
   \ 'path_html': '/Users/andyque/workspace/myblog/octopress/source/vimwiki_html/'}]
 "}}}
 
+"keymaping for HardMode plugin {{{
+autocmd VimEnter,BufNewFile,BufReadPost * silent! call HardMode()
+nnoremap <leader><leader>h <Esc>:call ToggleHardMode()<CR>
+"}}}
