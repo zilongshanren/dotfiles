@@ -173,3 +173,6 @@
 	path = bundle/hardmode
 	url = https://github.com/wikitopian/hardmode.git
     ignore = dirty
+[submodule "bundle/delimitMate"]
+	path = bundle/delimitMate
+	url = https://github.com/Raimondi/delimitMate.git
