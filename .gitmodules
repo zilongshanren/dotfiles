@@ -23,10 +23,6 @@
 [submodule "bundle/NrrwRgn"]
 	path = bundle/NrrwRgn
 	url = git://github.com/chrisbra/NrrwRgn.git
-[submodule "bundle/AutoClose"]
-	path = bundle/AutoClose
-	url = git://github.com/vim-scripts/AutoClose.git
-    ignore = dirty
 [submodule "bundle/checksyntax_vim"]
 	path = bundle/checksyntax_vim
 	url = git://github.com/tomtom/checksyntax_vim.git
