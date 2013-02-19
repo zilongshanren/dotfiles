@@ -183,7 +183,7 @@ if has('gui_running')
     set background=dark
     colorscheme solarized
 else
-    colorscheme wombat
+    colorscheme wombat256
 endif
 "}}}
 
@@ -544,4 +544,9 @@ let g:vimwiki_list = [{'path': '/Users/andyque/workspace/myblog/octopress/source
 "keymaping for HardMode plugin {{{
 autocmd VimEnter,BufNewFile,BufReadPost * silent! call HardMode()
 nnoremap <leader><leader>h <Esc>:call ToggleHardMode()<CR>
+"}}}
+
+"emacs keymaping for insert mode cursor movement{{{
+inoremap <c-a> <esc>I
+inoremap <c-e> <esc>A
 "}}}
