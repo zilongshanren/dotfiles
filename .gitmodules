@@ -179,3 +179,6 @@
 [submodule "bundle/LaTeX-Box"]
 	path = bundle/LaTeX-Box
 	url = https://github.com/LaTeX-Box-Team/LaTeX-Box.git
+[submodule "bundle/vim-blackboard"]
+	path = bundle/vim-blackboard
+	url = https://github.com/nelstrom/vim-blackboard.git
