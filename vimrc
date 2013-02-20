@@ -145,8 +145,8 @@ nnoremap <leader>b <C-o>
 
 
 "automatically save foldings in vim{{{
-au BufWinLeave * silent! mkview
-au BufWinEnter * silent! loadview
+" au BufWinLeave * silent! mkview
+" au BufWinEnter * silent! loadview
 "}}}
 
 "map markdown to html {{{
@@ -183,7 +183,7 @@ if has('gui_running')
     set background=dark
     colorscheme solarized
 else
-    colorscheme wombat256
+    colorscheme blackboard
 endif
 "}}}
 
