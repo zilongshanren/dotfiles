@@ -178,13 +178,7 @@ let g:syntastic_check_on_open=1
 
 "set colorscheme {{{
 syntax enable
-if has('gui_running')
-
-    set background=dark
-    colorscheme solarized
-else
-    colorscheme blackboard
-endif
+colorscheme blackboard
 "}}}
 
 "config tagbar plugin {{{
@@ -557,4 +551,10 @@ inoremap <C-d> <Esc>lxi
 "delimitMate mappings{{{
 let delimitMate_matchpairs = "(:),[:],{:},<:>"
 au FileType cpp let b:delimitMate_matchpairs = "(:),[:],{:}"
+"}}}
+
+"mappings for latex-box plugin{{{
+map <silent> <Leader>ls :silent !/Applications/Skim.app/Contents/SharedSupport/displayline
+            \ <C-R>=line('.')<CR> "<C-R>=LatexBox_GetOutputFile()<CR>" "%:p" <CR>
+autocmd filetype tex nnoremap F10 :!latexmk -pdf % 
 "}}}
