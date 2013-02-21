@@ -182,3 +182,6 @@
 [submodule "bundle/vim-blackboard"]
 	path = bundle/vim-blackboard
 	url = https://github.com/nelstrom/vim-blackboard.git
+[submodule "bundle/Ack"]
+	path = bundle/Ack
+	url = https://github.com/mileszs/ack.vim
