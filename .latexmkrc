@@ -1,0 +1,1 @@
+$pdflatex = 'xelatex %O %S'
