@@ -26,3 +26,5 @@ git submodule update
 echo "remove lua-ftplugin to prevent doc error msg"
 
 rm bundle/vim-lua-ftplugin/doc/lua-ftplugin.txt
+
+git submodule foreach git pull origin master
