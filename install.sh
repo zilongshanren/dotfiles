@@ -7,8 +7,16 @@ cd ~/.vim
 
 
 echo "create .vimrc"
+rm ~/.vimrc
+rm ~/.gvimrc
 ln -s ~/.vim/vimrc ~/.vimrc
 ln -s ~/.vim/vimrc ~/.gvimrc
+rm ~/.gitconfig
+rm ~/.latexmkrc
+rm ~/.zshrc
+ln -s ~/.vim/.gitconfig ~/.gitconfig
+ln -s ~/.vim/.latexmkrc ~/.latexmkrc
+ln -s ~/.vim/.zshrc ~/.zshrc
 
 
 echo "update submodules"
