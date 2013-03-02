@@ -27,7 +27,6 @@ let mapleader=','
 
 "some common configs {{{
 "map visual mode vertical selectoin"
-syntax on
 nmap <leader>v <c-v>
 set fenc=utf-8
 set termencoding=utf-8
