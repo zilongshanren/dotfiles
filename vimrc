@@ -557,3 +557,7 @@ map <silent> <Leader>ls :silent !/Applications/Skim.app/Contents/SharedSupport/d
             \ <C-R>=line('.')<CR> "<C-R>=LatexBox_GetOutputFile()<CR>" "%:p" <CR>
 autocmd filetype tex nnoremap F10 :!latexmk -pdf % 
 "}}}
+
+"Some convenient configuration for c-style languages {{{
+inoremap { {<CR>}<ESC>O
+"}}}
