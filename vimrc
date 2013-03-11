@@ -558,6 +558,3 @@ map <silent> <Leader>ls :silent !/Applications/Skim.app/Contents/SharedSupport/d
 autocmd filetype tex nnoremap F10 :!latexmk -pdf % 
 "}}}
 
-"Some convenient configuration for c-style languages {{{
-inoremap { {<CR>}<ESC>O
-"}}}
