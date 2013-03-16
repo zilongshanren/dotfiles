@@ -121,7 +121,7 @@ let g:buffergator_suppress_keymaps = 1
 nmap <silent>,o :ZoomWin <cr>
 
 "config for BufferNavigator"
-nmap <leader>bf :BuffergatorToggle<cr>
+nmap <leader>bf :BufExplorer<cr>
 "}}}
 
 "nerdTree plugin config {{{
