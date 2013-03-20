@@ -38,6 +38,7 @@ endif
 set autoindent
 set tabstop=4        " tab width is 4 spaces
 set shiftwidth=4     " indent also with 4 spaces
+set softtabstop=4
 set expandtab
 set textwidth=300
 set t_Co=256
@@ -564,3 +565,18 @@ map <silent> <Leader>ls :silent !/Applications/Skim.app/Contents/SharedSupport/d
 autocmd filetype tex nnoremap F10 :!latexmk -pdf % 
 "}}}
 
+"some keymapings for tidying your whitespace{{{
+function! Preserve(command)
+  " Preparation: save last search, and cursor position.
+  let _s=@/
+  let l = line(".")
+  let c = col(".")
+  " Do the business:
+  execute a:command
+  " Clean up: restore previous search history, and cursor position
+  let @/=_s
+  call cursor(l, c)
+endfunction
+nmap _$ :call Preserve("%s/\\s\\+$//e")<CR>
+nmap _= :call Preserve("normal gg=G")<CR>
+"}}}
