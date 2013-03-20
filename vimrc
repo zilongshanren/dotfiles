@@ -36,18 +36,17 @@ if has("win32") || has("win64")
     set fileencoding=chinese
 endif
 set autoindent
-set smartindent
 set tabstop=4        " tab width is 4 spaces
 set shiftwidth=4     " indent also with 4 spaces
-set expandtab        " expand tabs to spaces
+set expandtab
 set textwidth=300
 set t_Co=256
 set number
 set hidden
 set showmatch
 set comments=sl:/*,mb:\ *,elx:\ */
-set wildmode=longest:full
-set wildmenu
+" Use the same symbols as TextMate for tabstops and EOLs
+set listchars=tab:▸\ ,eol:¬
 set autoread
 set title
 set matchpairs+=<:>
@@ -59,6 +58,13 @@ set pastetoggle=<F2>
 set nolist
 syntax on
 "}}}
+
+"Tab-completion in command-line mode{{{
+set wildmenu
+set wildmode=longest:full
+set wildignore=*.pdf
+"}}}
+
 
 "search" {{{
 set incsearch
