@@ -264,8 +264,8 @@ nnoremap <leader>9   :call GenerateJsTags() <cr>
 "}}}
 
 " Always change to directory of the buffer currently in focus {{{
-autocmd! bufenter *.* :cd %:p:h
-autocmd! bufread  *.* :cd %:p:h
+" autocmd! bufenter *.* :cd %:p:h
+" autocmd! bufread  *.* :cd %:p:h
 "}}}
 
 
@@ -535,7 +535,7 @@ let g:vimwiki_list = [{'path': '/Users/andyque/workspace/myblog/octopress/source
 "}}}
 
 "keymaping for HardMode plugin {{{
-autocmd VimEnter,BufNewFile,BufReadPost * silent! call HardMode()
+" autocmd VimEnter,BufNewFile,BufReadPost * silent! call HardMode()
 nnoremap <leader>ha <Esc>:call ToggleHardMode()<CR>
 "}}}
 
