@@ -185,6 +185,9 @@ let g:syntastic_check_on_open=1
 "set colorscheme {{{
 syntax enable
 colorscheme blackboard
+if has("gui_running")
+    colorscheme solarized
+endif
 "}}}
 
 "config tagbar plugin {{{
