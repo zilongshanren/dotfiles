@@ -14,9 +14,11 @@ ln -s ~/.vim/vimrc ~/.gvimrc
 rm ~/.gitconfig
 rm ~/.latexmkrc
 rm ~/.zshrc
+rm ~/.tmux.conf
 ln -s ~/.vim/.gitconfig ~/.gitconfig
 ln -s ~/.vim/.latexmkrc ~/.latexmkrc
 ln -s ~/.vim/.zshrc ~/.zshrc
+ln -s ~/.vim/.tmux.conf ~/.tmux.conf
 
 
 echo "update submodules"
