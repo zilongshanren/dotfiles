@@ -66,7 +66,7 @@
 	url = git://github.com/godlygeek/tabular.git
 [submodule "tags"]
 	path = tags
-	url = git@github.com:andyque/Cocos2DTags.git
+	url = git://github.com/andyque/Cocos2DTags.git
 [submodule "bundle/gundo"]
 	path = bundle/gundo
 	url = git://github.com/sjl/gundo.vim.git
@@ -152,7 +152,7 @@
 	url = git://github.com/osyo-manga/neocomplcache-clang_complete.git
 [submodule "bundle/syntaxHighlighting"]
 	path = bundle/syntaxHighlighting
-	url = git@github.com:andyque/cSyntaxAfter.git
+	url = git://github.com/andyque/cSyntaxAfter.git
 [submodule "bundle/vimwiki"]
 	path = bundle/vimwiki
 	url = https://github.com/vim-scripts/vimwiki.git
