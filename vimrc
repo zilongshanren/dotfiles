@@ -201,12 +201,15 @@ let g:solarized_diffmode="low"
 
 " Ctlr-P {{{
 nmap <leader>p :CtrlP <cr>
-let g:ctrlp_jump_to_buffer    = 0
-let g:ctrlp_working_path_mode = 0
-let g:ctrlp_max_height        = 30
+let g:ctrlp_open_multiple_files = 'v'
+
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip
+let g:ctrlp_custom_ignore = {
+  \ 'dir':  '\v[\/]\.(git)$',
+  \ 'file': '\v\.(log|jpg|png|jpeg)$',
+  \ }
 set wildignore+=*.pyc
 set wildignore+=*_build/*
-set wildignore+=*/coverage/*
 set wildignore+=*.o
 "}}}
 

@@ -73,9 +73,9 @@ ZSH_THEME_GIT_PROMPT_CLEAN=""
 plugins=(git)
 
 source $ZSH/oh-my-zsh.sh
-export ANDROID_NDK_ROOT=~/Android/android-ndk-r7c
+export ANDROID_NDK_ROOT=~/Android/android-ndk-r8e
 export COCOS2DX_ROOT=~/OpenSourceGitRepository/cocos2d-x
-export NDK_ROOT=~/Android/android-ndk-r7c                             
+export NDK_ROOT=~/Android/android-ndk-r8e
 export ANDROID_SDK_ROOT=~/Android/android-sdk-macosx/
 export PATH=$PATH:$ANDROID_NDK_ROOT
 
