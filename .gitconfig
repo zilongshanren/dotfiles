@@ -12,6 +12,7 @@
     ci = commit -a -v
     throw = reset --hard HEAD
     throwh = reset --hard HEAD^
+    clr = clean -f -d
 [color]
     ui = true
 [core]
