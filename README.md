@@ -1,7 +1,7 @@
 This repo is inspired by this blog post:
     http://vimcasts.org/episodes/synchronizing-plugins-with-git-submodules-and-pathogen/
 
-#Installed with:
+#Install with:
 
     git clone https://github.com/andyque/dotvim.git ~/.vim
 
