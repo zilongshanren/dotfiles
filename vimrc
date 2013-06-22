@@ -437,13 +437,9 @@ noremap! <silent> <F10> <c-o>:SCCompileRun<cr>
 
 
 "config for neocomplcache{{{
-" use neocomplcache & clang_complete
-
 " add neocomplcache option
 let g:neocomplcache_force_overwrite_completefunc=1
 
-" add clang_complete option
-let g:clang_complete_auto=1
 " Disable AutoComplPop. Comment out this line if AutoComplPop is not installed.
 let g:acp_enableAtStartup = 0
 " Launches neocomplcache automatically on vim startup.
