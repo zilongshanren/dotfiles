@@ -137,10 +137,6 @@
 	path = bundle/SingleCompile
 	url = git://github.com/xuhdev/SingleCompile.git
     ignore = dirty
-[submodule "bundle/clangComplete"]
-	path = bundle/clangComplete
-	url = git://github.com/oblitum/clang_complete.git
-    ignore = dirty
 [submodule "bundle/bufkill"]
 	path = bundle/bufkill
 	url = git://github.com/oblitum/bufkill.git
