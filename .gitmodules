@@ -137,9 +137,6 @@
 [submodule "bundle/neocomplcache"]
 	path = bundle/neocomplcache
 	url = git://github.com/Shougo/neocomplcache.git
-[submodule "bundle/neocomplcache-clang_complete"]
-	path = bundle/neocomplcache-clang_complete
-	url = git://github.com/osyo-manga/neocomplcache-clang_complete.git
 [submodule "bundle/syntaxHighlighting"]
 	path = bundle/syntaxHighlighting
 	url = git://github.com/andyque/cSyntaxAfter.git
