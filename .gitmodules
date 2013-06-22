@@ -127,9 +127,6 @@
 	path = bundle/buferexplorer
 	url = git://github.com/vim-scripts/bufexplorer.zip.git
     ignore = dirty
-[submodule "bundle/vimprj"]
-	path = bundle/vimprj
-	url = git://github.com/oblitum/vimprj.git
 [submodule "bundle/SingleCompile"]
 	path = bundle/SingleCompile
 	url = git://github.com/xuhdev/SingleCompile.git
