@@ -5,6 +5,7 @@
 	keepBackup = true
 [alias]
 	cm = commit
+    cl = clone
 	br = branch
     st = status
     co = checkout

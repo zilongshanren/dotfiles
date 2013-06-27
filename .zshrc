@@ -73,10 +73,10 @@ ZSH_THEME_GIT_PROMPT_CLEAN=""
 plugins=(git)
 
 source $ZSH/oh-my-zsh.sh
-export ANDROID_NDK_ROOT=~/Android/android-ndk-r8e
-export COCOS2DX_ROOT=~/OpenSourceGitRepository/cocos2d-x
-export NDK_ROOT=~/Android/android-ndk-r8e
-export ANDROID_SDK_ROOT=~/Android/android-sdk-macosx/
+export ANDROID_NDK_ROOT=~/AndroidDev/android-ndk-r8e
+export COCOS2DX=~/Github/cocos2d-x
+export NDK_ROOT=~/AndroidDev/android-ndk-r8e
+export ANDROID_SDK_ROOT=~/AndroidDev/adt-bundle-mac-x86_64-20130522/sdk
 export PATH=$PATH:$ANDROID_NDK_ROOT
 
 export PATH=/usr/local/bin:$PATH:/usr/lib/
@@ -90,3 +90,6 @@ export LSCOLORS=GxFxCxDxBxegedabagaced
 
 export LC_ALL=zh_CN.UTF-8
 export LANG=zh_CN.UTF-8
+
+PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+NODE_PATH='/usr/local/lib/jsctags:${NODE_PATH}'
