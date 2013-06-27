@@ -467,8 +467,8 @@ inoremap <C-t>     <Esc> :tabnew<CR>
 
 "configs for vimwiki"{{{
 nmap <leader>5 :VimwikiAll2HTML<cr>
-let g:vimwiki_list = [{'path': '/Users/andyque/workspace/myblog/octopress/source/vimwiki/',  
-  \ 'path_html': '/Users/andyque/workspace/myblog/octopress/source/vimwiki_html/'}]
+let g:vimwiki_list = [{'path':  '/Users/guanghui/workspace/myblog/octopress/source/vimwiki/',  
+  \ 'path_html': '/Users/guanghui/workspace/myblog/octopress/source/vimwiki_html/'}]
 "}}}
 
 "keymaping for HardMode plugin {{{
