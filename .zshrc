@@ -70,7 +70,7 @@ ZSH_THEME_GIT_PROMPT_CLEAN=""
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git)
+plugins=(git osx ruby tmux)
 
 source $ZSH/oh-my-zsh.sh
 export ANDROID_NDK_ROOT=~/AndroidDev/android-ndk-r8e

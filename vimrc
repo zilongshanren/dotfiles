@@ -424,6 +424,9 @@ function! s:LoadSingleCompileOptions()
     call SingleCompile#ChooseCompiler('cpp', 'clang')
 endfunction
 
+" choose python3 for python compiler
+call SingleCompile#ChooseCompiler('python', 'python3')
+
 noremap  <silent> <F7> :Parse<cr>
 noremap  <silent> <F8> :ClangCheck<cr>
 noremap  <silent> <F9> :SCCompile<cr>
