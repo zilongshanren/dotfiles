@@ -513,3 +513,8 @@ endfunction
 nmap _$ :call Preserve("%s/\\s\\+$//e")<CR>
 nmap _= :call Preserve("normal gg=G")<CR>
 "}}}
+
+
+"keymapings for vim-css-color plugin {{{
+    let g:cssColorVimDoNotMessMyUpdatetime = 1
+"}}}
