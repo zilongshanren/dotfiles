@@ -20,7 +20,7 @@ enable cocos2d-x & cocos2d-html tags .Open your terminal,cd to your home directo
 
         mkdir cocos2d-html5
 
-    Now, you can put cocos2d-x(cpp,lua) project under ~/workspace/cocos2d-x directory,put cocos2d-html5 project under
+Now, you can put cocos2d-x(cpp,lua) project under ~/workspace/cocos2d-x directory,put cocos2d-html5 project under
 
     ~/workspace/cocos2d-html5
 
