@@ -1,2 +1,16 @@
-nnoremap ,a :nc<cr>
-inoremap ,a :nc<cr>
+nnoremap ,f :nc<cr>
+inoremap ,f :nc<cr>
+set ignorecase
+nnoremap ,r :run<cr>
+inoremap ,r :run<cr>
+
+nnoremap ,j <c-w>j
+nnoremap ,h <c-w>h
+nnoremap ,k <c-w>k
+nnoremap ,l <c-w>l
+
+nnoremap ,n <c-w>n
+nnoremap ,q <c-w>q
+nnoremap ,s <c-w>s
+nnoremap ,v <c-w>v
+
