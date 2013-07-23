@@ -10,11 +10,7 @@ This repo is inspired by this blog post:
     ./install.sh
 #Optional
 
-- 1.enable markdown to html
-
-        sudo cp ~/.vim/Markdown.pl /usr/local/bin
-
-- 2.enable cocos2d-x & cocos2d-html tags .Open your terminal,cd to your home directory,input the following commands.
+enable cocos2d-x & cocos2d-html tags .Open your terminal,cd to your home directory,input the following commands.
 
         mkdir workspace
 
