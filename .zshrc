@@ -39,6 +39,7 @@ $(virtualenv_info)$(prompt_char) '
 
 RPROMPT='$(battery_charge)'
 
+
 ZSH_THEME_GIT_PROMPT_PREFIX=" on %{$fg[magenta]%}"
 ZSH_THEME_GIT_PROMPT_SUFFIX="%{$reset_color%}"
 ZSH_THEME_GIT_PROMPT_DIRTY="%{$fg[green]%}!"
@@ -46,8 +47,14 @@ ZSH_THEME_GIT_PROMPT_UNTRACKED="%{$fg[green]%}?"
 ZSH_THEME_GIT_PROMPT_CLEAN=""
 
 # Example aliases
-aliases -s html=mate
-aliases -s rb=mate
+alias -s html=mate
+alias -s rb=mate
+alias -s vi="vim"
+alias -s py=vi 
+alias -s js=vi
+alias -s c=vi
+alias -s java=mate 
+alias -s txt=mate
 
 
 # Example format: plugins=(rails git textmate ruby lighthouse)
