@@ -75,3 +75,4 @@ export LANG=zh_CN.UTF-8
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 NODE_PATH='/usr/local/lib/jsctags:${NODE_PATH}'
 
+[[ -s ~/.autojump/etc/profile.d/autojump.sh ]] && . ~/.autojump/etc/profile.d/autojump.sh
