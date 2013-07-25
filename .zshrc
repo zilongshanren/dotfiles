@@ -49,10 +49,9 @@ ZSH_THEME_GIT_PROMPT_CLEAN=""
 # Example aliases
 alias -s html=mate
 alias -s rb=mate
-alias -s vi="vim"
-alias -s py=vi 
-alias -s js=vi
-alias -s c=vi
+alias -s py=mate 
+alias -s js=mate
+alias -s c=mate
 alias -s java=mate 
 alias -s txt=mate
 
