@@ -132,7 +132,7 @@ nmap <leader>bf :BufExplorer<cr>
 "}}}
 
 "nerdTree plugin config {{{
-autocmd vimenter * NERDTree
+" autocmd vimenter * NERDTree
 nmap <silent> <leader>n :NERDTreeToggle <CR>
 let NERDTreeShowHidden=1
 " bufkill bd's: really do not mess with NERDTree buffer
@@ -518,3 +518,7 @@ nmap _= :call Preserve("normal gg=G")<CR>
 "keymapings for vim-css-color plugin {{{
     let g:cssColorVimDoNotMessMyUpdatetime = 1
 "}}}
+
+"source $MYVIMRC automatically when load buffer"
+autocmd! bufenter *.* :so $MYVIMRC
+autocmd! bufread  *.* :so $MYVIMRC
