@@ -520,5 +520,5 @@ nmap _= :call Preserve("normal gg=G")<CR>
 "}}}
 
 "source $MYVIMRC automatically when load buffer"
-autocmd! bufenter *.* :so $MYVIMRC
-autocmd! bufread  *.* :so $MYVIMRC
+" autocmd! bufenter *.* :so $MYVIMRC
+" autocmd! bufread  *.* :so $MYVIMRC
