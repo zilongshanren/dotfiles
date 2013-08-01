@@ -1,5 +1,6 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =3
+let g:netrw_dirhist_cnt =4
 let g:netrw_dirhist_1='/Users/andyque/OpenSourceGitRepository/cocos2d-x/external/Box2D'
 let g:netrw_dirhist_2='/usr/share/terminfo'
 let g:netrw_dirhist_3='/Users/guanghui/.rvm'
+let g:netrw_dirhist_4='/Users/guanghui/Github/cocos2d-x/document/html/search'
