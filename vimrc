@@ -485,6 +485,8 @@ inoremap <c-e> <esc>A
 inoremap <c-f> <right>
 inoremap <c-b> <left>
 inoremap <C-d> <Esc>lxi
+inoremap <c-p> <up>
+inoremap <c-n> <down>
 "}}}
 
 "delimitMate mappings{{{
