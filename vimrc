@@ -519,6 +519,8 @@ nmap _= :call Preserve("normal gg=G")<CR>
     let g:cssColorVimDoNotMessMyUpdatetime = 1
 "}}}
 
-"source $MYVIMRC automatically when load buffer"
-" autocmd! bufenter *.* :so $MYVIMRC
-" autocmd! bufread  *.* :so $MYVIMRC
+"force saving files that require root permission" {{{
+cmap w!! %!sudo tee > /dev/null %
+"}}}
+
+
