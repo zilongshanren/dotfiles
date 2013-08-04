@@ -67,7 +67,7 @@ export ANDROID_SDK_ROOT=~/AndroidDev/adt-bundle-mac-x86_64-20130522/sdk
 export QTDIR=/usr/local/Cellar/qt/4.8.4/bin/
 export PATH=$PATH:$ANDROID_SDK_ROOT/tools:$ANDROID_SDK_ROOT/platform-tools
 
-export PATH=/usr/local/bin:$PATH:/usr/lib
+export PATH=/usr/local/opt:$PATH:/usr/local/bin:/usr/lib
 export PATH=$PATH:$HOME/bin
 
 export CLICOLOR=1
