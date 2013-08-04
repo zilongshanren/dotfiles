@@ -70,7 +70,7 @@ set wildignore=*.pdf
 "search" {{{
 set incsearch
 set hls
-nnoremap <silent> <C-l> :<C-u>nohlsearch<CR><C-l>
+nnoremap <silent> <leader>nl :<C-u>nohlsearch<CR><C-l>
 nnoremap <silent> <C-c> :%s///gn<cr>
 vnoremap < <gv
 vnoremap > >gv
@@ -146,7 +146,6 @@ au FileType nerdtree cnoreabbrev <buffer> BD <nop>
 
 "better tag navigation from www.vimbits.com {{{
 nnoremap <Return> <C-]>
-nnoremap <leader>b <C-o>
 "}}}
 
 
@@ -165,16 +164,54 @@ nmap <leader>md :%!/usr/local/bin/Markdown.pl --html4tags <cr>
 
 
 "map windows command {{{
-nmap ,j <c-w>j
-nmap ,k <c-w>k
-nmap ,h <c-w>h
-nmap ,l <c-w>l
+nmap <c-j> <c-w>j
+nmap <c-k> <c-w>k
+nmap <c-h> <c-w>h
+nmap <c-l> <c-w>l
 nmap ,c <c-w>c
 nmap ,<tab> <c-w><c-w>
 nnoremap j gj
 nnoremap k gk
-nmap <leader>d <c-D>
-nmap <leader>u <c-U>
+"}}}
+
+"maps from janus{{{
+
+" format the entire file
+nnoremap <leader>fef :normal! gg=G``<CR>
+
+" upper/lower word
+nmap <leader>u mQviwU`Q
+nmap <leader>l mQviwu`Q
+
+" upper/lower first char of word
+nmap <leader>U mQgewvU`Q
+nmap <leader>L mQgewvu`Q
+
+" cd to the directory containing the file in the buffer
+nmap <silent> <leader>cd :lcd %:h<CR>
+
+" Create the directory containing the file in the buffer
+nmap <silent> <leader>md :!mkdir -p %:p:h<CR>
+
+" Swap two words
+nmap <silent> <leader>gw :s/\(\%#\w\+\)\(\_W\+\)\(\w\+\)/\3\2\1/<CR>`'
+
+" Underline the current line with '='
+nmap <silent> <leader>ul :t.<CR>Vr=
+
+" set text wrapping toggles
+" nmap <silent> <leader>tw :set invwrap<CR>:set wrap?<CR>
+
+" find merge conflict markers
+nmap <silent> <leader>fc <ESC>/\v^[< = >]{7}( .*\|$)<CR>
+
+
+" Toggle hlsearch with <leader>hs
+nmap <leader>hs :set hlsearch! hlsearch?<CR>
+
+" Adjust viewports to the same size
+" map <Leader>= <C-w>=
+
 "}}}
 
 "config syntastic {{{
@@ -205,9 +242,9 @@ let g:ctrlp_open_multiple_files = 'v'
 
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip
 let g:ctrlp_custom_ignore = {
-  \ 'dir':  '\v[\/]\.(git)$',
-  \ 'file': '\v\.(log|jpg|png|jpeg)$',
-  \ }
+            \ 'dir':  '\v[\/]\.(git)$',
+            \ 'file': '\v\.(log|jpg|png|jpeg)$',
+            \ }
 set wildignore+=*.pyc
 set wildignore+=*_build/*
 set wildignore+=*.o
@@ -228,7 +265,7 @@ set spelllang=en_gb
 "}}}
 
 " map Gundo plugin toggle {{{
-nnoremap <leader>U ::GundoToggle<CR>
+" nnoremap <leader>U ::GundoToggle<CR>
 "}}}
 
 
@@ -287,16 +324,16 @@ nnoremap <leader>9   :call GenerateJsTags() <cr>
 let g:syntastic_cpp_compiler_options = ' -std=c++11'
 "run cpp11 code"
 if !has("win32")
-nmap <leader>rr :<C-U>!clang++ -std=c++11 -stdlib=libc++ -nostdinc++ -I/usr/local/src/llvm/tools/libcxx/include -L/usr/local/src/llvm/tools/libcxx/lib -o %:r % && ./%:r <cr>
+    nmap <leader>rr :<C-U>!clang++ -std=c++11 -stdlib=libc++ -nostdinc++ -I/usr/local/src/llvm/tools/libcxx/include -L/usr/local/src/llvm/tools/libcxx/lib -o %:r % && ./%:r <cr>
 endif
 
 if has("win32") || has("win64")
-nmap <leader>rr :<C-U>!clang++ -std=c++11 -stdlib=libc++ -nostdinc++
-            \ -IC:/MinGW/include
-            \ -IC:/MinGW/lib
-            \ -IC:/MinGW/lib/gcc/mingw32/4.6.2/include/c++
-            \ -IC:/MinGW/lib/gcc/mingw32/4.6.2/include/c++/mingw32
-            \ -o %:r % && %:r <cr>
+    nmap <leader>rr :<C-U>!clang++ -std=c++11 -stdlib=libc++ -nostdinc++
+                \ -IC:/MinGW/include
+                \ -IC:/MinGW/lib
+                \ -IC:/MinGW/lib/gcc/mingw32/4.6.2/include/c++
+                \ -IC:/MinGW/lib/gcc/mingw32/4.6.2/include/c++/mingw32
+                \ -o %:r % && %:r <cr>
 endif
 
 if has("win32") || has("win64")
@@ -349,7 +386,7 @@ set foldcolumn=3                " add a fold column
 set foldmethod=marker           " detect triple-{ style fold markers
 set foldlevelstart=99           " start out with everything folded
 set foldopen=block,hor,insert,jump,mark,percent,quickfix,search,tag,undo
-                                " which commands trigger auto-unfold
+" which commands trigger auto-unfold
 function! MyFoldText()
     let line = getline(v:foldstart)
 
@@ -403,7 +440,7 @@ if has('win32') || has('win64') || has('os2')
 else
     let g:common_run_command='./$(FILE_TITLE)$'
 endif
- 
+
 " SingleCompile for C++ with Clang
 function! s:LoadSingleCompileOptions()
     call SingleCompile#SetCompilerTemplate('c', 
@@ -412,9 +449,9 @@ function! s:LoadSingleCompileOptions()
                 \'clang', 
                 \'-o $(FILE_TITLE)$ ' . g:single_compile_options, 
                 \g:common_run_command)
- 
+
     call SingleCompile#ChooseCompiler('c', 'clang')
- 
+
     call SingleCompile#SetCompilerTemplate('cpp', 
                 \'clang', 
                 \'the Clang C and Objective-C compiler', 
@@ -471,7 +508,7 @@ inoremap <C-t>     <Esc> :tabnew<CR>
 "configs for vimwiki"{{{
 nmap <leader>5 :VimwikiAll2HTML<cr>
 let g:vimwiki_list = [{'path':  '/Users/guanghui/workspace/myblog/octopress/source/vimwiki/',  
-  \ 'path_html': '/Users/guanghui/workspace/myblog/octopress/source/vimwiki_html/'}]
+            \ 'path_html': '/Users/guanghui/workspace/myblog/octopress/source/vimwiki_html/'}]
 "}}}
 
 "keymaping for HardMode plugin {{{
@@ -502,15 +539,15 @@ autocmd filetype tex nnoremap F10 :!latexmk -pdf %
 
 "some keymapings for tidying your whitespace{{{
 function! Preserve(command)
-  " Preparation: save last search, and cursor position.
-  let _s=@/
-  let l = line(".")
-  let c = col(".")
-  " Do the business:
-  execute a:command
-  " Clean up: restore previous search history, and cursor position
-  let @/=_s
-  call cursor(l, c)
+    " Preparation: save last search, and cursor position.
+    let _s=@/
+    let l = line(".")
+    let c = col(".")
+    " Do the business:
+    execute a:command
+    " Clean up: restore previous search history, and cursor position
+    let @/=_s
+    call cursor(l, c)
 endfunction
 nmap _$ :call Preserve("%s/\\s\\+$//e")<CR>
 nmap _= :call Preserve("normal gg=G")<CR>
@@ -518,7 +555,7 @@ nmap _= :call Preserve("normal gg=G")<CR>
 
 
 "keymapings for vim-css-color plugin {{{
-    let g:cssColorVimDoNotMessMyUpdatetime = 1
+let g:cssColorVimDoNotMessMyUpdatetime = 1
 "}}}
 
 "force saving files that require root permission" {{{
