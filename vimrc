@@ -462,7 +462,7 @@ function! s:LoadSingleCompileOptions()
 endfunction
 
 " choose python3 for python compiler
-call SingleCompile#ChooseCompiler('python', 'python3')
+" call SingleCompile#ChooseCompiler('python', 'python3')
 
 noremap  <silent> <F7> :Parse<cr>
 noremap  <silent> <F8> :ClangCheck<cr>
@@ -562,4 +562,7 @@ let g:cssColorVimDoNotMessMyUpdatetime = 1
 cmap w!! %!sudo tee > /dev/null %
 "}}}
 
-
+"use sane regexes {{{
+nnoremap / /\v
+vnoremap / /\v
+"}}}
