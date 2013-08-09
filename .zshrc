@@ -64,21 +64,16 @@ export ANDROID_NDK_ROOT=~/AndroidDev/android-ndk-r8e
 export COCOS2DX=~/Github/cocos2d-x
 export NDK_ROOT=~/AndroidDev/android-ndk-r8e
 export ANDROID_SDK_ROOT=~/AndroidDev/adt-bundle-mac-x86_64-20130522/sdk
-export QTDIR=/usr/local/Cellar/qt/4.8.4/bin/
+
 export PATH=$PATH:$ANDROID_SDK_ROOT/tools:$ANDROID_SDK_ROOT/platform-tools
+export PATH=/usr/local/bin:/usr/bin:$PATH
 
-export PATH=/usr/local/opt:$PATH:/usr/local/bin:/usr/lib
-export PATH=$PATH:$HOME/bin
-
-export CLICOLOR=1
-export LSCOLORS=GxFxCxDxBxegedabagaced
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
 
 export LC_ALL=zh_CN.UTF-8
 export LANG=zh_CN.UTF-8
 
-PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 NODE_PATH='/usr/local/lib/jsctags:${NODE_PATH}'
 
 [[ -s ~/.autojump/etc/profile.d/autojump.sh ]] && . ~/.autojump/etc/profile.d/autojump.sh
