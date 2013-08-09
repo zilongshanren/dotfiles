@@ -29,3 +29,7 @@ Now, you can put cocos2d-x(cpp,lua) project under ~/workspace/cocos2d-x director
 
 ##if you want to update all submodules, you can
     git submodule foreach git pull origin master
+
+**Licence:**
+
+Do What The Fuck You Want To Public License ([WTFPL](http://www.wtfpl.net/)).
