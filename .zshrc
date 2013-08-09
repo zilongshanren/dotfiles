@@ -69,11 +69,15 @@ export PATH=$PATH:$ANDROID_SDK_ROOT/tools:$ANDROID_SDK_ROOT/platform-tools
 export PATH=/usr/local/bin:/usr/bin:$PATH
 
 
+
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
 
 export LC_ALL=zh_CN.UTF-8
 export LANG=zh_CN.UTF-8
 
-NODE_PATH='/usr/local/lib/jsctags:${NODE_PATH}'
+export NODE_PATH='/usr/local/lib/jsctags:${NODE_PATH}'
+export GOPATH="$HOME/workspace/golang"
+export GOROOT="/usr/local/Cellar/go/1.1.1"
+export PATH=$PATH:$GOPATH/bin
 
 [[ -s ~/.autojump/etc/profile.d/autojump.sh ]] && . ~/.autojump/etc/profile.d/autojump.sh
