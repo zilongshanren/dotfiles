@@ -488,8 +488,14 @@ let g:neocomplcache_enable_smart_case = 1
 let g:neocomplcache_enable_camel_case_completion = 1
 let g:neocomplcache_enable_underbar_completion = 1
 let g:neocomplcache_min_syntax_length = 3
-autocmd FileType go setlocal completefunc=gocomplete#Complete
-inoremap <tab> <c-x><c-o>
+"}}}
+
+"config for super tab{{{
+let g:SuperTabDefaultCompletionType = "context"
+let g:SuperTabCompletionContexts = ['s:ContextText', 's:ContextDiscover']
+let g:SuperTabContextTextOmniPrecedence = ['&omnifunc', '&completefunc']
+let g:SuperTabContextDiscoverDiscovery =
+            \ ["&completefunc:<c-x><c-u>", "&omnifunc:<c-x><c-o>"]
 "}}}
 
 "some abbreviates for myself {{{
