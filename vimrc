@@ -383,7 +383,6 @@ let g:pymode_breakpoint = 0
 let g:pymode_syntax = 1
 let g:pymode_syntax_builtin_objs = 0
 let g:pymode_syntax_builtin_funcs = 0
-" map <Leader>b Oimport ipdb; ipdb.set_trace() # BREAKPOINT<C-c>
 "}}}
 
 " Folding rules {{{
@@ -483,13 +482,14 @@ noremap! <silent> <F10> <c-o>:SCCompileRun<cr>
 
 
 "config for neocomplcache{{{
-" Disable AutoComplPop. Comment out this line if AutoComplPop is not installed.
 let g:acp_enableAtStartup = 0
 let g:neocomplcache_enable_at_startup = 1
 let g:neocomplcache_enable_smart_case = 1
 let g:neocomplcache_enable_camel_case_completion = 1
 let g:neocomplcache_enable_underbar_completion = 1
 let g:neocomplcache_min_syntax_length = 3
+autocmd FileType go setlocal completefunc=gocomplete#Complete
+inoremap <tab> <c-x><c-o>
 "}}}
 
 "some abbreviates for myself {{{
