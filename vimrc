@@ -1,13 +1,19 @@
 " VIM Configuration File
 " Author: guanghui qu 
 "
-" load plugins that ship with Vim {{{
 set nocompatible
+
+"keymaping for golang{{{"
+filetype off
+filetype plugin indent off
+set rtp+=$GOROOT/misc/vim
+"}}}
+
+" load plugins that ship with Vim {{{
 filetype on
 runtime macros/matchit.vim
 runtime ftplugin/man.vim
 "}}}
-
 
 "--vim-pathogen {{{
 filetype plugin indent on
@@ -477,20 +483,12 @@ noremap! <silent> <F10> <c-o>:SCCompileRun<cr>
 
 
 "config for neocomplcache{{{
-" add neocomplcache option
-let g:neocomplcache_force_overwrite_completefunc=1
-
 " Disable AutoComplPop. Comment out this line if AutoComplPop is not installed.
 let g:acp_enableAtStartup = 0
-" Launches neocomplcache automatically on vim startup.
 let g:neocomplcache_enable_at_startup = 1
-" Use smartcase.
 let g:neocomplcache_enable_smart_case = 1
-" Use camel case completion.
 let g:neocomplcache_enable_camel_case_completion = 1
-" Use underscore completion.
 let g:neocomplcache_enable_underbar_completion = 1
-" Sets minimum char length of syntax keyword.
 let g:neocomplcache_min_syntax_length = 3
 "}}}
 
@@ -566,3 +564,10 @@ cmap w!! %!sudo tee > /dev/null %
 nnoremap / /\v
 vnoremap / /\v
 "}}}
+
+if has("autocmd") && exists("+omnifunc")
+    autocmd Filetype *
+                \ if &omnifunc == "" |
+                \   setlocal omnifunc=syntaxcomplete#Complete |
+                \ endif
+endif
