@@ -61,7 +61,7 @@ plugins=(git osx ruby tmux autojump textmate)
 
 source $ZSH/oh-my-zsh.sh
 export ANDROID_NDK_ROOT=~/AndroidDev/android-ndk-r8e
-export COCOS2DX=~/Github/cocos2d-x
+export COCOS2DX=~/cocos2d-x
 export NDK_ROOT=~/AndroidDev/android-ndk-r8e
 export ANDROID_SDK_ROOT=~/AndroidDev/adt-bundle-mac-x86_64-20130522/sdk
 
