@@ -151,7 +151,7 @@ au FileType nerdtree cnoreabbrev <buffer> BD <nop>
 "}}}
 
 "better tag navigation from www.vimbits.com {{{
-nnoremap <Return> <C-]>
+nnoremap <leader><Enter> <C-]>
 "}}}
 
 
@@ -572,15 +572,6 @@ vnoremap / /\v
 "}}}
 
 "mappings ctrl-s to save {{{
-" If the current buffer has never been saved, it will have no name,
-" call the file browser to save it, otherwise just save it.
-command -nargs=0 -bar Update if &modified 
-                           \|    if empty(bufname('%'))
-                           \|        browse confirm write
-                           \|    else
-                           \|        confirm write
-                           \|    endif
-                           \|endif
 nnoremap <silent> <C-S> :<C-u>Update<CR>
 " Use CTRL-S for saving, also in Insert mode
 noremap <C-S> :update<CR>
