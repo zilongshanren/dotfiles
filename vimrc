@@ -227,7 +227,7 @@ let g:syntastic_check_on_open=1
 
 "set colorscheme {{{
 syntax enable
-colorscheme blackboard
+colorscheme busybee
 if has("gui_running")
     colorscheme solarized
 endif
