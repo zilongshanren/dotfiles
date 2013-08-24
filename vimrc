@@ -227,7 +227,7 @@ let g:syntastic_check_on_open=1
 
 "set colorscheme {{{
 syntax enable
-colorscheme busybee
+colorscheme blackboard
 if has("gui_running")
     colorscheme solarized
 endif
@@ -353,6 +353,7 @@ endif
 nmap ,3 :!rake generate <cr>
 nmap ,4 :!rake deploy <cr>
 "}}}
+
 
 " Better navigating through omnicomplete option list {{{
 " See http://stackoverflow.com/questions/2170023/how-to-map-keys-for-popup-menu-in-vim
@@ -560,4 +561,11 @@ nnoremap <silent> <C-S> :<C-u>Update<CR>
 noremap <C-S> :update<CR>
 vnoremap <C-S> <C-C>:update<CR>
 inoremap <C-S> <C-O>:update<CR>
+"}}}
+
+
+"change you complete me plugin default mappings"{{{
+let g:ycm_key_list_select_completion = ['<C-TAB>', '<Down>']
+let g:ycm_key_list_previous_completion = ['<C-S-TAB>', '<Up>']
+let g:SuperTabDefaultCompletionType = '<C-Tab>'
 "}}}
