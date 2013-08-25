@@ -576,3 +576,7 @@ let g:tern_show_argument_hints='on_hold'
 let g:indent_guides_start_level = 2
 let g:indent_guides_guide_size = 1
 "}}}
+
+"add gist plgin {{{
+let g:gist_open_browser_after_post =1
+"}}}
