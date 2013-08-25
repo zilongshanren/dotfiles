@@ -573,4 +573,6 @@ nnoremap <leader>jd :YcmCompleter GoToDefinitionElseDeclaration<CR>
 let g:ycm_confirm_extra_conf = 1
 let g:ycm_global_ycm_extra_conf="~/.vim/.ycm_extra_conf.py"
 let g:tern_show_argument_hints='on_hold'
+let g:indent_guides_start_level = 2
+let g:indent_guides_guide_size = 1
 "}}}
