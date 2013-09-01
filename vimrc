@@ -330,11 +330,11 @@ nnoremap <leader>9   :call GenerateJsTags() <cr>
 let g:syntastic_cpp_compiler_options = ' -std=c++11'
 "run cpp11 code"
 if !has("win32")
-    nmap <leader>rr :<C-U>!clang++ -std=c++11 -stdlib=libc++ -nostdinc++ -I/usr/local/src/llvm/tools/libcxx/include -L/usr/local/src/llvm/tools/libcxx/lib -o %:r % && ./%:r <cr>
+    nmap <leader>rr :<C-U>!clang++ -std=c++11 -stdlib=libc++  -o %:r % && ./%:r <cr>
 endif
 
 if has("win32") || has("win64")
-    nmap <leader>rr :<C-U>!clang++ -std=c++11 -stdlib=libc++ -nostdinc++
+    nmap <leader>rr :<C-U>!clang++ -std=c++11 -stdlib=libc++ 
                 \ -IC:/MinGW/include
                 \ -IC:/MinGW/lib
                 \ -IC:/MinGW/lib/gcc/mingw32/4.6.2/include/c++
