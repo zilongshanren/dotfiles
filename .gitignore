@@ -4,3 +4,4 @@
 view/
 *.swp
 .netrwhist
+.ycm_extra_conf.pyc
