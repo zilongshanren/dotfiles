@@ -48,7 +48,7 @@ set softtabstop=4
 set expandtab
 set textwidth=300
 set t_Co=256
-set number
+set relativenumber
 set hidden
 set showmatch
 set comments=sl:/*,mb:\ *,elx:\ */
@@ -227,7 +227,7 @@ let g:syntastic_check_on_open=1
 
 "set colorscheme {{{
 syntax enable
-colorscheme busybee
+colorscheme blackboard
 if has("gui_running")
     colorscheme solarized
 endif
@@ -247,6 +247,7 @@ nmap <leader>p :CtrlP <cr>
 let g:ctrlp_open_multiple_files = 'v'
 
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip
+let g:ctrlp_max_height = 100
 let g:ctrlp_custom_ignore = {
             \ 'dir':  '\v[\/]\.(git)$',
             \ 'file': '\v\.(log|jpg|png|jpeg)$',
@@ -330,11 +331,11 @@ nnoremap <leader>9   :call GenerateJsTags() <cr>
 let g:syntastic_cpp_compiler_options = ' -std=c++11'
 "run cpp11 code"
 if !has("win32")
-    nmap <leader>rr :<C-U>!clang++ -std=c++11 -stdlib=libc++ -nostdinc++ -I/usr/local/src/llvm/tools/libcxx/include -L/usr/local/src/llvm/tools/libcxx/lib -o %:r % && ./%:r <cr>
+    nmap <leader>rr :<C-U>!clang++ -std=c++11 -stdlib=libc++  -o %:r % && ./%:r <cr>
 endif
 
 if has("win32") || has("win64")
-    nmap <leader>rr :<C-U>!clang++ -std=c++11 -stdlib=libc++ -nostdinc++
+    nmap <leader>rr :<C-U>!clang++ -std=c++11 -stdlib=libc++ 
                 \ -IC:/MinGW/include
                 \ -IC:/MinGW/lib
                 \ -IC:/MinGW/lib/gcc/mingw32/4.6.2/include/c++
@@ -353,6 +354,7 @@ endif
 nmap ,3 :!rake generate <cr>
 nmap ,4 :!rake deploy <cr>
 "}}}
+
 
 " Better navigating through omnicomplete option list {{{
 " See http://stackoverflow.com/questions/2170023/how-to-map-keys-for-popup-menu-in-vim
@@ -481,23 +483,6 @@ noremap! <silent> <F10> <c-o>:SCCompileRun<cr>
 
 
 
-"config for neocomplcache{{{
-let g:acp_enableAtStartup = 0
-let g:neocomplcache_enable_at_startup = 1
-let g:neocomplcache_enable_smart_case = 1
-let g:neocomplcache_enable_camel_case_completion = 1
-let g:neocomplcache_enable_underbar_completion = 1
-let g:neocomplcache_min_syntax_length = 3
-"}}}
-
-"config for super tab{{{
-let g:SuperTabDefaultCompletionType = "context"
-let g:SuperTabCompletionContexts = ['s:ContextText', 's:ContextDiscover']
-let g:SuperTabContextTextOmniPrecedence = ['&omnifunc', '&completefunc']
-let g:SuperTabContextDiscoverDiscovery =
-            \ ["&completefunc:<c-x><c-u>", "&omnifunc:<c-x><c-o>"]
-"}}}
-
 "some abbreviates for myself {{{
 abbreviate zl zilongshanren
 "}}}
@@ -577,4 +562,26 @@ nnoremap <silent> <C-S> :<C-u>Update<CR>
 noremap <C-S> :update<CR>
 vnoremap <C-S> <C-C>:update<CR>
 inoremap <C-S> <C-O>:update<CR>
+"}}}
+
+
+"change you complete me plugin default mappings"{{{
+"refer to this blog post :http://0x3f.org/blog/make-youcompleteme-ultisnips-compatible/
+let g:ycm_key_list_select_completion = ['<C-TAB>', '<Down>']
+let g:ycm_key_list_previous_completion = ['<C-S-TAB>', '<Up>']
+let g:SuperTabDefaultCompletionType = '<C-Tab>'
+nnoremap <leader>jd :YcmCompleter GoToDefinitionElseDeclaration<CR>
+let g:ycm_confirm_extra_conf = 1
+let g:ycm_global_ycm_extra_conf="~/.vim/.ycm_extra_conf.py"
+let g:tern_show_argument_hints='on_hold'
+let g:indent_guides_start_level = 2
+let g:indent_guides_guide_size = 1
+"}}}
+
+"add gist plgin {{{
+let g:gist_open_browser_after_post =1
+"}}}
+
+"add powerline plugin config{{{
+" let g:Powerline_symbols = 'fancy'
 "}}}
