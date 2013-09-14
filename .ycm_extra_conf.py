@@ -28,6 +28,8 @@ flags = [
     '-I',
     '/Users/guanghui/cocos2d-x/CocosDenshion/include',
     '-I',
+    '/Users/guanghui/cocos2d-x/extensions',
+    '-I',
     '/Users/guanghui/cocos2d-x/cocos2dx/kazmath/include',
     '-isystem',
     '/usr/include/libxml2',

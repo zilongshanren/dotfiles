@@ -21,6 +21,8 @@ ln -s ~/.vim/.zshrc ~/.zshrc
 ln -s ~/.vim/.tmux.conf ~/.tmux.conf
 rm ~/.xvimrc
 ln -s ~/.vim/.xvimrc ~/.xvimrc
+rm -rf ~/.emacs.d
+ln -s ~/.vim/.emacs.d ~/.emacs.d
 
 
 echo "update submodules"
