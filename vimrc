@@ -48,7 +48,7 @@ set softtabstop=4
 set expandtab
 set textwidth=300
 set t_Co=256
-set number
+set relativenumber
 set hidden
 set showmatch
 set comments=sl:/*,mb:\ *,elx:\ */
@@ -247,6 +247,7 @@ nmap <leader>p :CtrlP <cr>
 let g:ctrlp_open_multiple_files = 'v'
 
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip
+let g:ctrlp_max_height = 100
 let g:ctrlp_custom_ignore = {
             \ 'dir':  '\v[\/]\.(git)$',
             \ 'file': '\v\.(log|jpg|png|jpeg)$',
@@ -579,4 +580,8 @@ let g:indent_guides_guide_size = 1
 
 "add gist plgin {{{
 let g:gist_open_browser_after_post =1
+"}}}
+
+"add powerline plugin config{{{
+" let g:Powerline_symbols = 'fancy'
 "}}}
