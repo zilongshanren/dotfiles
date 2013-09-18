@@ -48,7 +48,8 @@ set softtabstop=4
 set expandtab
 set textwidth=300
 set t_Co=256
-set relativenumber
+" set relativenumber
+set number
 set hidden
 set showmatch
 set comments=sl:/*,mb:\ *,elx:\ */
