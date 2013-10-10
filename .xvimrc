@@ -1,18 +1,26 @@
-nnoremap ,f :ncounterpart<cr>
-inoremap ,f :ncounterpart<cr>
-set ignorecase
-nnoremap ,ni :nissue<cr>
-inoremap ,ni :nissue<cr>
-nnoremap ,pi :pissue<cr>
-inoremap ,pi :pissue<cr>
-nnoremap ,r :run<cr>
-inoremap ,r :run<cr>
+"Jump between .h/.cpp
+nnoremap ,f :xccmd jumpToNextCounterpart<cr>
+inoremap ,f :xccmd jumpToNextCounterpart<cr>
 
+"Open quick search : CMD+Shift+o
+map ,p :xccmd openQuickly<cr>
+
+
+"fold
+map ,zf :xccmd fold<cr>
+map ,zu :xccmd unfold<cr>
+
+"search
+set ignorecase
+
+
+" window movement
 nnoremap <c-j> <c-w>j
 nnoremap <c-h> <c-w>h
 nnoremap <c-k> <c-w>k
 nnoremap <c-l> <c-w>l
 
+" windows split
 nnoremap ,n <c-w>n
 nnoremap ,q <c-w>q
 nnoremap ,s <c-w>s
