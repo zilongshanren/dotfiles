@@ -27,3 +27,5 @@
 	trustExitCode = true
 [github]
 	user = andyque
+[push]
+	default = matching
