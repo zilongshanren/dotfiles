@@ -26,3 +26,9 @@ nnoremap ,q <c-w>q
 nnoremap ,s <c-w>s
 nnoremap ,v <c-w>v
 
+" issue command
+map ,fi :xccmd jumpToPreviousIssue<cr>
+map ,bi :xccmd jumpToNextIssue<cr>
+
+" tab navigation
+map ,<tab> :xccmd selectNextTab<cr>
