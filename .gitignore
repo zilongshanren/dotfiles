@@ -1,9 +1,8 @@
 .DS_Store
 */.DS_Store
-.DS_store
 view/
 *.swp
 .netrwhist
 .ycm_extra_conf.pyc
 bundle/**
-~/bundle/vundle
+~bundle/vundle
