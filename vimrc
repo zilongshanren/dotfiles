@@ -352,8 +352,8 @@ endif
 "}}}
 
 "add octrpress publish blog key mappings {{{
-nmap ,3 :!rake generate <cr>
-nmap ,4 :!rake deploy <cr>
+nmap ,3 :!noglob rake generate <cr>
+nmap ,4 :!noglob rake deploy <cr>
 "}}}
 
 
