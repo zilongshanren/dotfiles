@@ -15,12 +15,70 @@ runtime macros/matchit.vim
 runtime ftplugin/man.vim
 "}}}
 
-"--vim-pathogen {{{
+"Let Vundle manage Vbundle{{{
 filetype plugin indent on
 filetype plugin on
-call pathogen#infect()
-call pathogen#helptags()
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+Bundle 'gmarik/vundle'
 "}}}
+
+" github repo
+Bundle 'tpope/vim-fugitive'
+Bundle 'scrooloose/nerdtree'
+Bundle  'scrooloose/syntastic'
+
+"color scheme
+Bundle 'altercation/vim-colors-solarized'
+Bundle 'nelstrom/vim-blackboard'
+Bundle  'mileszs/ack'
+Bundle  'kien/ctrlp.vim'
+Bundle  'Lokaltog/vim-easymotion'
+Bundle  'tpope/vim-surround'
+Bundle  'vim-scripts/DoxygenToolkit'
+Bundle 'xolox/vim-lua-ftplugin'
+Bundle  'plasticboy/vim-markdown'
+Bundle 'tpope/vim-repeat'
+Bundle  'pangloss/vim-javascript'
+Bundle  'majutsushi/tagbar'
+Bundle 'godlygeek/tabular'
+Bundle  'sjl/gundo.vim'
+Bundle  'tpope/vim-commentary'
+
+"text object plugin
+Bundle  'kana/vim-textobj-lastpat'
+Bundle  'kana/vim-textobj-user'
+Bundle  'tpope/vim-eunuch'
+Bundle  'kana/vim-textobj-line'
+Bundle  'nelstrom/vim-visual-star-search'
+Bundle  'kana/vim-textobj-indent'
+Bundle  'tpope/vim-abolish'
+Bundle  'nelstrom/vim-qargs'
+Bundle  'klen/python-mode'
+Bundle  'Lokaltog/vim-powerline'
+Bundle  'tpope/vim-unimpaired'
+Bundle  'tpope/vim-speeddating'
+Bundle  'SirVer/ultisnips'
+Bundle  'vim-scripts/a.vim'
+Bundle  'vim-scripts/bufexplorer.zip'
+Bundle  'xuhdev/SingleCompile'
+Bundle  'oblitum/bufkill'
+Bundle  'vim-scripts/calendar.vim--Matsumoto'
+Bundle  'wikitopian/hardmode'
+Bundle  'Raimondi/delimitMate'
+Bundle  'mileszs/ack.vim'
+Bundle  'kana/vim-textobj-entire'
+Bundle  'kana/vim-textobj-syntax'
+Bundle  'kchmck/vim-coffee-script'
+Bundle  'skammer/vim-css-color'
+Bundle  'xolox/vim-misc'
+Bundle  'Valloric/YouCompleteMe'
+Bundle  'ervandew/supertab'
+" gist repo
+Bundle  'mattn/gist-vim'
+Bundle  'mattn/webapi-vim'
+
+
 
 " Disable swapfile and backup {{{
 set nobackup
