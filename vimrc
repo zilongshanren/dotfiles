@@ -9,17 +9,6 @@ set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 "}}}
 
-"keymaping for golang{{{"
-filetype off
-filetype plugin indent off
-set rtp+=$GOROOT/misc/vim
-"}}}
-
-" load plugins that ship with Vim {{{
-filetype on
-runtime macros/matchit.vim
-runtime ftplugin/man.vim
-"}}}
 
 Bundle 'gmarik/vundle'
 
@@ -35,7 +24,6 @@ Bundle  'mileszs/ack.vim'
 Bundle  'kien/ctrlp.vim'
 Bundle  'Lokaltog/vim-easymotion'
 Bundle  'tpope/vim-surround'
-Bundle  'vim-scripts/DoxygenToolkit.vim'
 Bundle 'xolox/vim-lua-ftplugin'
 Bundle  'plasticboy/vim-markdown'
 Bundle 'tpope/vim-repeat'
@@ -59,11 +47,8 @@ Bundle  'Lokaltog/vim-powerline'
 Bundle  'tpope/vim-unimpaired'
 Bundle  'tpope/vim-speeddating'
 Bundle  'SirVer/ultisnips'
-Bundle  'vim-scripts/a.vim'
-Bundle  'vim-scripts/bufexplorer.zip'
 Bundle  'xuhdev/SingleCompile'
 Bundle  'oblitum/bufkill'
-Bundle  'vim-scripts/calendar.vim--Matsumoto'
 Bundle  'wikitopian/hardmode'
 Bundle  'Raimondi/delimitMate'
 Bundle  'mileszs/ack.vim'
@@ -78,7 +63,24 @@ Bundle  'ervandew/supertab'
 Bundle  'mattn/gist-vim'
 Bundle  'mattn/webapi-vim'
 
+" vim scripts"
+Bundle  'vim-scripts/a.vim'
+Bundle  'vim-scripts/bufexplorer.zip'
+Bundle  'vim-scripts/calendar.vim--Matsumoto'
+Bundle  'vim-scripts/DoxygenToolkit.vim'
+filetype plugin indent on
 
+"keymaping for golang{{{"
+filetype off
+filetype plugin indent off
+set rtp+=$GOROOT/misc/vim
+"}}}
+
+" load plugins that ship with Vim {{{
+filetype on
+runtime macros/matchit.vim
+runtime ftplugin/man.vim
+"}}}
 
 " Disable swapfile and backup {{{
 set nobackup
