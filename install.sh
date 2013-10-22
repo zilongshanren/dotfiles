@@ -23,12 +23,13 @@ rm ~/.xvimrc
 ln -s ~/.vim/.xvimrc ~/.xvimrc
 
 
-echo "update submodules"
-git submodule init
-git submodule update
+#echo "update submodules"
+#git submodule init
+#git submodule update
 
-echo "remove lua-ftplugin to prevent doc error msg"
+#echo "remove lua-ftplugin to prevent doc error msg"
 
 # rm bundle/vim-lua-ftplugin/doc/lua-ftplugin.txt
 
-git submodule foreach git pull origin master
+# because I don't use submodule any more
+#git submodule foreach git pull origin master
