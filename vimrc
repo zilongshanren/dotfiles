@@ -2,6 +2,12 @@
 " Author: guanghui qu 
 "
 set nocompatible
+filetype off
+
+"Let Vundle manage Vbundle{{{
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+"}}}
 
 "keymaping for golang{{{"
 filetype off
@@ -15,13 +21,7 @@ runtime macros/matchit.vim
 runtime ftplugin/man.vim
 "}}}
 
-"Let Vundle manage Vbundle{{{
-filetype plugin indent on
-filetype plugin on
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
 Bundle 'gmarik/vundle'
-"}}}
 
 " github repo
 Bundle 'tpope/vim-fugitive'
