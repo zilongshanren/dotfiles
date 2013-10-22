@@ -96,3 +96,5 @@ alias vim="stty stop '' -ixoff ; vim"
      command vim "$@"
      stty "$STTYOPTS"
  }
+
+ alias rake="noglob rake"
