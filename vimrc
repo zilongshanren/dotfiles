@@ -14,8 +14,17 @@ Bundle 'gmarik/vundle'
 
 " github repo
 Bundle 'tpope/vim-fugitive'
+
 Bundle 'scrooloose/nerdtree'
 Bundle  'scrooloose/syntastic'
+
+Bundle 'tpope/vim-repeat'
+Bundle  'tpope/vim-unimpaired'
+Bundle  'tpope/vim-speeddating'
+Bundle  'tpope/vim-abolish'
+Bundle  'tpope/vim-surround'
+Bundle  'tpope/vim-commentary'
+Bundle  'tpope/vim-eunuch'
 
 "color scheme
 Bundle 'altercation/vim-colors-solarized'
@@ -23,51 +32,46 @@ Bundle 'nelstrom/vim-blackboard'
 Bundle  'mileszs/ack.vim'
 Bundle  'kien/ctrlp.vim'
 Bundle  'Lokaltog/vim-easymotion'
-Bundle  'tpope/vim-surround'
 Bundle 'xolox/vim-lua-ftplugin'
 Bundle  'plasticboy/vim-markdown'
-Bundle 'tpope/vim-repeat'
 Bundle  'pangloss/vim-javascript'
 Bundle  'majutsushi/tagbar'
 Bundle 'godlygeek/tabular'
 Bundle  'sjl/gundo.vim'
-Bundle  'tpope/vim-commentary'
-
-"text object plugin
-Bundle  'kana/vim-textobj-lastpat'
-Bundle  'kana/vim-textobj-user'
-Bundle  'tpope/vim-eunuch'
-Bundle  'kana/vim-textobj-line'
 Bundle  'nelstrom/vim-visual-star-search'
-Bundle  'kana/vim-textobj-indent'
-Bundle  'tpope/vim-abolish'
 Bundle  'nelstrom/vim-qargs'
 Bundle  'klen/python-mode'
 Bundle  'Lokaltog/vim-powerline'
-Bundle  'tpope/vim-unimpaired'
-Bundle  'tpope/vim-speeddating'
 Bundle  'SirVer/ultisnips'
 Bundle  'xuhdev/SingleCompile'
 Bundle  'oblitum/bufkill'
 Bundle  'wikitopian/hardmode'
 Bundle  'Raimondi/delimitMate'
 Bundle  'mileszs/ack.vim'
-Bundle  'kana/vim-textobj-entire'
-Bundle  'kana/vim-textobj-syntax'
 Bundle  'kchmck/vim-coffee-script'
 Bundle  'skammer/vim-css-color'
 Bundle  'xolox/vim-misc'
 Bundle  'Valloric/YouCompleteMe'
 Bundle  'ervandew/supertab'
+
+"text object plugin
+Bundle  'kana/vim-textobj-lastpat'
+Bundle  'kana/vim-textobj-user'
+Bundle  'kana/vim-textobj-line'
+Bundle  'kana/vim-textobj-indent'
+Bundle  'kana/vim-textobj-entire'
+Bundle  'kana/vim-textobj-syntax'
+
 " gist repo
 Bundle  'mattn/gist-vim'
 Bundle  'mattn/webapi-vim'
 
-" vim scripts"
-Bundle  'vim-scripts/a.vim'
-Bundle  'vim-scripts/bufexplorer.zip'
-Bundle  'vim-scripts/calendar.vim--Matsumoto'
-Bundle  'vim-scripts/DoxygenToolkit.vim'
+" vim-scripts"
+Bundle  'a.vim'
+Bundle  'bufexplorer.zip'
+Bundle  'calendar.vim--Matsumoto'
+Bundle  'DoxygenToolkit.vim'
+Bundle  'ZoomWin'
 filetype plugin indent on
 
 "keymaping for golang{{{"
