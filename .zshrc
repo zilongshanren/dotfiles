@@ -98,3 +98,10 @@ alias vim="stty stop '' -ixoff ; vim"
  }
 
  alias rake="noglob rake"
+
+ export PATH="$HOME/.cask/bin:$PATH"
+
+ alias e=emacsclient -t
+ alias ec=emacsclient -c
+
+ export PATH="/usr/local/share/npm/bin:$PATH"
