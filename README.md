@@ -15,7 +15,7 @@ Open a arbitrary file and run the following ex command of vim:
     :BundleInstall
 
 #Tips:
-    if you want to use the full power of these vim plugins, you should install python,ruby ctags,jsctags
+    If you want to use the full power of these vim plugins, you should install python,ruby ctags,jsctags.
 
 
 **Licence:**
