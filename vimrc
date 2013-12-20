@@ -1,4 +1,5 @@
 " VIM Configuration File
+" Copyright: Common CC 3.0
 " Author: guanghui qu 
 "
 set nocompatible
