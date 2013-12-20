@@ -29,3 +29,5 @@
 	user = andyque
 [push]
 	default = matching
+[branch]
+	autosetuprebase = always
