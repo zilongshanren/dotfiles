@@ -10,7 +10,7 @@ I use Vundle to management my vim plugins. You can refer to this link for more i
     
 #Install plugins
 
-open your vimrc file and run command 
+Open a arbitrary file and run the following ex command of vim:
 
     :BundleInstall
 
