@@ -18,7 +18,7 @@ di = !"d() { git diff --patch-with-stat HEAD~$1; }; git diff-index --quiet HEAD 
     ci = commit -a -v
     throw = reset --hard HEAD
     throwh = reset --hard HEAD^
-    clr = clean -f -d
+    clr = clean -f -d -x
 [color]
     ui = true
 [core]
