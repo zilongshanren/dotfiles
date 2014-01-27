@@ -1,0 +1,15 @@
+set autoindent
+set ignorecase
+set smartcase
+nnoremap <silent> n nzz
+nnoremap <silent> N Nzz
+nnoremap <silent> * *zz
+inoremap <c-a> <esc>I
+inoremap <c-e> <esc>A
+inoremap <c-f> <right>
+inoremap <c-b> <left>
+" inoremap <C-d> <Esc>lxi
+inoremap <c-p> <up>
+inoremap <c-n> <down>
+set incsearch
+set hlsearch
