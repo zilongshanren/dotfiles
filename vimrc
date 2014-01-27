@@ -387,8 +387,8 @@ nnoremap <leader>9   :call GenerateJsTags() <cr>
 "}}}
 
 " Always change to directory of the buffer currently in focus {{{
-" autocmd! bufenter *.* :cd %:p:h
-" autocmd! bufread  *.* :cd %:p:h
+nmap <silent> <leader>cd :cd %:p:h
+inoremap  \fn <C-R>=expand("%:t:r")<CR>
 "}}}
 
 
