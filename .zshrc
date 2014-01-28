@@ -103,5 +103,6 @@ alias vim="stty stop '' -ixoff ; vim"
 
  alias e=emacsclient -t
  alias ec=emacsclient -c
+ alias tmuxd="tmux attach -d"
 
  export PATH="/usr/local/share/npm/bin:$PATH"
