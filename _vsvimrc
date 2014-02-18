@@ -1,0 +1,24 @@
+nmap <C-O> :vsc View.NavigateBackward<CR>
+nmap <C-I> :vsc View.NavigateForward<CR>
+
+nmap <C-]> :vsc Edit.GoToDefinition<CR>
+
+set incsearch
+set hlsearch
+set number
+
+set autoindent
+set tabstop=4        " tab width is 4 spaces
+set shiftwidth=4     " indent also with 4 spaces
+set softtabstop=4
+set expandtab
+set textwidth=300
+set t_Co=256
+
+
+imap <c-n> <Down>
+imap <c-p> <Up>
+imap <c-f> <Right>
+imap <c-b> <left>
+imap <c-a> <Esc>I
+imap <c-e> <Esc>A
