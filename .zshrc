@@ -99,7 +99,7 @@ alias vim="stty stop '' -ixoff ; vim"
 
  alias rake="noglob rake"
 
- export PATH="$HOME/.cask/bin:$PATH"
+ export PATH="$HOME/.cask/bin:$HOME/.cabal/bin:$PATH"
 
  alias e=emacsclient -t
  alias ec=emacsclient -c
