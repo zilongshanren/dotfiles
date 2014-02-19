@@ -20,23 +20,39 @@ flags = [
     '-I',
     '.',
     '-isystem',
+    '/usr/include',
+    '-isystem',
+    '/usr/include/c++/',
+    '-isystem',
+    '/usr/include/i386-linux-gnu/c++',
+    '-isystem',
     '/usr/lib/c++/v1',
     '-I',
-    '/Users/guanghui/cocos2d-x/cocos2dx/include',
+    '/Users/guanghui/cocos2d-x/cocos',
     '-I',
-    '/Users/guanghui/cocos2d-x/cocos2dx',
+    '/Users/guanghui/cocos2d-x/cocos/base',
     '-I',
-    '/Users/guanghui/cocos2d-x/CocosDenshion/include',
+    '/Users/guanghui/cocos2d-x/cocos/physics',
     '-I',
-    '/Users/guanghui/cocos2d-x/extensions',
+    '/Users/guanghui/cocos2d-x/cocos/math/kazmath/include',
     '-I',
-    '/Users/guanghui/cocos2d-x/cocos2dx/kazmath/include',
+    '/Users/guanghui/cocos2d-x/cocos/2d',
     '-isystem',
     '/usr/include/libxml2',
     '-I',
-    '/Users/guanghui/cocos2d-x/cocos2dx/platform/ios',
+    '/Users/guanghui/cocos2d-x/cocos/gui',
     '-I',
-    '/Users/guanghui/cocos2d-x/cocos2dx/platform/third_party/ios'
+    '/Users/guanghui/cocos2d-x/cocos/network'
+    '-I',
+    '/Users/guanghui/cocos2d-x/cocos/audio/include'
+    '-I',
+    '/Users/guanghui/cocos2d-x/cocos/editor-support'
+    '-I',
+    '/Users/guanghui/cocos2d-x/external'
+    '-I',
+    '/Users/guanghui/cocos2d-x/extensions'
+    '-I',
+    '/Users/guanghui/cocos2d-x/external/chipmunk/include/chipmunk'
 ]
 
 if compilation_database_folder:
