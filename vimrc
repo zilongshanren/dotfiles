@@ -288,6 +288,16 @@ nmap <leader>hs :set hlsearch! hlsearch?<CR>
 
 "config syntastic {{{
 let g:syntastic_check_on_open=1
+let g:syntastic_cpp_include_dirs = ['/usr/include/']
+let g:syntastic_cpp_remove_include_errors = 1
+let g:syntastic_cpp_check_header = 1
+let g:syntastic_cpp_compiler = 'clang++'
+let g:syntastic_cpp_compiler_options = '-std=c++11 -stdlib=libstdc++'
+"set error or warning signs
+"let g:syntastic_error_symbol = '✗'
+"let g:syntastic_warning_symbol = '⚠'
+""whether to show balloons
+let g:syntastic_enable_balloons = 1
 "}}}
 
 
