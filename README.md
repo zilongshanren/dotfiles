@@ -14,6 +14,10 @@ Open a arbitrary file and run the following ex command of vim:
 
     :BundleInstall
 
+#Config YouCompleteMe plugin
+
+You can refer to [this link](https://github.com/Valloric/YouCompleteMe) for more information.
+
 #Tips:
     If you want to use the full power of these vim plugins, you should install python,ruby ctags,jsctags.
 
