@@ -18,6 +18,7 @@ Bundle 'tpope/vim-fugitive'
 
 Bundle 'scrooloose/nerdtree'
 Bundle  'scrooloose/syntastic'
+Bundle 'tommcdo/vim-exchange'
 
 Bundle 'tpope/vim-repeat'
 Bundle  'tpope/vim-unimpaired'
