@@ -6,6 +6,8 @@ I use Vundle to management my vim plugins. You can refer to this link for more i
 
     cd ~/.vim
 
+    git submodule init --update
+
     ./install.sh
     
 #Install plugins
