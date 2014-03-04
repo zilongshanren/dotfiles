@@ -5,9 +5,50 @@
 set nocompatible
 filetype off
 
+function! GetRunningOS()
+  if has("win32")
+    return "win"
+  endif
+  if has("unix")
+    if system('uname')=~'Darwin'
+      return "mac"
+    else
+      return "linux"
+    endif
+  endif
+endfunction
+
+let os = GetRunningOS()
+
+if os=="win"
+set guioptions-=m
+set guioptions-=T
+language message zh_CN.utf-8
+endif
+
+"set font for gui vim
+if has("gui_running")
+  if has("gui_gtk2")
+    set guifont=Inconsolata\ 12
+  elseif has("gui_macvim")
+    set guifont=Menlo\ Regular:h14
+  elseif has("gui_win32")
+    set guifont=Consolas:h11:cANSI
+  endif
+endif
+
+
 "Let Vundle manage Vbundle{{{
+if os == "mac" || os == "linux"
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
+endif
+
+if os == "win"
+set rtp+=~/dotfiles/bundle/vundle/
+let path='~/dotfiles/bundle'
+call vundle#rc(path)
+endif
 "}}}
 
 
@@ -104,7 +145,7 @@ set fenc=utf-8
 set termencoding=utf-8
 set fileencodings=utf-8,chinese
 set encoding=utf-8  "if not set, the powerline plugins won't work 
-if has("win32") || has("win64")
+if os == "win"
     set fileencoding=chinese
 endif
 set autoindent
@@ -644,6 +685,11 @@ inoremap <C-S> <C-O>:update<CR>
 
 "change you complete me plugin default mappings"{{{
 "refer to this blog post :http://0x3f.org/blog/make-youcompleteme-ultisnips-compatible/
+
+"if your os is win, then disable the ycm plugin
+if os=="win"
+let g:loaded_youcompleteme = 1
+endif
 let g:ycm_key_list_select_completion = ['<C-TAB>', '<Down>']
 let g:ycm_key_list_previous_completion = ['<C-S-TAB>', '<Up>']
 let g:SuperTabDefaultCompletionType = '<C-Tab>'
