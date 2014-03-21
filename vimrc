@@ -56,11 +56,13 @@ Bundle 'gmarik/vundle'
 
 " github repo
 Bundle 'tpope/vim-fugitive'
+Bundle 'airblade/vim-gitgutter'
 
 Bundle 'scrooloose/nerdtree'
 Bundle  'scrooloose/syntastic'
 Bundle 'tommcdo/vim-exchange'
 
+" tpope's awesome vim plugins
 Bundle 'tpope/vim-repeat'
 Bundle  'tpope/vim-unimpaired'
 Bundle  'tpope/vim-speeddating'
@@ -84,7 +86,7 @@ Bundle  'sjl/gundo.vim'
 Bundle  'nelstrom/vim-visual-star-search'
 Bundle  'nelstrom/vim-qargs'
 Bundle  'klen/python-mode'
-Bundle  'Lokaltog/vim-powerline'
+Bundle 'bling/vim-airline'
 Bundle  'SirVer/ultisnips'
 Bundle  'xuhdev/SingleCompile'
 Bundle  'oblitum/bufkill'
@@ -708,3 +710,9 @@ let g:gist_open_browser_after_post =1
 "add powerline plugin config{{{
 " let g:Powerline_symbols = 'fancy'
 "}}}
+
+"key maps for gitgutter {{{
+nmap <Leader>gs <Plug>GitGutterStageHunk
+nmap <Leader>gr <Plug>GitGutterRevertHunk
+"}}}
+
