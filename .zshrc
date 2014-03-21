@@ -106,3 +106,5 @@ alias vim="stty stop '' -ixoff ; vim"
  alias tmuxd="tmux attach -d"
 
  export PATH="/usr/local/share/npm/bin:$PATH"
+ PATH=$(brew --prefix)/share/python:$(brew --prefix)/share/python/bin:$(brew --prefix)/share/python/sbin:$PATH
+ PYTHONPATH=$(brew --prefix)/lib/python2.7/site-packages:$PYTHONPATH
