@@ -617,9 +617,10 @@ inoremap <C-t>     <Esc> :tabnew<CR>
 "}}}
 
 "configs for vimwiki"{{{
-nmap <leader>5 :VimwikiAll2HTML<cr>
-let g:vimwiki_list = [{'path':  '/Users/guanghui/workspace/myblog/octopress/source/vimwiki/',  
-            \ 'path_html': '/Users/guanghui/workspace/myblog/octopress/source/vimwiki_html/'}]
+"I don't use vimwiki anymore. Now I am using emacs org-mode to manage my personal life
+"nmap <leader>5 :VimwikiAll2HTML<cr>
+"let g:vimwiki_list = [{'path':  '/Users/guanghui/workspace/myblog/octopress/source/vimwiki/',  
+"            \ 'path_html': '/Users/guanghui/workspace/myblog/octopress/source/vimwiki_html/'}]
 "}}}
 
 "keymaping for HardMode plugin {{{
@@ -720,4 +721,5 @@ nmap <Leader>gr <Plug>GitGutterRevertHunk
 
 "key maps for vim-airline {{{
 let g:airline#extensions#tabline#enabled = 1
+let g:airline_powerline_fonts = 1
 "}}}
