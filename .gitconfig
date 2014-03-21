@@ -24,6 +24,7 @@ di = !"d() { git diff --patch-with-stat HEAD~$1; }; git diff-index --quiet HEAD 
 [core]
     editor = vim
 	excludesfile = /Users/guanghui/.gitignore_global
+    autocrlf = false
 [difftool "sourcetree"]
 	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
 	path = 

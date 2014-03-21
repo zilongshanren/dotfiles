@@ -8,7 +8,7 @@ I use Vundle to management my vim plugins. You can refer to this link for more i
 
     git submodule init --update
 
-    ./install.sh
+    ./install.sh (Note: If you run this command, it will use my .gitconfig file, you should change the name and email part before using git and github.)
     
 #Install plugins
 
