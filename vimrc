@@ -282,7 +282,7 @@ let g:syntastic_error_symbol = '✗'
 let g:syntastic_warning_symbol = '⚠'
 " let g:syntastic_debug = 1
 let g:syntastic_python_checkers=['flake8']
-let g:syntastic_python_flake8_post_args='--ignore=E501'
+let g:syntastic_python_flake8_post_args='--ignore=E501,E128'
 "whether to show balloons
 let g:syntastic_enable_balloons = 1
 "}}}
