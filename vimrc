@@ -51,7 +51,7 @@ call vundle#rc(path)
 endif
 "}}}
 
-
+" vundle plugins
 Bundle 'gmarik/vundle'
 
 " github repo
@@ -75,6 +75,9 @@ Bundle  'tpope/vim-eunuch'
 "color scheme
 Bundle 'altercation/vim-colors-solarized'
 Bundle 'nelstrom/vim-blackboard'
+Bundle 'sickill/vim-monokai'
+
+"very useful plugins
 Bundle  'mileszs/ack.vim'
 Bundle  'kien/ctrlp.vim'
 Bundle  'Lokaltog/vim-easymotion'
@@ -348,10 +351,10 @@ let g:syntastic_enable_balloons = 1
 
 "set colorscheme {{{
 syntax enable
-colorscheme blackboard
-if has("gui_running")
-    colorscheme solarized
-endif
+colorscheme monokai
+" if has("gui_running")
+"     colorscheme monokai
+" endif
 "}}}
 
 "config tagbar plugin {{{
