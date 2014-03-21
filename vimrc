@@ -280,6 +280,7 @@ let g:syntastic_cpp_compiler_options = '-std=c++11 -stdlib=libstdc++'
 "set error or warning signs
 let g:syntastic_error_symbol = '✗'
 let g:syntastic_warning_symbol = '⚠'
+let g:pep8_ignore="E501,W601"
 "whether to show balloons
 let g:syntastic_enable_balloons = 1
 let g:syntastic_python_checkers=['pyflakes']
