@@ -51,7 +51,12 @@ call vundle#rc(path)
 endif
 "}}}
 
+" source vundle plugis
+if os == "win"
+source ~/dotfiles/bundles.vim
+else
 source ~/.vim/bundles.vim
+endif
 
 filetype plugin indent on
 
