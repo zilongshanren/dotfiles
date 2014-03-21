@@ -61,6 +61,7 @@ Bundle 'airblade/vim-gitgutter'
 Bundle 'scrooloose/nerdtree'
 Bundle  'scrooloose/syntastic'
 Bundle 'tommcdo/vim-exchange'
+Bundle 'terryma/vim-multiple-cursors'
 
 " tpope's awesome vim plugins
 Bundle 'tpope/vim-repeat'
@@ -505,6 +506,7 @@ let g:pymode_breakpoint = 0
 let g:pymode_syntax = 1
 let g:pymode_syntax_builtin_objs = 0
 let g:pymode_syntax_builtin_funcs = 0
+let g:pymode_rope_complete_on_dot = 0
 "}}}
 
 " Folding rules {{{
@@ -716,3 +718,6 @@ nmap <Leader>gs <Plug>GitGutterStageHunk
 nmap <Leader>gr <Plug>GitGutterRevertHunk
 "}}}
 
+"key maps for vim-airline {{{
+let g:airline#extensions#tabline#enabled = 1
+"}}}
