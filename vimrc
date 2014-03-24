@@ -86,7 +86,7 @@ let mapleader=','
 nmap <leader>v <c-v>
 set fenc=utf-8
 set termencoding=utf-8
-set fileencodings=utf-8,chinese
+set fileencodings=utf-8
 set encoding=utf-8  "if not set, the powerline plugins won't work 
 if os == "win"
     set fileencoding=chinese
