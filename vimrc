@@ -97,6 +97,7 @@ set shiftwidth=4     " indent also with 4 spaces
 set softtabstop=4
 set expandtab
 set textwidth=80
+set relativenumber
 set t_Co=256
 " set relativenumber
 set number
