@@ -282,7 +282,7 @@ let g:syntastic_enable_balloons = 1
 syntax enable
 colorscheme blackboard
 if has("gui_running")
-colorscheme monokai
+colorscheme solarized
 let s:uname = system("uname")
 if s:uname == "Darwin\n"
 set guifont=PowerlineSymbols
