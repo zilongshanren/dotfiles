@@ -5,7 +5,7 @@
 	keepBackup = true
 [alias]
 # Show the diff between the latest commit and the current state
-d = !"git diff-index --quiet HEAD -- || clear; git --no-pager diff --patch-with-stat"
+d = !"git diff"
 # `git di $number` shows the diff between the state `$number` revisions ago and the current state
 di = !"d() { git diff --patch-with-stat HEAD~$1; }; git diff-index --quiet HEAD -- || clear; d"
     g = git
@@ -18,7 +18,7 @@ di = !"d() { git diff --patch-with-stat HEAD~$1; }; git diff-index --quiet HEAD 
     ci = commit -a -v
     throw = reset --hard HEAD
     throwh = reset --hard HEAD^
-    clr = clean -f -d -x
+    clr = clean -fdx -f
 [color]
     ui = true
 [core]

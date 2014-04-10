@@ -26,17 +26,6 @@ set guioptions-=T
 language message zh_CN.utf-8
 endif
 
-"set font for gui vim
-if has("gui_running")
-  if has("gui_gtk2")
-    set guifont=Inconsolata\ 12
-  elseif has("gui_macvim")
-    set guifont=Menlo\ Regular:h14
-  elseif has("gui_win32")
-    set guifont=Consolas:h11:cANSI
-  endif
-endif
-
 
 "Let Vundle manage Vbundle{{{
 if os == "mac" || os == "linux"
@@ -291,10 +280,14 @@ let g:syntastic_enable_balloons = 1
 
 "set colorscheme {{{
 syntax enable
+colorscheme blackboard
+if has("gui_running")
 colorscheme monokai
-" if has("gui_running")
-"     colorscheme monokai
-" endif
+let s:uname = system("uname")
+if s:uname == "Darwin\n"
+set guifont=PowerlineSymbols
+endif
+endif
 "}}}
 
 "config tagbar plugin {{{
