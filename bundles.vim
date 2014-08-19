@@ -47,7 +47,7 @@ Bundle  'mileszs/ack.vim'
 Bundle  'kchmck/vim-coffee-script'
 Bundle  'skammer/vim-css-color'
 Bundle  'xolox/vim-misc'
-Bundle  'Valloric/YouCompleteMe'
+"Bundle  'Valloric/YouCompleteMe'
 Bundle  'ervandew/supertab'
 
 "text object plugin
