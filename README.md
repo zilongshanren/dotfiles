@@ -13,6 +13,7 @@ I use Vundle to management my vim plugins. You can refer to this link for more i
 Open a arbitrary file and run the following ex command of vim:
 
     :BundleInstall
+    Note: The BundleInstal commands will not install YouCompleteMe on default, you should uncomment it from *bundles.vim*
 
 #Config YouCompleteMe plugin
 
