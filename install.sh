@@ -30,6 +30,8 @@ ln -s ~/.vim/.tmux.conf ~/.tmux.conf
 rm ~/.xvimrc
 ln -s ~/.vim/.xvimrc ~/.xvimrc
 ln -s ~/.vim/.vrapperrc ~/.vrapperrc
+rm ~/.ctags
+ln -s ~/.vim/.ctags  ~/.ctags
 
 
 #echo "update submodules"
