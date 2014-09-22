@@ -4,21 +4,24 @@
 [mergetool]
 	keepBackup = true
 [alias]
-# Show the diff between the latest commit and the current state
-d = !"git diff"
-# `git di $number` shows the diff between the state `$number` revisions ago and the current state
-di = !"d() { git diff --patch-with-stat HEAD~$1; }; git diff-index --quiet HEAD -- || clear; d"
-    g = git
-	cm = commit
-    cl = clone
-	br = branch
-    st = status
-    co = checkout
-    sm = submodule
-    ci = commit -a -v
-    throw = reset --hard HEAD
-    throwh = reset --hard HEAD^
-    clr = clean -fdx -f
+	# Show the diff between the latest commit and the current state
+	d	= !"git diff"
+	# `git di $number` shows the diff between the state `$number` revisions ago and the current state
+	di	= !"d() { git diff --patch-with-stat HEAD~$1; }; git diff-index --quiet HEAD -- || clear; d"
+	g	= git
+	cm	= commit
+	cl	= clone
+	br	= branch
+	st	= status
+	co	= checkout
+	sm	= submodule
+	ci	= commit -a -v
+	throw	= reset --hard HEAD
+	throwh	= reset --hard HEAD^
+	clr	= clean -fdx -f
+	last	= log -1
+	glog	= log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+	slog	= log --pretty=oneline	
 [color]
     ui = true
 [core]

@@ -101,6 +101,11 @@ set matchpairs+=<:>
 set ruler
 set backspace=indent,eol,start
 map Y y$
+" Change K from being mapped to interactive man pages to being used as the
+" vanilla comma ',' key's functionality (intra-line backwards search repeat for
+" any t, T, f, F searches).
+nnoremap K ,
+vnoremap K ,
 set laststatus=2
 set pastetoggle=<F2>
 set nolist
