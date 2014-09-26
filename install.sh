@@ -38,6 +38,9 @@ ln -s ~/.vim/.ctags  ~/.ctags
 git submodule init
 git submodule update
 
+rm -rf ~/.percol.d
+mkdir ~/.percol.d
+ln -s  ~/.vim/rc.py ~/.percol.d/rc.py
 
 #echo "remove lua-ftplugin to prevent doc error msg"
 
