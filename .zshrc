@@ -147,3 +147,5 @@ alias vim="stty stop '' -ixoff ; vim"
      zle -N percol_select_history
      bindkey '^R' percol_select_history
  fi
+
+ source ~/.bash_profile
