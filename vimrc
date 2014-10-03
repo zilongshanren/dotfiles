@@ -417,6 +417,8 @@ nmap ,3 :!noglob rake generate <cr>
 nmap ,4 :!noglob rake deploy <cr>
 "}}}
 
+"add auto complete feature to vim
+let g:neocomplcache_enable_at_startup = 1
 
 " Better navigating through omnicomplete option list {{{
 " See http://stackoverflow.com/questions/2170023/how-to-map-keys-for-popup-menu-in-vim
