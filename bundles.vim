@@ -48,6 +48,9 @@ Bundle  'mileszs/ack.vim'
 " Bundle  'skammer/vim-css-color'
 Bundle  'xolox/vim-misc'
 " Bundle  'Valloric/YouCompleteMe'
+" if you use Vim for programming, please comment the necomplcache and use
+" YouComplete Me instead
+Bundle 'Shougo/neocomplcache.vim'
 Bundle  'ervandew/supertab'
 
 "text object plugin
