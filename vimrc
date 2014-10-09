@@ -306,6 +306,7 @@ let g:solarized_diffmode="low"
 
 " Ctlr-P {{{
 nmap <leader>p :CtrlP <cr>
+nmap <leader>xb :CtrlPBuffer<cr>
 let g:ctrlp_open_multiple_files = 'v'
 
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip
