@@ -4,7 +4,12 @@ inoremap ,f :xccmd jumpToNextCounterpart<cr>
 
 "Open quick search : CMD+Shift+o
 map ,p :xccmd openQuickly<cr>
-inoremap <c-e> <Esc>A
+inoremap <c-p> <UP>
+inoremap <c-n> <DOWN>
+inoremap <c-f> <RIGHT>
+inoremp <c-b> <LEFT>
+
+ inoremap <C-e> <C-o>$
 
 "fold
 map ,zf :xccmd fold<cr>

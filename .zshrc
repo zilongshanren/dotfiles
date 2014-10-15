@@ -101,8 +101,8 @@ alias vim="stty stop '' -ixoff ; vim"
 
  export PATH="$HOME/.cask/bin:$HOME/.cabal/bin:$PATH"
 
- # alias e='emacsclient -t'
- # alias ec='emacsclient -c'
+ alias e='emacsclient -t'
+ alias ec='emacsclient -c'
  # alias vim='emacsclient -t'
  # alias vi='emacsclient -t'
 
