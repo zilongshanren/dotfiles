@@ -1,3 +1,4 @@
+set relativenumber
 "Jump between .h/.cpp
 nnoremap ,f :xccmd jumpToNextCounterpart<cr>
 inoremap ,f :xccmd jumpToNextCounterpart<cr>
