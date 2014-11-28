@@ -8,10 +8,12 @@ rm ~/.gitconfig
 rm ~/.latexmkrc
 rm ~/.zshrc
 rm ~/.tmux.conf
+rm ~/.tmux-mac
 ln -s ~/.vim/.gitconfig ~/.gitconfig
 ln -s ~/.vim/.latexmkrc ~/.latexmkrc
 ln -s ~/.vim/.zshrc ~/.zshrc
 ln -s ~/.vim/.tmux.conf ~/.tmux.conf
+ln -s ~/.vim/.tmux-mac ~/.tmux-mac 
 
 rm ~/.xvimrc
 ln -s ~/.vim/.xvimrc ~/.xvimrc
