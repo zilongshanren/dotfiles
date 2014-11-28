@@ -72,9 +72,6 @@ export PATH=/usr/local/bin:/usr/bin:$PATH
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
 
-export LC_ALL=zh_CN.UTF-8
-export LANG=zh_CN.UTF-8
-
 export NODE_PATH='/usr/local/lib/jsctags:${NODE_PATH}'
 export GOPATH="$HOME/workspace/golang"
 export GOROOT="/usr/local/Cellar/go/1.1.1"
@@ -108,9 +105,9 @@ alias vim="stty stop '' -ixoff ; vim"
 
  alias tmuxd="tmux attach -d"
 
- export PATH="/usr/local/share/npm/bin:$PATH"
- PATH=$(brew --prefix)/share/python:$(brew --prefix)/share/python/bin:$(brew --prefix)/share/python/sbin:$PATH
- PYTHONPATH=$(brew --prefix)/lib/python2.7/site-packages:$PYTHONPATH
+ # export PATH="/usr/local/share/npm/bin:$PATH"
+ # PATH=$(brew --prefix)/share/python:$(brew --prefix)/share/python/bin:$(brew --prefix)/share/python/sbin:$PATH
+ # PYTHONPATH=$(brew --prefix)/lib/python2.7/site-packages:$PYTHONPATH
 
 
  function ppgrep() {
@@ -148,6 +145,5 @@ alias vim="stty stop '' -ixoff ; vim"
      bindkey '^R' percol_select_history
  fi
 
- source ~/.bash_profile
 
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
