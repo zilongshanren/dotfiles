@@ -10,9 +10,6 @@ export PATH=$ANDROID_SDK_ROOT/sdk/platform-tools:$PATH
 export PATH=$ANDROID_SDK_ROOT/tools:$ANDROID_SDK_ROOT/platform-tools:$PATH
 export ANT_ROOT=/Applications/Cocos/tools/ant/bin
 export PATH=$PATH:$ANT_ROOT
-# add by quick-cocos2d-x setup, DATE: 2014-07-14 TIME: 18:15:11
-export QUICK_COCOS2DX_ROOT=`cat ~/.QUICK_COCOS2DX_ROOT`
-ANDROID_NDK_TOOLCHAIN_ROOT=/Users/guanghui/AndroidDev/android-ndk-r9d/toolchain
 
 export TIZEN_SDK=/Users/guanghui/tizen-sdk
 export PATH=$TIZEN_SDK/tools/:$PATH
@@ -27,7 +24,3 @@ function start_qujing {
   export HTTPS_PROXY='http://theironislands.f.getqujing.net:36762'
 }
 export PATH=/usr/local/bin:$PATH
-
-# Add environment variable COCOS_X_ROOT for cocos2d-x
-export COCOS_X_ROOT=/Applications/Cocos/frameworks/cocos2d-x
-export PATH=$COCOS_X_ROOT:$PATH
