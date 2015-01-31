@@ -29,3 +29,6 @@ ln -s  ~/.vim/rc.py ~/.percol.d/rc.py
 
 rm ~/.bash_profile 
 ln -s ~/.vim/.bash_profile ~/.bash_profile
+
+rm ~/.ctags 
+ln -s ~/.vim/.ctags ~/.ctags

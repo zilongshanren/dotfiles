@@ -24,6 +24,7 @@
 	slog	= log --pretty=oneline	
     accept-ours = "!f() { git checkout --ours -- \"${@:-.}\"; git add -u \"${@:-.}\"; }; f"
     accept-theirs = "!f() { git checkout --theirs -- \"${@:-.}\"; git add -u \"${@:-.}\"; }; f"
+    tagcommit = !sh -c 'git rev-list $0 | head -n 1'
 [color]
     ui = true
 [core]

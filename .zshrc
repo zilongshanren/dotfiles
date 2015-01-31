@@ -1,4 +1,5 @@
 # Path to your oh-my-zsh configuration.
+source ~/.bash_profile
 ZSH=$HOME/.oh-my-zsh
 
 # Set name of the theme to load.
@@ -147,3 +148,16 @@ alias vim="stty stop '' -ixoff ; vim"
 
 
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
+
+# Add environment variable COCOS_X_ROOT for cocos2d-x
+export COCOS_X_ROOT=/Users/guanghui/cocos2d-x-v2
+export PATH=$COCOS_X_ROOT:$PATH
+
+# Add environment variable COCOS_TEMPLATES_ROOT for cocos2d-x
+export COCOS_TEMPLATES_ROOT=/Users/guanghui/cocos2d-x-v2/templates
+export PATH=$COCOS_TEMPLATES_ROOT:$PATH
+
+
+# Add environment variable COCOS_TEMPLATES_ROOT for cocos2d-x
+export COCOS_TEMPLATES_ROOT=/Users/guanghui/cocos2d-x/templates
+export PATH=$COCOS_TEMPLATES_ROOT:$PATH
