@@ -286,13 +286,13 @@ let g:syntastic_enable_balloons = 1
 "set colorscheme {{{
 syntax enable
 colorscheme blackboard
-if has("gui_running")
-colorscheme solarized
-let s:uname = system("uname")
-if s:uname == "Darwin\n"
-set guifont=PowerlineSymbols
-endif
-endif
+" if has("gui_running")
+" colorscheme solarized
+" let s:uname = system("uname")
+" if s:uname == "Darwin\n"
+" set guifont=PowerlineSymbols
+" endif
+" endif
 "}}}
 
 "config tagbar plugin {{{
