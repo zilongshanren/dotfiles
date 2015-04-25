@@ -18,10 +18,14 @@
      ;; --------------------------------------------------------
      auto-completion
      better-defaults
+     (colors :variables
+               colors-enable-nyan-cat-progress-bar
+               colors-enable-rainbow-identifiers t)
      (git :variables
            git-magit-status-fullscreen t
            git-enable-github-support t
           git-gutter-use-fringe t)
+     osx
      ;; markdown
      ;; org
      ;; syntax-checking
@@ -73,7 +77,7 @@ before layers configuration."
                                :size 13
                                :weight normal
                                :width normal
-                               :powerline-scale 1.1)
+                               :powerline-scale 1.0)
    ;; The leader key
    dotspacemacs-leader-key "SPC"
    ;; The leader key accessible in `emacs state' and `insert state'
@@ -141,6 +145,7 @@ before layers configuration."
   "Configuration function.
  This function is called at the very end of Spacemacs initialization after
 layers configuration."
+  (global-company-mode t)
 )
 
 ;; Do not write anything past this comment. This is where Emacs will
