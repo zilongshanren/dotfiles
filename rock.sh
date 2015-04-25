@@ -32,3 +32,6 @@ ln -s ~/.vim/.bash_profile ~/.bash_profile
 
 rm ~/.ctags 
 ln -s ~/.vim/.ctags ~/.ctags
+
+rm ~/.spacemacs
+ln -s ~/.vim/.spacemacs ~/.spacemacs
