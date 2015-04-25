@@ -29,6 +29,13 @@
      markdown
      org
      syntax-checking
+     python
+     html
+     javascript
+     (perspectives :variables
+                perspective-enable-persp-projectile t)
+     lua
+     c-c++
      )
    ;; A list of packages and/or extensions that will not be install and loaded.
    dotspacemacs-excluded-packages '()
