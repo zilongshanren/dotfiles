@@ -20,11 +20,11 @@
      auto-completion
      better-defaults
      (colors :variables
-               colors-enable-nyan-cat-progress-bar
-               colors-enable-rainbow-identifiers t)
+             colors-enable-nyan-cat-progress-bar
+             colors-enable-rainbow-identifiers t)
      (git :variables
-           git-magit-status-fullscreen t
-           git-enable-github-support t
+          git-magit-status-fullscreen t
+          git-enable-github-support t
           git-gutter-use-fringe t)
      osx
      markdown
@@ -222,7 +222,6 @@ layers configuration."
  '(ahs-idle-interval 0.25)
  '(ahs-idle-timer 0 t)
  '(ahs-inhibit-face-list nil)
- '(paradox-github-token "916a091812e9509d2b08a0b8f2837f8602dd5da8")
  '(ring-bell-function (quote ignore) t))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
