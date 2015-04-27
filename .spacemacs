@@ -41,7 +41,7 @@
      my-lisp
      )
    ;; A list of packages and/or extensions that will not be install and loaded.
-   dotspacemacs-excluded-packages '()
+   dotspacemacs-excluded-packages '(evil-escape)
    ;; If non-nil spacemacs will delete any orphan packages, i.e. packages that
    ;; are declared in a layer which is not a member of
    ;; the list `dotspacemacs-configuration-layers'
@@ -178,11 +178,12 @@ layers configuration."
               (git-rebase-mode . emacs)
               (weibo-post-mode . emacs)
               (sr-mode . emacs)
-              (dired-mode . emacs)
+              (dired-mode . normal)
               (compilation-mode . emacs)
               (speedbar-mode . emacs)
               (magit-cherry-mode . emacs)
               (magit-commit-mode . normal)
+              (magit-status-mode . emacs)
               (magit-blame-mode . emacs)
               (rtags-mode . emacs)
               (js2-error-buffer-mode . emacs)
