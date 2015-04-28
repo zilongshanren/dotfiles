@@ -74,9 +74,9 @@ before layers configuration."
    ;; List of themes, the first of the list is loaded when spacemacs starts.
    ;; Press <SPC> T n to cycle to the next theme in the list (works great
    ;; with 2 themes variants, one dark and one light)
-   dotspacemacs-themes '(solarized-light
+   dotspacemacs-themes '(monokai
+                         solarized-light
                          solarized-dark
-                         monokai
                          leuven
                          zenburn)
    ;; If non nil the cursor color matches the state color.
@@ -135,9 +135,9 @@ before layers configuration."
    ;; If non nil smooth scrolling (native-scrolling) is enabled. Smooth
    ;; scrolling overrides the default behavior of Emacs which recenters the
    ;; point when it reaches the top or bottom of the screen.
-   dotspacemacs-smooth-scrolling t
+   dotspacemacs-smooth-scrolling nil
    ;; If non-nil smartparens-strict-mode will be enabled in programming modes.
-   dotspacemacs-smartparens-strict-mode nil
+   dotspacemacs-smartparens-strict-mode t
    ;; If non nil advises quit functions to keep server open when quitting.
    dotspacemacs-persistent-server nil
    ;; List of search tool executable names. Spacemacs uses the first installed
@@ -155,56 +155,55 @@ before layers configuration."
   "Configuration function.
  This function is called at the very end of Spacemacs initialization after
 layers configuration."
-              ;; ;; change evil initial mode state
-      (loop for (mode . state) in
-            '(
-              (minibuffer-inactive-mode . emacs)
-              (Info-mode . emacs)
-              (term-mode . emacs)
-              (log-edit-mode . emacs)
-              (inf-ruby-mode . emacs)
-              (yari-mode . emacs)
-              (erc-mode . emacs)
-              (gud-mode . emacs)
-              (help-mode . emacs)
-              (eshell-mode . emacs)
-              (shell-mode . emacs)
-              (rst-mode . emacs)
-              (magit-log-edit-mode . emacs)
-              (fundamental-mode . emacs)
-              (gtags-select-mode . emacs)
-              (weibo-timeline-mode . emacs)
-              (elfeed-search-mode . emacs)
-              (git-rebase-mode . emacs)
-              (weibo-post-mode . emacs)
-              (sr-mode . emacs)
-              (dired-mode . normal)
-              (compilation-mode . emacs)
-              (speedbar-mode . emacs)
-              (magit-cherry-mode . emacs)
-              (magit-commit-mode . normal)
-              (magit-status-mode . emacs)
-              (magit-blame-mode . emacs)
-              (rtags-mode . emacs)
-              (js2-error-buffer-mode . emacs)
-              (mu4e~update-mail-mode . emacs)
-              (mu4e-about-mode . emacs)
-              (epa-key-list-mode . emacs)
-              (magit-commit-mode . emacs)
-              (diff-mode . emacs)
-              (makey-key-mode . emacs)
-              (srefactor-ui-menu-mode . emacs)
-              (eww-mode . emacs)
-              (elfeed-show-mode . emacs)
-              (fundamental-mode . normal)
-              (weibo-image-mode . emacs)
-              (sx-question-list-mode . emacs)
-              (sx-question-mode . emacs))
-            do (evil-set-initial-state mode state))
-
+;; change evil initial mode state
+  (loop for (mode . state) in
+        '(
+          (minibuffer-inactive-mode . emacs)
+          (Info-mode . emacs)
+          (term-mode . emacs)
+          (log-edit-mode . emacs)
+          (inf-ruby-mode . emacs)
+          (yari-mode . emacs)
+          (erc-mode . emacs)
+          (gud-mode . emacs)
+          (help-mode . emacs)
+          (eshell-mode . emacs)
+          (shell-mode . emacs)
+          (rst-mode . emacs)
+          (magit-log-edit-mode . emacs)
+          (fundamental-mode . emacs)
+          (gtags-select-mode . emacs)
+          (weibo-timeline-mode . emacs)
+          (elfeed-search-mode . emacs)
+          (git-rebase-mode . emacs)
+          (weibo-post-mode . emacs)
+          (sr-mode . emacs)
+          (dired-mode . normal)
+          (compilation-mode . emacs)
+          (speedbar-mode . emacs)
+          (magit-cherry-mode . emacs)
+          (magit-commit-mode . normal)
+          (magit-status-mode . emacs)
+          (magit-blame-mode . emacs)
+          (rtags-mode . emacs)
+          (js2-error-buffer-mode . emacs)
+          (mu4e~update-mail-mode . emacs)
+          (mu4e-about-mode . emacs)
+          (epa-key-list-mode . emacs)
+          (magit-commit-mode . emacs)
+          (diff-mode . emacs)
+          (makey-key-mode . emacs)
+          (srefactor-ui-menu-mode . emacs)
+          (eww-mode . emacs)
+          (elfeed-show-mode . emacs)
+          (fundamental-mode . normal)
+          (weibo-image-mode . emacs)
+          (sx-question-list-mode . emacs)
+          (sx-question-mode . emacs))
+        do (evil-set-initial-state mode state))
+  
   (global-company-mode t)
   (setq powerline-default-separator 'arrow)
-  (setq-default dotspacemacs-smartparens-strict-mode t)
   (require 'dired)
   (define-key dired-mode-map (kbd "RET") 'dired-find-alternate-file)
   (define-key dired-mode-map (kbd "C-k") (lambda () (interactive) (find-alternate-file "..")))
