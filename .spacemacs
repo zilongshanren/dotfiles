@@ -43,6 +43,7 @@
      my-web
      my-tools
      my-writing
+     my-org
      )
    ;; A list of packages and/or extensions that will not be install and loaded.
    dotspacemacs-excluded-packages '(evil-escape
