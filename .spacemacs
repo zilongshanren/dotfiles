@@ -28,6 +28,7 @@
      osx
      markdown
      org
+     dash
      syntax-checking
      python
      html
@@ -37,9 +38,21 @@
      my-c-c++
      my-lisp
      my-misc
+    my-better-defaults
+     my-web
      )
    ;; A list of packages and/or extensions that will not be install and loaded.
-   dotspacemacs-excluded-packages '(evil-escape)
+   dotspacemacs-excluded-packages '(evil-escape
+                                    ;; remove mode for git layer
+                                    magit-gh-pulls
+                                    magit-gitflow
+                                    magit-svn
+                                    smeargle
+                                    ;; remove mode for python layer
+                                    nose
+                                    pony-mode
+                                    hy-mode
+                                    )
    ;; If non-nil spacemacs will delete any orphan packages, i.e. packages that
    ;; are declared in a layer which is not a member of
    ;; the list `dotspacemacs-configuration-layers'
@@ -72,9 +85,9 @@ before layers configuration."
    ;; List of themes, the first of the list is loaded when spacemacs starts.
    ;; Press <SPC> T n to cycle to the next theme in the list (works great
    ;; with 2 themes variants, one dark and one light)
-   dotspacemacs-themes '(monokai
-                         solarized-light
+   dotspacemacs-themes '(solarized-light
                          solarized-dark
+                         monokai
                          leuven
                          zenburn)
    ;; If non nil the cursor color matches the state color.
@@ -152,7 +165,7 @@ before layers configuration."
   "Configuration function.
  This function is called at the very end of Spacemacs initialization after
 layers configuration."
-;; change evil initial mode state
+  ;; change evil initial mode state
   (loop for (mode . state) in
         '(
           (minibuffer-inactive-mode . emacs)
@@ -201,10 +214,10 @@ layers configuration."
   
   (global-company-mode t)
   (setq powerline-default-separator 'arrow)
-  (require 'dired)
-  (define-key dired-mode-map (kbd "RET") 'dired-find-alternate-file)
-  (define-key dired-mode-map (kbd "C-k") (lambda () (interactive) (find-alternate-file "..")))
-  (global-set-key (kbd "RET") 'newline-and-indent))
+  (menu-bar-mode t)
+  ;; (add-to-list 'yas/root-directory "~/.emacs.d/yasnippet-snippets/")
+  (setq-default yas-prompt-functions '(yas-ido-prompt yas-dropdown-prompt))
+  )
 
 ;; Do not write anything past this comment. This is where Emacs will
 ;; auto-generate custom variable definitions.
