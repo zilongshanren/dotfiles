@@ -33,13 +33,16 @@
      python
      html
      javascript
+     restclient
      lua
      c-c++
      my-c-c++
      my-lisp
      my-misc
-    my-better-defaults
+     my-better-defaults
      my-web
+     my-tools
+     my-writing
      )
    ;; A list of packages and/or extensions that will not be install and loaded.
    dotspacemacs-excluded-packages '(evil-escape
