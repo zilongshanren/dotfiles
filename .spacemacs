@@ -1,7 +1,6 @@
 ;; -*- mode: dotspacemacs -*-
 ;; This file is loaded by Spacemacs at startup.
 ;; It must be stored in your home directory.
-
 (defun dotspacemacs/layers ()
   "Configuration Layers declaration."
   (setq-default
@@ -12,11 +11,11 @@
    ;; of a list then all discovered layers will be installed.
    dotspacemacs-configuration-layers
    '(
-     my-evil
      ;; --------------------------------------------------------
      ;; Example of useful layers you may want to use right away
      ;; Uncomment a layer name and press C-c C-c to install it
      ;; --------------------------------------------------------
+     my-evil
      auto-completion
      better-defaults
      (colors :variables
@@ -33,12 +32,11 @@
      python
      html
      javascript
-     ;; (perspectives :variables
-     ;;            perspective-enable-persp-projectile t)
      lua
      c-c++
      my-c-c++
      my-lisp
+     my-misc
      )
    ;; A list of packages and/or extensions that will not be install and loaded.
    dotspacemacs-excluded-packages '(evil-escape)
@@ -146,8 +144,7 @@ before layers configuration."
    ;; The default package repository used if no explicit repository has been
    ;; specified with an installed package.
    ;; Not used for now.
-   dotspacemacs-default-package-repository nil
-   )
+   dotspacemacs-default-package-repository nil)
   ;; User initialization goes here
   )
 
@@ -208,7 +205,6 @@ layers configuration."
   (define-key dired-mode-map (kbd "RET") 'dired-find-alternate-file)
   (define-key dired-mode-map (kbd "C-k") (lambda () (interactive) (find-alternate-file "..")))
   (global-set-key (kbd "RET") 'newline-and-indent))
-  (define-key global-map (kbd "C-s") 'swiper)
 
 ;; Do not write anything past this comment. This is where Emacs will
 ;; auto-generate custom variable definitions.
