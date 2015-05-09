@@ -34,6 +34,7 @@
      html
      javascript
      restclient
+     my-lua
      lua
      c-c++
      my-c-c++
@@ -178,6 +179,7 @@ layers configuration."
           (log-edit-mode . emacs)
           (inf-ruby-mode . emacs)
           (yari-mode . emacs)
+          (flycheck-error-list-mode . emacs)
           (erc-mode . emacs)
           (gud-mode . emacs)
           (help-mode . emacs)
@@ -221,6 +223,26 @@ layers configuration."
   (menu-bar-mode t)
   ;; (add-to-list 'yas/root-directory "~/.emacs.d/yasnippet-snippets/")
   (setq-default yas-prompt-functions '(yas-ido-prompt yas-dropdown-prompt))
+  ;; See https://github.com/bbatsov/prelude/pull/670 for a detailed
+  ;; discussion of these options.
+  (setq helm-split-window-in-side-p           t
+        helm-move-to-line-cycle-in-source     t
+        helm-ff-search-library-in-sexp        t
+        helm-ff-file-name-history-use-recentf t)
+  (evil-leader/set-key-for-mode 'c++-mode
+    "mtr" 'rtags-find-references
+    "mts" 'rtags-find-symbol
+    "mti" 'rtags-imenu
+    "mtf" 'rtags-find-file
+    "mtv" 'rtags-find-virtuals-at-point)
+  (diminish 'global-whitespace-mode)
+  (require 'yasnippet)
+  (add-to-list 'yas/root-directory "~/.emacs.d/yasnippet-snippets/")
+  (setq right-fringe-width 10)
+
+  (evil-leader/set-key "fR" 'rename-file-and-buffer)
+  (define-key evil-insert-state-map (kbd "C-y") 'lispy-yank)
+  (define-key evil-insert-state-map (kbd "C-d") 'lispy-delete)
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
@@ -235,6 +257,21 @@ layers configuration."
  '(ahs-idle-interval 0.25)
  '(ahs-idle-timer 0 t)
  '(ahs-inhibit-face-list nil)
+ '(magit-use-overlays nil)
+ '(org-agenda-custom-commands nil)
+ '(org-agenda-files
+   (quote
+    ("~/org-notes/gtd.org" "~/org-notes/emacs.org" "~/org-notes/cocos2d-x.org" "~/org-notes/notes.org" "~/org-notes/learning.org" "~/org-notes/vim.org" "~/org-notes/journal.org")))
+ '(org-agenda-ndays 1)
+ '(org-agenda-show-all-dates t)
+ '(org-agenda-skip-deadline-if-done t)
+ '(org-agenda-skip-deadline-prewarning-if-scheduled t)
+ '(org-agenda-skip-scheduled-if-done t)
+ '(org-agenda-start-on-weekday nil)
+ '(org-deadline-warning-days 14)
+ '(org-fast-tag-selection-single-key (quote expert))
+ '(org-reverse-note-order t)
+ '(paradox-github-token t)
  '(ring-bell-function (quote ignore) t))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
@@ -242,4 +279,5 @@ layers configuration."
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(company-tooltip-common ((t (:inherit company-tooltip :weight bold :underline nil))))
- '(company-tooltip-common-selection ((t (:inherit company-tooltip-selection :weight bold :underline nil)))))
+ '(company-tooltip-common-selection ((t (:inherit company-tooltip-selection :weight bold :underline nil))))
+ '(git-gutter-fr:added ((t (:foreground "#859900" :weight bold :width extra-expanded)))))
