@@ -251,8 +251,9 @@ layers configuration."
   (define-key evil-insert-state-map (kbd "C-y") 'lispy-yank)
   (define-key evil-insert-state-map (kbd "C-d") 'lispy-delete)
   (define-key evil-insert-state-map (kbd "C-p") 'previous-line)
-  (setq insert-directory-program (executable-find "gls"))
-  (set-variable 'ycmd-server-command '("python" "/Users/guanghui/Github/ycmd/ycmd/__main__.py"))
+  (if (executable-find "gls")
+      (setq insert-directory-program (executable-find "gls")))
+  (set-variable 'ycmd-server-command `("python" ,(expand-file-name  "~/Github/ycmd/ycmd/__main__.py")))
   ;; the solution is not perfect, maybe I should wait for the spacemacs author
   ;; to fix the issue
   (delete 'company-c-headers company-backends-c-mode-common)
