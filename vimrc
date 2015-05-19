@@ -285,7 +285,8 @@ let g:syntastic_enable_balloons = 1
 
 "set colorscheme {{{
 syntax enable
-colorscheme blackboard
+set background=dark
+colorscheme solarized
 " if has("gui_running")
 " colorscheme solarized
 " let s:uname = system("uname")
