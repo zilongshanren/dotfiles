@@ -15,7 +15,6 @@
      ;; Example of useful layers you may want to use right away
      ;; Uncomment a layer name and press C-c C-c to install it
      ;; --------------------------------------------------------
-     my-evil
      auto-completion
      better-defaults
      (colors :variables
@@ -34,9 +33,16 @@
      html
      javascript
      restclient
-     my-lua
-     lua
+     emacs-lisp
+     ycmd
+     gtags
      c-c++
+     lua
+     semantic
+     (perspectives :variables
+                   perspective-enable-persp-projectile t)
+     my-evil
+     my-lua
      my-c-c++
      my-lisp
      my-misc
@@ -170,6 +176,7 @@ before layers configuration."
   "Configuration function.
  This function is called at the very end of Spacemacs initialization after
 layers configuration."
+  (add-hook 'prog-mode-hook #'linum-mode)
   ;; change evil initial mode state
   (loop for (mode . state) in
         '(
@@ -243,6 +250,14 @@ layers configuration."
   (evil-leader/set-key "fR" 'rename-file-and-buffer)
   (define-key evil-insert-state-map (kbd "C-y") 'lispy-yank)
   (define-key evil-insert-state-map (kbd "C-d") 'lispy-delete)
+  (define-key evil-insert-state-map (kbd "C-p") 'previous-line)
+  (setq insert-directory-program (executable-find "gls"))
+  (set-variable 'ycmd-server-command '("python" "/Users/guanghui/Github/ycmd/ycmd/__main__.py"))
+  ;; the solution is not perfect, maybe I should wait for the spacemacs author
+  ;; to fix the issue
+  (delete 'company-c-headers company-backends-c-mode-common)
+  (delete 'company-clang company-backends-c-mode-common)
+  (push 'company-c-headers company-backends-c-mode-common)
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
