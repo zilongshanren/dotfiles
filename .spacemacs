@@ -38,7 +38,8 @@
      gtags
      c-c++
      lua
-     semantic
+     ;; semantic
+     (clojure :variables clojure-enable-fancify-symbols t)
      (perspectives :variables
                    perspective-enable-persp-projectile t)
      my-evil
@@ -246,7 +247,7 @@ layers configuration."
   (require 'yasnippet)
   (add-to-list 'yas/root-directory "~/.emacs.d/yasnippet-snippets/")
   (setq right-fringe-width 10)
-
+  (global-set-key (kbd "s-s") 'save-buffer)
   (evil-leader/set-key "fR" 'rename-file-and-buffer)
   (define-key evil-insert-state-map (kbd "C-y") 'lispy-yank)
   (define-key evil-insert-state-map (kbd "C-d") 'lispy-delete)
