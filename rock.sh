@@ -35,3 +35,5 @@ ln -s ~/.vim/.ctags ~/.ctags
 
 rm ~/.spacemacs
 ln -s ~/.vim/.spacemacs ~/.spacemacs
+rm ~/.pylintrc
+ln -s ~/.vim/.pylintrc ~/.pylintrc
