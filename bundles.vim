@@ -20,7 +20,7 @@ Bundle  'tpope/vim-commentary'
 Bundle  'tpope/vim-eunuch'
 
 "color scheme
-" Bundle 'altercation/vim-colors-solarized'
+Bundle 'altercation/vim-colors-solarized'
 Bundle 'nelstrom/vim-blackboard'
 " Bundle 'sickill/vim-monokai'
 
