@@ -248,6 +248,7 @@ layers configuration."
   (add-to-list 'yas/root-directory "~/.emacs.d/yasnippet-snippets/")
   (setq right-fringe-width 10)
   (global-set-key (kbd "s-s") 'save-buffer)
+  (global-set-key (kbd "C-c SPC") 'avy-goto-char-2)
   (evil-leader/set-key "fR" 'rename-file-and-buffer)
   (define-key evil-insert-state-map (kbd "C-y") 'lispy-yank)
   (define-key evil-insert-state-map (kbd "C-d") 'lispy-delete)
@@ -255,6 +256,7 @@ layers configuration."
   (if (executable-find "gls")
       (setq insert-directory-program (executable-find "gls")))
   (set-variable 'ycmd-server-command `("python" ,(expand-file-name  "~/Github/ycmd/ycmd/__main__.py")))
+  (setq flycheck-display-errors-function 'flycheck-display-error-messages)
   ;; the solution is not perfect, maybe I should wait for the spacemacs author
   ;; to fix the issue
   (delete 'company-c-headers company-backends-c-mode-common)
