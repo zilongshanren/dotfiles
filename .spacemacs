@@ -98,8 +98,8 @@ before layers configuration."
    ;; Press <SPC> T n to cycle to the next theme in the list (works great
    ;; with 2 themes variants, one dark and one light)
    dotspacemacs-themes '(solarized-light
-                         solarized-dark
                          monokai
+                         solarized-dark
                          leuven
                          zenburn)
    ;; If non nil the cursor color matches the state color.
@@ -229,7 +229,6 @@ layers configuration."
   (global-company-mode t)
   (setq powerline-default-separator 'arrow)
   (menu-bar-mode t)
-  ;; (add-to-list 'yas/root-directory "~/.emacs.d/yasnippet-snippets/")
   (setq-default yas-prompt-functions '(yas-ido-prompt yas-dropdown-prompt))
   ;; See https://github.com/bbatsov/prelude/pull/670 for a detailed
   ;; discussion of these options.
@@ -253,16 +252,17 @@ layers configuration."
   (define-key evil-insert-state-map (kbd "C-y") 'lispy-yank)
   (define-key evil-insert-state-map (kbd "C-d") 'lispy-delete)
   (define-key evil-insert-state-map (kbd "C-p") 'previous-line)
+  (define-key yas-minor-mode-map (kbd "TAB") 'yas-expand)
   (if (executable-find "gls")
       (setq insert-directory-program (executable-find "gls")))
   (set-variable 'ycmd-server-command `("python" ,(expand-file-name  "~/Github/ycmd/ycmd/__main__.py")))
+  (evil-leader/set-key "pf" 'helm-ls-git-ls)
   (setq flycheck-display-errors-function 'flycheck-display-error-messages)
   ;; the solution is not perfect, maybe I should wait for the spacemacs author
   ;; to fix the issue
   (delete 'company-c-headers company-backends-c-mode-common)
   (delete 'company-clang company-backends-c-mode-common)
-  (push 'company-c-headers company-backends-c-mode-common)
-  )
+  (push 'company-c-headers company-backends-c-mode-common))
 
 ;; Do not write anything past this comment. This is where Emacs will
 ;; auto-generate custom variable definitions.
@@ -299,4 +299,7 @@ layers configuration."
  ;; If there is more than one, they won't work right.
  '(company-tooltip-common ((t (:inherit company-tooltip :weight bold :underline nil))))
  '(company-tooltip-common-selection ((t (:inherit company-tooltip-selection :weight bold :underline nil))))
- '(git-gutter-fr:added ((t (:foreground "#859900" :weight bold :width extra-expanded)))))
+ '(git-gutter-fr:added ((t (:foreground "#859900" :weight bold :width extra-expanded))))
+ '(helm-ls-git-modified-and-staged-face ((t (:foreground "dark cyan"))))
+ '(helm-ls-git-modified-not-staged-face ((t (:foreground "dark cyan"))))
+ '(helm-ls-git-renamed-modified-face ((t (:foreground "dark cyan")))))
