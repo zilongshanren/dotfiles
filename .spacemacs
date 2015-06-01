@@ -18,8 +18,7 @@
      auto-completion
      better-defaults
      (colors :variables
-             colors-enable-nyan-cat-progress-bar
-             colors-enable-rainbow-identifiers t)
+             colors-enable-nyan-cat-progress-bar t)
      (git :variables
           git-magit-status-fullscreen t
           git-enable-github-support t
@@ -28,6 +27,8 @@
      markdown
      org
      dash
+     games
+     search-engine
      syntax-checking
      python
      html
@@ -36,6 +37,9 @@
      emacs-lisp
      ycmd
      gtags
+     (shell :variables
+            shell-default-shell 'ansi-term
+            shell-default-term-shell "/bin/zsh")
      c-c++
      lua
      ;; semantic
@@ -223,9 +227,10 @@ layers configuration."
           (fundamental-mode . normal)
           (weibo-image-mode . emacs)
           (sx-question-list-mode . emacs)
+          (anaconda-nav-mode . emacs)
           (sx-question-mode . emacs))
         do (evil-set-initial-state mode state))
-  
+
   (global-company-mode t)
   (setq powerline-default-separator 'arrow)
   (menu-bar-mode t)
@@ -253,13 +258,14 @@ layers configuration."
   (define-key evil-insert-state-map (kbd "C-d") 'lispy-delete)
   (define-key evil-insert-state-map (kbd "C-p") 'previous-line)
   (define-key yas-minor-mode-map (kbd "TAB") 'yas-expand)
-  (if (executable-find "gls")
-      (setq insert-directory-program (executable-find "gls")))
   (set-variable 'ycmd-server-command `("python" ,(expand-file-name  "~/Github/ycmd/ycmd/__main__.py")))
   (evil-leader/set-key "pf" 'helm-ls-git-ls)
   (setq flycheck-display-errors-function 'flycheck-display-error-messages)
   ;; the solution is not perfect, maybe I should wait for the spacemacs author
   ;; to fix the issue
+  (require 'lispy)
+  (define-key lispy-mode-map (kbd "s-1") 'lispy-describe-inline)
+  (define-key lispy-mode-map (kbd "s-2") 'lispy-arglist-inline)
   (delete 'company-c-headers company-backends-c-mode-common)
   (delete 'company-clang company-backends-c-mode-common)
   (push 'company-c-headers company-backends-c-mode-common))
@@ -291,7 +297,10 @@ layers configuration."
  '(org-fast-tag-selection-single-key (quote expert))
  '(org-reverse-note-order t)
  '(paradox-github-token t)
- '(ring-bell-function (quote ignore) t))
+ '(ring-bell-function (quote ignore) t)
+ '(safe-local-variable-values
+   (quote
+    ((eval setenv "PYTHONPATH" "/Users/guanghui/cocos2d-x/tools/cocos2d-console/plugins:/Users/guanghui/cocos2d-x/tools/cocos2d-console/bin")))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
