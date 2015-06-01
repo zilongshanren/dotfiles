@@ -41,11 +41,14 @@
             shell-default-shell 'ansi-term
             shell-default-term-shell "/bin/zsh")
      c-c++
+     deft
      lua
      ;; semantic
      (clojure :variables clojure-enable-fancify-symbols t)
-     (perspectives :variables
-                   perspective-enable-persp-projectile t)
+     eyebrowse
+     ;; replace with  eyebrowser
+     ;; (perspectives :variables
+     ;;               perspective-enable-persp-projectile t)
      my-evil
      my-lua
      my-c-c++
@@ -93,8 +96,12 @@ before layers configuration."
    ;; If the value is nil then no banner is displayed.
    ;; dotspacemacs-startup-banner 'official
    dotspacemacs-startup-banner 'official
+   ;; better company auto completion
+   auto-completion-enable-sort-by-usage t
    ;; t if you always want to see the changelog at startup
    dotspacemacs-always-show-changelog t
+   ;; Adding packages to this list will install them without needing them to be wrapped in a layer. Ideal for quickly add a package. 
+   dotspacemacs-additional-packages '()
    ;; List of items to show in the startup buffer. If nil it is disabled.
    ;; Possible values are: `recents' `bookmarks' `projects'."
    dotspacemacs-startup-lists '(recents projects bookmarks)
@@ -162,7 +169,7 @@ before layers configuration."
    ;; If non nil smooth scrolling (native-scrolling) is enabled. Smooth
    ;; scrolling overrides the default behavior of Emacs which recenters the
    ;; point when it reaches the top or bottom of the screen.
-   dotspacemacs-smooth-scrolling nil
+   dotspacemacs-smooth-scrolling t
    ;; If non-nil smartparens-strict-mode will be enabled in programming modes.
    dotspacemacs-smartparens-strict-mode t
    ;; If non nil advises quit functions to keep server open when quitting.
@@ -266,6 +273,7 @@ layers configuration."
   (require 'lispy)
   (define-key lispy-mode-map (kbd "s-1") 'lispy-describe-inline)
   (define-key lispy-mode-map (kbd "s-2") 'lispy-arglist-inline)
+  (setq deft-directory "~/Dropbox/notes")
   (delete 'company-c-headers company-backends-c-mode-common)
   (delete 'company-clang company-backends-c-mode-common)
   (push 'company-c-headers company-backends-c-mode-common))
