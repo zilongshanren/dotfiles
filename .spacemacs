@@ -37,6 +37,7 @@
      emacs-lisp
      ycmd
      gtags
+     semantic
      (shell :variables
             shell-default-shell 'ansi-term
             shell-default-term-shell "/bin/zsh")
@@ -188,7 +189,8 @@ before layers configuration."
   "Configuration function.
  This function is called at the very end of Spacemacs initialization after
 layers configuration."
-  (add-hook 'prog-mode-hook #'linum-mode)
+  ;; linum-mode is very slow
+  ;; (add-hook 'prog-mode-hook #'linum-mode)
   ;; change evil initial mode state
   (loop for (mode . state) in
         '(
@@ -268,12 +270,23 @@ layers configuration."
   (set-variable 'ycmd-server-command `("python" ,(expand-file-name  "~/Github/ycmd/ycmd/__main__.py")))
   (evil-leader/set-key "pf" 'helm-ls-git-ls)
   (setq flycheck-display-errors-function 'flycheck-display-error-messages)
+  (setq ycmd-request-message-level -1)
+  (setq  url-show-status nil)
   ;; the solution is not perfect, maybe I should wait for the spacemacs author
   ;; to fix the issue
+  (setq helm-ag-insert-at-point 'symbol)
+  (eval-after-load "doxymacs"
+    '(diminish 'doxymacs-mode))
   (require 'lispy)
   (define-key lispy-mode-map (kbd "s-1") 'lispy-describe-inline)
   (define-key lispy-mode-map (kbd "s-2") 'lispy-arglist-inline)
+  (setq deft-extension "org")
   (setq deft-directory "~/Dropbox/notes")
+  (add-to-list 'auto-mode-alist '("\\.eml\\'" . org-mode))
+  (add-to-list 'auto-mode-alist '("\\.h\\'" . c++-mode))
+  (add-to-list 'auto-mode-alist '("\\.c\\'" . c++-mode))
+  (add-to-list 'auto-mode-alist '("\\.mm\\'" . objc-mode))
+
   (delete 'company-c-headers company-backends-c-mode-common)
   (delete 'company-clang company-backends-c-mode-common)
   (push 'company-c-headers company-backends-c-mode-common))
@@ -290,6 +303,9 @@ layers configuration."
  '(ahs-idle-interval 0.25)
  '(ahs-idle-timer 0 t)
  '(ahs-inhibit-face-list nil)
+ '(expand-region-contract-fast-key "V")
+ '(expand-region-reset-fast-key "r")
+ '(helm-ls-git-show-abs-or-relative (quote absolute))
  '(magit-use-overlays nil)
  '(org-agenda-custom-commands nil)
  '(org-agenda-files
@@ -308,7 +324,10 @@ layers configuration."
  '(ring-bell-function (quote ignore) t)
  '(safe-local-variable-values
    (quote
-    ((eval setenv "PYTHONPATH" "/Users/guanghui/cocos2d-x/tools/cocos2d-console/plugins:/Users/guanghui/cocos2d-x/tools/cocos2d-console/bin")))))
+    ((eval setenv "PYTHONPATH" "/Users/guanghui/cocos2d-x/tools/cocos2d-console/plugins:/Users/guanghui/cocos2d-x/tools/cocos2d-console/bin"))))
+ '(vc-follow-symlinks t)
+ '(ycmd-extra-conf-handler (quote load))
+ '(ycmd-extra-conf-whitelist (quote ("~/cocos2d-x/*"))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
