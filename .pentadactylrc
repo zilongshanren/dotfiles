@@ -1,0 +1,47 @@
+" Use home row letters for hints instead of numbers
+"http://nakkaya.com/2014/01/26/pentadactyl-configuration/
+
+set hintkeys=asdflkj
+hi -a Hint font-size: 9pt !important;
+
+" disable smooth scroll
+set scrollsteps=1
+set scrolltime=0
+
+" editor
+set editor="emacsclient"
+
+" faster scrolling
+" map -b j 8j
+" map -b k 8k
+" map -b h 8h
+" map -b l 8l
+
+set hlfind
+
+set findcase=smart
+
+set incfind
+
+map -b zi ZI
+map -b zo ZO
+
+command read-later -description "Execute emacsclient" -javascript <<EOF
+        var emacsClient = "/Applications/Emacs.app/Contents/MacOS/bin/emacsclient";
+        var url = "\"org-protocol://capture://l/"+ encodeURIComponent(content.location) + "/"+ encodeURIComponent(content.document.title) +"/" + encodeURIComponent(content.window.getSelection()) + "\"";
+        var command = emacsClient + " " + url;
+        CommandExMode().open("!" + command);
+EOF
+
+" bring back/hide portions of the GUI
+map -builtin <silent> cog :set guioptions+=mBT<CR>
+map -builtin <silent> coG :set guioptions-=mBT<CR>
+map -builtin <silent> cob :toolbartoggle Bookmarks Toolbar<CR>
+map -builtin <silent> coT :set showtabline=always<CR>
+map -builtin <silent> cot :set showtabline=never<CR>
+
+" I tend to tap the 'd' key on my keyboard on accident
+nmap -builtin d <silent> <Nop>
+
+" Never wanted to go back when I hit delete, now it won't
+nmap -builtin <bs> <nop>

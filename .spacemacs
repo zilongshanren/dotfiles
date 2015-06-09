@@ -14,15 +14,14 @@
      ;; --------------------------------------------------------
      ;; Example of useful layers you may want to use right away
      ;; Uncomment a layer name and press C-c C-c to install it
+     ;;  Guide key
      ;; --------------------------------------------------------
      auto-completion
      better-defaults
      (colors :variables
              colors-enable-nyan-cat-progress-bar t)
      (git :variables
-          git-magit-status-fullscreen t
-          git-enable-github-support t
-          git-gutter-use-fringe t)
+          git-magit-status-fullscreen t)
      osx
      markdown
      org
@@ -59,14 +58,15 @@
      my-web
      my-tools
      my-writing
-     my-org
-     )
+     my-org)
    ;; A list of packages and/or extensions that will not be install and loaded.
    dotspacemacs-excluded-packages '(evil-escape
                                     ;; remove mode for git layer
                                     magit-gh-pulls
                                     magit-gitflow
                                     magit-svn
+                                    git-gutter-fringe
+                                    git-gutter
                                     smeargle
                                     ;; remove mode for python layer
                                     nose
@@ -239,7 +239,8 @@ layers configuration."
           (anaconda-nav-mode . emacs)
           (sx-question-mode . emacs))
         do (evil-set-initial-state mode state))
-
+  ;; 设置中文等宽字体
+  (setq cfs-profiles '("profile1"))
   (global-company-mode t)
   (setq powerline-default-separator 'arrow)
   (menu-bar-mode t)
@@ -303,6 +304,7 @@ layers configuration."
  '(ahs-idle-interval 0.25)
  '(ahs-idle-timer 0 t)
  '(ahs-inhibit-face-list nil)
+ '(cfs--current-profile-name "profile1" t)
  '(expand-region-contract-fast-key "V")
  '(expand-region-reset-fast-key "r")
  '(helm-ls-git-show-abs-or-relative (quote absolute))
@@ -320,8 +322,11 @@ layers configuration."
  '(org-deadline-warning-days 14)
  '(org-fast-tag-selection-single-key (quote expert))
  '(org-reverse-note-order t)
+ '(package-selected-packages
+   (quote
+    (edn paredit queue peg json-rpc dash-functional web-completion-data makey anzu highlight goto-chg flx gh logito pcache pos-tip guide-key request parent-mode simple-httpd json-snatcher json-reformat multiple-cursors moz ctable orglue epic alert log4e gntp spinner epl hydra async deferred f s chinese-word-at-point dash youdao-dictionary ws-butler window-numbering web-mode web-beautify volatile-highlights vi-tilde-fringe use-package tagedit stickyfunc-enhance srefactor smooth-scrolling slim-mode scss-mode sass-mode rfringe reveal-in-finder rainbow-mode rainbow-identifiers rainbow-delimiters pyvenv pyenv-mode popwin pip-requirements persp-projectile pbcopy page-break-lines ox-reveal org-repo-todo org-present org-octopress org-mac-link org-download org-bullets open-junk-file neotree multi-term moz-controller move-text monokai-theme markdown-toc magit macrostep lispy linum-relative leuven-theme less-css-mode json-mode js2-refactor js-doc indent-guide impatient-mode ido-vertical-mode hungry-delete hl-anything highlight-parentheses highlight-numbers highlight-indentation helm-themes helm-swoop helm-pydoc helm-projectile helm-mode-manager helm-make helm-ls-git helm-gtags helm-gitignore helm-github-stars helm-flyspell helm-descbinds helm-css-scss helm-c-yasnippet helm-ag guide-key-tip google-translate golden-ratio github-browse-file gitconfig-mode gitattributes-mode git-timemachine git-messenger git-link gist gh-md ggtags geiser fringe-helper flycheck-ycmd flycheck-pos-tip flx-ido fill-column-indicator fancy-battery eyebrowse expand-region exec-path-from-shell evil-visualstar evil-tutor evil-terminal-cursor-changer evil-surround evil-search-highlight-persist evil-org evil-numbers evil-nerd-commenter evil-matchit evil-lisp-state evil-jumper evil-indent-textobject evil-iedit-state evil-exchange evil-args evil-anzu engine-mode emmet-mode elisp-slime-nav elfeed discover-my-major deft dash-at-point cython-mode company-ycmd company-web company-tern company-statistics company-quickhelp company-c-headers company-anaconda command-log-mode coffee-mode cmake-font-lock clj-refactor clean-aindent-mode clang-format cider-eval-sexp-fu chinese-fonts-setup buffer-move auto-yasnippet auto-highlight-symbol auto-dictionary align-cljlet aggressive-indent adaptive-wrap ace-jump-mode ac-ispell 2048-game)))
  '(paradox-github-token t)
- '(ring-bell-function (quote ignore) t)
+ '(ring-bell-function (quote ignore))
  '(safe-local-variable-values
    (quote
     ((eval setenv "PYTHONPATH" "/Users/guanghui/cocos2d-x/tools/cocos2d-console/plugins:/Users/guanghui/cocos2d-x/tools/cocos2d-console/bin"))))
