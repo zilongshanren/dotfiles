@@ -9,8 +9,10 @@ set scrollsteps=1
 set scrolltime=0
 
 " editor
-set editor="emacsclient"
+set editor="/Applications/Emacs.app/Contents/MacOS/bin/emacsclient"
 
+set guioptions=bCrs
+au Fullscreen .* :set guioptions+=s
 " faster scrolling
 " map -b j 8j
 " map -b k 8k

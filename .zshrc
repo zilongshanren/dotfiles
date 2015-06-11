@@ -50,13 +50,13 @@ ZSH_THEME_GIT_PROMPT_UNTRACKED="%{$fg[green]%}?"
 ZSH_THEME_GIT_PROMPT_CLEAN=""
 
 # Example aliases
-alias -s html=mate
-alias -s rb=mate
-alias -s py=mate 
-alias -s js=mate
-alias -s c=mate
-alias -s java=mate 
-alias -s txt=mate
+#alias -s html=mate
+#alias -s rb=mate
+#alias -s py=mate 
+#alias -s js=mate
+#alias -s c=mate
+#alias -s java=mate 
+#alias -s txt=mate
 
 
 # Example format: plugins=(rails git textmate ruby lighthouse)
