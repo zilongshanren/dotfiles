@@ -6,7 +6,7 @@
   (setq-default
    ;; List of additional paths where to look for configuration layers.
    ;; Paths must have a trailing slash (ie. `~/.mycontribs/')
-   dotspacemacs-configuration-layer-path '("~/.emacs.d/spacemacs-private/")
+   dotspacemacs-configuration-layer-path '("~/spacemacs-private/")
    ;; List of configuration layers to load. If it is the symbol `all' instead
    ;; of a list then all discovered layers will be installed.
    dotspacemacs-configuration-layers
@@ -22,7 +22,10 @@
              colors-enable-nyan-cat-progress-bar t)
      (git :variables
           git-magit-status-fullscreen t)
+     github
+     version-control
      osx
+     semantic                           ; too slow
      markdown
      org
      dash
@@ -34,14 +37,13 @@
      javascript
      restclient
      emacs-lisp
-     ycmd
      gtags
-     semantic
      (shell :variables
             shell-default-shell 'ansi-term
             shell-default-term-shell "/bin/zsh")
      c-c++
      deft
+     ycmd
      lua
      ;; semantic
      (clojure :variables clojure-enable-fancify-symbols t)
@@ -65,8 +67,6 @@
                                     magit-gh-pulls
                                     magit-gitflow
                                     magit-svn
-                                    git-gutter-fringe
-                                    git-gutter
                                     smeargle
                                     ;; remove mode for python layer
                                     nose
@@ -192,64 +192,24 @@ layers configuration."
   ;; linum-mode is very slow
   ;; (add-hook 'prog-mode-hook #'linum-mode)
   ;; change evil initial mode state
-  (loop for (mode . state) in
-        '(
-          (minibuffer-inactive-mode . emacs)
-          (Info-mode . emacs)
-          (term-mode . emacs)
-          (log-edit-mode . emacs)
-          (inf-ruby-mode . emacs)
-          (yari-mode . emacs)
-          (flycheck-error-list-mode . emacs)
-          (erc-mode . emacs)
-          (gud-mode . emacs)
-          (help-mode . emacs)
-          (eshell-mode . emacs)
-          (shell-mode . emacs)
-          (rst-mode . emacs)
-          (magit-log-edit-mode . emacs)
-          (fundamental-mode . emacs)
-          (gtags-select-mode . emacs)
-          (weibo-timeline-mode . emacs)
-          (elfeed-search-mode . emacs)
-          (git-rebase-mode . emacs)
-          (weibo-post-mode . emacs)
-          (sr-mode . emacs)
-          (dired-mode . normal)
-          (compilation-mode . emacs)
-          (speedbar-mode . emacs)
-          (magit-cherry-mode . emacs)
-          (magit-commit-mode . normal)
-          (magit-status-mode . emacs)
-          (magit-blame-mode . emacs)
-          (rtags-mode . emacs)
-          (js2-error-buffer-mode . emacs)
-          (mu4e~update-mail-mode . emacs)
-          (mu4e-about-mode . emacs)
-          (epa-key-list-mode . emacs)
-          (magit-commit-mode . emacs)
-          (diff-mode . emacs)
-          (makey-key-mode . emacs)
-          (srefactor-ui-menu-mode . emacs)
-          (eww-mode . emacs)
-          (elfeed-show-mode . emacs)
-          (fundamental-mode . normal)
-          (weibo-image-mode . emacs)
-          (sx-question-list-mode . emacs)
-          (anaconda-nav-mode . emacs)
-          (sx-question-mode . emacs))
-        do (evil-set-initial-state mode state))
   ;; 设置中文等宽字体
-  (setq cfs-profiles '("profile1"))
+  (defun set-font (english chinese english-size chinese-size)
+    (set-face-attribute 'default nil :font
+                        (format   "%s:pixelsize=%d"  english english-size))
+    (dolist (charset '(kana han symbol cjk-misc bopomofo))
+      (set-fontset-font (frame-parameter nil 'font) charset
+                        (font-spec :family chinese :size chinese-size))))
+
+  (set-font   "Source Code Pro" "Microsoft Yahei" 14 16)
   (global-company-mode t)
   (setq powerline-default-separator 'arrow)
   (menu-bar-mode t)
   (setq-default yas-prompt-functions '(yas-ido-prompt yas-dropdown-prompt))
   ;; See https://github.com/bbatsov/prelude/pull/670 for a detailed
   ;; discussion of these options.
-  (setq helm-split-window-in-side-p           t
-        helm-move-to-line-cycle-in-source     t
-        helm-ff-search-library-in-sexp        t
+  (setq helm-split-window-in-side-p t
+        helm-move-to-line-cycle-in-source t
+        helm-ff-search-library-in-sexp t
         helm-ff-file-name-history-use-recentf t)
   (evil-leader/set-key-for-mode 'c++-mode
     "mtr" 'rtags-find-references
@@ -260,19 +220,21 @@ layers configuration."
   (diminish 'global-whitespace-mode)
   (require 'yasnippet)
   (add-to-list 'yas/root-directory "~/.emacs.d/yasnippet-snippets/")
-  (setq right-fringe-width 10)
   (global-set-key (kbd "s-s") 'save-buffer)
   (global-set-key (kbd "C-c SPC") 'avy-goto-char-2)
+  (global-set-key (kbd "s-\\") 'toggle-input-method)
+  (global-set-key (kbd "s-0") 'toggle-input-method)
+  (global-set-key (kbd "s-[") 'toggle-input-method)
   (evil-leader/set-key "fR" 'rename-file-and-buffer)
   (define-key evil-insert-state-map (kbd "C-y") 'lispy-yank)
   (define-key evil-insert-state-map (kbd "C-d") 'lispy-delete)
   (define-key evil-insert-state-map (kbd "C-p") 'previous-line)
   (define-key yas-minor-mode-map (kbd "TAB") 'yas-expand)
-  (set-variable 'ycmd-server-command `("python" ,(expand-file-name  "~/Github/ycmd/ycmd/__main__.py")))
+  (set-variable 'ycmd-server-command `("python" ,(expand-file-name "~/Github/ycmd/ycmd/__main__.py")))
   (evil-leader/set-key "pf" 'helm-ls-git-ls)
   (setq flycheck-display-errors-function 'flycheck-display-error-messages)
   (setq ycmd-request-message-level -1)
-  (setq  url-show-status nil)
+  (setq url-show-status nil)
   ;; the solution is not perfect, maybe I should wait for the spacemacs author
   ;; to fix the issue
   (setq helm-ag-insert-at-point 'symbol)
@@ -287,7 +249,7 @@ layers configuration."
   (add-to-list 'auto-mode-alist '("\\.h\\'" . c++-mode))
   (add-to-list 'auto-mode-alist '("\\.c\\'" . c++-mode))
   (add-to-list 'auto-mode-alist '("\\.mm\\'" . objc-mode))
-
+  (delete "*Async Shell Command*" 'popwin:special-display-config)
   (delete 'company-c-headers company-backends-c-mode-common)
   (delete 'company-clang company-backends-c-mode-common)
   (push 'company-c-headers company-backends-c-mode-common))
@@ -324,7 +286,7 @@ layers configuration."
  '(org-reverse-note-order t)
  '(package-selected-packages
    (quote
-    (edn paredit queue peg json-rpc dash-functional web-completion-data makey anzu highlight goto-chg flx gh logito pcache pos-tip guide-key request parent-mode simple-httpd json-snatcher json-reformat multiple-cursors moz ctable orglue epic alert log4e gntp spinner epl hydra async deferred f s chinese-word-at-point dash youdao-dictionary ws-butler window-numbering web-mode web-beautify volatile-highlights vi-tilde-fringe use-package tagedit stickyfunc-enhance srefactor smooth-scrolling slim-mode scss-mode sass-mode rfringe reveal-in-finder rainbow-mode rainbow-identifiers rainbow-delimiters pyvenv pyenv-mode popwin pip-requirements persp-projectile pbcopy page-break-lines ox-reveal org-repo-todo org-present org-octopress org-mac-link org-download org-bullets open-junk-file neotree multi-term moz-controller move-text monokai-theme markdown-toc magit macrostep lispy linum-relative leuven-theme less-css-mode json-mode js2-refactor js-doc indent-guide impatient-mode ido-vertical-mode hungry-delete hl-anything highlight-parentheses highlight-numbers highlight-indentation helm-themes helm-swoop helm-pydoc helm-projectile helm-mode-manager helm-make helm-ls-git helm-gtags helm-gitignore helm-github-stars helm-flyspell helm-descbinds helm-css-scss helm-c-yasnippet helm-ag guide-key-tip google-translate golden-ratio github-browse-file gitconfig-mode gitattributes-mode git-timemachine git-messenger git-link gist gh-md ggtags geiser fringe-helper flycheck-ycmd flycheck-pos-tip flx-ido fill-column-indicator fancy-battery eyebrowse expand-region exec-path-from-shell evil-visualstar evil-tutor evil-terminal-cursor-changer evil-surround evil-search-highlight-persist evil-org evil-numbers evil-nerd-commenter evil-matchit evil-lisp-state evil-jumper evil-indent-textobject evil-iedit-state evil-exchange evil-args evil-anzu engine-mode emmet-mode elisp-slime-nav elfeed discover-my-major deft dash-at-point cython-mode company-ycmd company-web company-tern company-statistics company-quickhelp company-c-headers company-anaconda command-log-mode coffee-mode cmake-font-lock clj-refactor clean-aindent-mode clang-format cider-eval-sexp-fu chinese-fonts-setup buffer-move auto-yasnippet auto-highlight-symbol auto-dictionary align-cljlet aggressive-indent adaptive-wrap ace-jump-mode ac-ispell 2048-game)))
+    (edn paredit queue peg json-rpc dash-functional web-completion-data makey anzu highlight goto-chg flx gh logito pcache pos-tip guide-key request parent-mode simple-httpd json-snatcher json-reformat multiple-cursors moz ctable orglue epic alert log4e gntp spinner epl hydra async deferred f s chinese-word-at-point dash youdao-dictionary ws-butler window-numbering web-mode web-beautify volatile-highlights vi-tilde-fringe use-package tagedit smooth-scrolling slim-mode scss-mode sass-mode rfringe reveal-in-finder rainbow-mode rainbow-identifiers rainbow-delimiters pyvenv pyenv-mode popwin pip-requirements persp-projectile pbcopy page-break-lines ox-reveal org-repo-todo org-present org-octopress org-mac-link org-download org-bullets open-junk-file neotree multi-term moz-controller move-text monokai-theme markdown-toc magit macrostep lispy linum-relative leuven-theme less-css-mode json-mode js2-refactor js-doc indent-guide impatient-mode ido-vertical-mode hungry-delete hl-anything highlight-parentheses highlight-numbers highlight-indentation helm-themes helm-swoop helm-pydoc helm-projectile helm-mode-manager helm-make helm-ls-git helm-gtags helm-gitignore helm-github-stars helm-flyspell helm-descbinds helm-css-scss helm-c-yasnippet helm-ag guide-key-tip google-translate golden-ratio github-browse-file gitconfig-mode gitattributes-mode git-timemachine git-messenger git-link gist gh-md ggtags geiser fringe-helper flycheck-ycmd flycheck-pos-tip flx-ido fill-column-indicator fancy-battery eyebrowse expand-region exec-path-from-shell evil-visualstar evil-tutor evil-terminal-cursor-changer evil-surround evil-search-highlight-persist evil-org evil-numbers evil-nerd-commenter evil-matchit evil-lisp-state evil-jumper evil-indent-textobject evil-iedit-state evil-exchange evil-args evil-anzu engine-mode emmet-mode elisp-slime-nav elfeed discover-my-major deft dash-at-point cython-mode company-ycmd company-web company-tern company-statistics company-quickhelp company-c-headers company-anaconda command-log-mode coffee-mode cmake-font-lock clj-refactor clean-aindent-mode clang-format cider-eval-sexp-fu chinese-fonts-setup buffer-move auto-yasnippet auto-highlight-symbol auto-dictionary align-cljlet aggressive-indent adaptive-wrap ace-jump-mode ac-ispell 2048-game)))
  '(paradox-github-token t)
  '(ring-bell-function (quote ignore))
  '(safe-local-variable-values
