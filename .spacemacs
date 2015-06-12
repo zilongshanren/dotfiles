@@ -6,7 +6,7 @@
   (setq-default
    ;; List of additional paths where to look for configuration layers.
    ;; Paths must have a trailing slash (ie. `~/.mycontribs/')
-   dotspacemacs-configuration-layer-path '("~/spacemacs-private/")
+   dotspacemacs-configuration-layer-path '("~/.emacs.d/spacemacs-private/")
    ;; List of configuration layers to load. If it is the symbol `all' instead
    ;; of a list then all discovered layers will be installed.
    dotspacemacs-configuration-layers
@@ -60,7 +60,8 @@
      my-web
      my-tools
      my-writing
-     my-org)
+    my-org
+     )
    ;; A list of packages and/or extensions that will not be install and loaded.
    dotspacemacs-excluded-packages '(evil-escape
                                     ;; remove mode for git layer
@@ -193,6 +194,8 @@ layers configuration."
   ;; (add-hook 'prog-mode-hook #'linum-mode)
   ;; change evil initial mode state
   ;; 设置中文等宽字体
+  
+  (setq default-input-method 'eim-wb)
   (defun set-font (english chinese english-size chinese-size)
     (set-face-attribute 'default nil :font
                         (format   "%s:pixelsize=%d"  english english-size))
@@ -200,7 +203,7 @@ layers configuration."
       (set-fontset-font (frame-parameter nil 'font) charset
                         (font-spec :family chinese :size chinese-size))))
 
-  (set-font   "Source Code Pro" "Microsoft Yahei" 14 16)
+  (set-font   "Source Code Pro" "Hiragino Sans GB" 14 16)
   (global-company-mode t)
   (setq powerline-default-separator 'arrow)
   (menu-bar-mode t)
