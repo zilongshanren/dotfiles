@@ -37,6 +37,7 @@
      javascript
      restclient
      emacs-lisp
+     racket
      gtags
      (shell :variables
             shell-default-shell 'ansi-term
@@ -51,16 +52,7 @@
      ;; replace with  eyebrowser
      ;; (perspectives :variables
      ;;               perspective-enable-persp-projectile t)
-     my-evil
-     my-lua
-     my-c-c++
-     my-lisp
-     my-misc
-     my-better-defaults
-     my-web
-     my-tools
-     my-writing
-    my-org
+     zilongshanren
      )
    ;; A list of packages and/or extensions that will not be install and loaded.
    dotspacemacs-excluded-packages '(evil-escape
@@ -241,8 +233,18 @@ layers configuration."
   ;; the solution is not perfect, maybe I should wait for the spacemacs author
   ;; to fix the issue
   (setq helm-ag-insert-at-point 'symbol)
-  (eval-after-load "doxymacs"
-    '(diminish 'doxymacs-mode))
+  (spacemacs|hide-lighter doxymacs-mode)
+  ;; By default, spacemacs does not show snippets in the autocomplete popup
+  ;; This snippet enables the display of snippets in the popup
+  (defun autocomplete-show-snippets ()
+    "Show snippets in autocomplete popup."
+    (let ((backend (car company-backends)))
+      (unless (listp backend)
+        (setcar company-backends `(,backend :with company-yasnippet company-files)))))
+
+  ;; See http://www.gnu.org/software/emacs/manual/html_node/emacs/Hooks.html
+  ;; for what this line means
+  (add-hook 'after-change-major-mode-hook 'autocomplete-show-snippets)
   (require 'lispy)
   (define-key lispy-mode-map (kbd "s-1") 'lispy-describe-inline)
   (define-key lispy-mode-map (kbd "s-2") 'lispy-arglist-inline)
@@ -252,6 +254,8 @@ layers configuration."
   (add-to-list 'auto-mode-alist '("\\.h\\'" . c++-mode))
   (add-to-list 'auto-mode-alist '("\\.c\\'" . c++-mode))
   (add-to-list 'auto-mode-alist '("\\.mm\\'" . objc-mode))
+  ;; save desktop ;unprintable entity
+  ;; (desktop-save-mode t)
   (delete "*Async Shell Command*" 'popwin:special-display-config)
   (delete 'company-c-headers company-backends-c-mode-common)
   (delete 'company-clang company-backends-c-mode-common)
