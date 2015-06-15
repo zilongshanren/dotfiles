@@ -249,7 +249,7 @@ layers configuration."
   (define-key lispy-mode-map (kbd "s-1") 'lispy-describe-inline)
   (define-key lispy-mode-map (kbd "s-2") 'lispy-arglist-inline)
   (setq deft-extension "org")
-  (setq deft-directory "~/Dropbox/notes")
+  (setq deft-directory "~/org-notes/wiki")
   (add-to-list 'auto-mode-alist '("\\.eml\\'" . org-mode))
   (add-to-list 'auto-mode-alist '("\\.h\\'" . c++-mode))
   (add-to-list 'auto-mode-alist '("\\.c\\'" . c++-mode))
@@ -279,9 +279,7 @@ layers configuration."
  '(helm-ls-git-show-abs-or-relative (quote absolute))
  '(magit-use-overlays nil)
  '(org-agenda-custom-commands nil)
- '(org-agenda-files
-   (quote
-    ("~/org-notes/gtd.org" "~/org-notes/emacs.org" "~/org-notes/cocos2d-x.org" "~/org-notes/notes.org" "~/org-notes/learning.org" "~/org-notes/vim.org" "~/org-notes/journal.org")))
+ '(org-agenda-files (quote ("~/org-notes/gtd.org")))
  '(org-agenda-ndays 1)
  '(org-agenda-show-all-dates t)
  '(org-agenda-skip-deadline-if-done t)
@@ -295,7 +293,7 @@ layers configuration."
    (quote
     (edn paredit queue peg json-rpc dash-functional web-completion-data makey anzu highlight goto-chg flx gh logito pcache pos-tip guide-key request parent-mode simple-httpd json-snatcher json-reformat multiple-cursors moz ctable orglue epic alert log4e gntp spinner epl hydra async deferred f s chinese-word-at-point dash youdao-dictionary ws-butler window-numbering web-mode web-beautify volatile-highlights vi-tilde-fringe use-package tagedit smooth-scrolling slim-mode scss-mode sass-mode rfringe reveal-in-finder rainbow-mode rainbow-identifiers rainbow-delimiters pyvenv pyenv-mode popwin pip-requirements persp-projectile pbcopy page-break-lines ox-reveal org-repo-todo org-present org-octopress org-mac-link org-download org-bullets open-junk-file neotree multi-term moz-controller move-text monokai-theme markdown-toc magit macrostep lispy linum-relative leuven-theme less-css-mode json-mode js2-refactor js-doc indent-guide impatient-mode ido-vertical-mode hungry-delete hl-anything highlight-parentheses highlight-numbers highlight-indentation helm-themes helm-swoop helm-pydoc helm-projectile helm-mode-manager helm-make helm-ls-git helm-gtags helm-gitignore helm-github-stars helm-flyspell helm-descbinds helm-css-scss helm-c-yasnippet helm-ag guide-key-tip google-translate golden-ratio github-browse-file gitconfig-mode gitattributes-mode git-timemachine git-messenger git-link gist gh-md ggtags geiser fringe-helper flycheck-ycmd flycheck-pos-tip flx-ido fill-column-indicator fancy-battery eyebrowse expand-region exec-path-from-shell evil-visualstar evil-tutor evil-terminal-cursor-changer evil-surround evil-search-highlight-persist evil-org evil-numbers evil-nerd-commenter evil-matchit evil-lisp-state evil-jumper evil-indent-textobject evil-iedit-state evil-exchange evil-args evil-anzu engine-mode emmet-mode elisp-slime-nav elfeed discover-my-major deft dash-at-point cython-mode company-ycmd company-web company-tern company-statistics company-quickhelp company-c-headers company-anaconda command-log-mode coffee-mode cmake-font-lock clj-refactor clean-aindent-mode clang-format cider-eval-sexp-fu chinese-fonts-setup buffer-move auto-yasnippet auto-highlight-symbol auto-dictionary align-cljlet aggressive-indent adaptive-wrap ace-jump-mode ac-ispell 2048-game)))
  '(paradox-github-token t)
- '(ring-bell-function (quote ignore))
+ '(ring-bell-function (quote ignore) t)
  '(safe-local-variable-values
    (quote
     ((eval setenv "PYTHONPATH" "/Users/guanghui/cocos2d-x/tools/cocos2d-console/plugins:/Users/guanghui/cocos2d-x/tools/cocos2d-console/bin"))))
