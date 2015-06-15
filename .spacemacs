@@ -102,11 +102,12 @@ before layers configuration."
    ;; List of themes, the first of the list is loaded when spacemacs starts.
    ;; Press <SPC> T n to cycle to the next theme in the list (works great
    ;; with 2 themes variants, one dark and one light)
-   dotspacemacs-themes '(solarized-light
-                         monokai
+   dotspacemacs-themes '( solarized-light
                          solarized-dark
-                         leuven
-                         zenburn)
+                         ;; monokai
+                         ;; leuven
+                         ;; zenburn
+                         )
    ;; If non nil the cursor color matches the state color.
    dotspacemacs-colorize-cursor-according-to-state t
    ;; Default font. `powerline-scale' allows to quickly tweak the mode-line
@@ -249,6 +250,7 @@ layers configuration."
   (define-key lispy-mode-map (kbd "s-1") 'lispy-describe-inline)
   (define-key lispy-mode-map (kbd "s-2") 'lispy-arglist-inline)
   (setq deft-extension "org")
+  (evil-leader/set-key "l" 'avy-goto-line)
   (setq deft-directory "~/org-notes/wiki")
   (add-to-list 'auto-mode-alist '("\\.eml\\'" . org-mode))
   (add-to-list 'auto-mode-alist '("\\.h\\'" . c++-mode))
@@ -286,6 +288,7 @@ layers configuration."
  '(org-agenda-skip-deadline-prewarning-if-scheduled t)
  '(org-agenda-skip-scheduled-if-done t)
  '(org-agenda-start-on-weekday nil)
+ '(org-agenda-text-search-extra-files (file-expand-wildcards "~/org-notes/wiki/*.org"))
  '(org-deadline-warning-days 14)
  '(org-fast-tag-selection-single-key (quote expert))
  '(org-reverse-note-order t)
