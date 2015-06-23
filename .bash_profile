@@ -24,3 +24,7 @@ function start_qujing {
   export HTTPS_PROXY='http://theironislands.f.getqujing.net:36762'
 }
 export PATH=/usr/local/bin:$PATH
+# for color
+export CLICOLOR=1
+# \h:\W \u\$
+export PS1='\[\033[01;33m\]\u@\h\[\033[01;31m\] \W\$\[\033[00m\] '
