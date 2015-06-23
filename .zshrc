@@ -1,24 +1,27 @@
 # Path to your oh-my-zsh configuration.
+export LANG='en_US.UTF-8'
+export LC_ALL="en_US.UTF-8"
 export PATH=/usr/local/bin:/usr/bin:$PATH
 source ~/.bash_profile
 source ~/.vim/antigen/antigen.zsh
-ZSH=$HOME/.oh-my-zsh
-export LANG='en_US.UTF-8'
-export LC_ALL="en_US.UTF-8"
 
 # Load the oh-my-zsh's library.
 antigen use oh-my-zsh
 
 # Bundles from the default repo (robbyrussell's oh-my-zsh).
 antigen bundle git
-antigen bundle heroku
+antigen bundle tmux
+antigen bundle osx
+antigen bundle ruby
+antigen bundle autojump
+antigen bundle textmate
 antigen bundle pip
 antigen bundle lein
 antigen bundle command-not-found
-antigen bundle rimraf/k
 
 # Syntax highlighting bundle.
-antigen bundle zsh-users/zsh-syntax-highlighting
+# don't enable this theme, it doesn't work well with ansi-term in emacs
+# antigen bundle zsh-users/zsh-syntax-highlighting
 
 # Load the theme.
 antigen theme robbyrussell
@@ -57,8 +60,6 @@ alias vim="stty stop '' -ixoff ; vim"
  alias ec='emacsclient -c'
 
  alias tmuxd="tmux attach -d"
-
-
 
  function ppgrep() {
      if [[ $1 == "" ]]; then
