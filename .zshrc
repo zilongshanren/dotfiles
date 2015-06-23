@@ -1,6 +1,7 @@
 # Path to your oh-my-zsh configuration.
-source ~/.vim/antigen/antigen.zsh
+export PATH=/usr/local/bin:/usr/bin:$PATH
 source ~/.bash_profile
+source ~/.vim/antigen/antigen.zsh
 ZSH=$HOME/.oh-my-zsh
 export LANG='en_US.UTF-8'
 export LC_ALL="en_US.UTF-8"
@@ -22,11 +23,7 @@ antigen bundle zsh-users/zsh-syntax-highlighting
 # Load the theme.
 antigen theme robbyrussell
 
-# Tell antigen that you're done.
-antigen apply
 
-
-export PATH=/usr/local/bin:/usr/bin:$PATH
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
 
@@ -58,14 +55,9 @@ alias vim="stty stop '' -ixoff ; vim"
 
  alias e='emacsclient -t'
  alias ec='emacsclient -c'
- # alias vim='emacsclient -t'
- # alias vi='emacsclient -t'
 
  alias tmuxd="tmux attach -d"
 
- # export PATH="/usr/local/share/npm/bin:$PATH"
- # PATH=$(brew --prefix)/share/python:$(brew --prefix)/share/python/bin:$(brew --prefix)/share/python/sbin:$PATH
- # PYTHONPATH=$(brew --prefix)/lib/python2.7/site-packages:$PYTHONPATH
 
 
  function ppgrep() {
@@ -118,5 +110,6 @@ export PATH=$COCOS_TEMPLATES_ROOT:$PATH
 # Add environment variable COCOS_TEMPLATES_ROOT for cocos2d-x
 export COCOS_TEMPLATES_ROOT=/Users/guanghui/cocos2d-x/templates
 export PATH=$COCOS_TEMPLATES_ROOT:$PATH:/Applications/Racket\ v6.1.1/bin
-antigen bundle rimraf/k
+
+# Tell antigen that you're done.
 antigen apply
