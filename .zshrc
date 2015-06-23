@@ -1,77 +1,32 @@
 # Path to your oh-my-zsh configuration.
+source ~/.vim/antigen/antigen.zsh
 source ~/.bash_profile
 ZSH=$HOME/.oh-my-zsh
 export LANG='en_US.UTF-8'
 export LC_ALL="en_US.UTF-8"
 
-# Set name of the theme to load.
-# Look in ~/.oh-my-zsh/themes/
-# Optionally, if you set this to "random", it'll load a random theme each
-# time that oh-my-zsh is loaded.
-ZSH_THEME="candy"
+# Load the oh-my-zsh's library.
+antigen use oh-my-zsh
 
-function collapse_pwd {
-    echo $(pwd | sed -e "s,^$HOME,~,")
-}
+# Bundles from the default repo (robbyrussell's oh-my-zsh).
+antigen bundle git
+antigen bundle heroku
+antigen bundle pip
+antigen bundle lein
+antigen bundle command-not-found
+antigen bundle rimraf/k
 
-function prompt_char {
-    git branch >/dev/null 2>/dev/null && echo '±' && return
-    hg root >/dev/null 2>/dev/null && echo '☿' && return
-    echo '○'
-}
+# Syntax highlighting bundle.
+antigen bundle zsh-users/zsh-syntax-highlighting
 
-function battery_charge {
-    echo `$BAT_CHARGE` 2>/dev/null
-}
+# Load the theme.
+antigen theme robbyrussell
 
-function virtualenv_info {
-    [ $VIRTUAL_ENV ] && echo '('`basename $VIRTUAL_ENV`') '
-}
-
-function hg_prompt_info {
-    hg prompt --angle-brackets "\
-        < on %{$fg[magenta]%}<branch>%{$reset_color%}>\
-        < at %{$fg[yellow]%}<tags|%{$reset_color%}, %{$fg[yellow]%}>%{$reset_color%}>\
-        %{$fg[green]%}<status|modified|unknown><update>%{$reset_color%}<
-    patches: <patches|join( → )|pre_applied(%{$fg[yellow]%})|post_applied(%{$reset_color%})|pre_unapplied(%{$fg_bold[black]%})|post_unapplied(%{$reset_color%})>>" 2>/dev/null
-}
-
-PROMPT='
-%{$fg[magenta]%}%n%{$reset_color%} at %{$fg[yellow]%}%m%{$reset_color%} in %{$fg_bold[green]%}$(collapse_pwd)%{$reset_color%}$(hg_prompt_info)$(git_prompt_info)
-$(virtualenv_info)$(prompt_char) '
-
-RPROMPT='$(battery_charge)'
+# Tell antigen that you're done.
+antigen apply
 
 
-ZSH_THEME_GIT_PROMPT_PREFIX=" on %{$fg[magenta]%}"
-ZSH_THEME_GIT_PROMPT_SUFFIX="%{$reset_color%}"
-ZSH_THEME_GIT_PROMPT_DIRTY="%{$fg[green]%}!"
-ZSH_THEME_GIT_PROMPT_UNTRACKED="%{$fg[green]%}?"
-ZSH_THEME_GIT_PROMPT_CLEAN=""
-
-# Example aliases
-#alias -s html=mate
-#alias -s rb=mate
-#alias -s py=mate 
-#alias -s js=mate
-#alias -s c=mate
-#alias -s java=mate 
-#alias -s txt=mate
-
-
-# Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git osx ruby tmux autojump textmate)
-
-source $ZSH/oh-my-zsh.sh
-# export ANDROID_NDK_ROOT=~/AndroidDev/android-ndk-r9b
-# export COCOS2DX=~/cocos2d-x
-# export NDK_ROOT=~/AndroidDev/android-ndk-r9b
-# export ANDROID_SDK_ROOT=~/AndroidDev/adt-bundle-mac-x86_64-20130522/sdk
-
-# export PATH=$PATH:$ANDROID_SDK_ROOT/tools:$ANDROID_SDK_ROOT/platform-tools
 export PATH=/usr/local/bin:/usr/bin:$PATH
-
-
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
 
@@ -163,3 +118,5 @@ export PATH=$COCOS_TEMPLATES_ROOT:$PATH
 # Add environment variable COCOS_TEMPLATES_ROOT for cocos2d-x
 export COCOS_TEMPLATES_ROOT=/Users/guanghui/cocos2d-x/templates
 export PATH=$COCOS_TEMPLATES_ROOT:$PATH:/Applications/Racket\ v6.1.1/bin
+antigen bundle rimraf/k
+antigen apply

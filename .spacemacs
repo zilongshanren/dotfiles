@@ -52,6 +52,7 @@
      ;; replace with  eyebrowser
      ;; (perspectives :variables
      ;;               perspective-enable-persp-projectile t)
+     (chinese :variables chinese-im-enable-wubi t)
      zilongshanren
      )
    ;; A list of packages and/or extensions that will not be install and loaded.
@@ -102,12 +103,13 @@ before layers configuration."
    ;; List of themes, the first of the list is loaded when spacemacs starts.
    ;; Press <SPC> T n to cycle to the next theme in the list (works great
    ;; with 2 themes variants, one dark and one light)
-   dotspacemacs-themes '(sanityinc-solarized-light
+   dotspacemacs-themes '(
+                         solarized-light
+                         solarized-dark
+                         sanityinc-solarized-light
                          sanityinc-solarized-dark
                          sanityinc-tomorrow-day
                          sanityinc-tomorrow-night
-                         solarized-light
-                         solarized-dark
                          ;; monokai
                          ;; leuven
                          ;; zenburn
@@ -190,17 +192,6 @@ layers configuration."
   ;; linum-mode is very slow
   ;; (add-hook 'prog-mode-hook #'linum-mode)
   ;; change evil initial mode state
-  ;; 设置中文等宽字体
-  
-  (setq default-input-method 'eim-wb)
-  (defun set-font (english chinese english-size chinese-size)
-    (set-face-attribute 'default nil :font
-                        (format   "%s:pixelsize=%d"  english english-size))
-    (dolist (charset '(kana han symbol cjk-misc bopomofo))
-      (set-fontset-font (frame-parameter nil 'font) charset
-                        (font-spec :family chinese :size chinese-size))))
-
-  (set-font   "Source Code Pro" "Hiragino Sans GB" 14 16)
   (global-company-mode t)
   (setq powerline-default-separator 'arrow)
   (menu-bar-mode t)
@@ -225,6 +216,7 @@ layers configuration."
   (global-set-key (kbd "s-\\") 'toggle-input-method)
   (global-set-key (kbd "s-0") 'toggle-input-method)
   (global-set-key (kbd "s-[") 'toggle-input-method)
+  (define-key evil-normal-state-map (kbd ",,w") 'ace-jump-char-mode)
   (evil-leader/set-key "fR" 'rename-file-and-buffer)
   (define-key evil-insert-state-map (kbd "C-y") 'lispy-yank)
   (define-key evil-insert-state-map (kbd "C-d") 'lispy-delete)
@@ -232,7 +224,7 @@ layers configuration."
   (define-key yas-minor-mode-map (kbd "TAB") 'yas-expand)
   (set-variable 'ycmd-server-command `("python" ,(expand-file-name "~/Github/ycmd/ycmd/__main__.py")))
   (evil-leader/set-key "pf" 'helm-ls-git-ls)
-  (setq flycheck-display-errors-function 'flycheck-display-error-messages)
+  ;; (setq flycheck-display-errors-function 'flycheck-display-error-messages)
   (setq ycmd-request-message-level -1)
   (setq url-show-status nil)
   ;; the solution is not perfect, maybe I should wait for the spacemacs author
@@ -253,6 +245,14 @@ layers configuration."
   (require 'lispy)
   (define-key lispy-mode-map (kbd "s-1") 'lispy-describe-inline)
   (define-key lispy-mode-map (kbd "s-2") 'lispy-arglist-inline)
+  (eval-after-load 'racket-repl-mode
+    '(progn
+       (define-key racket-repl-mode-map (kbd "]") nil)
+       (define-key racket-repl-mode-map (kbd "[") nil)
+       ))
+  (evil-leader/set-key "oy" 'youdao-dictionary-search-at-point+)
+  (add-hook 'racket-repl-mode-hook #'(lambda () (lispy-mode t)))
+  (add-hook 'racket-repl-mode-hook #'(lambda () (smartparens-mode t)))
   (setq deft-extension "org")
   (evil-leader/set-key "l" 'avy-goto-line)
   (setq deft-directory "~/org-notes/wiki")
@@ -300,6 +300,10 @@ layers configuration."
    (quote
     (edn paredit queue peg json-rpc dash-functional web-completion-data makey anzu highlight goto-chg flx gh logito pcache pos-tip guide-key request parent-mode simple-httpd json-snatcher json-reformat multiple-cursors moz ctable orglue epic alert log4e gntp spinner epl hydra async deferred f s chinese-word-at-point dash youdao-dictionary ws-butler window-numbering web-mode web-beautify volatile-highlights vi-tilde-fringe use-package tagedit smooth-scrolling slim-mode scss-mode sass-mode rfringe reveal-in-finder rainbow-mode rainbow-identifiers rainbow-delimiters pyvenv pyenv-mode popwin pip-requirements persp-projectile pbcopy page-break-lines ox-reveal org-repo-todo org-present org-octopress org-mac-link org-download org-bullets open-junk-file neotree multi-term moz-controller move-text monokai-theme markdown-toc magit macrostep lispy linum-relative leuven-theme less-css-mode json-mode js2-refactor js-doc indent-guide impatient-mode ido-vertical-mode hungry-delete hl-anything highlight-parentheses highlight-numbers highlight-indentation helm-themes helm-swoop helm-pydoc helm-projectile helm-mode-manager helm-make helm-ls-git helm-gtags helm-gitignore helm-github-stars helm-flyspell helm-descbinds helm-css-scss helm-c-yasnippet helm-ag guide-key-tip google-translate golden-ratio github-browse-file gitconfig-mode gitattributes-mode git-timemachine git-messenger git-link gist gh-md ggtags geiser fringe-helper flycheck-ycmd flycheck-pos-tip flx-ido fill-column-indicator fancy-battery eyebrowse expand-region exec-path-from-shell evil-visualstar evil-tutor evil-terminal-cursor-changer evil-surround evil-search-highlight-persist evil-org evil-numbers evil-nerd-commenter evil-matchit evil-lisp-state evil-jumper evil-indent-textobject evil-iedit-state evil-exchange evil-args evil-anzu engine-mode emmet-mode elisp-slime-nav elfeed discover-my-major deft dash-at-point cython-mode company-ycmd company-web company-tern company-statistics company-quickhelp company-c-headers company-anaconda command-log-mode coffee-mode cmake-font-lock clj-refactor clean-aindent-mode clang-format cider-eval-sexp-fu chinese-fonts-setup buffer-move auto-yasnippet auto-highlight-symbol auto-dictionary align-cljlet aggressive-indent adaptive-wrap ace-jump-mode ac-ispell 2048-game)))
  '(paradox-github-token t)
+ '(pyim-dicts
+   (quote
+    ((:name "BigDict-01" :file "/Users/guanghui/.emacs.d/pyim/dicts/pyim-bigdict.pyim" :coding utf-8-unix)
+     (:name "BigDict-01" :file "/Users/guanghui/.emacs.d/.cache/pyim-bigdict.pyim" :coding utf-8-unix))))
  '(ring-bell-function (quote ignore) t)
  '(safe-local-variable-values
    (quote
