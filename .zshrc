@@ -3,14 +3,40 @@ export LANG='en_US.UTF-8'
 export LC_ALL="en_US.UTF-8"
 export PATH=/usr/local/bin:/usr/bin:$PATH
 source ~/.bash_profile
+
+#https://joshldavis.com/2014/07/26/oh-my-zsh-is-a-disease-antigen-is-the-vaccine/
+#
+# OS Detection
+#
+
+UNAME=`uname`
+
+# Fallback info
+CURRENT_OS='Linux'
+DISTRO=''
+
+if [[ $UNAME == 'Darwin' ]]; then
+    CURRENT_OS='OS X'
+else
+    # Must be Linux, determine distro
+    if [[ -f /etc/redhat-release ]]; then
+        # CentOS or Redhat?
+        if grep -q "CentOS" /etc/redhat-release; then
+            DISTRO='CentOS'
+        else
+            DISTRO='RHEL'
+        fi
+    fi
+fi
+
 source ~/.vim/antigen/antigen.zsh
 
 # Load the oh-my-zsh's library.
-antigen use oh-my-zsh
+antigen bundle robbyrussell/oh-my-zsh lib/
 
 # Bundles from the default repo (robbyrussell's oh-my-zsh).
 antigen bundle git
-antigen bundle tmux
+antigen bundle tmuxinator
 antigen bundle osx
 antigen bundle ruby
 antigen bundle autojump
@@ -24,7 +50,23 @@ antigen bundle command-not-found
 # antigen bundle zsh-users/zsh-syntax-highlighting
 
 # Load the theme.
-antigen theme robbyrussell
+#antigen theme robbyrussell
+antigen theme jdavis/zsh-files themes/jdavis
+
+if [[ $CURRENT_OS == 'OS X' ]]; then
+    antigen bundle brew
+    antigen bundle brew-cask
+    antigen bundle gem
+    antigen bundle osx
+elif [[ $CURRENT_OS == 'Linux' ]]; then
+# None so far...
+
+if [[ $DISTRO == 'CentOS' ]]; then
+    antigen bundle centos
+fi
+elif [[ $CURRENT_OS == 'Cygwin' ]]; then
+    antigen bundle cygwin
+fi
 
 
 
