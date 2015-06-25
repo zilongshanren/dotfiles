@@ -194,6 +194,7 @@ layers configuration."
   ;; change evil initial mode state
   (global-company-mode t)
   (setq powerline-default-separator 'arrow)
+  (global-set-key (kbd "s-l") 'goto-line)
   (menu-bar-mode t)
   (setq-default yas-prompt-functions '(yas-ido-prompt yas-dropdown-prompt))
   ;; See https://github.com/bbatsov/prelude/pull/670 for a detailed

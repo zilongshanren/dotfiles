@@ -9,11 +9,13 @@ rm ~/.latexmkrc
 rm ~/.zshrc
 rm ~/.tmux.conf
 rm ~/.tmux-mac
+rm ~/.flake8rc
 ln -s ~/.vim/.gitconfig ~/.gitconfig
 ln -s ~/.vim/.latexmkrc ~/.latexmkrc
 ln -s ~/.vim/.zshrc ~/.zshrc
 ln -s ~/.vim/.tmux.conf ~/.tmux.conf
-ln -s ~/.vim/.tmux-mac ~/.tmux-mac 
+ln -s ~/.vim/.tmux-mac ~/.tmux-mac
+ln -s ~/.vim/.flake8rc  ~/.flake8rc
 
 rm ~/.xvimrc
 ln -s ~/.vim/.xvimrc ~/.xvimrc
@@ -27,10 +29,10 @@ rm -rf ~/.percol.d
 mkdir ~/.percol.d
 ln -s  ~/.vim/rc.py ~/.percol.d/rc.py
 
-rm ~/.bash_profile 
+rm ~/.bash_profile
 ln -s ~/.vim/.bash_profile ~/.bash_profile
 
-rm ~/.ctags 
+rm ~/.ctags
 ln -s ~/.vim/.ctags ~/.ctags
 
 rm ~/.spacemacs
