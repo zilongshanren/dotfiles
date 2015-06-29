@@ -21,7 +21,8 @@
      (colors :variables
              colors-enable-nyan-cat-progress-bar t)
      (git :variables
-          git-magit-status-fullscreen t)
+          git-magit-status-fullscreen t
+          git-use-magit-next t)
      github
      version-control
      osx
@@ -42,7 +43,8 @@
      (shell :variables
             shell-default-shell 'ansi-term
             shell-default-term-shell "/bin/zsh")
-     c-c++
+     (c-c++ :variables
+            c-c++-default-mode-for-headers 'c++-mode)
      deft
      ycmd
      lua
@@ -90,7 +92,7 @@ before layers configuration."
    ;; directory. A string value must be a path to a .PNG file.
    ;; If the value is nil then no banner is displayed.
    ;; dotspacemacs-startup-banner 'official
-   dotspacemacs-startup-banner 'official
+   dotspacemacs-startup-banner 'doge
    ;; better company auto completion
    auto-completion-enable-sort-by-usage t
    ;; t if you always want to see the changelog at startup
@@ -203,12 +205,6 @@ layers configuration."
         helm-move-to-line-cycle-in-source t
         helm-ff-search-library-in-sexp t
         helm-ff-file-name-history-use-recentf t)
-  (evil-leader/set-key-for-mode 'c++-mode
-    "mtr" 'rtags-find-references
-    "mts" 'rtags-find-symbol
-    "mti" 'rtags-imenu
-    "mtf" 'rtags-find-file
-    "mtv" 'rtags-find-virtuals-at-point)
   (diminish 'global-whitespace-mode)
   (require 'yasnippet)
   (add-to-list 'yas/root-directory "~/.emacs.d/yasnippet-snippets/")
@@ -258,7 +254,6 @@ layers configuration."
   (evil-leader/set-key "l" 'avy-goto-line)
   (setq deft-directory "~/org-notes/wiki")
   (add-to-list 'auto-mode-alist '("\\.eml\\'" . org-mode))
-  (add-to-list 'auto-mode-alist '("\\.h\\'" . c++-mode))
   (add-to-list 'auto-mode-alist '("\\.c\\'" . c++-mode))
   (add-to-list 'auto-mode-alist '("\\.mm\\'" . objc-mode))
   ;; save desktop ;unprintable entity
@@ -266,7 +261,9 @@ layers configuration."
   (delete "*Async Shell Command*" 'popwin:special-display-config)
   (delete 'company-c-headers company-backends-c-mode-common)
   (delete 'company-clang company-backends-c-mode-common)
-  (push 'company-c-headers company-backends-c-mode-common))
+  (push 'company-c-headers company-backends-c-mode-common)
+  (evilify magit-popup-mode magit-popup-mode-map)
+  )
 
 ;; Do not write anything past this comment. This is where Emacs will
 ;; auto-generate custom variable definitions.
