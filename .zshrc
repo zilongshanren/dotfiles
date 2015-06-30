@@ -51,7 +51,7 @@ antigen bundle command-not-found
 
 # Load the theme.
 #antigen theme robbyrussell
-antigen theme jdavis/zsh-files themes/jdavis
+antigen theme candy
 
 if [[ $CURRENT_OS == 'OS X' ]]; then
     antigen bundle brew
@@ -138,8 +138,6 @@ alias vim="stty stop '' -ixoff ; vim"
      bindkey '^R' percol_select_history
  fi
 
-
-export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 
 # Add environment variable COCOS_X_ROOT for cocos2d-x
 export COCOS_X_ROOT=/Users/guanghui/cocos2d-x-v2

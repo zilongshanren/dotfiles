@@ -21,8 +21,7 @@
      (colors :variables
              colors-enable-nyan-cat-progress-bar t)
      (git :variables
-          git-magit-status-fullscreen t
-          git-use-magit-next t)
+          git-magit-status-fullscreen t)
      github
      version-control
      osx
@@ -54,16 +53,14 @@
      ;; replace with  eyebrowser
      ;; (perspectives :variables
      ;;               perspective-enable-persp-projectile t)
-     (chinese :variables chinese-im-enable-wubi t)
+     (chinese :variables chinese-default-input-method 'pinyin)
      zilongshanren
      )
    ;; A list of packages and/or extensions that will not be install and loaded.
-   dotspacemacs-excluded-packages '(evil-escape
-                                    ;; remove mode for git layer
+   dotspacemacs-excluded-packages '(;; remove mode for git layer
                                     magit-gh-pulls
                                     magit-gitflow
                                     magit-svn
-                                    smeargle
                                     ;; remove mode for python layer
                                     nose
                                     pony-mode
@@ -210,9 +207,8 @@ layers configuration."
   (add-to-list 'yas/root-directory "~/.emacs.d/yasnippet-snippets/")
   (global-set-key (kbd "s-s") 'save-buffer)
   (global-set-key (kbd "C-c SPC") 'avy-goto-char-2)
-  (global-set-key (kbd "s-\\") 'toggle-input-method)
-  (global-set-key (kbd "s-0") 'toggle-input-method)
-  (global-set-key (kbd "s-[") 'toggle-input-method)
+  (setq magit-repository-directories '("~/cocos2d-x/"))
+  (global-set-key (kbd "C-`") 'toggle-input-method)
   (define-key evil-normal-state-map (kbd ",,w") 'ace-jump-char-mode)
   (evil-leader/set-key "fR" 'rename-file-and-buffer)
   (define-key evil-insert-state-map (kbd "C-y") 'lispy-yank)
@@ -221,7 +217,7 @@ layers configuration."
   (define-key yas-minor-mode-map (kbd "TAB") 'yas-expand)
   (set-variable 'ycmd-server-command `("python" ,(expand-file-name "~/Github/ycmd/ycmd/__main__.py")))
   (evil-leader/set-key "pf" 'helm-ls-git-ls)
-  ;; (setq flycheck-display-errors-function 'flycheck-display-error-messages)
+  (setq flycheck-display-errors-function 'flycheck-display-error-messages)
   (setq ycmd-request-message-level -1)
   (setq url-show-status nil)
   ;; the solution is not perfect, maybe I should wait for the spacemacs author
@@ -262,7 +258,6 @@ layers configuration."
   (delete 'company-c-headers company-backends-c-mode-common)
   (delete 'company-clang company-backends-c-mode-common)
   (push 'company-c-headers company-backends-c-mode-common)
-  (evilify magit-popup-mode magit-popup-mode-map)
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
