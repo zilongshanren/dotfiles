@@ -10,12 +10,14 @@ rm ~/.zshrc
 rm ~/.tmux.conf
 rm ~/.tmux-mac
 rm ~/.flake8rc
+rm ~/.luacheckrc
 ln -s ~/.vim/.gitconfig ~/.gitconfig
 ln -s ~/.vim/.latexmkrc ~/.latexmkrc
 ln -s ~/.vim/.zshrc ~/.zshrc
 ln -s ~/.vim/.tmux.conf ~/.tmux.conf
 ln -s ~/.vim/.tmux-mac ~/.tmux-mac
 ln -s ~/.vim/.flake8rc  ~/.flake8rc
+ln -s ~/.vim/.luacheckrc  ~/.luacheckrc
 
 rm ~/.xvimrc
 ln -s ~/.vim/.xvimrc ~/.xvimrc

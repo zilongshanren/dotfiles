@@ -12,17 +12,7 @@ export ANT_ROOT=/usr/local/bin
 export PATH=$PATH:$ANT_ROOT
 
 export TIZEN_SDK=/Users/guanghui/tizen-sdk
-export PATH=$TIZEN_SDK/tools/:$PATH
-#
-# Qu Jing iTerm & Terminal Setup Script
-# version 0.3
-# Felix Ding
-# July 12, 2014 @Costa
-#
-function start_qujing {
-  export http_proxy='http://theironislands.f.getqujing.net:36762'
-  export HTTPS_PROXY='http://theironislands.f.getqujing.net:36762'
-}
+
 export PATH=/usr/local/bin:$PATH
 # for color
 export CLICOLOR=1
