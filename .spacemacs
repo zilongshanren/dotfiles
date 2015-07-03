@@ -16,8 +16,9 @@
      ;; Uncomment a layer name and press C-c C-c to install it
      ;;  Guide key
      ;; --------------------------------------------------------
-     auto-completion
      better-defaults
+     (auto-completion :variables
+                      auto-completion-enable-snippets-in-popup t)
      (colors :variables
              colors-enable-nyan-cat-progress-bar t)
      (git :variables
@@ -53,11 +54,12 @@
      ;; replace with  eyebrowser
      ;; (perspectives :variables
      ;;               perspective-enable-persp-projectile t)
-     (chinese :variables chinese-default-input-method 'pinyin)
+     (chinese :variables chinese-default-input-method 'wubi)
      zilongshanren
      )
    ;; A list of packages and/or extensions that will not be install and loaded.
    dotspacemacs-excluded-packages '(;; remove mode for git layer
+                                    evil-escape
                                     magit-gh-pulls
                                     magit-gitflow
                                     magit-svn
@@ -70,7 +72,7 @@
    ;; are declared in a layer which is not a member of
    ;; the list `dotspacemacs-configuration-layers'
    dotspacemacs-delete-orphan-packages t))
-
+ 
 (defun dotspacemacs/init ()
   "Initialization function.
 This function is called at the very startup of Spacemacs initialization
@@ -224,17 +226,6 @@ layers configuration."
   ;; to fix the issue
   (setq helm-ag-insert-at-point 'symbol)
   (spacemacs|hide-lighter doxymacs-mode)
-  ;; By default, spacemacs does not show snippets in the autocomplete popup
-  ;; This snippet enables the display of snippets in the popup
-  (defun autocomplete-show-snippets ()
-    "Show snippets in autocomplete popup."
-    (let ((backend (car company-backends)))
-      (unless (listp backend)
-        (setcar company-backends `(,backend :with company-yasnippet company-files)))))
-
-  ;; See http://www.gnu.org/software/emacs/manual/html_node/emacs/Hooks.html
-  ;; for what this line means
-  (add-hook 'after-change-major-mode-hook 'autocomplete-show-snippets)
   (require 'lispy)
   (define-key lispy-mode-map (kbd "s-1") 'lispy-describe-inline)
   (define-key lispy-mode-map (kbd "s-2") 'lispy-arglist-inline)
