@@ -28,9 +28,12 @@
      osx
      semantic                           ; too slow
      markdown
+     ruby
      org
      dash
-     games
+     prodigy
+     (ibuffer :variables ibuffer-group-buffers-by 'projects)
+     ;; games
      search-engine
      syntax-checking
      python
@@ -38,7 +41,9 @@
      javascript
      restclient
      emacs-lisp
+     emoji
      racket
+     ;; chrome
      gtags
      (shell :variables
             shell-default-shell 'ansi-term
@@ -176,6 +181,7 @@ before layers configuration."
    dotspacemacs-smartparens-strict-mode t
    ;; If non nil advises quit functions to keep server open when quitting.
    dotspacemacs-persistent-server nil
+   ruby-version-manager 'rvm
    ;; List of search tool executable names. Spacemacs uses the first installed
    ;; tool of the list. Supported tools are `ag', `pt', `ack' and `grep'.
    dotspacemacs-search-tools '("ag" "pt" "ack" "grep")
@@ -243,13 +249,41 @@ layers configuration."
   (add-to-list 'auto-mode-alist '("\\.eml\\'" . org-mode))
   (add-to-list 'auto-mode-alist '("\\.c\\'" . c++-mode))
   (add-to-list 'auto-mode-alist '("\\.mm\\'" . objc-mode))
+  (spacemacs|add-toggle iimage
+                        :status iimage-mode
+                        :on (iimage-mode)
+                        :off (iimage-mode -1)
+                        :documentation "Enable iimage mode"
+                        :evil-leader "Ti")
   ;; save desktop ;unprintable entity
   ;; (desktop-save-mode t)
   (delete "*Async Shell Command*" 'popwin:special-display-config)
   (delete 'company-c-headers company-backends-c-mode-common)
   (delete 'company-clang company-backends-c-mode-common)
   (push 'company-c-headers company-backends-c-mode-common)
-  )
+  (prodigy-define-tag
+    :name 'jekyll
+    :env '(("LANG" "en_US.UTF-8")
+           ("LC_ALL" "en_US.UTF-8")))
+  ;; define service
+  (prodigy-define-service
+    :name "Python app"
+    :command "python"
+    :args '("-m" "SimpleHTTPServer" "6001")
+    :cwd "~/cocos2d-x/web"
+    :tags '(work)
+    :kill-signal 'sigkill
+    :kill-process-buffer-on-stop t)
+
+  ;; still buggy
+  (prodigy-define-service
+    :name "Octopress preview"
+    :command "rake"
+    :args '("preview")
+    :cwd "~/4gamers.cn"
+    :tags '(octopress jekyll)
+    :kill-signal 'sigkill
+    :kill-process-buffer-on-stop t))
 
 ;; Do not write anything past this comment. This is where Emacs will
 ;; auto-generate custom variable definitions.
