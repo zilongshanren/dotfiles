@@ -17,8 +17,6 @@
      ;;  Guide key
      ;; --------------------------------------------------------
      better-defaults
-     (auto-completion :variables
-                      auto-completion-enable-snippets-in-popup t)
      (colors :variables
              colors-enable-nyan-cat-progress-bar t)
      (git :variables
@@ -33,6 +31,10 @@
      dash
      prodigy
      (ibuffer :variables ibuffer-group-buffers-by 'projects)
+     (c-c++ :variables
+            c-c++-default-mode-for-headers 'c++-mode)
+     (auto-completion :variables
+                      auto-completion-enable-snippets-in-popup t)
      ;; games
      search-engine
      syntax-checking
@@ -45,21 +47,19 @@
      racket
      ;; chrome
      gtags
+     pcre2el
+     ;; fasd
      (shell :variables
             shell-default-shell 'ansi-term
             shell-default-term-shell "/bin/zsh")
-     (c-c++ :variables
-            c-c++-default-mode-for-headers 'c++-mode)
-     deft
      ycmd
+     deft
      lua
      ;; semantic
      (clojure :variables clojure-enable-fancify-symbols t)
      eyebrowse
-     ;; replace with  eyebrowser
-     ;; (perspectives :variables
-     ;;               perspective-enable-persp-projectile t)
-     (chinese :variables chinese-default-input-method 'wubi)
+     (chinese :variables chinese-default-input-method 'wubi
+              chinese-enable-youdao-dict t)
      zilongshanren
      )
    ;; A list of packages and/or extensions that will not be install and loaded.
@@ -109,8 +109,7 @@ before layers configuration."
    ;; List of themes, the first of the list is loaded when spacemacs starts.
    ;; Press <SPC> T n to cycle to the next theme in the list (works great
    ;; with 2 themes variants, one dark and one light)
-   dotspacemacs-themes '(
-                         solarized-light
+   dotspacemacs-themes '(solarized-light
                          solarized-dark
                          sanityinc-solarized-light
                          sanityinc-solarized-dark
@@ -200,6 +199,8 @@ layers configuration."
   ;; (add-hook 'prog-mode-hook #'linum-mode)
   ;; change evil initial mode state
   (global-company-mode t)
+  (when (system-is-mac)
+    (spacemacs//set-monospaced-font "Source Code Pro" "Hiragino Sans GB" 14 16))
   (setq powerline-default-separator 'arrow)
   (global-set-key (kbd "s-l") 'goto-line)
   (menu-bar-mode t)
@@ -260,7 +261,6 @@ layers configuration."
   (delete "*Async Shell Command*" 'popwin:special-display-config)
   (delete 'company-c-headers company-backends-c-mode-common)
   (delete 'company-clang company-backends-c-mode-common)
-  (push 'company-c-headers company-backends-c-mode-common)
   (prodigy-define-tag
     :name 'jekyll
     :env '(("LANG" "en_US.UTF-8")
@@ -300,6 +300,9 @@ layers configuration."
  '(cfs--current-profile-name "profile1" t)
  '(expand-region-contract-fast-key "V")
  '(expand-region-reset-fast-key "r")
+ '(golden-ratio-exclude-modes
+   (quote
+    ("bs-mode" "calc-mode" "ediff-mode" "dired-mode" "gud-mode" "gdb-locals-mode" "gdb-registers-mode" "gdb-breakpoints-mode" "gdb-threads-mode" "gdb-frames-mode" "gdb-inferior-io-mode" "gud-mode" "gdb-inferior-io-mode" "gdb-disassembly-mode" "gdb-memory-mode" "restclient-mode" "speedbar-mode" term-mode)))
  '(helm-ls-git-show-abs-or-relative (quote absolute))
  '(magit-use-overlays nil)
  '(org-agenda-custom-commands nil)
