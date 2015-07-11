@@ -16,6 +16,7 @@
 	co	= checkout
 	sm	= submodule
 	ci	= commit -a -v
+    unst = reset HEAD
 	throw	= reset --hard HEAD
 	throwh	= reset --hard HEAD^
 	clr	= clean -fdx -f

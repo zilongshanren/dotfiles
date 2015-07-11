@@ -196,7 +196,7 @@ before layers configuration."
  This function is called at the very end of Spacemacs initialization after
 layers configuration."
   ;; linum-mode is very slow
-  ;; (add-hook 'prog-mode-hook #'linum-mode)
+  (add-hook 'prog-mode-hook #'linum-mode)
   ;; change evil initial mode state
   (global-company-mode t)
   (when (system-is-mac)
@@ -275,7 +275,6 @@ layers configuration."
     :kill-signal 'sigkill
     :kill-process-buffer-on-stop t)
 
-  ;; still buggy
   (prodigy-define-service
     :name "Octopress preview"
     :command "rake"
