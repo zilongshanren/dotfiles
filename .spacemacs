@@ -259,8 +259,10 @@ layers configuration."
   ;; save desktop ;unprintable entity
   ;; (desktop-save-mode t)
   (delete "*Async Shell Command*" 'popwin:special-display-config)
-  (delete 'company-c-headers company-backends-c-mode-common)
-  (delete 'company-clang company-backends-c-mode-common)
+  ;; company backend should be grouped
+  (setq company-backends-c-mode-common '((company-c-headers
+                                          company-ycmd
+                                          company-dabbrev :with company-yasnippet)))
   (prodigy-define-tag
     :name 'jekyll
     :env '(("LANG" "en_US.UTF-8")
