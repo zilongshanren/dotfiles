@@ -16,18 +16,18 @@
 	co	= checkout
 	sm	= submodule
 	ci	= commit -a -v
-    unst = reset HEAD
+	unst = reset HEAD
 	throw	= reset --hard HEAD
 	throwh	= reset --hard HEAD^
 	clr	= clean -fdx -f
 	last	= log -1
 	glog	= log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
 	slog	= log --pretty=oneline	
-    accept-ours = "!f() { git checkout --ours -- \"${@:-.}\"; git add -u \"${@:-.}\"; }; f"
-    accept-theirs = "!f() { git checkout --theirs -- \"${@:-.}\"; git add -u \"${@:-.}\"; }; f"
-    tagcommit = !sh -c 'git rev-list $0 | head -n 1'
+	accept-ours = "!f() { git checkout --ours -- \"${@:-.}\"; git add -u \"${@:-.}\"; }; f"
+	accept-theirs = "!f() { git checkout --theirs -- \"${@:-.}\"; git add -u \"${@:-.}\"; }; f"
+	tagcommit = !sh -c 'git rev-list $0 | head -n 1'
 [color]
-    ui = true
+		ui = true
 [core]
     editor = vim
 	excludesfile = /Users/guanghui/.gitignore_global
