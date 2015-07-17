@@ -197,6 +197,8 @@ before layers configuration."
 layers configuration."
   ;; linum-mode is very slow
   (add-hook 'prog-mode-hook #'linum-mode)
+  (with-eval-after-load 'linum
+    (linum-relative-toggle))
   ;; change evil initial mode state
   (global-company-mode t)
   (when (system-is-mac)
@@ -213,7 +215,7 @@ layers configuration."
         helm-ff-file-name-history-use-recentf t)
   (diminish 'global-whitespace-mode)
   (require 'yasnippet)
-  (add-to-list 'yas/root-directory "~/.emacs.d/yasnippet-snippets/")
+  ;; (add-to-list 'yas/root-directory "~/.emacs.d/yasnippet-snippets/")
   (global-set-key (kbd "s-s") 'save-buffer)
   (global-set-key (kbd "C-c SPC") 'avy-goto-char-2)
   (setq magit-repository-directories '("~/cocos2d-x/"))
@@ -262,7 +264,8 @@ layers configuration."
   ;; company backend should be grouped
   (setq company-backends-c-mode-common '((company-c-headers
                                           company-ycmd
-                                          company-dabbrev :with company-yasnippet)))
+                                          company-dabbrev-code
+                                          company-dabbrev :with company-yasnippet) company-files))
   (prodigy-define-tag
     :name 'jekyll
     :env '(("LANG" "en_US.UTF-8")
