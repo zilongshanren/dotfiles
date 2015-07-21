@@ -28,14 +28,13 @@
      markdown
      ruby
      org
-     dash
+     ;; dash
      prodigy
      (ibuffer :variables ibuffer-group-buffers-by 'projects)
      (c-c++ :variables
             c-c++-default-mode-for-headers 'c++-mode)
      (auto-completion :variables
                       auto-completion-enable-snippets-in-popup t)
-     ;; games
      search-engine
      syntax-checking
      python
@@ -45,17 +44,15 @@
      emacs-lisp
      emoji
      racket
-     ;; chrome
      gtags
-     pcre2el
-     ;; fasd
+     ;; ess
+     ;; pcre2el
      (shell :variables
             shell-default-shell 'ansi-term
             shell-default-term-shell "/bin/zsh")
      ycmd
      deft
      lua
-     ;; semantic
      (clojure :variables clojure-enable-fancify-symbols t)
      eyebrowse
      (chinese :variables chinese-default-input-method 'wubi
@@ -199,6 +196,7 @@ layers configuration."
   (add-hook 'prog-mode-hook #'linum-mode)
   (with-eval-after-load 'linum
     (linum-relative-toggle))
+  (global-set-key (kbd "s-;") 'chinese-wbim-insert-ascii)
   ;; change evil initial mode state
   (global-company-mode t)
   (when (system-is-mac)
@@ -287,7 +285,54 @@ layers configuration."
     :cwd "~/4gamers.cn"
     :tags '(octopress jekyll)
     :kill-signal 'sigkill
-    :kill-process-buffer-on-stop t))
+    :kill-process-buffer-on-stop t)
+  ;; config for org export
+  (require 'ox-publish)
+  (defvar zilongshanren-website-html-preamble 
+    "<div class='nav'>
+<ul>
+<li><a href='http://zilongshanren.com'>博客</a></li>
+<li><a href='/index.html'>笔记目录</a></li>
+</ul>
+</div>")
+  (defvar zilongshanren-website-html-blog-head
+    " <link rel='stylesheet' href='css/site.css' type='text/css'/> \n
+    <link rel=\"stylesheet\" type=\"text/css\" href=\"/css/worg.css\"/>")
+  (setq org-publish-project-alist
+        `(
+         ("blog-notes"
+          :base-directory "~/org-notes/wiki"
+          :base-extension "org"
+          :publishing-directory "~/org-notes/public_html/"
+          
+          :recursive t
+          :html-head , zilongshanren-website-html-blog-head
+          :publishing-function org-html-publish-to-html
+          :headline-levels 4            ; Just the default for this project.
+          :auto-preamble t
+          :section-numbers nil
+          :html-preamble ,zilongshanren-website-html-preamble
+          :author "zilongshanren"
+          :email "guanghui8827@gmail.com"
+          :auto-sitemap t                  ; Generate sitemap.org automagically...
+          :sitemap-filename "sitemap.org"  ; ... call it sitemap.org (it's the default)...
+          :sitemap-title "Sitemap"         ; ... with title 'Sitemap'.
+          :sitemap-sort-files anti-chronologically
+          :sitemap-file-entry-format "%d %t"
+          )
+         ("blog-static"
+          :base-directory "~/org-notes/wiki"
+          :base-extension "css\\|js\\|png\\|jpg\\|gif\\|pdf\\|mp3\\|ogg\\|swf"
+          :publishing-directory "~/org-notes/public_html/"
+          :recursive t
+          :publishing-function org-publish-attachment
+          )
+         ("blog" :components ("blog-notes" "blog-static"))
+         ))
+  (setq org-agenda-custom-commands
+        '(("O" tags-todo "WORK")
+          ("P" tags-todo "PROJECT")))
+  )
 
 ;; Do not write anything past this comment. This is where Emacs will
 ;; auto-generate custom variable definitions.
