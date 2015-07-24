@@ -26,6 +26,7 @@
      osx
      semantic                           ; too slow
      markdown
+     unimpaired
      ruby
      org
      ;; dash
@@ -197,6 +198,8 @@ layers configuration."
   (with-eval-after-load 'linum
     (linum-relative-toggle))
   (global-set-key (kbd "s-;") 'chinese-wbim-insert-ascii)
+  ;; cleanup rencent files
+  (add-hook 'kill-emacs-hook #'(lambda () (recentf-cleanup)))
   ;; change evil initial mode state
   (global-company-mode t)
   (when (system-is-mac)
@@ -213,6 +216,7 @@ layers configuration."
         helm-ff-file-name-history-use-recentf t)
   (diminish 'global-whitespace-mode)
   (require 'yasnippet)
+  
   ;; (add-to-list 'yas/root-directory "~/.emacs.d/yasnippet-snippets/")
   (global-set-key (kbd "s-s") 'save-buffer)
   (global-set-key (kbd "C-c SPC") 'avy-goto-char-2)
@@ -300,35 +304,35 @@ layers configuration."
     <link rel=\"stylesheet\" type=\"text/css\" href=\"/css/worg.css\"/>")
   (setq org-publish-project-alist
         `(
-         ("blog-notes"
-          :base-directory "~/org-notes/wiki"
-          :base-extension "org"
-          :publishing-directory "~/org-notes/public_html/"
+          ("blog-notes"
+           :base-directory "~/org-notes/wiki"
+           :base-extension "org"
+           :publishing-directory "~/org-notes/public_html/"
           
-          :recursive t
-          :html-head , zilongshanren-website-html-blog-head
-          :publishing-function org-html-publish-to-html
-          :headline-levels 4            ; Just the default for this project.
-          :auto-preamble t
-          :section-numbers nil
-          :html-preamble ,zilongshanren-website-html-preamble
-          :author "zilongshanren"
-          :email "guanghui8827@gmail.com"
-          :auto-sitemap t                  ; Generate sitemap.org automagically...
-          :sitemap-filename "sitemap.org"  ; ... call it sitemap.org (it's the default)...
-          :sitemap-title "Sitemap"         ; ... with title 'Sitemap'.
-          :sitemap-sort-files anti-chronologically
-          :sitemap-file-entry-format "%d %t"
-          )
-         ("blog-static"
-          :base-directory "~/org-notes/wiki"
-          :base-extension "css\\|js\\|png\\|jpg\\|gif\\|pdf\\|mp3\\|ogg\\|swf"
-          :publishing-directory "~/org-notes/public_html/"
-          :recursive t
-          :publishing-function org-publish-attachment
-          )
-         ("blog" :components ("blog-notes" "blog-static"))
-         ))
+           :recursive t
+           :html-head , zilongshanren-website-html-blog-head
+           :publishing-function org-html-publish-to-html
+           :headline-levels 4           ; Just the default for this project.
+           :auto-preamble t
+           :section-numbers nil
+           :html-preamble ,zilongshanren-website-html-preamble
+           :author "zilongshanren"
+           :email "guanghui8827@gmail.com"
+           :auto-sitemap t                ; Generate sitemap.org automagically...
+           :sitemap-filename "sitemap.org" ; ... call it sitemap.org (it's the default)...
+           :sitemap-title "Sitemap"        ; ... with title 'Sitemap'.
+           :sitemap-sort-files anti-chronologically
+           :sitemap-file-entry-format "%d %t"
+           )
+          ("blog-static"
+           :base-directory "~/org-notes/wiki"
+           :base-extension "css\\|js\\|png\\|jpg\\|gif\\|pdf\\|mp3\\|ogg\\|swf"
+           :publishing-directory "~/org-notes/public_html/"
+           :recursive t
+           :publishing-function org-publish-attachment
+           )
+          ("blog" :components ("blog-notes" "blog-static"))
+          ))
   (setq org-agenda-custom-commands
         '(("O" tags-todo "WORK")
           ("P" tags-todo "PROJECT")))
