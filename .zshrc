@@ -70,7 +70,6 @@ fi
 
 
 
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
 
 export NODE_PATH='/usr/local/lib/jsctags:${NODE_PATH}'
 export GOPATH="$HOME/workspace/golang"
