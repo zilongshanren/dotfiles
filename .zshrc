@@ -30,7 +30,7 @@ else
 fi
 
 source ~/.vim/antigen/antigen.zsh
-antigen update
+# call antigen update on your terminal and it will update the oh-my-zsh repository
 # Load the oh-my-zsh's library.
 antigen bundle robbyrussell/oh-my-zsh lib/
 
