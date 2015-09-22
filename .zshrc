@@ -30,7 +30,7 @@ else
 fi
 
 source ~/.vim/antigen/antigen.zsh
-
+antigen update
 # Load the oh-my-zsh's library.
 antigen bundle robbyrussell/oh-my-zsh lib/
 
@@ -44,6 +44,11 @@ antigen bundle textmate
 antigen bundle pip
 antigen bundle lein
 antigen bundle command-not-found
+antigen bundle gulp
+antigen bundle node
+antigen bundle npm
+antigen bundle nvm
+antigen bundle bower
 
 # Syntax highlighting bundle.
 # don't enable this theme, it doesn't work well with ansi-term in emacs
@@ -101,7 +106,7 @@ alias vim="stty stop '' -ixoff ; vim"
  alias ec='emacsclient -c'
 
  alias tmuxd="tmux attach -d"
-
+alias gp="gulp"
  function ppgrep() {
      if [[ $1 == "" ]]; then
          PERCOL=percol
