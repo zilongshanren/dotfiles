@@ -1,1 +1,5 @@
 elpa
+node_modules/
+bower_components/
+TAGS
+*.min.js
