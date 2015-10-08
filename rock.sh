@@ -13,6 +13,7 @@ rm ~/.flake8rc
 rm ~/.luacheckrc
 rm ~/.eslintrc
 rm ~/.jshintrc 
+rm ~/.agignore
 ln -s ~/.vim/.gitconfig ~/.gitconfig
 ln -s ~/.vim/.latexmkrc ~/.latexmkrc
 ln -s ~/.vim/.zshrc ~/.zshrc
@@ -22,6 +23,7 @@ ln -s ~/.vim/.flake8rc  ~/.flake8rc
 ln -s ~/.vim/.luacheckrc  ~/.luacheckrc
 ln -s ~/.vim/.eslintrc  ~/.eslintrc
 ln -s ~/.vim/.jshintrc  ~/.jshintrc
+ln -s ~/.vim/.agignore  ~/.agignore
 
 rm ~/.xvimrc
 ln -s ~/.vim/.xvimrc ~/.xvimrc
