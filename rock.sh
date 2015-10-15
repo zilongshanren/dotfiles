@@ -14,6 +14,7 @@ rm ~/.luacheckrc
 rm ~/.eslintrc
 rm ~/.jshintrc 
 rm ~/.agignore
+rm ~/.jsbeautifyrc
 ln -s ~/.vim/.gitconfig ~/.gitconfig
 ln -s ~/.vim/.latexmkrc ~/.latexmkrc
 ln -s ~/.vim/.zshrc ~/.zshrc
@@ -24,6 +25,7 @@ ln -s ~/.vim/.luacheckrc  ~/.luacheckrc
 ln -s ~/.vim/.eslintrc  ~/.eslintrc
 ln -s ~/.vim/.jshintrc  ~/.jshintrc
 ln -s ~/.vim/.agignore  ~/.agignore
+ln -s ~/.vim/.jsbeautifyrc ~/.jsbeautifyrc
 
 rm ~/.xvimrc
 ln -s ~/.vim/.xvimrc ~/.xvimrc
