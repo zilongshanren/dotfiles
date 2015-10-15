@@ -158,3 +158,6 @@ export PATH=$COCOS_TEMPLATES_ROOT:$PATH:/Applications/Racket\ v6.1.1/bin
 
 # Tell antigen that you're done.
 antigen apply
+
+export NVM_DIR="/Users/guanghui/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm

@@ -1,3 +1,5 @@
+#!/bin/bash
+
 export USE_CCACHE=1
 export NDK_CCACHE=/usr/local/bin/ccache
 export COCOS_CONSOLE_ROOT=/Applications/Cocos/frameworks/cocos2d-x-3.8/tools/cocos2d-console/bin
@@ -16,8 +18,6 @@ export TIZEN_SDK=/Users/guanghui/tizen-sdk
 export PATH=/usr/local/bin:$PATH
 # for color
 export CLICOLOR=1
-# \h:\W \u\$
-export PS1='\[\033[01;33m\]\u@\h\[\033[01;31m\] \W\$\[\033[00m\] '
 
 # Add environment variable COCOS_FRAMEWORKS for cocos2d-x
 export COCOS_FRAMEWORKS=/Applications/Cocos/frameworks
