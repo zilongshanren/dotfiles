@@ -13,6 +13,7 @@
 --exclude=*.min.css
 --exclude=*.pack.js
 --exclude=*.log
+--exclude=*bin*
 --exclude=*vender*
 --exclude=*.sql
 --exclude=*.html
@@ -26,6 +27,7 @@
 --exclude=GRTAGS
 --exclude=*doc*
 --exclude=*tmp*
+--exclude=*test*
 --exclude=.#*
 --tag-relative=yes
 --recurse=yes
@@ -46,6 +48,7 @@
 --regex-js=/([A-Za-z$][A-Za-z0-9_$()]+)[ \t]*=[ \t]*[Rr]eact.createClass[ \t]*\(/\1/c,class/
 --regex-js=/([A-Z][A-Za-z0-9_$]+)[ \t]*=[ \t]*[A-Za-z0-9_$]*[ \t]*[{(]/\1/c,class/
 --regex-js=/([A-Z][A-Za-z0-9_$]+)[ \t]*:[ \t]*[A-Za-z0-9_$]*[ \t]*[{(]/\1/c,class/
+--regex-js=/^[ \t]*cc\.(.+)[ \t]*=[ \t]*cc\.([a-zA-Z]+)\.extend/\1/c,class/
 
 --regex-js=/([A-Za-z$][A-Za-z0-9_$]+)[ \t]*=[ \t]*function[ \t]*\(/\1/f,function/
 
