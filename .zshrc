@@ -1,8 +1,6 @@
 # Path to your oh-my-zsh configuration.
 export LANG='en_US.UTF-8'
 export LC_ALL="en_US.UTF-8"
-export PATH=/usr/local/bin:/usr/bin:$PATH
-source ~/.bash_profile
 
 #https://joshldavis.com/2014/07/26/oh-my-zsh-is-a-disease-antigen-is-the-vaccine/
 #
@@ -76,12 +74,6 @@ fi
 
 
 
-export NODE_PATH='/usr/local/lib/jsctags:${NODE_PATH}'
-export GOPATH="$HOME/workspace/golang"
-export GOROOT="/usr/local/Cellar/go/1.1.1"
-export PATH=$PATH:$GOPATH/bin
-
-[[ -s ~/.autojump/etc/profile.d/autojump.sh ]] && . ~/.autojump/etc/profile.d/autojump.sh
 
 # zsh
 alias vim="stty stop '' -ixoff ; vim"
@@ -100,8 +92,7 @@ alias vim="stty stop '' -ixoff ; vim"
 
  alias rake="noglob rake"
 
- export PATH="$HOME/.cask/bin:$HOME/.cabal/bin:$PATH"
-
+[[ -s ~/.autojump/etc/profile.d/autojump.sh ]] && . ~/.autojump/etc/profile.d/autojump.sh
  alias e='emacsclient -t'
  alias ec='emacsclient -c'
 
@@ -141,20 +132,6 @@ alias gp="gulp"
      zle -N percol_select_history
      bindkey '^R' percol_select_history
  fi
-
-
-# Add environment variable COCOS_X_ROOT for cocos2d-x
-export COCOS_X_ROOT=/Users/guanghui/cocos2d-x-v2
-export PATH=$COCOS_X_ROOT:$PATH
-
-# Add environment variable COCOS_TEMPLATES_ROOT for cocos2d-x
-export COCOS_TEMPLATES_ROOT=/Users/guanghui/cocos2d-x-v2/templates
-export PATH=$COCOS_TEMPLATES_ROOT:$PATH
-
-
-# Add environment variable COCOS_TEMPLATES_ROOT for cocos2d-x
-export COCOS_TEMPLATES_ROOT=/Users/guanghui/cocos2d-x/templates
-export PATH=$COCOS_TEMPLATES_ROOT:$PATH:/Applications/Racket\ v6.1.1/bin
 
 # Tell antigen that you're done.
 antigen apply

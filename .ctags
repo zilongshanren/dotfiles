@@ -49,6 +49,7 @@
 --regex-js=/([A-Z][A-Za-z0-9_$]+)[ \t]*=[ \t]*[A-Za-z0-9_$]*[ \t]*[{(]/\1/c,class/
 --regex-js=/([A-Z][A-Za-z0-9_$]+)[ \t]*:[ \t]*[A-Za-z0-9_$]*[ \t]*[{(]/\1/c,class/
 --regex-js=/^[ \t]*cc\.(.+)[ \t]*=[ \t]*cc\.([a-zA-Z]+)\.extend/\1/c,class/
+--regex-js=/^[ \t]*cc\.(\w+)[ \t]*=[ \t]*cc\./\1/c,class/
 
 --regex-js=/([A-Za-z$][A-Za-z0-9_$]+)[ \t]*=[ \t]*function[ \t]*\(/\1/f,function/
 
