@@ -13,7 +13,7 @@
     // Enforcing
     "bitwise"       : true,     // true: Prohibit bitwise operators (&, |, ^, etc.)
     "camelcase"     : true,     // true: Identifiers must be in camelCase
-    "curly"         : true,     // true: Require {} for every new block or scope
+    "curly"         : false,     // true: Require {} for every new block or scope
     "eqeqeq"        : true,     // true: Require triple equals (===) for comparison
     "forin"         : false,     // true: Require filtering for..in loops with obj.hasOwnProperty()
     "immed"         : true,    // true: Require immediate invocations to be wrapped in parens e.g. `(function () { } ());`
@@ -24,7 +24,7 @@
     "noempty"       : true,     // true: Prohibit use of empty blocks
     "nonew"         : false,    // true: Prohibit use of constructors for side-effects (without assignment)
     "plusplus"      : false,    // true: Prohibit use of `++` & `--`
-    "quotmark"      : "single",    // Quotation mark consistency:
+    "quotmark"      : false,    // Quotation mark consistency:
                                 //   false    : do nothing (default)
                                 //   true     : ensure whatever is used is consistent
                                 //   "single" : require single quotes
@@ -33,10 +33,10 @@
     "unused"        : true,     // true: Require all defined variables be used
     "strict"        : false,     // true: Requires all functions run in ES5 Strict Mode
     "trailing"      : true,     // true: Prohibit trailing whitespaces
-    "maxparams"     : false,    // {int} Max number of formal params allowed per function
-    "maxdepth"      : false,    // {int} Max depth of nested blocks (within functions)
-    "maxstatements" : false,    // {int} Max number statements per function
-    "maxcomplexity" : false,    // {int} Max cyclomatic complexity per function
+    "maxparams"     : 4,    // {int} Max number of formal params allowed per function
+    "maxdepth"      : 4,    // {int} Max depth of nested blocks (within functions)
+    "maxstatements" : 15,    // {int} Max number statements per function
+    "maxcomplexity" : 6,    // {int} Max cyclomatic complexity per function
     "maxlen"        : 110,       // {int} Max number of characters per line
 
     // Relaxing
