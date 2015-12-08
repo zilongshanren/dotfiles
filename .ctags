@@ -27,7 +27,6 @@
 --exclude=GRTAGS
 --exclude=*doc*
 --exclude=*tmp*
---exclude=*test*
 --exclude=.#*
 --tag-relative=yes
 --recurse=yes
