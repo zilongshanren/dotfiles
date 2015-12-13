@@ -16,6 +16,7 @@ rm ~/.jshintrc
 rm ~/.agignore
 rm ~/.jsbeautifyrc
 rm ~/.zshenv
+rm ~/.npmrc
 ln -s ~/.vim/.gitconfig ~/.gitconfig
 ln -s ~/.vim/.latexmkrc ~/.latexmkrc
 ln -s ~/.vim/.zshrc ~/.zshrc
@@ -28,6 +29,7 @@ ln -s ~/.vim/.jshintrc  ~/.jshintrc
 ln -s ~/.vim/.agignore  ~/.agignore
 ln -s ~/.vim/.jsbeautifyrc ~/.jsbeautifyrc
 ln -s ~/.vim/.zshenv ~/.zshenv
+ln -s ~/.vim/.npmrc ~/.npmrc
 
 rm ~/.xvimrc
 ln -s ~/.vim/.xvimrc ~/.xvimrc
