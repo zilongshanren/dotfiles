@@ -1,6 +1,6 @@
 I use Vundle to management my vim plugins. You can refer to this link for more information: [Vundle]( https://github.com/gmarik/vundle )
 
-#Install with:
+# Install with:
 
     git clone https://github.com/andyque/dotvim.git ~/.vim
 
@@ -8,21 +8,21 @@ I use Vundle to management my vim plugins. You can refer to this link for more i
 
     ./install.sh
     
-#Install plugins
+# Install plugins
 
 Open a arbitrary file and run the following ex command of vim:
 
     :BundleInstall
     Note: The BundleInstal commands will not install YouCompleteMe on default, you should uncomment it from *bundles.vim*
 
-#Config YouCompleteMe plugin
+## Config YouCompleteMe plugin
 
 You can refer to [this link](https://github.com/Valloric/YouCompleteMe) for more information.
 
-#Tips:
+# Tips:
     If you want to use the full power of these vim plugins, you should install python,ruby ctags,jsctags.
 
-#For Windows Platform
+# For Windows Platform
 
     1. At first, you should download the [vim version](ftp://ftp.vim.org/pub/vim/pc/gvim74.exe)
 
@@ -36,6 +36,18 @@ You can refer to [this link](https://github.com/Valloric/YouCompleteMe) for more
 
     5. Enjoy!
 
+
+# Config for .gitconfig.local
+
+```
+
+[credential]
+  helper = osxkeychain
+
+[github]
+  username = zilongshanren
+  token = a123uber456secret789ceprivate000key78
+```
 
 **Licence:**
 
