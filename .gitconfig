@@ -1,6 +1,8 @@
 [user]
 	name = zilongshanren
 	email = guanghui8827@126.com
+[include]
+	path = ~/.gitconfig.local
 [mergetool]
 	keepBackup = true
 [alias]
@@ -38,8 +40,6 @@
 [mergetool "sourcetree"]
 	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
 	trustExitCode = true
-[github]
-	user = zilongshanren
 [push]
 	default = matching
 [branch]

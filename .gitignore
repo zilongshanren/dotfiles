@@ -6,3 +6,4 @@ view/
 .ycm_extra_conf.pyc
 bundle/*
 !bundle/vundle
+/.gitconfig.local
