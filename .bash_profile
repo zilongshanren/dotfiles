@@ -2,8 +2,6 @@
 
 export USE_CCACHE=1
 export NDK_CCACHE=/usr/local/bin/ccache
-export COCOS_CONSOLE_ROOT=/Users/guanghui/cocos2d-x/tools/cocos2d-console/bin
-export COCOS=/Applications/Cocos/frameworks/cocos2d-x-3.9/tools/cocos2d-console/bin
 export PATH=$COCOS_CONSOLE_ROOT:$PATH
 export ANDROID_NDK=/Users/guanghui/AndroidDev/android-ndk-r10c
 export NDK_ROOT=/Users/guanghui/AndroidDev/android-ndk-r10c
@@ -16,10 +14,6 @@ export PATH=$PATH:$ANT_ROOT
 
 export TIZEN_SDK=/Users/guanghui/tizen-sdk
 
-export PATH=/usr/local/bin:$PATH
+export PATH=/Library/TeX/texbin:/usr/local/bin:$PATH
 # for color
 export CLICOLOR=1
-
-# Add environment variable COCOS_FRAMEWORKS for cocos2d-x
-export COCOS_FRAMEWORKS=/Applications/Cocos/frameworks
-export PATH=$COCOS_FRAMEWORKS:$PATH
