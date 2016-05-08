@@ -1,5 +1,16 @@
 " vundle plugins
 Bundle 'gmarik/vundle'
+Bundle 'tpope/vim-repeat'
+Bundle  'tpope/vim-unimpaired'
+Bundle  'tpope/vim-surround'
+Bundle  'tpope/vim-commentary'
+Bundle  'kien/ctrlp.vim'
+Bundle  'Lokaltog/vim-easymotion'
+Bundle  'sjl/gundo.vim'
+Bundle  'nelstrom/vim-visual-star-search'
+Bundle 'Shougo/neocomplcache.vim'
+Bundle  'ervandew/supertab'
+Bundle  'Raimondi/delimitMate'
 
 " github repo
 " Bundle 'tpope/vim-fugitive'
@@ -11,12 +22,8 @@ Bundle 'gmarik/vundle'
 " Bundle 'terryma/vim-multiple-cursors'
 
 " tpope's awesome vim plugins
-Bundle 'tpope/vim-repeat'
-Bundle  'tpope/vim-unimpaired'
 " Bundle  'tpope/vim-speeddating'
 " Bundle  'tpope/vim-abolish'
-Bundle  'tpope/vim-surround'
-Bundle  'tpope/vim-commentary'
 " Bundle  'tpope/vim-eunuch'
 
 "color scheme
@@ -26,15 +33,11 @@ Bundle  'tpope/vim-commentary'
 
 "very useful plugins
 " Bundle  'mileszs/ack.vim'
-Bundle  'kien/ctrlp.vim'
-Bundle  'Lokaltog/vim-easymotion'
 " Bundle 'xolox/vim-lua-ftplugin'
 " Bundle  'gabrielelana/vim-markdown'
 " Bundle  'pangloss/vim-javascript'
 " Bundle  'majutsushi/tagbar'
 " Bundle 'godlygeek/tabular'
-Bundle  'sjl/gundo.vim'
-Bundle  'nelstrom/vim-visual-star-search'
 " Bundle  'nelstrom/vim-qargs'
 " Bundle  'klen/python-mode'
 " Bundle 'bling/vim-airline'
@@ -42,7 +45,6 @@ Bundle  'nelstrom/vim-visual-star-search'
 " Bundle  'xuhdev/SingleCompile'
 " Bundle  'oblitum/bufkill'
 " Bundle  'wikitopian/hardmode'
-Bundle  'Raimondi/delimitMate'
 " Bundle  'mileszs/ack.vim'
 " Bundle  'kchmck/vim-coffee-script'
 " Bundle  'skammer/vim-css-color'
@@ -50,8 +52,6 @@ Bundle  'Raimondi/delimitMate'
 " Bundle  'Valloric/YouCompleteMe'
 " if you use Vim for programming, please comment the necomplcache and use
 " YouComplete Me instead
-Bundle 'Shougo/neocomplcache.vim'
-Bundle  'ervandew/supertab'
 
 "text object plugin
 " Bundle  'kana/vim-textobj-lastpat'

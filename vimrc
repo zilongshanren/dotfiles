@@ -1,4 +1,4 @@
-  VIM Configuration File
+" VIM Configuration File
 " Copyright: Common CC 3.0
 " Author: guanghui qu 
 "
