@@ -1,4 +1,4 @@
-" VIM Configuration File
+  VIM Configuration File
 " Copyright: Common CC 3.0
 " Author: guanghui qu 
 "
@@ -287,9 +287,6 @@ let g:syntastic_enable_balloons = 1
 syntax enable
 set background=dark
 colorscheme wombat
-if has("gui_running")
-colorscheme solarized
-endif
 "}}}
 
 "config tagbar plugin {{{
