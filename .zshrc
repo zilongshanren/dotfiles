@@ -178,3 +178,6 @@ export PATH=$COCOS_CONSOLE_ROOT:$PATH
 # Add environment variable COCOS_TEMPLATES_ROOT for cocos2d-x
 export COCOS_TEMPLATES_ROOT=/Users/guanghui/Downloads/cocos2d/templates
 export PATH=$COCOS_TEMPLATES_ROOT:$PATH
+
+# added by travis gem
+[ -f /Users/guanghui/.travis/travis.sh ] && source /Users/guanghui/.travis/travis.sh
