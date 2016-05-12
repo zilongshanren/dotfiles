@@ -11,6 +11,10 @@ Bundle  'nelstrom/vim-visual-star-search'
 Bundle 'Shougo/neocomplcache.vim'
 Bundle  'ervandew/supertab'
 Bundle  'Raimondi/delimitMate'
+Bundle 'jimmay5469/vim-spacemacs'
+Bundle 'rking/ag.vim'
+
+
 
 " github repo
 " Bundle 'tpope/vim-fugitive'

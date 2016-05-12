@@ -67,7 +67,7 @@ set noswapfile
 "}}}
 
 "remap leader key{{{
-let mapleader=','
+let mapleader = "\<SPACE>"
 "}}}
 
 "some common configs {{{
