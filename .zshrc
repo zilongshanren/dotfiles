@@ -157,27 +157,18 @@ alias m='f -e mplayer' # quick opening files with mplayer
 alias o='a -e open' # quick opening files with xdg-open
 alias e='f -e emacsclient -t' # quick opening files with xdg-open
 
-export NODE_PATH=/usr/local/lib/node_modules:$NODE_PATH
-
-# Add environment variable COCOS_CONSOLE_ROOT for cocos2d-x
-export COCOS_CONSOLE_ROOT=/Users/guanghui/cocos2d-x-v3/tools/cocos2d-console/bin
-export PATH=$COCOS_CONSOLE_ROOT:$PATH
-
-# Add environment variable COCOS_CONSOLE_ROOT for cocos2d-x
-export COCOS_CONSOLE_ROOT=/Users/guanghui/cocos2d-x/tools/cocos2d-console/bin
-export PATH=$COCOS_CONSOLE_ROOT:$PATH
-
-# Add environment variable COCOS_TEMPLATES_ROOT for cocos2d-x
-export COCOS_TEMPLATES_ROOT=/Users/guanghui/cocos2d-x/templates
-export PATH=$COCOS_TEMPLATES_ROOT:$PATH
-
-# Add environment variable COCOS_CONSOLE_ROOT for cocos2d-x
-export COCOS_CONSOLE_ROOT=/Users/guanghui/Downloads/cocos2d/tools/cocos2d-console/bin
-export PATH=$COCOS_CONSOLE_ROOT:$PATH
-
-# Add environment variable COCOS_TEMPLATES_ROOT for cocos2d-x
-export COCOS_TEMPLATES_ROOT=/Users/guanghui/Downloads/cocos2d/templates
-export PATH=$COCOS_TEMPLATES_ROOT:$PATH
 
 # added by travis gem
 [ -f /Users/guanghui/.travis/travis.sh ] && source /Users/guanghui/.travis/travis.sh
+
+# Add environment variable COCOS_CONSOLE_ROOT for cocos2d-x
+export COCOS_CONSOLE_ROOT=/Users/guanghui/Github/fireball/cocos2d-x/tools/cocos2d-console/bin
+export PATH=$COCOS_CONSOLE_ROOT:$PATH
+
+# Add environment variable COCOS_X_ROOT for cocos2d-x
+export COCOS_X_ROOT=/Users/guanghui/Github/fireball
+export PATH=$COCOS_X_ROOT:$PATH
+
+# Add environment variable COCOS_TEMPLATES_ROOT for cocos2d-x
+export COCOS_TEMPLATES_ROOT=/Users/guanghui/Github/fireball/cocos2d-x/templates
+export PATH=$COCOS_TEMPLATES_ROOT:$PATH
