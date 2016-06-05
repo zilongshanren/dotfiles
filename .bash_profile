@@ -17,3 +17,5 @@ export TIZEN_SDK=/Users/guanghui/tizen-sdk
 export PATH=/Library/TeX/texbin:/usr/local/bin:$PATH
 # for color
 export CLICOLOR=1
+
+alias g='git'
