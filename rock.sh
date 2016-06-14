@@ -17,6 +17,7 @@ rm ~/.agignore
 rm ~/.jsbeautifyrc
 rm ~/.zshenv
 rm ~/.npmrc
+rm ~/tslint.json
 ln -s ~/.vim/.gitconfig ~/.gitconfig
 ln -s ~/.vim/.latexmkrc ~/.latexmkrc
 ln -s ~/.vim/.zshrc ~/.zshrc
@@ -30,6 +31,7 @@ ln -s ~/.vim/.agignore  ~/.agignore
 ln -s ~/.vim/.jsbeautifyrc ~/.jsbeautifyrc
 ln -s ~/.vim/.zshenv ~/.zshenv
 ln -s ~/.vim/.npmrc ~/.npmrc
+ln -s ~/.vim/tslint.json ~/tslint.json
 
 rm ~/.xvimrc
 ln -s ~/.vim/.xvimrc ~/.xvimrc
