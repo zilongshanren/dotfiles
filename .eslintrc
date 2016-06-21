@@ -35,6 +35,8 @@
     "cc": true,
     "Editor": true,
     "_ccsg": true,
+    "CC_JSB": true,
+    "CC_EDITOR": true
   },
 
   "plugins": [
