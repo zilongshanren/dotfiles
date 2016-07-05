@@ -169,6 +169,7 @@ map <leader>dl :DoxLic<cr>
 "plugins key maps" {{{
 "--commentary plugin,comment a line
 map <leader>/ \\\
+map <leader>; \\\
 "go back and forth from header file and source file
 nmap <silent> <leader>f :A<cr>
 "open a tag list ivew

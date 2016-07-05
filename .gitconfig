@@ -44,3 +44,8 @@
 	default = matching
 [branch]
 	autosetuprebase = always
+[pack]
+	windowMemory = 100m
+	packSizeLimit = 100m
+	threads = 1
+	SizeLimit = 100m
