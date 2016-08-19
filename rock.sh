@@ -18,6 +18,7 @@ rm ~/.jsbeautifyrc
 rm ~/.zshenv
 rm ~/.npmrc
 rm ~/tslint.json
+rm ~/.ruby-version
 ln -s ~/.vim/.gitconfig ~/.gitconfig
 ln -s ~/.vim/.latexmkrc ~/.latexmkrc
 ln -s ~/.vim/.zshrc ~/.zshrc
@@ -32,6 +33,7 @@ ln -s ~/.vim/.jsbeautifyrc ~/.jsbeautifyrc
 ln -s ~/.vim/.zshenv ~/.zshenv
 ln -s ~/.vim/.npmrc ~/.npmrc
 ln -s ~/.vim/tslint.json ~/tslint.json
+ln -s ~/.vim/.ruby-version ~/.ruby-version
 
 rm ~/.xvimrc
 ln -s ~/.vim/.xvimrc ~/.xvimrc
