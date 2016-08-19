@@ -3,8 +3,8 @@
 export USE_CCACHE=1
 export NDK_CCACHE=/usr/local/bin/ccache
 export PATH=$COCOS_CONSOLE_ROOT:$PATH
-export ANDROID_NDK=/Users/guanghui/AndroidDev/android-ndk-r11c
-export NDK_ROOT=/Users/guanghui/AndroidDev/android-ndk-r11c
+export ANDROID_NDK=/Users/guanghui/AndroidDev/android-ndk-r12b
+export NDK_ROOT=/Users/guanghui/AndroidDev/android-ndk-r12b
 export PATH=$NDK_ROOT:$PATH
 export ANDROID_SDK_ROOT=/Users/guanghui/AndroidDev/adt-bundle-mac-x86_64-20130522/sdk
 export PATH=$ANDROID_SDK_ROOT/sdk/platform-tools:$PATH
