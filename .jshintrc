@@ -11,8 +11,8 @@
     "maxerr"        : 50,       // {int} Maximum error before stopping
 
     // Enforcing
-    "bitwise"       : true,     // true: Prohibit bitwise operators (&, |, ^, etc.)
-    "camelcase"     : true,     // true: Identifiers must be in camelCase
+    "bitwise"       : false,     // true: Prohibit bitwise operators (&, |, ^, etc.)
+    "camelcase"     : false,     // true: Identifiers must be in camelCase
     "curly"         : false,     // true: Require {} for every new block or scope
     "eqeqeq"        : true,     // true: Require triple equals (===) for comparison
     "forin"         : false,     // true: Require filtering for..in loops with obj.hasOwnProperty()
@@ -36,8 +36,8 @@
     "maxparams"     : 4,    // {int} Max number of formal params allowed per function
     "maxdepth"      : 4,    // {int} Max depth of nested blocks (within functions)
     "maxstatements" : 15,    // {int} Max number statements per function
-    "maxcomplexity" : 6,    // {int} Max cyclomatic complexity per function
-    "maxlen"        : 110,       // {int} Max number of characters per line
+    "maxcomplexity" : 8,    // {int} Max cyclomatic complexity per function
+    "maxlen"        : 160,       // {int} Max number of characters per line
 
     // Relaxing
     "asi"           : false,     // true: Tolerate Automatic Semicolon Insertion (no semicolons)
@@ -128,6 +128,7 @@
       "Random": false,
       "_": false,               // Underscore.js
       "$": false,               // jQuery
-      "Router": false           // iron-router
+      "Router": false,
+      "cc": false
     }
 }
