@@ -183,3 +183,6 @@ export PATH=$COCOS_CONSOLE_ROOT:$PATH
 # Add environment variable COCOS_X_ROOT for cocos2d-x
 export COCOS_X_ROOT=/Users/guanghui
 export PATH=$COCOS_X_ROOT:$PATH
+
+export NVM_DIR=~/.nvm
+source $(brew --prefix nvm)/nvm.sh
