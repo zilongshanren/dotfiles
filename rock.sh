@@ -15,7 +15,7 @@ rm ~/.eslintrc
 rm ~/.jshintrc 
 rm ~/.agignore
 rm ~/.jsbeautifyrc
-rm ~/.zshenv
+# rm ~/.zshenv
 rm ~/.npmrc
 rm ~/tslint.json
 rm ~/.ruby-version
@@ -30,7 +30,7 @@ ln -s ~/.vim/.eslintrc  ~/.eslintrc
 ln -s ~/.vim/.jshintrc  ~/.jshintrc
 ln -s ~/.vim/.agignore  ~/.agignore
 ln -s ~/.vim/.jsbeautifyrc ~/.jsbeautifyrc
-ln -s ~/.vim/.zshenv ~/.zshenv
+# ln -s ~/.vim/.zshenv ~/.zshenv
 ln -s ~/.vim/.npmrc ~/.npmrc
 ln -s ~/.vim/tslint.json ~/tslint.json
 ln -s ~/.vim/.ruby-version ~/.ruby-version
