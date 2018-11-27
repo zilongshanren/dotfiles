@@ -32,7 +32,6 @@
 		ui = true
 [core]
     editor = vim
-	excludesfile = /Users/lionqu/.gitignore_global
     autocrlf = false
 [difftool "sourcetree"]
 	cmd = /usr/local/bin/bcomp \"$LOCAL\" \"$REMOTE\"
@@ -49,5 +48,3 @@
 	packSizeLimit = 100m
 	threads = 1
 	SizeLimit = 100m
-[commit]
-	template = /Users/lionqu/.stCommitMsg
