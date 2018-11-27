@@ -35,7 +35,7 @@ antigen bundle robbyrussell/oh-my-zsh lib/
 # Bundles from the default repo (robbyrussell's oh-my-zsh).
 antigen bundle git
 antigen bundle tmuxinator
-antigen bundle osx
+#antigen bundle osx
 antigen bundle ruby
 antigen bundle autojump
 antigen bundle textmate
@@ -44,7 +44,7 @@ antigen bundle lein
 antigen bundle command-not-found
 antigen bundle gulp
 antigen bundle node
-antigen bundle npm
+#antigen bundle npm
 antigen bundle nvm
 antigen bundle bower
 
@@ -58,9 +58,7 @@ antigen theme candy
 
 if [[ $CURRENT_OS == 'OS X' ]]; then
     antigen bundle brew
-    antigen bundle brew-cask
     antigen bundle gem
-    antigen bundle osx
 elif [[ $CURRENT_OS == 'Linux' ]]; then
 # None so far...
 
@@ -72,8 +70,8 @@ elif [[ $CURRENT_OS == 'Cygwin' ]]; then
 fi
 
 # chruby
-source /usr/local/opt/chruby/share/chruby/chruby.sh
-source /usr/local/opt/chruby/share/chruby/auto.sh
+#source /usr/local/opt/chruby/share/chruby/chruby.sh
+#source /usr/local/opt/chruby/share/chruby/auto.sh
 
 # zsh
 alias vim="stty stop '' -ixoff ; vim"
@@ -186,3 +184,8 @@ export PATH=$COCOS_X_ROOT:$PATH
 
 export NVM_DIR=~/.nvm
 source $(brew --prefix nvm)/nvm.sh
+nvm use 6.11
+
+export http_proxy=http://web-proxy.tencent.com:8080
+export https_proxy=http://web-proxy.tencent.com:8080
+export no_proxy="localhost,127.0.0.1,.oa.com"

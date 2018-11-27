@@ -32,13 +32,13 @@
 		ui = true
 [core]
     editor = vim
-	excludesfile = /Users/guanghui/.gitignore_global
+	excludesfile = /Users/lionqu/.gitignore_global
     autocrlf = false
 [difftool "sourcetree"]
-	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
-	path = 
+	cmd = /usr/local/bin/bcomp \"$LOCAL\" \"$REMOTE\"
+	path = -ro
 [mergetool "sourcetree"]
-	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	cmd = /usr/local/bin/bcomp \"$LOCAL\" \"$REMOTE\" \"$BASE\" \"$MERGED\"
 	trustExitCode = true
 [push]
 	default = matching
@@ -49,3 +49,5 @@
 	packSizeLimit = 100m
 	threads = 1
 	SizeLimit = 100m
+[commit]
+	template = /Users/lionqu/.stCommitMsg
