@@ -34,6 +34,7 @@ ln -s ~/.vim/.jsbeautifyrc ~/.jsbeautifyrc
 ln -s ~/.vim/.npmrc ~/.npmrc
 ln -s ~/.vim/tslint.json ~/tslint.json
 ln -s ~/.vim/.ruby-version ~/.ruby-version
+mkdir -p ~/.config/karabiner
 ln -s ~/.vim/karabiner.json ~/.config/karabiner/karabiner.json
 
 rm ~/.xvimrc
