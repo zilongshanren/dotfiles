@@ -186,6 +186,3 @@ export NVM_DIR=~/.nvm
 source $(brew --prefix nvm)/nvm.sh
 nvm use 6.11
 
-export http_proxy=http://web-proxy.tencent.com:8080
-export https_proxy=http://web-proxy.tencent.com:8080
-export no_proxy="localhost,127.0.0.1,.oa.com"
