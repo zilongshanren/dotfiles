@@ -14,6 +14,11 @@ Open a arbitrary file and run the following ex command of vim:
 
     :BundleInstall
     Note: The BundleInstal commands will not install YouCompleteMe on default, you should uncomment it from *bundles.vim*
+    
+ # Install oh-my-zsh, tmux
+    sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+    brew install tmux
+    brew install reattach-to-user-namespace
 
 ## Config YouCompleteMe plugin
 
