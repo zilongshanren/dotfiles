@@ -19,6 +19,7 @@ Open a arbitrary file and run the following ex command of vim:
     sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
     brew install tmux
     brew install reattach-to-user-namespace
+    ./rock.sh
 
 ## Config YouCompleteMe plugin
 
