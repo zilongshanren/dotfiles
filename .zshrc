@@ -184,5 +184,5 @@ export PATH=$COCOS_X_ROOT:$PATH
 
 export NVM_DIR=~/.nvm
 source $(brew --prefix nvm)/nvm.sh
-nvm use 6.11
+nvm use 10.16
 
