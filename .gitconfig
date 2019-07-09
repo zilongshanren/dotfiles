@@ -16,6 +16,11 @@
 	br	= branch
 	st	= status
 	co	= checkout
+	hide = update-index --assume-unchanged
+	unhide = update-index --no-assume-unchanged
+	unhide-all = "!git ls-files -v | grep \"^[a-z]\" | awk '{print $2,$NF;}' | xargs git unhide"
+	hidden = !git ls-files -v | grep \"^[a-z]\"
+	ignored = !git status -s --ignored | grep \"^!!\"
 	sm	= submodule
 	ci	= commit -a -v
 	unst = reset HEAD
@@ -33,11 +38,12 @@
 [core]
     editor = vim
     autocrlf = false
+	excludesfile = /Users/lionqu/.gitignore_global
 [difftool "sourcetree"]
-	cmd = /usr/local/bin/bcomp \"$LOCAL\" \"$REMOTE\"
-	path = -ro
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path = 
 [mergetool "sourcetree"]
-	cmd = /usr/local/bin/bcomp \"$LOCAL\" \"$REMOTE\" \"$BASE\" \"$MERGED\"
+	cmd = /Applications/Sourcetree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
 	trustExitCode = true
 [push]
 	default = matching
@@ -48,3 +54,9 @@
 	packSizeLimit = 100m
 	threads = 1
 	SizeLimit = 100m
+[http "https://git.code.oa.com"]
+      proxy = http://127.0.0.1:12639
+[http "http://git.code.oa.com"]
+      proxy = http://127.0.0.1:12639
+[commit]
+	template = /Users/lionqu/.stCommitMsg
