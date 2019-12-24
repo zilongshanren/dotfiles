@@ -80,13 +80,13 @@ alias vim="stty stop '' -ixoff ; vim"
 
  # bash
  # No ttyctl, so we need to save and then restore terminal settings
- vim()
- {
-     local STTYOPTS="$(stty --save)"
-     stty stop '' -ixoff
-     command vim "$@"
-     stty "$STTYOPTS"
- }
+ # vim()
+ # {
+ #     local STTYOPTS="$(stty --save)"
+ #     stty stop '' -ixoff
+ #     command vim "$@"
+ #     stty "$STTYOPTS"
+ # }
 
  alias rake="noglob rake"
 
@@ -185,4 +185,7 @@ export PATH=$COCOS_X_ROOT:$PATH
 export NVM_DIR=~/.nvm
 source $(brew --prefix nvm)/nvm.sh
 nvm use 10.16
+
+
+
 
