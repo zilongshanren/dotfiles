@@ -54,5 +54,3 @@
 	packSizeLimit = 100m
 	threads = 1
 	SizeLimit = 100m
-[commit]
-	template = /Users/lionqu/.stCommitMsg

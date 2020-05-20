@@ -146,6 +146,7 @@ alias e='f -e emacsclient -t' # quick opening files with xdg-open
 
 export PATH="/usr/local/sbin":$PATH
 export PATH="$HOME/.emacs.d/bin:$PATH"
+export PATH="$HOME/Library/Python/2.7/bin:$PATH"
 
 
 export NVM_DIR=~/.nvm
