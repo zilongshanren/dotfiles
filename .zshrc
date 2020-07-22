@@ -110,6 +110,7 @@ function ppkill() {
 function exists { which $1 &> /dev/null }
 
 if exists percol; then
+echo  "bind  percol key"
     function percol_select_history() {
         local tac
         exists gtac && tac="gtac" || { exists tac && tac="tac" || { tac="tail -r" } }

@@ -1,0 +1,55 @@
+" selected IntelliSpace modules
+source ~/.intellimacs/spacemacs.vim
+source ~/.intellimacs/extra.vim
+source ~/.intellimacs/major.vim
+source ~/.intellimacs/hybrid.vim
+
+vnoremap < <gv
+vnoremap > >gv
+nnoremap <silent> n nzz
+nnoremap <silent> N Nzz
+nnoremap <silent> * *zz
+nnoremap <silent> # #zz
+nnoremap <silent> g* g*zz
+nnoremap <silent> g# g#zz
+
+" My own vim commands
+nnoremap Y y$
+
+" Add/edit actions
+nnoremap <leader>gl    :action Vcs.Show.Log<CR>
+vnoremap <leader>gl    :action Vcs.Show.Log<CR>
+nnoremap <leader>sj   :action FileStructurePopup<CR>
+vnoremap <leader>sj   :action FileStructurePopup<CR>
+nnoremap gr :action Refactorings.QuickListPopupAction<CR>
+nnoremap <leader>v :action EditorSelectWord<CR>
+vnoremap v :action EditorSelectWord<CR>
+vnoremap V :action EditorUnSelectWord<CR>
+
+
+" Insert line below
+nnoremap ]<space>   o<Esc>k
+vnoremap ]<space>    <Esc>o<Esc>k
+
+" Insert line above
+nnoremap [<space>   O<Esc>j
+vnoremap [<space>    <Esc>O<Esc>j
+
+nnoremap <leader>l :action GoToLine<CR>
+vnoremap <leader>l :action GoToLine<CR>
+
+inoremap <C-y>  <Esc>pA
+
+nnoremap <leader>= :action ReformatCode<CR>
+nnoremap == :action AutoIndentLines<CR>
+vnoremap = :action AutoIndentLines<CR><Esc>
+
+nnoremap ,/    :action CommentByLineComment<CR>
+vnoremap ,/    :action CommentByLineComment<CR>
+" Redo
+nnoremap U <C-r>
+
+
+nnoremap <leader>fo    :action ShowFilePath<CR>
+
+nnoremap <C-f>    :action Find<CR>

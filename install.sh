@@ -28,8 +28,10 @@ cd ~/.vim
 echo "create .vimrc"
 rm ~/.vimrc
 rm ~/.gvimrc
+rm ~/.ideavimrc
 ln -s ~/.vim/vimrc ~/.vimrc
 ln -s ~/.vim/vimrc ~/.gvimrc
+ln -s ~/.vim/.ideavimrc ~/.ideavimrc
 
 #echo "update submodules"
 git submodule init
