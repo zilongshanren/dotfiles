@@ -51,8 +51,8 @@ antigen bundle bower
 
 # Load the theme.
 #antigen theme robbyrussell
-THEME=candy
-antigen list | grep $THEME; if [ $? -ne 0 ]; then antigen theme $THEME; fi
+# THEME=candy
+# antigen list | grep $THEME; if [ $? -ne 0 ]; then antigen theme $THEME; fi
 
 
 # Tell antigen that you're done.
@@ -87,41 +87,6 @@ alias ec='emacsclient -c'
 alias tmuxd="tmux attach -d"
 alias gp="gulp"
 
-function ppgrep() {
-
-    if [[ $1 == "" ]]; then
-        PERCOL=percol
-    else
-        PERCOL="percol --query $1"
-    fi
-    ps aux | eval $PERCOL | awk '{ print $2 }'
-}
-
-function ppkill() {
-    if [[ $1 =~ "^-" ]]; then
-        QUERY=""            # options only
-    else
-        QUERY=$1            # with a query
-        [[ $# > 0 ]] && shift
-    fi
-    ppgrep $QUERY | xargs kill $*
-}
-
-function exists { which $1 &> /dev/null }
-
-if exists percol; then
-echo  "bind  percol key"
-    function percol_select_history() {
-        local tac
-        exists gtac && tac="gtac" || { exists tac && tac="tac" || { tac="tail -r" } }
-        BUFFER=$(fc -l -n 1 | eval $tac | percol --query "$LBUFFER")
-        CURSOR=$#BUFFER         # move cursor
-        zle -R -c               # refresh
-    }
-
-    zle -N percol_select_history
-    bindkey '^R' percol_select_history
-fi
 
 
 eval "$(fasd --init auto)"
@@ -156,4 +121,38 @@ nvm use 10.16
 
 
 
+function ppgrep() {
 
+    if [[ $1 == "" ]]; then
+        PERCOL=percol
+    else
+        PERCOL="percol --query $1"
+    fi
+    ps aux | eval $PERCOL | awk '{ print $2 }'
+}
+
+function ppkill() {
+    if [[ $1 =~ "^-" ]]; then
+        QUERY=""            # options only
+    else
+        QUERY=$1            # with a query
+        [[ $# > 0 ]] && shift
+    fi
+    ppgrep $QUERY | xargs kill $*
+}
+
+function exists { which $1 &> /dev/null }
+
+if exists percol; then
+    echo  "bind  percol key"
+    function percol_select_history() {
+        local tac
+        exists gtac && tac="gtac" || { exists tac && tac="tac" || { tac="tail -r" } }
+        BUFFER=$(fc -l -n 1 | eval $tac | percol --query "$LBUFFER")
+        CURSOR=$#BUFFER         # move cursor
+        zle -R -c               # refresh
+    }
+
+    zle -N percol_select_history
+    bindkey '^R' percol_select_history
+fi
