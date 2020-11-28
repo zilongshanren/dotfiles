@@ -50,7 +50,7 @@ antigen bundle bower
 # antigen bundle zsh-users/zsh-syntax-highlighting
 
 # Load the theme.
-#antigen theme robbyrussell
+antigen theme robbyrussell
 # THEME=candy
 # antigen list | grep $THEME; if [ $? -ne 0 ]; then antigen theme $THEME; fi
 
