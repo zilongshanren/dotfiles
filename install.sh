@@ -40,3 +40,5 @@ git submodule update
 
 # install tmux plugin
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+# for ls & cat gnu version  for easing dired-quick-sort
+brew install coreutils
