@@ -4,7 +4,7 @@
 [include]
 	path = ~/.gitconfig.local
 [mergetool]
-	keepBackup = true
+	keepBackup = false
 [alias]
 	# Show the diff between the latest commit and the current state
 	d	= !"git diff"
@@ -39,11 +39,15 @@
     editor = vim
     autocrlf = false
 	excludesfile = /Users/lionqu/.gitignore_global
+	quotepath = false
+	longpaths = true
+	trustctime = false
+	attributesfile = ~/.attributes_global
 [difftool "sourcetree"]
-	cmd = /usr/local/bin/bcomp \"$LOCAL\" \"$REMOTE\"
-	path = -ro
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path = 
 [mergetool "sourcetree"]
-	cmd = /usr/local/bin/bcomp \"$LOCAL\" \"$REMOTE\" \"$BASE\" \"$MERGED\"
+	cmd = /Applications/Sourcetree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
 	trustExitCode = true
 [push]
 	default = matching
@@ -54,3 +58,16 @@
 	packSizeLimit = 100m
 	threads = 1
 	SizeLimit = 100m
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+[http]
+	postBuffer = 655360000
+[diff "text"]
+	textconv = cat
+[lfs]
+	concurrenttransfers = 32
+[rebase]
+	backend = apply
