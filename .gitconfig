@@ -37,7 +37,7 @@
 		ui = true
 [core]
     editor = vim
-    autocrlf = false
+	autocrlf = input
 	excludesfile = /Users/lionqu/.gitignore_global
 	quotepath = false
 	longpaths = true
@@ -71,3 +71,5 @@
 	concurrenttransfers = 32
 [rebase]
 	backend = apply
+[url "https://github.com.cnpmjs.org/"]
+	insteadof = https://github.com/
