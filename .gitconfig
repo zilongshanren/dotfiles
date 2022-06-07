@@ -71,5 +71,3 @@
 	concurrenttransfers = 32
 [rebase]
 	backend = apply
-[url "https://github.com.cnpmjs.org/"]
-	insteadof = https://github.com/
