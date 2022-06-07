@@ -9,6 +9,7 @@ export LC_ALL="en_US.UTF-8"
 
 UNAME=`uname`
 
+eval "$(/opt/homebrew/bin/brew shellenv)"
 # Fallback info
 CURRENT_OS='Linux'
 DISTRO=''
@@ -59,8 +60,8 @@ antigen theme robbyrussell
 antigen apply
 
 # chruby
-source /usr/local/opt/chruby/share/chruby/chruby.sh
-source /usr/local/opt/chruby/share/chruby/auto.sh
+# source /usr/local/opt/chruby/share/chruby/chruby.sh
+# source /usr/local/opt/chruby/share/chruby/auto.sh
 
 # zsh
 alias vim="stty stop '' -ixoff ; vim"
@@ -113,7 +114,7 @@ alias e='f -e emacsclient -t' # quick opening files with xdg-open
 export PATH="/usr/local/sbin":$PATH
 export PATH="$HOME/.emacs.d/bin:$PATH"
 export PATH="$HOME/Library/Python/2.7/bin:$PATH"
-export PATH="/Applications/Emacs.app/Contents/MacOS:$PATH"
+export PATH="/Applications/Emacs.app/Contents/MacOS:$PATH:/opt/homebrew/bin"
 
 
 export NVM_DIR=~/.nvm
@@ -157,6 +158,5 @@ if exists percol; then
     zle -N percol_select_history
     bindkey '^R' percol_select_history
 fi
-source $HOME/.cargo/env
-
+# source $HOME/.cargo/env
 #export https_proxy=http://127.0.0.1:7890 http_proxy=http://127.0.0.1:7890 all_proxy=socks5://127.0.0.1:7891

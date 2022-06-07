@@ -12,9 +12,10 @@ rm ~/.tmux-mac
 rm ~/.flake8rc
 rm ~/.luacheckrc
 rm ~/.eslintrc
-rm ~/.jshintrc 
+rm ~/.jshintrc
 rm ~/.agignore
 rm ~/.jsbeautifyrc
+rm ~/.zshenv
 # rm ~/.zshenv
 rm ~/.npmrc
 rm ~/tslint.json
@@ -22,6 +23,7 @@ rm ~/.ruby-version
 ln -s ~/.vim/.gitconfig ~/.gitconfig
 ln -s ~/.vim/.latexmkrc ~/.latexmkrc
 ln -s ~/.vim/.zshrc ~/.zshrc
+ln -s ~/.vim/.zshenv ~/.zshenv
 ln -s ~/.vim/.tmux.conf ~/.tmux.conf
 ln -s ~/.vim/.tmux-mac ~/.tmux-mac
 ln -s ~/.vim/.flake8rc  ~/.flake8rc
