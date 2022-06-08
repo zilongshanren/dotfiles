@@ -16,10 +16,17 @@ brew install reattach-to-user-namespace
 brew install node
 brew install nvm
 nvm install 10.16
-#install percol
-curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
-sudo  python ./get-pip.py
-sudo pip install percol
+# install tmux plugin
+git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+# for ls & cat gnu version  for easing dired-quick-sort
+brew install coreutils
+brew install fd
+brew install ripgrep
+
+brew install pyenv
+pyenv install 2.7.18
+pyenv global 2.7.18
+pip install percol
 
 echo "Install vim configurations..."
 
@@ -38,11 +45,3 @@ ln -s ~/.vim/.ideavimrc ~/.ideavimrc
 #echo "update submodules"
 git submodule init
 git submodule update
-
-
-# install tmux plugin
-git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
-# for ls & cat gnu version  for easing dired-quick-sort
-brew install coreutils
-brew install fd
-brew install ripgrep
