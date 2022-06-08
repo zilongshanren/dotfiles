@@ -18,7 +18,7 @@ export PATH=/Library/TeX/texbin:/usr/local/bin:$PATH
 export CLICOLOR=1
 
 alias g='git'
-source "$HOME/.cargo/env"
 export PATH=/usr/local/bin/:/usr/local/Cellar/git/2.30.1/libexec/git-core:$PATH
 export PERL5LIB=/usr/local/lib/perl5/site_perl/5.28.2/darwin-thread-multi-2level
 alias grep="ggrep"
+. "$HOME/.cargo/env"

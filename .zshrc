@@ -158,5 +158,5 @@ if exists percol; then
     zle -N percol_select_history
     bindkey '^R' percol_select_history
 fi
-# source $HOME/.cargo/env
+source $HOME/.cargo/env
 #export https_proxy=http://127.0.0.1:7890 http_proxy=http://127.0.0.1:7890 all_proxy=socks5://127.0.0.1:7891
