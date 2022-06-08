@@ -20,7 +20,7 @@
 			<key>Activate</key>
 			<string>Normal</string>
 			<key>CreationDate</key>
-			<real>565002699.23652005</real>
+			<real>676304489.32959604</real>
 			<key>Macros</key>
 			<array>
 				<dict>
@@ -74,15 +74,77 @@
 			<key>Name</key>
 			<string>Global Macro Group</string>
 			<key>ToggleMacroUID</key>
-			<string>D6337978-5D72-4E83-BDA1-0BF43ED78605</string>
+			<string>9D40F254-8D94-4500-8EB8-8D6B4326FE36</string>
 			<key>UID</key>
-			<string>AD4C1529-100A-4EAB-9579-7E397E1A8F2B</string>
+			<string>FB6797CB-B9F6-4EEE-B5BD-FBCB678FA973</string>
 		</dict>
 		<dict>
 			<key>Activate</key>
 			<string>Normal</string>
 			<key>CreationDate</key>
-			<real>565002699.23652005</real>
+			<real>676304489.32959604</real>
+			<key>Macros</key>
+			<array>
+				<dict>
+					<key>Actions</key>
+					<array>
+						<dict>
+							<key>AllWindows</key>
+							<true/>
+							<key>AlreadyActivatedActionType</key>
+							<string>Normal</string>
+							<key>Application</key>
+							<dict>
+								<key>BundleIdentifier</key>
+								<string>com.microsoft.VSCode</string>
+								<key>Name</key>
+								<string>Visual Studio Code</string>
+								<key>NewFile</key>
+								<string>/Applications/Visual Studio Code.app</string>
+							</dict>
+							<key>MacroActionType</key>
+							<string>ActivateApplication</string>
+							<key>ReopenWindows</key>
+							<false/>
+							<key>TimeOutAbortsMacro</key>
+							<true/>
+						</dict>
+					</array>
+					<key>CreationDate</key>
+					<real>544673356.43304503</real>
+					<key>ModificationDate</key>
+					<real>676343018.56807101</real>
+					<key>Name</key>
+					<string>Open code</string>
+					<key>Triggers</key>
+					<array>
+						<dict>
+							<key>FireType</key>
+							<string>Pressed</string>
+							<key>KeyCode</key>
+							<integer>1</integer>
+							<key>MacroTriggerType</key>
+							<string>HotKey</string>
+							<key>Modifiers</key>
+							<integer>6912</integer>
+						</dict>
+					</array>
+					<key>UID</key>
+					<string>2125225D-299F-42A5-93E2-9CB6332348C8</string>
+				</dict>
+			</array>
+			<key>Name</key>
+			<string>Global Macro Group</string>
+			<key>ToggleMacroUID</key>
+			<string>9D40F254-8D94-4500-8EB8-8D6B4326FE36</string>
+			<key>UID</key>
+			<string>FB6797CB-B9F6-4EEE-B5BD-FBCB678FA973</string>
+		</dict>
+		<dict>
+			<key>Activate</key>
+			<string>Normal</string>
+			<key>CreationDate</key>
+			<real>676304489.32959604</real>
 			<key>Macros</key>
 			<array>
 				<dict>
@@ -113,7 +175,7 @@
 					<key>CreationDate</key>
 					<real>544183568.64597404</real>
 					<key>ModificationDate</key>
-					<real>544183587.19098699</real>
+					<real>676304676.09361994</real>
 					<key>Name</key>
 					<string>Open iTerm</string>
 					<key>Triggers</key>
@@ -136,15 +198,15 @@
 			<key>Name</key>
 			<string>Global Macro Group</string>
 			<key>ToggleMacroUID</key>
-			<string>D6337978-5D72-4E83-BDA1-0BF43ED78605</string>
+			<string>9D40F254-8D94-4500-8EB8-8D6B4326FE36</string>
 			<key>UID</key>
-			<string>AD4C1529-100A-4EAB-9579-7E397E1A8F2B</string>
+			<string>FB6797CB-B9F6-4EEE-B5BD-FBCB678FA973</string>
 		</dict>
 		<dict>
 			<key>Activate</key>
 			<string>Normal</string>
 			<key>CreationDate</key>
-			<real>565002699.23652005</real>
+			<real>676304489.32959604</real>
 			<key>Macros</key>
 			<array>
 				<dict>
@@ -161,8 +223,6 @@
 								<string>com.tencent.qq</string>
 								<key>Name</key>
 								<string>QQ</string>
-								<key>NewFile</key>
-								<string>/Applications/QQ.app</string>
 							</dict>
 							<key>MacroActionType</key>
 							<string>ActivateApplication</string>
@@ -198,77 +258,15 @@
 			<key>Name</key>
 			<string>Global Macro Group</string>
 			<key>ToggleMacroUID</key>
-			<string>D6337978-5D72-4E83-BDA1-0BF43ED78605</string>
+			<string>9D40F254-8D94-4500-8EB8-8D6B4326FE36</string>
 			<key>UID</key>
-			<string>AD4C1529-100A-4EAB-9579-7E397E1A8F2B</string>
+			<string>FB6797CB-B9F6-4EEE-B5BD-FBCB678FA973</string>
 		</dict>
 		<dict>
 			<key>Activate</key>
 			<string>Normal</string>
 			<key>CreationDate</key>
-			<real>565002699.23652005</real>
-			<key>Macros</key>
-			<array>
-				<dict>
-					<key>Actions</key>
-					<array>
-						<dict>
-							<key>AllWindows</key>
-							<true/>
-							<key>AlreadyActivatedActionType</key>
-							<string>Normal</string>
-							<key>Application</key>
-							<dict>
-								<key>BundleIdentifier</key>
-								<string>com.sublimetext.3</string>
-								<key>Name</key>
-								<string>Sublime Text</string>
-								<key>NewFile</key>
-								<string>/Volumes/MacbookPro/Applications/Sublime Text.app</string>
-							</dict>
-							<key>MacroActionType</key>
-							<string>ActivateApplication</string>
-							<key>ReopenWindows</key>
-							<false/>
-							<key>TimeOutAbortsMacro</key>
-							<true/>
-						</dict>
-					</array>
-					<key>CreationDate</key>
-					<real>544673356.43304503</real>
-					<key>ModificationDate</key>
-					<real>565005453.21229601</real>
-					<key>Name</key>
-					<string>Open Sublime</string>
-					<key>Triggers</key>
-					<array>
-						<dict>
-							<key>FireType</key>
-							<string>Pressed</string>
-							<key>KeyCode</key>
-							<integer>1</integer>
-							<key>MacroTriggerType</key>
-							<string>HotKey</string>
-							<key>Modifiers</key>
-							<integer>6912</integer>
-						</dict>
-					</array>
-					<key>UID</key>
-					<string>2125225D-299F-42A5-93E2-9CB6332348C8</string>
-				</dict>
-			</array>
-			<key>Name</key>
-			<string>Global Macro Group</string>
-			<key>ToggleMacroUID</key>
-			<string>D6337978-5D72-4E83-BDA1-0BF43ED78605</string>
-			<key>UID</key>
-			<string>AD4C1529-100A-4EAB-9579-7E397E1A8F2B</string>
-		</dict>
-		<dict>
-			<key>Activate</key>
-			<string>Normal</string>
-			<key>CreationDate</key>
-			<real>565002699.23652005</real>
+			<real>676304489.32959604</real>
 			<key>Macros</key>
 			<array>
 				<dict>
@@ -322,15 +320,15 @@
 			<key>Name</key>
 			<string>Global Macro Group</string>
 			<key>ToggleMacroUID</key>
-			<string>D6337978-5D72-4E83-BDA1-0BF43ED78605</string>
+			<string>9D40F254-8D94-4500-8EB8-8D6B4326FE36</string>
 			<key>UID</key>
-			<string>AD4C1529-100A-4EAB-9579-7E397E1A8F2B</string>
+			<string>FB6797CB-B9F6-4EEE-B5BD-FBCB678FA973</string>
 		</dict>
 		<dict>
 			<key>Activate</key>
 			<string>Normal</string>
 			<key>CreationDate</key>
-			<real>565002699.23652005</real>
+			<real>676304489.32959604</real>
 			<key>Macros</key>
 			<array>
 				<dict>
@@ -344,11 +342,11 @@
 							<key>Application</key>
 							<dict>
 								<key>BundleIdentifier</key>
-								<string>com.cocos.creator</string>
+								<string>com.apple.dt.Xcode</string>
 								<key>Name</key>
-								<string>CocosCreator</string>
+								<string>Xcode</string>
 								<key>NewFile</key>
-								<string>/Volumes/MacbookPro/Applications/CocosCreator.app</string>
+								<string>/Applications/Xcode.app</string>
 							</dict>
 							<key>MacroActionType</key>
 							<string>ActivateApplication</string>
@@ -361,7 +359,7 @@
 					<key>CreationDate</key>
 					<real>544674756.04601002</real>
 					<key>ModificationDate</key>
-					<real>565005457.35485601</real>
+					<real>676342830.240749</real>
 					<key>Name</key>
 					<string>Open Xcode</string>
 					<key>Triggers</key>
@@ -384,15 +382,15 @@
 			<key>Name</key>
 			<string>Global Macro Group</string>
 			<key>ToggleMacroUID</key>
-			<string>D6337978-5D72-4E83-BDA1-0BF43ED78605</string>
+			<string>9D40F254-8D94-4500-8EB8-8D6B4326FE36</string>
 			<key>UID</key>
-			<string>AD4C1529-100A-4EAB-9579-7E397E1A8F2B</string>
+			<string>FB6797CB-B9F6-4EEE-B5BD-FBCB678FA973</string>
 		</dict>
 		<dict>
 			<key>Activate</key>
 			<string>Normal</string>
 			<key>CreationDate</key>
-			<real>565002699.23652005</real>
+			<real>676304489.32959604</real>
 			<key>Macros</key>
 			<array>
 				<dict>
@@ -410,7 +408,7 @@
 								<key>Name</key>
 								<string>Emacs</string>
 								<key>NewFile</key>
-								<string>/usr/local/Cellar/emacs-plus/26.1/Emacs.app</string>
+								<string>/Applications/Emacs.app</string>
 							</dict>
 							<key>MacroActionType</key>
 							<string>ActivateApplication</string>
@@ -446,15 +444,15 @@
 			<key>Name</key>
 			<string>Global Macro Group</string>
 			<key>ToggleMacroUID</key>
-			<string>D6337978-5D72-4E83-BDA1-0BF43ED78605</string>
+			<string>9D40F254-8D94-4500-8EB8-8D6B4326FE36</string>
 			<key>UID</key>
-			<string>AD4C1529-100A-4EAB-9579-7E397E1A8F2B</string>
+			<string>FB6797CB-B9F6-4EEE-B5BD-FBCB678FA973</string>
 		</dict>
 		<dict>
 			<key>Activate</key>
 			<string>Normal</string>
 			<key>CreationDate</key>
-			<real>565002699.23652005</real>
+			<real>676304489.32959604</real>
 			<key>Macros</key>
 			<array>
 				<dict>
@@ -508,12 +506,173 @@
 			<key>Name</key>
 			<string>Global Macro Group</string>
 			<key>ToggleMacroUID</key>
-			<string>D6337978-5D72-4E83-BDA1-0BF43ED78605</string>
+			<string>9D40F254-8D94-4500-8EB8-8D6B4326FE36</string>
 			<key>UID</key>
-			<string>AD4C1529-100A-4EAB-9579-7E397E1A8F2B</string>
+			<string>FB6797CB-B9F6-4EEE-B5BD-FBCB678FA973</string>
+		</dict>
+		<dict>
+			<key>Activate</key>
+			<string>Normal</string>
+			<key>CreationDate</key>
+			<real>676304489.32959604</real>
+			<key>Macros</key>
+			<array>
+				<dict>
+					<key>Actions</key>
+					<array>
+						<dict>
+							<key>AddToMacroPalette</key>
+							<false/>
+							<key>AddToStatusMenu</key>
+							<false/>
+							<key>EnableRepeat</key>
+							<true/>
+							<key>IsDisclosed</key>
+							<false/>
+							<key>KeyCode</key>
+							<integer>122</integer>
+							<key>MacroActionType</key>
+							<string>QuickMacro</string>
+							<key>Modifiers</key>
+							<integer>2048</integer>
+							<key>QuickMacroUID</key>
+							<string>CD36EA81-D0C4-4A44-B9F3-77E832F706EC</string>
+						</dict>
+					</array>
+					<key>CreationDate</key>
+					<real>676304489.32829797</real>
+					<key>ModificationDate</key>
+					<real>676304489.32829797</real>
+					<key>Name</key>
+					<string>Quick Macro for ⌥F1</string>
+					<key>Triggers</key>
+					<array>
+						<dict>
+							<key>FireType</key>
+							<string>Pressed</string>
+							<key>KeyCode</key>
+							<integer>122</integer>
+							<key>MacroTriggerType</key>
+							<string>HotKey</string>
+							<key>Modifiers</key>
+							<integer>4096</integer>
+						</dict>
+					</array>
+					<key>UID</key>
+					<string>898BEF21-28D7-4E80-BDCA-21864E957A8D</string>
+				</dict>
+			</array>
+			<key>Name</key>
+			<string>Global Macro Group</string>
+			<key>ToggleMacroUID</key>
+			<string>9D40F254-8D94-4500-8EB8-8D6B4326FE36</string>
+			<key>UID</key>
+			<string>FB6797CB-B9F6-4EEE-B5BD-FBCB678FA973</string>
+		</dict>
+		<dict>
+			<key>Activate</key>
+			<string>Normal</string>
+			<key>CreationDate</key>
+			<real>676304489.32959604</real>
+			<key>Macros</key>
+			<array>
+				<dict>
+					<key>Actions</key>
+					<array>
+						<dict>
+							<key>Default</key>
+							<string></string>
+							<key>IsDisclosed</key>
+							<false/>
+							<key>MacroActionType</key>
+							<string>Search</string>
+							<key>TimeOutAbortsMacro</key>
+							<true/>
+							<key>Title</key>
+							<string>Search the web with Google</string>
+							<key>URL</key>
+							<string>http://www.google.com/search?q=%Search%</string>
+						</dict>
+					</array>
+					<key>CreationDate</key>
+					<real>676304489.32292497</real>
+					<key>ModificationDate</key>
+					<real>676304489.32292497</real>
+					<key>Triggers</key>
+					<array>
+						<dict>
+							<key>FireType</key>
+							<string>Pressed</string>
+							<key>KeyCode</key>
+							<integer>5</integer>
+							<key>MacroTriggerType</key>
+							<string>HotKey</string>
+							<key>Modifiers</key>
+							<integer>4608</integer>
+						</dict>
+					</array>
+					<key>UID</key>
+					<string>8130BF41-338F-4AA8-91EF-C4A7FFE4DD5D</string>
+				</dict>
+			</array>
+			<key>Name</key>
+			<string>Global Macro Group</string>
+			<key>ToggleMacroUID</key>
+			<string>9D40F254-8D94-4500-8EB8-8D6B4326FE36</string>
+			<key>UID</key>
+			<string>FB6797CB-B9F6-4EEE-B5BD-FBCB678FA973</string>
+		</dict>
+		<dict>
+			<key>Activate</key>
+			<string>Normal</string>
+			<key>CreationDate</key>
+			<real>676304489.32959604</real>
+			<key>Macros</key>
+			<array>
+				<dict>
+					<key>Actions</key>
+					<array>
+						<dict>
+							<key>MacroActionType</key>
+							<string>TriggerByName</string>
+							<key>TimeOutAbortsMacro</key>
+							<true/>
+						</dict>
+					</array>
+					<key>CreationDate</key>
+					<real>676304489.32414603</real>
+					<key>ModificationDate</key>
+					<real>676304489.32414603</real>
+					<key>Triggers</key>
+					<array>
+						<dict>
+							<key>FireType</key>
+							<string>Pressed</string>
+							<key>KeyCode</key>
+							<integer>17</integer>
+							<key>MacroTriggerType</key>
+							<string>HotKey</string>
+							<key>Modifiers</key>
+							<integer>6400</integer>
+						</dict>
+						<dict>
+							<key>MacroTriggerType</key>
+							<string>StatusMenu</string>
+						</dict>
+					</array>
+					<key>UID</key>
+					<string>FAC5F3AD-574B-4E01-B6FA-D9A45291CA2F</string>
+				</dict>
+			</array>
+			<key>Name</key>
+			<string>Global Macro Group</string>
+			<key>ToggleMacroUID</key>
+			<string>9D40F254-8D94-4500-8EB8-8D6B4326FE36</string>
+			<key>UID</key>
+			<string>FB6797CB-B9F6-4EEE-B5BD-FBCB678FA973</string>
 		</dict>
 	</array>
 	<key>UID</key>
-	<string>EEDF3D4A-0CF8-4E86-958E-3FAC0CB0A469</string>
+	<string>A704991B-C845-4935-AA3C-DC338E30B8FE</string>
 </dict>
 </plist>
