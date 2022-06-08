@@ -12,6 +12,7 @@ brew install autojump
 # install tmux
 brew install tmux
 brew install reattach-to-user-namespace
+brew install cmake
 #install node and nvm
 brew install node
 brew install nvm
