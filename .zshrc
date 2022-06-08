@@ -119,7 +119,7 @@ export PATH="/Applications/Emacs.app/Contents/MacOS/bin/:$PATH:/opt/homebrew/bin
 
 export NVM_DIR=~/.nvm
 source $(brew --prefix nvm)/nvm.sh
-nvm use 10.16
+nvm use 16.15.1
 
 
 

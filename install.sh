@@ -16,7 +16,7 @@ brew install cmake
 #install node and nvm
 brew install node
 brew install nvm
-nvm install 10.16
+nvm install 16.15.1
 # install tmux plugin
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 # for ls & cat gnu version  for easing dired-quick-sort
