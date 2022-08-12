@@ -27,7 +27,8 @@ brew install ripgrep
 brew install pyenv
 pyenv install 2.7.18
 pyenv global 2.7.18
-pip install percol
+pip install git+https://github.com/osdakira/python3-percol
+
 
 echo "Install vim configurations..."
 
