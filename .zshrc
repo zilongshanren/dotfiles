@@ -112,7 +112,8 @@ alias e='f -e emacsclient -t' # quick opening files with xdg-open
 [ -f /Users/guanghui/.travis/travis.sh ] && source /Users/guanghui/.travis/travis.sh
 
 export PATH="/usr/local/sbin":$PATH
-export PATH="/opt/homebrew/bin:$HOME/.emacs.d/bin:$PATH"
+export PATH="${HOME}/.pyenv/shims:$HOME/.emacs.d/bin:$PATH"
+export PATH="$HOME/Library/Python/2.7/bin:$PATH"
 export PATH="/Applications/Emacs.app/Contents/MacOS/bin/:$PATH:/opt/homebrew/bin:/Users/lionqu/Library/Python/3.8/bin"
 
 
