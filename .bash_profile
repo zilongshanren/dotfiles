@@ -7,7 +7,7 @@ export
 JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_301.jdk/Contents/Home
 export ANDROID_NDK_ROOT=/Users/lionqu/workspace/android-ndk-r20b/
 export PATH=$NDK_ROOT:$PATH
-export ANDROID_SDK_ROOT=/Users/guanghui/AndroidDev/adt-bundle-mac-x86_64-20130522/sdk
+export ANDROID_SDK_ROOT=/Users/lionqu/Library/Android/sdk
 export PATH=$ANDROID_SDK_ROOT/sdk/platform-tools:$PATH
 export PATH=$ANDROID_SDK_ROOT/tools:$ANDROID_SDK_ROOT/platform-tools:$PATH
 
