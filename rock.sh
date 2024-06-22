@@ -63,3 +63,4 @@ rm ~/.pylintrc
 ln -s ~/.vim/.pylintrc ~/.pylintrc
 rm ~/.pentadactylrc
 ln -s ~/.vim/.pentadactylrc ~/.pentadactylrc
+ln -s ~/.vim/.gdlintrc ~/.gdlintrc

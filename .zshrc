@@ -119,7 +119,7 @@ export PATH="/Applications/Emacs.app/Contents/MacOS/bin/:$PATH:/opt/homebrew/bin
 
 export NVM_DIR=~/.nvm
 source $(brew --prefix nvm)/nvm.sh
-nvm use 16.15.1
+nvm use 20.9.0
 
 
 
@@ -160,3 +160,5 @@ if exists percol; then
 fi
 source $HOME/.cargo/env
 #export https_proxy=http://127.0.0.1:7890 http_proxy=http://127.0.0.1:7890 all_proxy=socks5://127.0.0.1:7891
+#export https_proxy=http://web-proxy.oa.com:8080 http_proxy=http://web-proxy.oa.com:8080
+source /opt/homebrew/opt/asdf/libexec/asdf.sh
